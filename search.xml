@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(1) - 建立hexo部落格模板</title>
-    <url>/Bosh-Hexo-Blog/hexo-from-scratch-0/</url>
+    <url>/Bosh-Hexo-Blog/hexo-from-scratch-1/</url>
     <content><![CDATA[<h2 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h2><p>在開始搭建hexo部落格前需要先安裝以下軟體，可以參考<a href="https://hexo.io/zh-tw/docs/">官方文件</a>依照自己的作業系統安裝。</p>
 <ul>
 <li>Git</li>
@@ -11,14 +11,20 @@
 </ul>
 <span id="more"></span>
 
+<br/>
+
 <h2 id="安裝Hexo"><a href="#安裝Hexo" class="headerlink" title="安裝Hexo"></a><strong>安裝Hexo</strong></h2><h3 id="下載-Hexo-套件包"><a href="#下載-Hexo-套件包" class="headerlink" title="下載 Hexo 套件包"></a><strong>下載 Hexo 套件包</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
 
 <p>確認hexo-cli成功下載可以輸入<code>hexo -v</code> 查看 hexo-cli 版本，若有出現下方hexo-cli版本資訊就代表安裝成功囉，<code>注意，hexo-cli跟hexo是不一樣的東西</code>，如果熟悉react的朋友，我個人覺得<code>hexo-cli</code>跟<code>create-react-app</code>有點像，都是創建環境的工具，而<code>hexo</code>跟<code>react</code>才是框架本體。許多hexo主題套件會要求hexo的版本，並不是指這邊輸入<code>hexo -v</code>顯示的hexo-cli 版本，至於hexo版本怎麼看會在下方講到。</p>
 <p><img src="https://i.imgur.com/hpd7mip.png" alt="Imgur"></p>
+<br/>
+
 <h3 id="創建hexo專案資料夾"><a href="#創建hexo專案資料夾" class="headerlink" title="創建hexo專案資料夾"></a><strong>創建hexo專案資料夾</strong></h3><p>我選擇將hexo專案資料夾創建於我的桌面上</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> Desktop</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init Blog</span><br></pre></td></tr></table></figure>
+
+<br/>
 
 <h3 id="安裝專案需要的檔案"><a href="#安裝專案需要的檔案" class="headerlink" title="安裝專案需要的檔案"></a><strong>安裝專案需要的檔案</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> Blog</span><br></pre></td></tr></table></figure>
 
@@ -33,25 +39,205 @@
 <li>source: 用來存放原始檔案的資料夾，例如 Markdown 檔、圖片、各種頁面（分頁、關於等）。資料夾以_開頭，如:<code>_posts, _imgs</code>但除了 <code>_posts</code> 資料夾以外以 <code>_</code> 開頭的檔案、資料夾或隱藏檔案會被忽略。</li>
 <li>source &amp; public &amp; .deploy_git: 執行<code>$ hexo generate</code>生成靜態網站文件時source資料夾中的Markdown 檔和 HTML 檔會被解析並根據主題渲染，並放到 public 資料夾，而其他檔案則會被拷貝過去。執行<code>$ hexo deploy</code>則會將 public 文件夾中的內容部署到 GitHub，並生成 <code>.deploy_git</code>資料夾，其內容與public幾乎完全同。</li>
 </ul>
+<br/>
+
 <h2 id="看看部落格的雛形吧！"><a href="#看看部落格的雛形吧！" class="headerlink" title="看看部落格的雛形吧！"></a><strong>看看部落格的雛形吧！</strong></h2><p>當完成前述指令動作基本的hexo部落格就已經搭建好了，跟自己從零開始手刻一個部落格相比hexo真的是個快速又方便網站搭建神器！接下來使用hexo的一些基本指令來實現自己的部落格。</p>
+<br/>
+
 <h3 id="新增文章"><a href="#新增文章" class="headerlink" title="新增文章"></a><strong>新增文章</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
 
 <p>建立一篇新的文章。如果沒有設定 <code>layout</code> 的話，則會使用 <code>_config.yml</code> 中的 <code>default_layout</code> 設定代替，<code>default_layout</code>為post。如果標題有包含空格，需使用引號括住，例如<code>&quot; title&quot;。</code></p>
 <p><img src="https://i.imgur.com/LCPIWQT.png" alt="Imgur"><br><img src="https://i.imgur.com/YgTqyW4.png" alt="Imgur"></p>
+<br/>
+
 <h3 id="產生靜態網頁"><a href="#產生靜態網頁" class="headerlink" title="產生靜態網頁"></a><strong>產生靜態網頁</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
 <p>執行後，多了一個 public 目錄，點擊進去後，會發現裡面有一些內容，這是 Hexo解析<code>source</code>資料夾產生的靜態網頁資料，也就是決定部落格內容與外觀的一些文件，之後部署到github page做的事情其實就是把<code>public</code>資料夾內容搬到github上</p>
+<br/>
+
 <h3 id="清除靜態檔案與快取"><a href="#清除靜態檔案與快取" class="headerlink" title="清除靜態檔案與快取"></a><strong>清除靜態檔案與快取</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
 
 <p>清除快取檔案 (<code>db.json</code>) 和已產生的靜態檔案 (<code>public</code>)。建議在每次更新部落格內容執行hexo generate之前先執行</p>
+<br/>
+
 <h3 id="本地伺服器"><a href="#本地伺服器" class="headerlink" title="本地伺服器"></a><strong>本地伺服器</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
 <p>在本地端啟動 Hexo 伺服器，預設路徑為：<code>localhost:4000/</code>，可在自己電腦上預覽設定結果</p>
 <p><img src="https://i.imgur.com/SMPrFou.png" alt="Imgur"><br><img src="https://i.imgur.com/2yz3f5h.png" alt="Imgur"></p>
+<br/>
+
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a><strong>參考資料</strong></h2><ul>
 <li><a href="https://hackmd.io/@Heidi-Liu/note-hexo-github#%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD">【學習筆記】如何使用 Hexo + GitHub Pages 架設個人網誌</a></li>
 <li><a href="https://ithelp.ithome.com.tw/users/20139218/ironman/3910">30 天利用 Hexo 打造技術部落格系列</a></li>
 <li><a href="https://hexo.io/zh-tw/docs/commands">Hexo文件-指令</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(4) - 寫下第一篇部落格文章</title>
+    <url>/Bosh-Hexo-Blog/hexo-from-scratch-4/</url>
+    <content><![CDATA[<h2 id="來寫第一篇部落格文章吧！"><a href="#來寫第一篇部落格文章吧！" class="headerlink" title="來寫第一篇部落格文章吧！"></a><strong>來寫第一篇部落格文章吧！</strong></h2><p>接下來使用hexo指令來創建這個部落格的第一篇文章!</p>
+<span id="more"></span>
+
+<br/>
+
+<h3 id="創建新文章或草稿-md檔"><a href="#創建新文章或草稿-md檔" class="headerlink" title="創建新文章或草稿.md檔"></a><strong>創建新文章或草稿.md檔</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> 專案目錄</span><br><span class="line"></span><br><span class="line">hexo new <span class="string">&quot;&lt;文章名稱&gt;&quot;</span></span><br><span class="line"><span class="comment"># hexo new draft &quot;文章名稱&quot; 用來建立草稿 .md 檔</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>輸入指令後<code>source/_posts</code>中會自動新增一個md檔，指令中輸入的文章名稱則是用於網站中該篇文章的網址。若是建立草稿（文章與頁面都可以），建立的 .md 檔會放置在 <code>./source/_drafts</code> 內，存放在 <code>_drafts</code> 目錄內的檔案不會被建立成文章或是頁面，因此如果想先建立檔案但不一定要先發佈，可以先建立成草稿，等到要發佈時，再移動到 <code>_post</code> 目錄內或是獨立建成一個頁面。</p>
+<br/>
+
+<h3 id="設定文章資訊"><a href="#設定文章資訊" class="headerlink" title="設定文章資訊"></a><strong>設定文章資訊</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: first-test-article</span><br><span class="line">date: 2022-01-20 16:58:52</span><br><span class="line">tags:</span><br><span class="line">- [<span class="built_in">test</span>]</span><br><span class="line">category:</span><br><span class="line">- [<span class="built_in">test</span>]</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>創建好文章後一開始會是一個空白頁面，以及預設的post layout (不會顯示於內文)，<code>title</code>為在網頁中的王張標題，<code>date</code>為文章創建日期，文章資訊可以日後再進行修改，tags與categoty與接下面提到標籤頁面與分類頁面有關。</p>
+<br/>
+
+<h3 id="分類與標籤"><a href="#分類與標籤" class="headerlink" title="分類與標籤"></a><strong>分類與標籤</strong></h3><p>tags欄與category欄就是標籤頁與分類頁對應的標籤與分類，而category又有兩種不同寫法會影響文章的分類方式。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: first-test-article</span><br><span class="line">date: 2022-01-20 16:58:52</span><br><span class="line">tags:</span><br><span class="line">- [標籤1]</span><br><span class="line">- [標籤2]</span><br><span class="line">category:</span><br><span class="line">- [分類1]</span><br><span class="line">- [分類2]</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: first-test-article</span><br><span class="line">date: 2022-01-20 16:58:52</span><br><span class="line">tags:</span><br><span class="line">- 標籤1</span><br><span class="line">- 標籤2</span><br><span class="line">category:</span><br><span class="line">- 分類1</span><br><span class="line">- 分類2</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>第一種寫法:分類1, 分類2為獨立的兩個分類，標籤1, 標籤2為獨立的兩個標籤。</p>
+<p>第二種寫法:分類2為分類1底下的子分類，而標籤1, 標籤2依舊為獨立的兩個標籤。</p>
+<br/>
+
+<h3 id="Markdown語法編輯內文"><a href="#Markdown語法編輯內文" class="headerlink" title="Markdown語法編輯內文"></a><strong>Markdown語法編輯內文</strong></h3><p>hexo的文章是以markdown語法格式來編寫的，我自己是習慣用Notion或VScode來寫，至於要在文章中插入的圖片我選擇將圖片先丟到<a href="https://imgur.com/">Imgur</a>當作圖床再用連結導入，因為Github Page有容量限制，如果直接在專案資料夾引入很快就沒空間了。</p>
+<p>在編輯文章內容時可同時用<code>hexo server</code>在本地端預覽文章在網站上的樣子來做排版。</p>
+<p><img src="https://i.imgur.com/fptfNuB.png" alt="Imgur"></p>
+<br/>
+
+<h3 id="隱藏過長的文章內容"><a href="#隱藏過長的文章內容" class="headerlink" title="隱藏過長的文章內容"></a><strong>隱藏過長的文章內容</strong></h3><p>打完一篇文章發布後發現首頁完全被這片文章給佔據了，要如何讓文章只在首頁顯示部分內容，讓讀者想閱讀全文再點擊進入該文章呢？</p>
+<p>只要在想要開始隱藏的內文上頭加上<code>&lt;!-- more --&gt;</code>，首頁就會出現閱讀全文按鈕並隱藏內文。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 會顯示出來的部分</span></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"><span class="comment"># 會隱藏起來的部分</span></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a><strong>參考資料</strong></h2><ul>
+<li><a href="https://ithelp.ithome.com.tw/users/20139218/ironman/3910">30 天利用 Hexo 打造技術部落格系列</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(2) - Hexo基本設定</title>
+    <url>/Bosh-Hexo-Blog/hexo-from-scratch-2/</url>
+    <content><![CDATA[<h2 id="Hexo網站基本設定介紹"><a href="#Hexo網站基本設定介紹" class="headerlink" title="Hexo網站基本設定介紹"></a><strong>Hexo網站基本設定介紹</strong></h2><p>用hexo架設網站非常的方便，hexo把所有網站的基本設定參數都放在<code>_config.uml</code>裡面，我們可以根據自己對網站的需求調整這些晚站配置參數。配置參數很多這裡就不一一列舉，只記錄一些重要需要更改的參數。詳細也可以參考<a href="https://hexo.io/zh-tw/docs/configuration">官方配置文件</a></p>
+<blockquote>
+<p><code>任何有關設定檔案的設定值，一定要在冒號後加上一個空格再接設定值</code></p>
+</blockquote>
+<span id="more"></span>
+
+<br/>
+
+<h3 id="網站基本資訊"><a href="#網站基本資訊" class="headerlink" title="網站基本資訊"></a><strong>網站基本資訊</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line">title: Hexo <span class="comment"># 部落格標題</span></span><br><span class="line">subtitle: <span class="string">&#x27;&#x27;</span> <span class="comment"># 部落格副標題</span></span><br><span class="line">description: <span class="string">&#x27;&#x27;</span> <span class="comment"># 部落格簡介</span></span><br><span class="line">keywords: <span class="string">&#x27;關鍵字1&#x27;</span>, <span class="string">&#x27;關鍵字2&#x27;</span> <span class="comment"># 網站關鍵字，多個關鍵字用逗號隔開</span></span><br><span class="line">author: John Doe <span class="comment"># 作者名字</span></span><br><span class="line">language: en <span class="comment"># 語言，繁體中文設定 zh-TW</span></span><br><span class="line">timezone: <span class="string">&#x27;&#x27;</span> <span class="comment"># 使用系統時間即可</span></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<h3 id="URL設定"><a href="#URL設定" class="headerlink" title="URL設定"></a><strong>URL設定</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as &#x27;http://example.com/child&#x27; and root as &#x27;/child/&#x27;</span></span><br><span class="line">url: http://example.com <span class="comment"># 正式部落格網址</span></span><br><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/ # 文章路徑</span></span><br><span class="line">permalink: :title/  <span class="comment"># 可以設定網址後直接接文章名稱，網址整體才比較短</span></span><br><span class="line">permalink_defaults:</span><br><span class="line">pretty_urls:</span><br><span class="line">  trailing_index: <span class="literal">false</span> <span class="comment"># 設置 false 會移除網址中的 index.html</span></span><br><span class="line">  trailing_html: <span class="literal">false</span> <span class="comment"># 設置 false 會移除網址中的 html</span></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<h3 id="載入文章"><a href="#載入文章" class="headerlink" title="載入文章"></a><strong>載入文章</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="comment"># new_post_name: :title.md  設定對應的文章原始編輯檔</span></span><br><span class="line">new_post_name: :year-:month-:day-:title.md  <span class="comment"># 這樣設定會在生成新文章.md檔時將文章生成日輸入進檔名，方便日後管理</span></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<h3 id="中文分類與標籤"><a href="#中文分類與標籤" class="headerlink" title="中文分類與標籤"></a><strong>中文分類與標籤</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Category &amp; Tag</span></span><br><span class="line">default_category: uncategorized</span><br><span class="line">category_map:</span><br><span class="line">  <span class="comment"># 中文分類: english-category  一個分類一列</span></span><br><span class="line">	學習: Learning</span><br><span class="line">tag_map:</span><br><span class="line">  <span class="comment"># 中文標籤: english-tag  一個標籤一列</span></span><br><span class="line">	學習: Learning</span><br></pre></td></tr></table></figure>
+
+<p>如果新增文章分類或是標籤是中文，因為預設網址會抓分類與標籤名稱，網址就會跟著是中文。因此若要改成是英文網址，就要透過以上範例方式，即可將中文網址改為英文。不過這個部分不用一開始就設定，之後新增分類或標籤有設定到中文名稱時再設定就可以。</p>
+<br/>
+
+<h2 id="換一個好看的佈景主題"><a href="#換一個好看的佈景主題" class="headerlink" title="換一個好看的佈景主題"></a><strong>換一個好看的佈景主題</strong></h2><p>我以hexo主題中最多人使用的<code>NexT</code>佈景主題作為我佈景主題。</p>
+<p>第一步先將next clone進theme資料夾。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+<p>接下來修改<code>_config.yml</code>檔案</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: next </span><br></pre></td></tr></table></figure>
+
+<p>修改完後重新 hexo generate、hexo server就可以看到<code>next</code>主題被套上去了</p>
+<br/>
+
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a><strong>參考資料</strong></h2><ul>
+<li><a href="https://hackmd.io/@Heidi-Liu/note-hexo-github#%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD">【學習筆記】如何使用 Hexo + GitHub Pages 架設個人網誌</a></li>
+<li><a href="https://ithelp.ithome.com.tw/users/20139218/ironman/3910">30 天利用 Hexo 打造技術部落格系列</a></li>
+<li><a href="https://hexo.io/zh-tw/docs/configuration">Hexo文件-配置</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(3) - NexT佈景主題基本設置</title>
+    <url>/Bosh-Hexo-Blog/hexo-from-scratch-3/</url>
+    <content><![CDATA[<h2 id="客製化自己的NexT佈景主題"><a href="#客製化自己的NexT佈景主題" class="headerlink" title="客製化自己的NexT佈景主題"></a><strong>客製化自己的NexT佈景主題</strong></h2><p>因為接下來要調整的設定參數是針對NexT佈景主題而不是整個網站，我們要開啟的檔案是在 Hexo 根目錄下的 <code>thems/next/_config.yml</code> 這個檔案，而不是根目錄下的<code>_config.yml</code>。</p>
+<span id="more"></span>
+
+<br/>
+
+<h3 id="Scheme設置"><a href="#Scheme設置" class="headerlink" title="Scheme設置"></a><strong>Scheme設置</strong></h3><p>調整scheme可以變換部落格主頁、邊欄等的擺放位置，可以參考官方文件的範例<a href="https://github.com/next-theme/awesome-next#live-preview">https://github.com/next-theme/awesome-next#live-preview</a>，或自己動手調整看看哪整編排方式最順眼，我目前是比較喜歡<code>Gemini</code>的編排。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Scheme Settings</span></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Schemes</span></span><br><span class="line">scheme: Muse</span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"><span class="comment">#scheme: Gemini</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Dark Mode</span></span><br><span class="line">darkmode: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<h3 id="頁尾作者連結"><a href="#頁尾作者連結" class="headerlink" title="頁尾作者連結"></a><strong>頁尾作者連結</strong></h3><p>正常來說頁尾部分就會顯示自己在根目錄<code>_config.yml</code>設定的作者名稱。若要將文字設定成一個鏈結，可以透過Html <code>&lt;a&gt;&lt;/a&gt;</code>語法嵌入指定的連結。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">copyright: <span class="string">&quot;&lt;a href=&#x27;&lt;指定連結&gt;&#x27;&gt;作者名字&lt;/a&gt;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<h3 id="主選單配置"><a href="#主選單配置" class="headerlink" title="主選單配置"></a><strong>主選單配置</strong></h3><p>一開始next預設開啟的選單為首頁以及歸檔</p>
+<p><img src="https://i.imgur.com/Gx4WOju.png" alt="Imgur"></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line"><span class="comment"># 分頁名稱: 路徑 || Icon 圖示</span></span><br><span class="line">  home: / || fa fa-home</span><br><span class="line">  <span class="comment">#about: /about/ || fa fa-user</span></span><br><span class="line">  <span class="comment">#tags: /tags/ || fa fa-tags</span></span><br><span class="line">  <span class="comment">#categories: /categories/ || fa fa-th</span></span><br><span class="line">  archives: /archives/ || fa fa-archive</span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || fa fa-sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat</span></span><br></pre></td></tr></table></figure>
+
+<p>關於、標籤以及分類頁都需要我們額外新增頁面，因此在這裡就先不開啟。</p>
+<br/>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Enable / Disable menu icons / item badges.</span></span><br><span class="line">menu_settings:</span><br><span class="line">  icons: <span class="literal">true</span></span><br><span class="line">  badges: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p><code>icons</code> 控制選單是否要顯示圖示，<code>badges</code> 旁邊會顯示有幾篇文章的數字，有點像Line的未讀訊息數</p>
+<br/>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sidebar:</span><br><span class="line">  <span class="comment"># Sidebar Position.</span></span><br><span class="line">  position: left</span><br><span class="line">  <span class="comment">#position: right</span></span><br></pre></td></tr></table></figure>
+
+<p>Scheme 是選擇 Pisces 或 Gemini 的話，就會直接看到文章列表旁邊的邊欄（如果是 Muse 跟 Mist 的話，可以看到左下角的方形內三條線的按鈕，點一下就會跑出邊欄了），預設是靠左。</p>
+<br/>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">avatar:</span><br><span class="line">  <span class="comment"># Replace the default image and set the url here.</span></span><br><span class="line">  url: /images/avatar.gif</span><br></pre></td></tr></table></figure>
+
+<p>url認的網址為next資料夾下的<code>source</code>資料夾</p>
+<br/>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">social:</span><br><span class="line">  <span class="comment">#GitHub: https://github.com/yourname || fab fa-github</span></span><br><span class="line">  <span class="comment">#E-Mail: mailto:yourname@gmail.com || fa fa-envelope</span></span><br><span class="line">  <span class="comment">#Weibo: https://weibo.com/yourname || fab fa-weibo</span></span><br><span class="line">  <span class="comment">#Google: https://plus.google.com/yourname || fab fa-google</span></span><br><span class="line">  <span class="comment">#Twitter: https://twitter.com/yourname || fab fa-twitter</span></span><br><span class="line">  <span class="comment">#FB Page: https://www.facebook.com/yourname || fab fa-facebook</span></span><br><span class="line">  <span class="comment">#StackOverflow: https://stackoverflow.com/yourname || fab fa-stack-overflow</span></span><br><span class="line">  <span class="comment">#YouTube: https://youtube.com/yourname || fab fa-youtube</span></span><br><span class="line">  <span class="comment">#Instagram: https://instagram.com/yourname || fab fa-instagram</span></span><br><span class="line">  <span class="comment">#Skype: skype:yourname?call|chat || fab fa-skype</span></span><br></pre></td></tr></table></figure>
+
+<p>跟menu主選單很像，提供連結社群媒體的icon與連結</p>
+<br/>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">back2top:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Back to top in sidebar.</span></span><br><span class="line">  sidebar: <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Scroll percent label in b2t button.</span></span><br><span class="line">  scrollpercent: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>sidebar: 設定在側邊欄的個人資訊區塊中，Social Links 下，顯示回到頂部按鈕。</li>
+<li>scrollpercent:閱讀進度百分比。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">codeblock:</span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic</span></span><br><span class="line">  <span class="comment"># See: https://github.com/chriskempson/tomorrow-theme</span></span><br><span class="line">  highlight_theme: normal</span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  copy_button:</span><br><span class="line">    <span class="built_in">enable</span>: <span class="literal">false</span></span><br><span class="line">    <span class="comment"># Show text copy result.</span></span><br><span class="line">    show_result: <span class="literal">false</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    style: mac</span><br></pre></td></tr></table></figure>
+
+<p>文章中出現的程式碼的佈景顏色、主題以及複製特效，可以試試看哪個風格和胃口</p>
+<br/>
+
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a><strong>參考資料</strong></h2><ul>
+<li><a href="https://ithelp.ithome.com.tw/users/20139218/ironman/3910">30 天利用 Hexo 打造技術部落格系列</a></li>
+<li><a href="https://github.com/next-theme/hexo-theme-next">NexT</a></li>
 </ul>
 ]]></content>
       <categories>
