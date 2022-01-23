@@ -119,4 +119,4 @@ deploy:
   type: git
   repo: https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git
   branch: gh-pages  # repo分支
-  message: "美化NexT背景主題"  # Commit 訊息
+  message: "發布從零開始使用Hexo + Github Page搭建個人技術筆記網站(2)~(4)"  # Commit 訊息

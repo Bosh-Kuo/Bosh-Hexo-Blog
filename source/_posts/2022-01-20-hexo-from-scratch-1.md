@@ -17,6 +17,8 @@ category:
 
 <!-- more -->
 
+<br/>
+
 ## **安裝Hexo**
 
 ### **下載 Hexo 套件包**
@@ -30,6 +32,8 @@ npm install hexo-cli -g
 
 ![Imgur](https://i.imgur.com/hpd7mip.png)
 
+<br/>
+
 ### **創建hexo專案資料夾**
 
 我選擇將hexo專案資料夾創建於我的桌面上
@@ -41,6 +45,8 @@ cd Desktop
 ```bash
 hexo init Blog
 ```
+
+<br/>
 
 ### **安裝專案需要的檔案**
 
@@ -62,10 +68,13 @@ npm install
 - source: 用來存放原始檔案的資料夾，例如 Markdown 檔、圖片、各種頁面（分頁、關於等）。資料夾以_開頭，如:`_posts, _imgs`但除了 `_posts` 資料夾以外以 `_` 開頭的檔案、資料夾或隱藏檔案會被忽略。
 - source & public & .deploy_git: 執行`$ hexo generate`生成靜態網站文件時source資料夾中的Markdown 檔和 HTML 檔會被解析並根據主題渲染，並放到 public 資料夾，而其他檔案則會被拷貝過去。執行`$ hexo deploy`則會將 public 文件夾中的內容部署到 GitHub，並生成 `.deploy_git`資料夾，其內容與public幾乎完全同。
 
+<br/>
 
 ## **看看部落格的雛形吧！**
 
 當完成前述指令動作基本的hexo部落格就已經搭建好了，跟自己從零開始手刻一個部落格相比hexo真的是個快速又方便網站搭建神器！接下來使用hexo的一些基本指令來實現自己的部落格。
+
+<br/>
 
 ### **新增文章**
 
@@ -78,6 +87,8 @@ $ hexo new [layout] <title>
 ![Imgur](https://i.imgur.com/LCPIWQT.png)
 ![Imgur](https://i.imgur.com/YgTqyW4.png)
 
+<br/>
+
 ### **產生靜態網頁**
 
 ```bash
@@ -86,6 +97,8 @@ $ hexo generate
 
 執行後，多了一個 public 目錄，點擊進去後，會發現裡面有一些內容，這是 Hexo解析`source`資料夾產生的靜態網頁資料，也就是決定部落格內容與外觀的一些文件，之後部署到github page做的事情其實就是把`public`資料夾內容搬到github上
 
+<br/>
+
 ### **清除靜態檔案與快取**
 
 ```bash
@@ -93,6 +106,8 @@ $ hexo clean
 ```
 
 清除快取檔案 (`db.json`) 和已產生的靜態檔案 (`public`)。建議在每次更新部落格內容執行hexo generate之前先執行
+
+<br/>
 
 ### **本地伺服器**
 
@@ -104,6 +119,8 @@ $ hexo server
 
 ![Imgur](https://i.imgur.com/SMPrFou.png)
 ![Imgur](https://i.imgur.com/2yz3f5h.png)
+
+<br/>
 
 ## **參考資料**
 - [【學習筆記】如何使用 Hexo + GitHub Pages 架設個人網誌](https://hackmd.io/@Heidi-Liu/note-hexo-github#%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD)
