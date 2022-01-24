@@ -80,99 +80,47 @@
       </tags>
   </entry>
   <entry>
-    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(5) - 標籤、分類與關於頁面</title>
-    <url>/Bosh-Hexo-Blog/hexo-from-scratch-5/</url>
-    <content><![CDATA[<h2 id="幫部落格添加標籤、分類與關於頁面！"><a href="#幫部落格添加標籤、分類與關於頁面！" class="headerlink" title="幫部落格添加標籤、分類與關於頁面！"></a><strong>幫部落格添加標籤、分類與關於頁面！</strong></h2><h3 id="建立新自訂頁面"><a href="#建立新自訂頁面" class="headerlink" title="建立新自訂頁面"></a><strong>建立新自訂頁面</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;頁面名稱&quot;</span></span><br></pre></td></tr></table></figure>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(2) - Hexo基本設定</title>
+    <url>/Bosh-Hexo-Blog/hexo-from-scratch-2/</url>
+    <content><![CDATA[<h2 id="Hexo網站基本設定介紹"><a href="#Hexo網站基本設定介紹" class="headerlink" title="Hexo網站基本設定介紹"></a><strong>Hexo網站基本設定介紹</strong></h2><p>用hexo架設網站非常的方便，hexo把所有網站的基本設定參數都放在<code>_config.uml</code>裡面，我們可以根據自己對網站的需求調整這些晚站配置參數。配置參數很多這裡就不一一列舉，只記錄一些重要需要更改的參數。詳細也可以參考<a href="https://hexo.io/zh-tw/docs/configuration">官方配置文件</a></p>
+<blockquote>
+<p><code>任何有關設定檔案的設定值，一定要在冒號後加上一個空格再接設定值</code></p>
+</blockquote>
 <span id="more"></span>
 
-<p><img src="https://i.imgur.com/zNvPADU.png" alt="Imgur"></p>
-<p>hexo會自動在source資料夾建立一個跟該新建頁面名稱相同的資料夾，裡面放著一個index.md檔用來編寫頁面內容。若是原本存為草稿的md檔編輯好要發布成頁面，就以同個道理在source創建一個該頁面名稱的資料夾，並將草稿從草稿資料夾移到該資料夾並將檔案改命名為index.md。</p>
 <br/>
 
-<h3 id="頁面資訊"><a href="#頁面資訊" class="headerlink" title="頁面資訊"></a><strong>頁面資訊</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2022-01-20 20:16:29</span><br><span class="line">comments: <span class="literal">false</span>  <span class="comment"># 設定為 false 表示不開放留言</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>有些頁面的目的為專門提供資訊或指引，沒有互動的需求，因此可以設定使該頁面不開放留言，當然現在還沒有打算加入留言功能所以有沒有這一行都沒關係。</p>
-<br/>
-
-<h3 id="建立分類頁與標籤頁"><a href="#建立分類頁與標籤頁" class="headerlink" title="建立分類頁與標籤頁"></a><strong>建立分類頁與標籤頁</strong></h3><p>Hexo 本身就有提供一些能夠連動網站資訊的頁面，例如文章分類與標籤頁，建立的方式就跟建立自訂頁面一樣。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 建立標籤頁</span></span><br><span class="line">hexo new page tags</span><br><span class="line"><span class="comment"># 建立分類頁</span></span><br><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+<h3 id="網站基本資訊"><a href="#網站基本資訊" class="headerlink" title="網站基本資訊"></a><strong>網站基本資訊</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line">title: Hexo <span class="comment"># 部落格標題</span></span><br><span class="line">subtitle: <span class="string">&#x27;&#x27;</span> <span class="comment"># 部落格副標題</span></span><br><span class="line">description: <span class="string">&#x27;&#x27;</span> <span class="comment"># 部落格簡介</span></span><br><span class="line">keywords: <span class="string">&#x27;關鍵字1&#x27;</span>, <span class="string">&#x27;關鍵字2&#x27;</span> <span class="comment"># 網站關鍵字，多個關鍵字用逗號隔開</span></span><br><span class="line">author: John Doe <span class="comment"># 作者名字</span></span><br><span class="line">language: en <span class="comment"># 語言，繁體中文設定 zh-TW</span></span><br><span class="line">timezone: <span class="string">&#x27;&#x27;</span> <span class="comment"># 使用系統時間即可</span></span><br></pre></td></tr></table></figure>
 
 <br/>
 
-<p>打開新建的分頁index.md，會發現其實跟前述自訂分頁一樣一開始一開始只有title和date兩欄，如果要連接 Hexo 資訊，就要加上 <code>type</code> 資訊，並設定為 <code>tags</code>或<code>categories</code>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># tags/index.md</span></span><br><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2022-01-20 20:58:13</span><br><span class="line"><span class="built_in">type</span>: tags </span><br><span class="line">comments: <span class="literal">false</span> </span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"><span class="comment"># categorues/index.md</span></span><br><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2022-01-20 20:58:31</span><br><span class="line"><span class="built_in">type</span>: categories </span><br><span class="line">comments: <span class="literal">false</span> </span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="URL設定"><a href="#URL設定" class="headerlink" title="URL設定"></a><strong>URL設定</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as &#x27;http://example.com/child&#x27; and root as &#x27;/child/&#x27;</span></span><br><span class="line">url: http://example.com <span class="comment"># 正式部落格網址</span></span><br><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/ # 文章路徑</span></span><br><span class="line">permalink: :title/  <span class="comment"># 可以設定網址後直接接文章名稱，網址整體才比較短</span></span><br><span class="line">permalink_defaults:</span><br><span class="line">pretty_urls:</span><br><span class="line">  trailing_index: <span class="literal">false</span> <span class="comment"># 設置 false 會移除網址中的 index.html</span></span><br><span class="line">  trailing_html: <span class="literal">false</span> <span class="comment"># 設置 false 會移除網址中的 html</span></span><br></pre></td></tr></table></figure>
 
 <br/>
 
-<p>接著打開<code>./themes/next/_config.yml</code>，設定側欄顯示清單，完成後側邊欄就多了剛剛新增的幾個頁面連結了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || fa fa-home</span><br><span class="line">  about: /about/ || fa fa-user</span><br><span class="line">  tags: /tags/ || fa fa-tags</span><br><span class="line">  categories: /categories/ || fa fa-th</span><br><span class="line">  archives: /archives/ || fa fa-archive</span><br></pre></td></tr></table></figure>
+<h3 id="載入文章"><a href="#載入文章" class="headerlink" title="載入文章"></a><strong>載入文章</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="comment"># new_post_name: :title.md  設定對應的文章原始編輯檔</span></span><br><span class="line">new_post_name: :year-:month-:day-:title.md  <span class="comment"># 這樣設定會在生成新文章.md檔時將文章生成日輸入進檔名，方便日後管理</span></span><br></pre></td></tr></table></figure>
 
+<br/>
+
+<h3 id="中文分類與標籤"><a href="#中文分類與標籤" class="headerlink" title="中文分類與標籤"></a><strong>中文分類與標籤</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Category &amp; Tag</span></span><br><span class="line">default_category: uncategorized</span><br><span class="line">category_map:</span><br><span class="line">  <span class="comment"># 中文分類: english-category  一個分類一列</span></span><br><span class="line">	學習: Learning</span><br><span class="line">tag_map:</span><br><span class="line">  <span class="comment"># 中文標籤: english-tag  一個標籤一列</span></span><br><span class="line">	學習: Learning</span><br></pre></td></tr></table></figure>
+
+<p>如果新增文章分類或是標籤是中文，因為預設網址會抓分類與標籤名稱，網址就會跟著是中文。因此若要改成是英文網址，就要透過以上範例方式，即可將中文網址改為英文。不過這個部分不用一開始就設定，之後新增分類或標籤有設定到中文名稱時再設定就可以。</p>
+<br/>
+
+<h2 id="換一個好看的佈景主題"><a href="#換一個好看的佈景主題" class="headerlink" title="換一個好看的佈景主題"></a><strong>換一個好看的佈景主題</strong></h2><p>我以hexo主題中最多人使用的<code>NexT</code>佈景主題作為我佈景主題。</p>
+<p>第一步先將next clone進theme資料夾。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+<p>接下來修改<code>_config.yml</code>檔案</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: next </span><br></pre></td></tr></table></figure>
+
+<p>修改完後重新 hexo generate、hexo server就可以看到<code>next</code>主題被套上去了</p>
 <br/>
 
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a><strong>參考資料</strong></h2><ul>
+<li><a href="https://hackmd.io/@Heidi-Liu/note-hexo-github#%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD">【學習筆記】如何使用 Hexo + GitHub Pages 架設個人網誌</a></li>
 <li><a href="https://ithelp.ithome.com.tw/users/20139218/ironman/3910">30 天利用 Hexo 打造技術部落格系列</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(10) - 客製化NexT主題：美化NexT背景主題</title>
-    <url>/Bosh-Hexo-Blog/hexo-from-scratch-10/</url>
-    <content><![CDATA[<h2 id="設置左上角或右上角-github-圖標"><a href="#設置左上角或右上角-github-圖標" class="headerlink" title="設置左上角或右上角 github 圖標"></a><strong>設置左上角或右上角 github 圖標</strong></h2><p>打開hexo根目錄的<code>_config.yml</code>，將enable改為true即可</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># `Follow me on GitHub` banner in the top-right corner.</span></span><br><span class="line">github_banner:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># 點擊即跳轉到該鏈接，自行設定</span></span><br><span class="line">  permalink: https://github.com/yourname</span><br><span class="line">  <span class="comment"># 當鼠標懸浮於上方時顯示的文本</span></span><br><span class="line">  title: Follow me on GitHub</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<br/>
-
-<h2 id="可切換式Dark-mode"><a href="#可切換式Dark-mode" class="headerlink" title="可切換式Dark mode"></a><strong>可切換式Dark mode</strong></h2><p>next雖然有支援dark mode，但沒有直接支援手動切換dark/light mode的功能，因此我們要使用一個plug-in：<code>hexo-next-darkmode</code>，先到Blog專案目錄npm安裝</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-next-darkmode --save</span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<p>接著更改 Next 主题的配置文件 <code>themes/next/_config.yml</code>，在底下添加下列程式碼</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Darkmode JS</span></span><br><span class="line"><span class="comment"># For more information: https://github.com/rqh656418510/hexo-next-darkmode, https://github.com/sandoche/Darkmode.js</span></span><br><span class="line">darkmode_js:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  bottom: <span class="string">&#x27;64px&#x27;</span> <span class="comment"># default: &#x27;32px&#x27;</span></span><br><span class="line">  right: <span class="string">&#x27;unset&#x27;</span> <span class="comment"># default: &#x27;32px&#x27;</span></span><br><span class="line">  left: <span class="string">&#x27;32px&#x27;</span> <span class="comment"># default: &#x27;unset&#x27;</span></span><br><span class="line">  time: <span class="string">&#x27;0.5s&#x27;</span> <span class="comment"># default: &#x27;0.3s&#x27;</span></span><br><span class="line">  mixColor: <span class="string">&#x27;transparent&#x27;</span> <span class="comment"># default: &#x27;#fff&#x27;</span></span><br><span class="line">  backgroundColor: <span class="string">&#x27;transparent&#x27;</span> <span class="comment"># default: &#x27;#fff&#x27;</span></span><br><span class="line">  buttonColorDark: <span class="string">&#x27;#100f2c&#x27;</span> <span class="comment"># default: &#x27;#100f2c&#x27;</span></span><br><span class="line">  buttonColorLight: <span class="string">&#x27;#fff&#x27;</span> <span class="comment"># default: &#x27;#fff&#x27;</span></span><br><span class="line">  isActivated: <span class="literal">false</span> <span class="comment"># default false</span></span><br><span class="line">  saveInCookies: <span class="literal">true</span> <span class="comment"># default: true</span></span><br><span class="line">  label: <span class="string">&#x27;🌓&#x27;</span> <span class="comment"># default: &#x27;&#x27;</span></span><br><span class="line">  autoMatchOsTheme: <span class="literal">true</span> <span class="comment"># default: true</span></span><br><span class="line">  libUrl: <span class="comment"># Set custom library cdn url for Darkmode.js</span></span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<p><code>isActivated: true</code>: 默認激活dark mode, 必須搭配 <code>saveInCookies: false</code> 與 <code>autoMatchOsTheme: false</code></p>
-<p>關於如何調整dark mode的css 可以參考plug-in作者的repo: <strong><a href="https://github.com/rqh656418510/hexo-next-darkmode">Hexo NexT Darkmode</a></strong></p>
-<p><img src="https://i.imgur.com/HlhDqFH.png" alt="Imgur"></p>
-<br/>
-
-<h2 id="加上Canvas-Ribbon背景"><a href="#加上Canvas-Ribbon背景" class="headerlink" title="加上Canvas Ribbon背景"></a><strong>加上Canvas Ribbon背景</strong></h2><p>加上dark mode後現在的背景不是全黑就是全白，要如何讓背景更豐富呢？NexT 默認提供3種背景配置，但都需要安裝依賴，這邊選擇Canvas Ribbon背景。</p>
-<ol>
-<li>首先進入next資料夾</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/next</span><br></pre></td></tr></table></figure>
-<br/>
-
-<ol start="2">
-<li>安裝模塊到 source/lib 目錄下：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/theme-next-canvas-ribbon <span class="built_in">source</span>/lib/canvas-ribbon</span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<ol start="3">
-<li>編輯<code>/theme/next/_config.yml</code>，將enable改為true</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 更改 Next 主题的配置文件 themes/next/_config.yml，设置以下内容</span></span><br><span class="line">canvas_ribbon:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  size: 300           <span class="comment"># Ribbon的寬度</span></span><br><span class="line">  alpha: 0.6          <span class="comment"># Ribbon的透明度</span></span><br><span class="line">  zIndex: -1          <span class="comment"># Ribbon的顯示級別</span></span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<p>修改完成後Canvas Ribbon背景就出現了～</p>
-<p><img src="https://i.imgur.com/vN40tT5.png" alt="Imgur"></p>
-<br/>
-
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a><strong>參考資料</strong></h2><ul>
-<li><a href="https://www.techgrow.cn/posts/abf4aee1.html">Hexo Next 8.x 主题添加可切换的暗黑模式</a></li>
-<li><a href="https://www.twblogs.net/a/5ef7dc58f638e9bb9bd55a57">Hexo 搭建個人博客（九）NexT 主題進階配置</a></li>
+<li><a href="https://hexo.io/zh-tw/docs/configuration">Hexo文件-配置</a></li>
 </ul>
 ]]></content>
       <categories>
@@ -251,126 +199,61 @@
       </tags>
   </entry>
   <entry>
-    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(2) - Hexo基本設定</title>
-    <url>/Bosh-Hexo-Blog/hexo-from-scratch-2/</url>
-    <content><![CDATA[<h2 id="Hexo網站基本設定介紹"><a href="#Hexo網站基本設定介紹" class="headerlink" title="Hexo網站基本設定介紹"></a><strong>Hexo網站基本設定介紹</strong></h2><p>用hexo架設網站非常的方便，hexo把所有網站的基本設定參數都放在<code>_config.uml</code>裡面，我們可以根據自己對網站的需求調整這些晚站配置參數。配置參數很多這裡就不一一列舉，只記錄一些重要需要更改的參數。詳細也可以參考<a href="https://hexo.io/zh-tw/docs/configuration">官方配置文件</a></p>
-<blockquote>
-<p><code>任何有關設定檔案的設定值，一定要在冒號後加上一個空格再接設定值</code></p>
-</blockquote>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(11) - 用Git&amp;Github備份hexo專案</title>
+    <url>/Bosh-Hexo-Blog/hexo-from-scratch-11/</url>
+    <content><![CDATA[<h2 id="備份hexo設定與文章"><a href="#備份hexo設定與文章" class="headerlink" title="備份hexo設定與文章"></a><strong>備份hexo設定與文章</strong></h2><p>到目前為止我們做了一系列的操作客製化hexo部落格，但有沒有想過，有沒有可能真的這麼衰，好不容易完成了hexo的一系列設定，照著各種教學文章安裝了一堆套件，在看起來莫名其妙的檔案中加了那麼幾句我自己也看不懂的程式碼後，終於開開心心的發了幾篇文章後結果電腦莫名其妙掛了資料全不見了？如果沒有備份習慣，當發生這種事情的時候還真的只能乾瞪著眼看著那曾經美好的Blog，偷流幾滴淚把repo從github上刪掉後再重來一次。(可能有其他補救辦法啦但我的話會乾脆再重頭來XD)</p>
+<p>因此當決定自用hexo搭建部落格時備份就成為了必學的功課，我們可以土法煉鋼每次改完設定後都把專案檔copy到一顆硬碟或雲端空間，但這麼做久了其實滿麻煩，而且還需要花錢購買備份空間，而且也得承擔備份空間會不會哪天也一起壞掉的風險，這時候<code>Git &amp; Github</code>就顯的非常高效好用了，我們可以在自己的電腦上的專案資料夾新增一個git專案，接下來再連接自己的github repo，就可以在每次更新完hexo專案檔案、更換主題、發新文章後就把當前的專案文件push到github上，這樣就可以保證就算即使自己的電腦壞掉檔案損壞我的Hexo設定檔與文章都還在自己的Github上(ＧGithub掛掉機率應該比自己的硬碟掛掉機率小很多吧)。甚至哪天我突然想換別台電腦來寫文章，我也可以直接clone我的專案repo到另一台電腦，再用<code>npm install</code>把套件裝回來就可以直接開始寫文章了。</p>
+<p>所以這篇文章就是要示範如何將hexo專案push到github作為遠端備份。</p>
 <span id="more"></span>
 
 <br/>
 
-<h3 id="網站基本資訊"><a href="#網站基本資訊" class="headerlink" title="網站基本資訊"></a><strong>網站基本資訊</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line">title: Hexo <span class="comment"># 部落格標題</span></span><br><span class="line">subtitle: <span class="string">&#x27;&#x27;</span> <span class="comment"># 部落格副標題</span></span><br><span class="line">description: <span class="string">&#x27;&#x27;</span> <span class="comment"># 部落格簡介</span></span><br><span class="line">keywords: <span class="string">&#x27;關鍵字1&#x27;</span>, <span class="string">&#x27;關鍵字2&#x27;</span> <span class="comment"># 網站關鍵字，多個關鍵字用逗號隔開</span></span><br><span class="line">author: John Doe <span class="comment"># 作者名字</span></span><br><span class="line">language: en <span class="comment"># 語言，繁體中文設定 zh-TW</span></span><br><span class="line">timezone: <span class="string">&#x27;&#x27;</span> <span class="comment"># 使用系統時間即可</span></span><br></pre></td></tr></table></figure>
+<h3 id="建立本地端Git儲存庫"><a href="#建立本地端Git儲存庫" class="headerlink" title="建立本地端Git儲存庫"></a><strong>建立本地端Git儲存庫</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> Blog  <span class="comment"># 我的hexo專案根目錄</span></span><br><span class="line"></span><br><span class="line">git init  <span class="comment"># 建立本地端Git儲存庫</span></span><br><span class="line"></span><br><span class="line">git status  <span class="comment"># 看一下檔案追蹤狀況 </span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/mjLGOUS.png" alt="Imgur"></p>
+<br/>
+
+<h3 id="確認-gitignore"><a href="#確認-gitignore" class="headerlink" title="確認.gitignore"></a><strong>確認.gitignore</strong></h3><p>確認資料夾裡有<code>.gitignore</code>這個檔案並且檔案內容如下，定義不推送的資料（可自訂）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.<span class="built_in">log</span></span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br></pre></td></tr></table></figure>
 
 <br/>
 
-<h3 id="URL設定"><a href="#URL設定" class="headerlink" title="URL設定"></a><strong>URL設定</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as &#x27;http://example.com/child&#x27; and root as &#x27;/child/&#x27;</span></span><br><span class="line">url: http://example.com <span class="comment"># 正式部落格網址</span></span><br><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/ # 文章路徑</span></span><br><span class="line">permalink: :title/  <span class="comment"># 可以設定網址後直接接文章名稱，網址整體才比較短</span></span><br><span class="line">permalink_defaults:</span><br><span class="line">pretty_urls:</span><br><span class="line">  trailing_index: <span class="literal">false</span> <span class="comment"># 設置 false 會移除網址中的 index.html</span></span><br><span class="line">  trailing_html: <span class="literal">false</span> <span class="comment"># 設置 false 會移除網址中的 html</span></span><br></pre></td></tr></table></figure>
+<h3 id="在本地端commit"><a href="#在本地端commit" class="headerlink" title="在本地端commit"></a><strong>在本地端commit</strong></h3><p><code>git</code>的<code>commit</code>指令有點像是為當前的儲存庫拍一張快照，紀錄當下的版本，在連結遠端github repo並推送之前必須先在本地端commit</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+
+<p><code>這時候我遇到了一個問題</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">warning: adding embedded git repository: themes/next</span><br><span class="line">hint: You’ve added another git repository inside your current repository.</span><br><span class="line">hint: Clones of the outer repository will not contain the contents of</span><br><span class="line">hint: the embedded repository and will not know how to obtain it.</span><br><span class="line">hint: If you meant to add a submodule, use:</span><br><span class="line">hint:</span><br><span class="line">hint: git submodule add themes/next</span><br><span class="line">hint:</span><br><span class="line">hint: If you added this path by mistake, you can remove it from the</span><br><span class="line">hint: index with:</span><br><span class="line">hint:</span><br><span class="line">hint: git rm --cached themes/next</span><br><span class="line">hint:</span><br><span class="line">hint: See “git <span class="built_in">help</span> submodule” <span class="keyword">for</span> more information.</span><br></pre></td></tr></table></figure>
+
+<p>查了一下原因是我在Blog（專案根目錄）<code>git init</code>初始化本地儲存庫時，裡面的某個資料夾也含有 .git 文件 → <code>就是themes資料夾底下next資料夾</code>，這因為next是從外部clone進來的，所以會發生這個問題。我的解決方法是將next資料夾中原本的.git資料夾刪掉然後重新回Blog資料夾add，把next資料夾中的檔案重新作為子資料夾加入追蹤。</p>
+<p>接下來更新此Git除存庫的版本也就是上面比喻的『拍一張快照』</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span></span><br></pre></td></tr></table></figure>
 
 <br/>
 
-<h3 id="載入文章"><a href="#載入文章" class="headerlink" title="載入文章"></a><strong>載入文章</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="comment"># new_post_name: :title.md  設定對應的文章原始編輯檔</span></span><br><span class="line">new_post_name: :year-:month-:day-:title.md  <span class="comment"># 這樣設定會在生成新文章.md檔時將文章生成日輸入進檔名，方便日後管理</span></span><br></pre></td></tr></table></figure>
+<h3 id="連結github遠端repo"><a href="#連結github遠端repo" class="headerlink" title="連結github遠端repo"></a><strong>連結github遠端repo</strong></h3><p>我們可以專門創一個repo給hexo專案，但因為我們已經在搭建的過程中就有創一個用來架設Github Page的repo，所以這裡直接用這個repo來連結本地端的git儲存庫就好。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 以我的repo網址為例https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git</span></span><br><span class="line">git remote add origin https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git</span><br></pre></td></tr></table></figure>
+
+<h3 id="push到github上的master分支"><a href="#push到github上的master分支" class="headerlink" title="push到github上的master分支"></a><strong>push到github上的master分支</strong></h3><p>由於這個github repo已經存在gh-pages這個分支了，所以我們要推送到github的別的分支，這邊我們推到遠端的master分支，推送指令送出就會在遠端自動創建master分支。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
 
 <br/>
 
-<h3 id="中文分類與標籤"><a href="#中文分類與標籤" class="headerlink" title="中文分類與標籤"></a><strong>中文分類與標籤</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Category &amp; Tag</span></span><br><span class="line">default_category: uncategorized</span><br><span class="line">category_map:</span><br><span class="line">  <span class="comment"># 中文分類: english-category  一個分類一列</span></span><br><span class="line">	學習: Learning</span><br><span class="line">tag_map:</span><br><span class="line">  <span class="comment"># 中文標籤: english-tag  一個標籤一列</span></span><br><span class="line">	學習: Learning</span><br></pre></td></tr></table></figure>
-
-<p>如果新增文章分類或是標籤是中文，因為預設網址會抓分類與標籤名稱，網址就會跟著是中文。因此若要改成是英文網址，就要透過以上範例方式，即可將中文網址改為英文。不過這個部分不用一開始就設定，之後新增分類或標籤有設定到中文名稱時再設定就可以。</p>
+<p>如此一來遠端就有電腦上hexo專案檔案的備份了！</p>
+<p><img src="https://i.imgur.com/Ie8LCNh.png" alt="Imgur"></p>
 <br/>
 
-<h2 id="換一個好看的佈景主題"><a href="#換一個好看的佈景主題" class="headerlink" title="換一個好看的佈景主題"></a><strong>換一個好看的佈景主題</strong></h2><p>我以hexo主題中最多人使用的<code>NexT</code>佈景主題作為我佈景主題。</p>
-<p>第一步先將next clone進theme資料夾。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<h3 id="檢視遠端分支"><a href="#檢視遠端分支" class="headerlink" title="檢視遠端分支"></a><strong>檢視遠端分支</strong></h3><p>現在我的遠端github上有兩個分支了，之後在推送時得小心不要不小心推到gh-pages這個分支，如果我們想知道遠端的更多資訊可以用<code>git remote show [remote-name]</code> 命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote show origin</span><br></pre></td></tr></table></figure>
 
-<p>接下來修改<code>_config.yml</code>檔案</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: next </span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/22cNiCK.png" alt="Imgur"></p>
+<p>從圖片中可以看到<code>Head branch</code>現在指的是<code>gh-pages</code>這個分支，所以如果我只輸入<code>git push</code>還真的會不小心推到gh-pages這個分支，因此之後推送時應該要輸入完整指令<code>git push [remote-name] [branch-name]</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
 
-<p>修改完後重新 hexo generate、hexo server就可以看到<code>next</code>主題被套上去了</p>
 <br/>
 
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a><strong>參考資料</strong></h2><ul>
-<li><a href="https://hackmd.io/@Heidi-Liu/note-hexo-github#%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD">【學習筆記】如何使用 Hexo + GitHub Pages 架設個人網誌</a></li>
 <li><a href="https://ithelp.ithome.com.tw/users/20139218/ironman/3910">30 天利用 Hexo 打造技術部落格系列</a></li>
-<li><a href="https://hexo.io/zh-tw/docs/configuration">Hexo文件-配置</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(6) - Github Page 部署</title>
-    <url>/Bosh-Hexo-Blog/hexo-from-scratch-6/</url>
-    <content><![CDATA[<h2 id="終於要上架Hexo部落格了！"><a href="#終於要上架Hexo部落格了！" class="headerlink" title="終於要上架Hexo部落格了！"></a><strong>終於要上架Hexo部落格了！</strong></h2><p>到目前為止我們做的所有操作與設定雖然可以透過<code>hexo server</code>指令在本機看到網頁的樣貌，但只有自己看得到的網站真的很難說服自己在寫網站。那要怎麼做才能讓其他人也能使用我寫的網站呢？其實概念很簡單，就是找一台機器（自己的也行）全年無休運行server程式，並且提供外界連接進來的窗口（也就是網址）。我們可以選擇網路上主機租用的服務或是用自己的機器架設，但這兩種方法對一個靜態網頁來說好像又略嫌麻煩或是需要花上一些錢。<code>Github Page</code>剛好提供了一個免費的靜態網站架設環境，它提供了：</p>
-<ul>
-<li>免費的靜態網頁空間</li>
-<li>1GB 空間容量</li>
-<li>100GB 月流量</li>
-<li>提供一組 Github帳號.github.io 子網域</li>
-<li>能夠使用 Git 部署並進行版本控制</li>
-</ul>
-<p>雖然空間與流量上有所限制，但對個人技術部落格來說已經非常夠用了！</p>
-<span id="more"></span>
-
-<br/>
-
-<h2 id="創建Github-repo"><a href="#創建Github-repo" class="headerlink" title="創建Github repo"></a><strong>創建Github repo</strong></h2><p>首先新增一個github repo，<code>注意!</code>，幾乎所有教學文章都寫Repository name要命名成<code>&lt;github account&gt;.github.io</code>，如果我的github帳號叫<code>Bosh-Kuo</code>，那新增的repo就要叫<code>Bosh-Kuo.github.io</code>，這樣連到該專案的網址才會是 <code>https://Bosh-Kuo.github.io/</code>。</p>
-<p>但是要是我有第二個部落格想架設呢？或是我覺得repo就是想取其他名字呢？其實是可以的，這篇示範的就是用別的方式命名來架設Github page，我把我的github repo取名為<code>Bosh-Hexo-Blog</code>，接下來部署github-page一樣可以在這個repo下完成，但有些設定需要稍微改動。</p>
-<p><img src="https://i.imgur.com/VXDYXW9.png" alt="Imgur"></p>
-<br/>
-
-<h3 id="設定-Hexo-連結github-repo"><a href="#設定-Hexo-連結github-repo" class="headerlink" title="設定 Hexo 連結github repo"></a><strong>設定 Hexo 連結github repo</strong></h3><p>部署前要先設定 Hexo 的 <code>_config.yml</code> 檔案中連接到 Github 儲存庫的相關設定，</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git <span class="comment"># 使用 Git 部署</span></span><br><span class="line">  repo: https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git <span class="comment"># repo clone link</span></span><br><span class="line">  branch: gh-pages <span class="comment"># hexo 會將靜態網頁內容放到這個repo分支</span></span><br><span class="line">  message: <span class="string">&quot;First Commit&quot;</span> <span class="comment"># Commit 訊息</span></span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<p>接著進入至關重要的一環，因為我們的命名方式並不是以<code>&lt;github account&gt;.github.io</code>來命名，因此我的網站網址會在<code>Bosh-Kuo.github.io</code>的下一層，舉例來說我的repo命名為Bosh-Hexo-Blog因此這個Github Page架設的網站網址就會是<code>https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/</code>，因此我們必須去改<code>_config.yml</code>中的<code>url</code>和<code>root</code>，讓hexo架在正確的位置上，並且設置正確的網站根目錄，可以參考官方文件的<strong>網站存放在子目錄</strong>部分</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span></span><br><span class="line">url: https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/  <span class="comment"># 網站的網址</span></span><br><span class="line">root: /Bosh-Hexo-Blog/  <span class="comment"># 網站的根目錄</span></span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<p>注意！當我們這麼設定完後以後開local server也會把根目錄設在Bosh-Hexo-Blog，local網址就會變成: <code>http://localhost:4000/Bosh-Hexo-Blog/</code></p>
-<br/>
-
-<h3 id="使用指令部署"><a href="#使用指令部署" class="headerlink" title="使用指令部署"></a><strong>使用指令部署</strong></h3><p>設定完成後首先安裝hexo的git部署套件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<p>接著清理之前建立的靜態檔案 → 建立靜態檔案 → 部署至 Github Pages</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clear</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<p>完成後就會看到github頁面被更新囉～</p>
-<p><img src="https://i.imgur.com/WVdsOnY.png" alt="Imgur"></p>
-<br/>
-
-<p>接著前往設定Settings開啟Github Pages</p>
-<p><img src="https://i.imgur.com/IEJmSRU.png" alt="Imgur"></p>
-<p><img src="https://i.imgur.com/xhYGzp6.png" alt="Imgur"></p>
-<br/>
-
-<p>接著點選repo頁面的火箭圖示，可以看到deploy的狀況，當部署完成網址就生效囉！</p>
-<blockquote>
-<p><strong>耶～ 我的部落格正式誕生了 撒花慶祝～</strong></p>
-</blockquote>
-<p><img src="https://i.imgur.com/rZCmFoq.png" alt="Imgur"></p>
-<br/>
-
-<h3 id="補充-移除網址末端的-more"><a href="#補充-移除網址末端的-more" class="headerlink" title="補充-移除網址末端的 #more"></a><strong><code>補充-移除網址末端的 #more</code></strong></h3><p>如果是點選<code>閱讀全文</code>按鍵進入文章的，文章網址後面不但會有 <code>#more</code> 的後綴詞，而且瀏覽器會自動跳到閱讀全文後的網頁內容，而不是最上層。原因是 #more 是 HTML 元素裡的一個 ID，如果進入以 ID 為 more 的文章網址，就會自動跳到 ID 為 more 的區塊。</p>
-<p>解決方法就是修改<code>themes/next/lauout/_macro/post.swig</code>這個檔案</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;!--/noindex--&gt;</span><br><span class="line">&#123;% <span class="keyword">elif</span> post.excerpt %&#125;</span><br><span class="line">        &#123;&#123; post.excerpt &#125;&#125;</span><br><span class="line">        &lt;!--noindex--&gt;</span><br><span class="line">        &#123;%- <span class="keyword">if</span> theme.read_more_btn %&#125;</span><br><span class="line">    &lt;div class=<span class="string">&quot;post-button&quot;</span>&gt;</span><br><span class="line">            &lt;a class=<span class="string">&quot;btn&quot;</span> href=<span class="string">&quot;&#123;&#123; url_for(post.path) &#125;&#125;#more&quot;</span> rel=<span class="string">&quot;contents&quot;</span>&gt;</span><br><span class="line">        &#123;&#123; __(<span class="string">&#x27;post.read_more&#x27;</span>) &#125;&#125; &amp;raquo;</span><br><span class="line">            &lt;/a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">        &#123;%- endif %&#125;</span><br><span class="line">        &lt;!--/noindex--&gt;</span><br></pre></td></tr></table></figure>
-
-<p>將<code>&lt;a class=&quot;btn&quot; href=&quot;&#123;&#123; url_for(post.path) &#125;&#125;#more&quot; rel=&quot;contents&quot;&gt;</code>的#more刪除就ok了</p>
-<br/>
-
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a><strong>參考資料</strong></h2><ul>
-<li><a href="https://ithelp.ithome.com.tw/users/20139218/ironman/3910"><strong>30 天利用 Hexo 打造技術部落格系列</strong></a></li>
-<li><a href="https://ed521.github.io/2019/07/hexo-install/">[教學] 使用 GitHub Pages + Hexo 來架設個人部落格</a></li>
+<li><a href="https://git-scm.com/book/zh-tw/v2/Git-%E5%9F%BA%E7%A4%8E-%E8%88%87%E9%81%A0%E7%AB%AF%E5%8D%94%E5%90%8C%E5%B7%A5%E4%BD%9C">2.5 Git 基礎 - 與遠端協同工作</a></li>
 </ul>
 ]]></content>
       <categories>
@@ -415,6 +298,109 @@
 <h3 id="隱藏過長的文章內容"><a href="#隱藏過長的文章內容" class="headerlink" title="隱藏過長的文章內容"></a><strong>隱藏過長的文章內容</strong></h3><p>打完一篇文章發布後發現首頁完全被這片文章給佔據了，要如何讓文章只在首頁顯示部分內容，讓讀者想閱讀全文再點擊進入該文章呢？</p>
 <p>只要在想要開始隱藏的內文上頭加上<code>&lt;!-- more --&gt;</code>，首頁就會出現閱讀全文按鈕並隱藏內文。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 會顯示出來的部分</span></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"><span class="comment"># 會隱藏起來的部分</span></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a><strong>參考資料</strong></h2><ul>
+<li><a href="https://ithelp.ithome.com.tw/users/20139218/ironman/3910">30 天利用 Hexo 打造技術部落格系列</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(10) - 客製化NexT主題：美化NexT背景主題</title>
+    <url>/Bosh-Hexo-Blog/hexo-from-scratch-10/</url>
+    <content><![CDATA[<h2 id="設置左上角或右上角-github-圖標"><a href="#設置左上角或右上角-github-圖標" class="headerlink" title="設置左上角或右上角 github 圖標"></a><strong>設置左上角或右上角 github 圖標</strong></h2><p>打開hexo根目錄的<code>_config.yml</code>，將enable改為true即可</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># `Follow me on GitHub` banner in the top-right corner.</span></span><br><span class="line">github_banner:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># 點擊即跳轉到該鏈接，自行設定</span></span><br><span class="line">  permalink: https://github.com/yourname</span><br><span class="line">  <span class="comment"># 當鼠標懸浮於上方時顯示的文本</span></span><br><span class="line">  title: Follow me on GitHub</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<br/>
+
+<h2 id="可切換式Dark-mode"><a href="#可切換式Dark-mode" class="headerlink" title="可切換式Dark mode"></a><strong>可切換式Dark mode</strong></h2><p>next雖然有支援dark mode，但沒有直接支援手動切換dark/light mode的功能，因此我們要使用一個plug-in：<code>hexo-next-darkmode</code>，先到Blog專案目錄npm安裝</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-next-darkmode --save</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p>接著更改 Next 主题的配置文件 <code>themes/next/_config.yml</code>，在底下添加下列程式碼</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Darkmode JS</span></span><br><span class="line"><span class="comment"># For more information: https://github.com/rqh656418510/hexo-next-darkmode, https://github.com/sandoche/Darkmode.js</span></span><br><span class="line">darkmode_js:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  bottom: <span class="string">&#x27;64px&#x27;</span> <span class="comment"># default: &#x27;32px&#x27;</span></span><br><span class="line">  right: <span class="string">&#x27;unset&#x27;</span> <span class="comment"># default: &#x27;32px&#x27;</span></span><br><span class="line">  left: <span class="string">&#x27;32px&#x27;</span> <span class="comment"># default: &#x27;unset&#x27;</span></span><br><span class="line">  time: <span class="string">&#x27;0.5s&#x27;</span> <span class="comment"># default: &#x27;0.3s&#x27;</span></span><br><span class="line">  mixColor: <span class="string">&#x27;transparent&#x27;</span> <span class="comment"># default: &#x27;#fff&#x27;</span></span><br><span class="line">  backgroundColor: <span class="string">&#x27;transparent&#x27;</span> <span class="comment"># default: &#x27;#fff&#x27;</span></span><br><span class="line">  buttonColorDark: <span class="string">&#x27;#100f2c&#x27;</span> <span class="comment"># default: &#x27;#100f2c&#x27;</span></span><br><span class="line">  buttonColorLight: <span class="string">&#x27;#fff&#x27;</span> <span class="comment"># default: &#x27;#fff&#x27;</span></span><br><span class="line">  isActivated: <span class="literal">false</span> <span class="comment"># default false</span></span><br><span class="line">  saveInCookies: <span class="literal">true</span> <span class="comment"># default: true</span></span><br><span class="line">  label: <span class="string">&#x27;🌓&#x27;</span> <span class="comment"># default: &#x27;&#x27;</span></span><br><span class="line">  autoMatchOsTheme: <span class="literal">true</span> <span class="comment"># default: true</span></span><br><span class="line">  libUrl: <span class="comment"># Set custom library cdn url for Darkmode.js</span></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p><code>isActivated: true</code>: 默認激活dark mode, 必須搭配 <code>saveInCookies: false</code> 與 <code>autoMatchOsTheme: false</code></p>
+<p>關於如何調整dark mode的css 可以參考plug-in作者的repo: <strong><a href="https://github.com/rqh656418510/hexo-next-darkmode">Hexo NexT Darkmode</a></strong></p>
+<p><img src="https://i.imgur.com/HlhDqFH.png" alt="Imgur"></p>
+<br/>
+
+<h2 id="加上Canvas-Ribbon背景"><a href="#加上Canvas-Ribbon背景" class="headerlink" title="加上Canvas Ribbon背景"></a><strong>加上Canvas Ribbon背景</strong></h2><p>加上dark mode後現在的背景不是全黑就是全白，要如何讓背景更豐富呢？NexT 默認提供3種背景配置，但都需要安裝依賴，這邊選擇Canvas Ribbon背景。</p>
+<ol>
+<li>首先進入next資料夾</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/next</span><br></pre></td></tr></table></figure>
+<br/>
+
+<ol start="2">
+<li>安裝模塊到 source/lib 目錄下：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/theme-next-canvas-ribbon <span class="built_in">source</span>/lib/canvas-ribbon</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<ol start="3">
+<li>編輯<code>/theme/next/_config.yml</code>，將enable改為true</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 更改 Next 主题的配置文件 themes/next/_config.yml，设置以下内容</span></span><br><span class="line">canvas_ribbon:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  size: 300           <span class="comment"># Ribbon的寬度</span></span><br><span class="line">  alpha: 0.6          <span class="comment"># Ribbon的透明度</span></span><br><span class="line">  zIndex: -1          <span class="comment"># Ribbon的顯示級別</span></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p>修改完成後Canvas Ribbon背景就出現了～</p>
+<p><img src="https://i.imgur.com/vN40tT5.png" alt="Imgur"></p>
+<br/>
+
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a><strong>參考資料</strong></h2><ul>
+<li><a href="https://www.techgrow.cn/posts/abf4aee1.html">Hexo Next 8.x 主题添加可切换的暗黑模式</a></li>
+<li><a href="https://www.twblogs.net/a/5ef7dc58f638e9bb9bd55a57">Hexo 搭建個人博客（九）NexT 主題進階配置</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(5) - 標籤、分類與關於頁面</title>
+    <url>/Bosh-Hexo-Blog/hexo-from-scratch-5/</url>
+    <content><![CDATA[<h2 id="幫部落格添加標籤、分類與關於頁面！"><a href="#幫部落格添加標籤、分類與關於頁面！" class="headerlink" title="幫部落格添加標籤、分類與關於頁面！"></a><strong>幫部落格添加標籤、分類與關於頁面！</strong></h2><h3 id="建立新自訂頁面"><a href="#建立新自訂頁面" class="headerlink" title="建立新自訂頁面"></a><strong>建立新自訂頁面</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;頁面名稱&quot;</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<p><img src="https://i.imgur.com/zNvPADU.png" alt="Imgur"></p>
+<p>hexo會自動在source資料夾建立一個跟該新建頁面名稱相同的資料夾，裡面放著一個index.md檔用來編寫頁面內容。若是原本存為草稿的md檔編輯好要發布成頁面，就以同個道理在source創建一個該頁面名稱的資料夾，並將草稿從草稿資料夾移到該資料夾並將檔案改命名為index.md。</p>
+<br/>
+
+<h3 id="頁面資訊"><a href="#頁面資訊" class="headerlink" title="頁面資訊"></a><strong>頁面資訊</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2022-01-20 20:16:29</span><br><span class="line">comments: <span class="literal">false</span>  <span class="comment"># 設定為 false 表示不開放留言</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>有些頁面的目的為專門提供資訊或指引，沒有互動的需求，因此可以設定使該頁面不開放留言，當然現在還沒有打算加入留言功能所以有沒有這一行都沒關係。</p>
+<br/>
+
+<h3 id="建立分類頁與標籤頁"><a href="#建立分類頁與標籤頁" class="headerlink" title="建立分類頁與標籤頁"></a><strong>建立分類頁與標籤頁</strong></h3><p>Hexo 本身就有提供一些能夠連動網站資訊的頁面，例如文章分類與標籤頁，建立的方式就跟建立自訂頁面一樣。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 建立標籤頁</span></span><br><span class="line">hexo new page tags</span><br><span class="line"><span class="comment"># 建立分類頁</span></span><br><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p>打開新建的分頁index.md，會發現其實跟前述自訂分頁一樣一開始一開始只有title和date兩欄，如果要連接 Hexo 資訊，就要加上 <code>type</code> 資訊，並設定為 <code>tags</code>或<code>categories</code>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># tags/index.md</span></span><br><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2022-01-20 20:58:13</span><br><span class="line"><span class="built_in">type</span>: tags </span><br><span class="line">comments: <span class="literal">false</span> </span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"><span class="comment"># categorues/index.md</span></span><br><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2022-01-20 20:58:31</span><br><span class="line"><span class="built_in">type</span>: categories </span><br><span class="line">comments: <span class="literal">false</span> </span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p>接著打開<code>./themes/next/_config.yml</code>，設定側欄顯示清單，完成後側邊欄就多了剛剛新增的幾個頁面連結了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || fa fa-home</span><br><span class="line">  about: /about/ || fa fa-user</span><br><span class="line">  tags: /tags/ || fa fa-tags</span><br><span class="line">  categories: /categories/ || fa fa-th</span><br><span class="line">  archives: /archives/ || fa fa-archive</span><br></pre></td></tr></table></figure>
 
 <br/>
 
@@ -589,6 +575,85 @@
 <li><a href="https://www.techgrow.cn/posts/755ff30d.html">Hexo Next 主题详细配置之一</a></li>
 <li><a href="https://ithelp.ithome.com.tw/users/20139218/ironman/3910">30 天利用 Hexo 打造技術部落格系列</a></li>
 <li><a href="https://ithelp.ithome.com.tw/articles/10248214">(20) 試著學 Hexo - NexT 主題篇 - 可以安裝的套件</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(6) - Github Page 部署</title>
+    <url>/Bosh-Hexo-Blog/hexo-from-scratch-6/</url>
+    <content><![CDATA[<h2 id="終於要上架Hexo部落格了！"><a href="#終於要上架Hexo部落格了！" class="headerlink" title="終於要上架Hexo部落格了！"></a><strong>終於要上架Hexo部落格了！</strong></h2><p>到目前為止我們做的所有操作與設定雖然可以透過<code>hexo server</code>指令在本機看到網頁的樣貌，但只有自己看得到的網站真的很難說服自己在寫網站。那要怎麼做才能讓其他人也能使用我寫的網站呢？其實概念很簡單，就是找一台機器（自己的也行）全年無休運行server程式，並且提供外界連接進來的窗口（也就是網址）。我們可以選擇網路上主機租用的服務或是用自己的機器架設，但這兩種方法對一個靜態網頁來說好像又略嫌麻煩或是需要花上一些錢。<code>Github Page</code>剛好提供了一個免費的靜態網站架設環境，它提供了：</p>
+<ul>
+<li>免費的靜態網頁空間</li>
+<li>1GB 空間容量</li>
+<li>100GB 月流量</li>
+<li>提供一組 Github帳號.github.io 子網域</li>
+<li>能夠使用 Git 部署並進行版本控制</li>
+</ul>
+<p>雖然空間與流量上有所限制，但對個人技術部落格來說已經非常夠用了！</p>
+<span id="more"></span>
+
+<br/>
+
+<h2 id="創建Github-repo"><a href="#創建Github-repo" class="headerlink" title="創建Github repo"></a><strong>創建Github repo</strong></h2><p>首先新增一個github repo，<code>注意!</code>，幾乎所有教學文章都寫Repository name要命名成<code>&lt;github account&gt;.github.io</code>，如果我的github帳號叫<code>Bosh-Kuo</code>，那新增的repo就要叫<code>Bosh-Kuo.github.io</code>，這樣連到該專案的網址才會是 <code>https://Bosh-Kuo.github.io/</code>。</p>
+<p>但是要是我有第二個部落格想架設呢？或是我覺得repo就是想取其他名字呢？其實是可以的，這篇示範的就是用別的方式命名來架設Github page，我把我的github repo取名為<code>Bosh-Hexo-Blog</code>，接下來部署github-page一樣可以在這個repo下完成，但有些設定需要稍微改動。</p>
+<p><img src="https://i.imgur.com/VXDYXW9.png" alt="Imgur"></p>
+<br/>
+
+<h3 id="設定-Hexo-連結github-repo"><a href="#設定-Hexo-連結github-repo" class="headerlink" title="設定 Hexo 連結github repo"></a><strong>設定 Hexo 連結github repo</strong></h3><p>部署前要先設定 Hexo 的 <code>_config.yml</code> 檔案中連接到 Github 儲存庫的相關設定，</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git <span class="comment"># 使用 Git 部署</span></span><br><span class="line">  repo: https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git <span class="comment"># repo clone link</span></span><br><span class="line">  branch: gh-pages <span class="comment"># hexo 會將靜態網頁內容放到這個repo分支</span></span><br><span class="line">  message: <span class="string">&quot;First Commit&quot;</span> <span class="comment"># Commit 訊息</span></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p>接著進入至關重要的一環，因為我們的命名方式並不是以<code>&lt;github account&gt;.github.io</code>來命名，因此我的網站網址會在<code>Bosh-Kuo.github.io</code>的下一層，舉例來說我的repo命名為Bosh-Hexo-Blog因此這個Github Page架設的網站網址就會是<code>https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/</code>，因此我們必須去改<code>_config.yml</code>中的<code>url</code>和<code>root</code>，讓hexo架在正確的位置上，並且設置正確的網站根目錄，可以參考官方文件的<strong>網站存放在子目錄</strong>部分</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span></span><br><span class="line">url: https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/  <span class="comment"># 網站的網址</span></span><br><span class="line">root: /Bosh-Hexo-Blog/  <span class="comment"># 網站的根目錄</span></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p>注意！當我們這麼設定完後以後開local server也會把根目錄設在Bosh-Hexo-Blog，local網址就會變成: <code>http://localhost:4000/Bosh-Hexo-Blog/</code></p>
+<br/>
+
+<h3 id="使用指令部署"><a href="#使用指令部署" class="headerlink" title="使用指令部署"></a><strong>使用指令部署</strong></h3><p>設定完成後首先安裝hexo的git部署套件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p>接著清理之前建立的靜態檔案 → 建立靜態檔案 → 部署至 Github Pages</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clear</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p>完成後就會看到github頁面被更新囉～</p>
+<p><img src="https://i.imgur.com/WVdsOnY.png" alt="Imgur"></p>
+<br/>
+
+<p>接著前往設定Settings開啟Github Pages</p>
+<p><img src="https://i.imgur.com/IEJmSRU.png" alt="Imgur"></p>
+<p><img src="https://i.imgur.com/xhYGzp6.png" alt="Imgur"></p>
+<br/>
+
+<p>接著點選repo頁面的火箭圖示，可以看到deploy的狀況，當部署完成網址就生效囉！</p>
+<blockquote>
+<p><strong>耶～ 我的部落格正式誕生了 撒花慶祝～</strong></p>
+</blockquote>
+<p><img src="https://i.imgur.com/rZCmFoq.png" alt="Imgur"></p>
+<br/>
+
+<h3 id="補充-移除網址末端的-more"><a href="#補充-移除網址末端的-more" class="headerlink" title="補充-移除網址末端的 #more"></a><strong><code>補充-移除網址末端的 #more</code></strong></h3><p>如果是點選<code>閱讀全文</code>按鍵進入文章的，文章網址後面不但會有 <code>#more</code> 的後綴詞，而且瀏覽器會自動跳到閱讀全文後的網頁內容，而不是最上層。原因是 #more 是 HTML 元素裡的一個 ID，如果進入以 ID 為 more 的文章網址，就會自動跳到 ID 為 more 的區塊。</p>
+<p>解決方法就是修改<code>themes/next/lauout/_macro/post.swig</code>這個檔案</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;!--/noindex--&gt;</span><br><span class="line">&#123;% <span class="keyword">elif</span> post.excerpt %&#125;</span><br><span class="line">        &#123;&#123; post.excerpt &#125;&#125;</span><br><span class="line">        &lt;!--noindex--&gt;</span><br><span class="line">        &#123;%- <span class="keyword">if</span> theme.read_more_btn %&#125;</span><br><span class="line">    &lt;div class=<span class="string">&quot;post-button&quot;</span>&gt;</span><br><span class="line">            &lt;a class=<span class="string">&quot;btn&quot;</span> href=<span class="string">&quot;&#123;&#123; url_for(post.path) &#125;&#125;#more&quot;</span> rel=<span class="string">&quot;contents&quot;</span>&gt;</span><br><span class="line">        &#123;&#123; __(<span class="string">&#x27;post.read_more&#x27;</span>) &#125;&#125; &amp;raquo;</span><br><span class="line">            &lt;/a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">        &#123;%- endif %&#125;</span><br><span class="line">        &lt;!--/noindex--&gt;</span><br></pre></td></tr></table></figure>
+
+<p>將<code>&lt;a class=&quot;btn&quot; href=&quot;&#123;&#123; url_for(post.path) &#125;&#125;#more&quot; rel=&quot;contents&quot;&gt;</code>的#more刪除就ok了</p>
+<br/>
+
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a><strong>參考資料</strong></h2><ul>
+<li><a href="https://ithelp.ithome.com.tw/users/20139218/ironman/3910"><strong>30 天利用 Hexo 打造技術部落格系列</strong></a></li>
+<li><a href="https://ed521.github.io/2019/07/hexo-install/">[教學] 使用 GitHub Pages + Hexo 來架設個人部落格</a></li>
 </ul>
 ]]></content>
       <categories>

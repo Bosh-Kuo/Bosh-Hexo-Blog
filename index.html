@@ -207,6 +207,97 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Bosh-Hexo-Blog/images/Bosh2.jpg">
+      <meta itemprop="name" content="Bosh-Kuo">
+      <meta itemprop="description" content="轉職路上的土木系碩班生">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bosh的技術部落格">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Bosh-Hexo-Blog/hexo-from-scratch-11/" class="post-title-link" itemprop="url">從零開始使用Hexo + Github Page搭建個人技術筆記網站(11) - 用Git&Github備份hexo專案</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2022-01-24 14:14:19 / 修改時間：14:20:11" itemprop="dateCreated datePublished" datetime="2022-01-24T14:14:19+08:00">2022-01-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Bosh-Hexo-Blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>2.4k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>2 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="備份hexo設定與文章"><a href="#備份hexo設定與文章" class="headerlink" title="備份hexo設定與文章"></a><strong>備份hexo設定與文章</strong></h2><p>到目前為止我們做了一系列的操作客製化hexo部落格，但有沒有想過，有沒有可能真的這麼衰，好不容易完成了hexo的一系列設定，照著各種教學文章安裝了一堆套件，在看起來莫名其妙的檔案中加了那麼幾句我自己也看不懂的程式碼後，終於開開心心的發了幾篇文章後結果電腦莫名其妙掛了資料全不見了？如果沒有備份習慣，當發生這種事情的時候還真的只能乾瞪著眼看著那曾經美好的Blog，偷流幾滴淚把repo從github上刪掉後再重來一次。(可能有其他補救辦法啦但我的話會乾脆再重頭來XD)</p>
+<p>因此當決定自用hexo搭建部落格時備份就成為了必學的功課，我們可以土法煉鋼每次改完設定後都把專案檔copy到一顆硬碟或雲端空間，但這麼做久了其實滿麻煩，而且還需要花錢購買備份空間，而且也得承擔備份空間會不會哪天也一起壞掉的風險，這時候<code>Git &amp; Github</code>就顯的非常高效好用了，我們可以在自己的電腦上的專案資料夾新增一個git專案，接下來再連接自己的github repo，就可以在每次更新完hexo專案檔案、更換主題、發新文章後就把當前的專案文件push到github上，這樣就可以保證就算即使自己的電腦壞掉檔案損壞我的Hexo設定檔與文章都還在自己的Github上(ＧGithub掛掉機率應該比自己的硬碟掛掉機率小很多吧)。甚至哪天我突然想換別台電腦來寫文章，我也可以直接clone我的專案repo到另一台電腦，再用<code>npm install</code>把套件裝回來就可以直接開始寫文章了。</p>
+<p>所以這篇文章就是要示範如何將hexo專案push到github作為遠端備份。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Bosh-Hexo-Blog/hexo-from-scratch-11/" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-10/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -560,564 +651,11 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Bosh-Hexo-Blog/images/Bosh2.jpg">
-      <meta itemprop="name" content="Bosh-Kuo">
-      <meta itemprop="description" content="轉職路上的土木系碩班生">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bosh的技術部落格">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Bosh-Hexo-Blog/hexo-from-scratch-6/" class="post-title-link" itemprop="url">從零開始使用Hexo + Github Page搭建個人技術筆記網站(6) - Github Page 部署</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
-
-              <time title="創建時間：2022-01-24 11:44:51 / 修改時間：11:55:24" itemprop="dateCreated datePublished" datetime="2022-01-24T11:44:51+08:00">2022-01-24</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Bosh-Hexo-Blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>2.6k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>2 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="終於要上架Hexo部落格了！"><a href="#終於要上架Hexo部落格了！" class="headerlink" title="終於要上架Hexo部落格了！"></a><strong>終於要上架Hexo部落格了！</strong></h2><p>到目前為止我們做的所有操作與設定雖然可以透過<code>hexo server</code>指令在本機看到網頁的樣貌，但只有自己看得到的網站真的很難說服自己在寫網站。那要怎麼做才能讓其他人也能使用我寫的網站呢？其實概念很簡單，就是找一台機器（自己的也行）全年無休運行server程式，並且提供外界連接進來的窗口（也就是網址）。我們可以選擇網路上主機租用的服務或是用自己的機器架設，但這兩種方法對一個靜態網頁來說好像又略嫌麻煩或是需要花上一些錢。<code>Github Page</code>剛好提供了一個免費的靜態網站架設環境，它提供了：</p>
-<ul>
-<li>免費的靜態網頁空間</li>
-<li>1GB 空間容量</li>
-<li>100GB 月流量</li>
-<li>提供一組 Github帳號.github.io 子網域</li>
-<li>能夠使用 Git 部署並進行版本控制</li>
-</ul>
-<p>雖然空間與流量上有所限制，但對個人技術部落格來說已經非常夠用了！</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Bosh-Hexo-Blog/hexo-from-scratch-6/" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Bosh-Hexo-Blog/images/Bosh2.jpg">
-      <meta itemprop="name" content="Bosh-Kuo">
-      <meta itemprop="description" content="轉職路上的土木系碩班生">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bosh的技術部落格">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Bosh-Hexo-Blog/hexo-from-scratch-5/" class="post-title-link" itemprop="url">從零開始使用Hexo + Github Page搭建個人技術筆記網站(5) - 標籤、分類與關於頁面</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
-
-              <time title="創建時間：2022-01-24 11:29:55 / 修改時間：11:55:43" itemprop="dateCreated datePublished" datetime="2022-01-24T11:29:55+08:00">2022-01-24</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Bosh-Hexo-Blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>962</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="幫部落格添加標籤、分類與關於頁面！"><a href="#幫部落格添加標籤、分類與關於頁面！" class="headerlink" title="幫部落格添加標籤、分類與關於頁面！"></a><strong>幫部落格添加標籤、分類與關於頁面！</strong></h2><h3 id="建立新自訂頁面"><a href="#建立新自訂頁面" class="headerlink" title="建立新自訂頁面"></a><strong>建立新自訂頁面</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;頁面名稱&quot;</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Bosh-Hexo-Blog/hexo-from-scratch-5/" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Bosh-Hexo-Blog/images/Bosh2.jpg">
-      <meta itemprop="name" content="Bosh-Kuo">
-      <meta itemprop="description" content="轉職路上的土木系碩班生">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bosh的技術部落格">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Bosh-Hexo-Blog/hexo-from-scratch-4/" class="post-title-link" itemprop="url">從零開始使用Hexo + Github Page搭建個人技術筆記網站(4) - 寫下第一篇部落格文章</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
-
-              <time title="創建時間：2022-01-23 20:07:29 / 修改時間：20:19:50" itemprop="dateCreated datePublished" datetime="2022-01-23T20:07:29+08:00">2022-01-23</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Bosh-Hexo-Blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="來寫第一篇部落格文章吧！"><a href="#來寫第一篇部落格文章吧！" class="headerlink" title="來寫第一篇部落格文章吧！"></a><strong>來寫第一篇部落格文章吧！</strong></h2><p>接下來使用hexo指令來創建這個部落格的第一篇文章!</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Bosh-Hexo-Blog/hexo-from-scratch-4/" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Bosh-Hexo-Blog/images/Bosh2.jpg">
-      <meta itemprop="name" content="Bosh-Kuo">
-      <meta itemprop="description" content="轉職路上的土木系碩班生">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bosh的技術部落格">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Bosh-Hexo-Blog/hexo-from-scratch-3/" class="post-title-link" itemprop="url">從零開始使用Hexo + Github Page搭建個人技術筆記網站(3) - NexT佈景主題基本設置</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
-
-              <time title="創建時間：2022-01-23 19:54:23 / 修改時間：20:01:58" itemprop="dateCreated datePublished" datetime="2022-01-23T19:54:23+08:00">2022-01-23</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Bosh-Hexo-Blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>2.5k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>2 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="客製化自己的NexT佈景主題"><a href="#客製化自己的NexT佈景主題" class="headerlink" title="客製化自己的NexT佈景主題"></a><strong>客製化自己的NexT佈景主題</strong></h2><p>因為接下來要調整的設定參數是針對NexT佈景主題而不是整個網站，我們要開啟的檔案是在 Hexo 根目錄下的 <code>thems/next/_config.yml</code> 這個檔案，而不是根目錄下的<code>_config.yml</code>。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Bosh-Hexo-Blog/hexo-from-scratch-3/" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Bosh-Hexo-Blog/images/Bosh2.jpg">
-      <meta itemprop="name" content="Bosh-Kuo">
-      <meta itemprop="description" content="轉職路上的土木系碩班生">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bosh的技術部落格">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Bosh-Hexo-Blog/hexo-from-scratch-2/" class="post-title-link" itemprop="url">從零開始使用Hexo + Github Page搭建個人技術筆記網站(2) - Hexo基本設定</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
-
-              <time title="創建時間：2022-01-23 19:49:48 / 修改時間：20:06:29" itemprop="dateCreated datePublished" datetime="2022-01-23T19:49:48+08:00">2022-01-23</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Bosh-Hexo-Blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>1.5k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Hexo網站基本設定介紹"><a href="#Hexo網站基本設定介紹" class="headerlink" title="Hexo網站基本設定介紹"></a><strong>Hexo網站基本設定介紹</strong></h2><p>用hexo架設網站非常的方便，hexo把所有網站的基本設定參數都放在<code>_config.uml</code>裡面，我們可以根據自己對網站的需求調整這些晚站配置參數。配置參數很多這裡就不一一列舉，只記錄一些重要需要更改的參數。詳細也可以參考<a target="_blank" rel="noopener" href="https://hexo.io/zh-tw/docs/configuration">官方配置文件</a></p>
-<blockquote>
-<p><code>任何有關設定檔案的設定值，一定要在冒號後加上一個空格再接設定值</code></p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Bosh-Hexo-Blog/hexo-from-scratch-2/" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Bosh-Hexo-Blog/images/Bosh2.jpg">
-      <meta itemprop="name" content="Bosh-Kuo">
-      <meta itemprop="description" content="轉職路上的土木系碩班生">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bosh的技術部落格">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Bosh-Hexo-Blog/hexo-from-scratch-1/" class="post-title-link" itemprop="url">從零開始使用Hexo + Github Page搭建個人技術筆記網站(1) - 建立hexo部落格模板</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2022-01-20 16:58:52" itemprop="dateCreated datePublished" datetime="2022-01-20T16:58:52+08:00">2022-01-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-01-23 20:04:30" itemprop="dateModified" datetime="2022-01-23T20:04:30+08:00">2022-01-23</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Bosh-Hexo-Blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>1.6k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h2><p>在開始搭建hexo部落格前需要先安裝以下軟體，可以參考<a target="_blank" rel="noopener" href="https://hexo.io/zh-tw/docs/">官方文件</a>依照自己的作業系統安裝。</p>
-<ul>
-<li>Git</li>
-<li>Node.js</li>
-<li>VScode</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Bosh-Hexo-Blog/hexo-from-scratch-1/" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/Bosh-Hexo-Blog/page/2/">2</a><a class="page-number" href="/Bosh-Hexo-Blog/page/3/">3</a><a class="extend next" rel="next" href="/Bosh-Hexo-Blog/page/2/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
+  </nav>
 
 
 
@@ -1184,7 +722,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Bosh-Hexo-Blog/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -1252,13 +790,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">總字數：</span>
-    <span title="總字數">20k</span>
+    <span title="總字數">23k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">所需總閱讀時間 &asymp;</span>
-    <span title="所需總閱讀時間">19 分鐘</span>
+    <span title="所需總閱讀時間">21 分鐘</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
   </div>
