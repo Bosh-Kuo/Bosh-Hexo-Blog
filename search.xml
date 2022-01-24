@@ -80,40 +80,32 @@
       </tags>
   </entry>
   <entry>
-    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(4) - 寫下第一篇部落格文章</title>
-    <url>/Bosh-Hexo-Blog/hexo-from-scratch-4/</url>
-    <content><![CDATA[<h2 id="來寫第一篇部落格文章吧！"><a href="#來寫第一篇部落格文章吧！" class="headerlink" title="來寫第一篇部落格文章吧！"></a><strong>來寫第一篇部落格文章吧！</strong></h2><p>接下來使用hexo指令來創建這個部落格的第一篇文章!</p>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(5) - 標籤、分類與關於頁面</title>
+    <url>/Bosh-Hexo-Blog/hexo-from-scratch-5/</url>
+    <content><![CDATA[<h2 id="幫部落格添加標籤、分類與關於頁面！"><a href="#幫部落格添加標籤、分類與關於頁面！" class="headerlink" title="幫部落格添加標籤、分類與關於頁面！"></a><strong>幫部落格添加標籤、分類與關於頁面！</strong></h2><h3 id="建立新自訂頁面"><a href="#建立新自訂頁面" class="headerlink" title="建立新自訂頁面"></a><strong>建立新自訂頁面</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;頁面名稱&quot;</span></span><br></pre></td></tr></table></figure>
 <span id="more"></span>
 
+<p><img src="https://i.imgur.com/zNvPADU.png" alt="Imgur"></p>
+<p>hexo會自動在source資料夾建立一個跟該新建頁面名稱相同的資料夾，裡面放著一個index.md檔用來編寫頁面內容。若是原本存為草稿的md檔編輯好要發布成頁面，就以同個道理在source創建一個該頁面名稱的資料夾，並將草稿從草稿資料夾移到該資料夾並將檔案改命名為index.md。</p>
 <br/>
 
-<h3 id="創建新文章或草稿-md檔"><a href="#創建新文章或草稿-md檔" class="headerlink" title="創建新文章或草稿.md檔"></a><strong>創建新文章或草稿.md檔</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> 專案目錄</span><br><span class="line"></span><br><span class="line">hexo new <span class="string">&quot;&lt;文章名稱&gt;&quot;</span></span><br><span class="line"><span class="comment"># hexo new draft &quot;文章名稱&quot; 用來建立草稿 .md 檔</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="頁面資訊"><a href="#頁面資訊" class="headerlink" title="頁面資訊"></a><strong>頁面資訊</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2022-01-20 20:16:29</span><br><span class="line">comments: <span class="literal">false</span>  <span class="comment"># 設定為 false 表示不開放留言</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
-<p>輸入指令後<code>source/_posts</code>中會自動新增一個md檔，指令中輸入的文章名稱則是用於網站中該篇文章的網址。若是建立草稿（文章與頁面都可以），建立的 .md 檔會放置在 <code>./source/_drafts</code> 內，存放在 <code>_drafts</code> 目錄內的檔案不會被建立成文章或是頁面，因此如果想先建立檔案但不一定要先發佈，可以先建立成草稿，等到要發佈時，再移動到 <code>_post</code> 目錄內或是獨立建成一個頁面。</p>
+<p>有些頁面的目的為專門提供資訊或指引，沒有互動的需求，因此可以設定使該頁面不開放留言，當然現在還沒有打算加入留言功能所以有沒有這一行都沒關係。</p>
 <br/>
 
-<h3 id="設定文章資訊"><a href="#設定文章資訊" class="headerlink" title="設定文章資訊"></a><strong>設定文章資訊</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: first-test-article</span><br><span class="line">date: 2022-01-20 16:58:52</span><br><span class="line">tags:</span><br><span class="line">- [<span class="built_in">test</span>]</span><br><span class="line">category:</span><br><span class="line">- [<span class="built_in">test</span>]</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="建立分類頁與標籤頁"><a href="#建立分類頁與標籤頁" class="headerlink" title="建立分類頁與標籤頁"></a><strong>建立分類頁與標籤頁</strong></h3><p>Hexo 本身就有提供一些能夠連動網站資訊的頁面，例如文章分類與標籤頁，建立的方式就跟建立自訂頁面一樣。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 建立標籤頁</span></span><br><span class="line">hexo new page tags</span><br><span class="line"><span class="comment"># 建立分類頁</span></span><br><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
 
-<p>創建好文章後一開始會是一個空白頁面，以及預設的post layout (不會顯示於內文)，<code>title</code>為在網頁中的王張標題，<code>date</code>為文章創建日期，文章資訊可以日後再進行修改，tags與categoty與接下面提到標籤頁面與分類頁面有關。</p>
 <br/>
 
-<h3 id="分類與標籤"><a href="#分類與標籤" class="headerlink" title="分類與標籤"></a><strong>分類與標籤</strong></h3><p>tags欄與category欄就是標籤頁與分類頁對應的標籤與分類，而category又有兩種不同寫法會影響文章的分類方式。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: first-test-article</span><br><span class="line">date: 2022-01-20 16:58:52</span><br><span class="line">tags:</span><br><span class="line">- [標籤1]</span><br><span class="line">- [標籤2]</span><br><span class="line">category:</span><br><span class="line">- [分類1]</span><br><span class="line">- [分類2]</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>打開新建的分頁index.md，會發現其實跟前述自訂分頁一樣一開始一開始只有title和date兩欄，如果要連接 Hexo 資訊，就要加上 <code>type</code> 資訊，並設定為 <code>tags</code>或<code>categories</code>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># tags/index.md</span></span><br><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2022-01-20 20:58:13</span><br><span class="line"><span class="built_in">type</span>: tags </span><br><span class="line">comments: <span class="literal">false</span> </span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"><span class="comment"># categorues/index.md</span></span><br><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2022-01-20 20:58:31</span><br><span class="line"><span class="built_in">type</span>: categories </span><br><span class="line">comments: <span class="literal">false</span> </span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: first-test-article</span><br><span class="line">date: 2022-01-20 16:58:52</span><br><span class="line">tags:</span><br><span class="line">- 標籤1</span><br><span class="line">- 標籤2</span><br><span class="line">category:</span><br><span class="line">- 分類1</span><br><span class="line">- 分類2</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>第一種寫法:分類1, 分類2為獨立的兩個分類，標籤1, 標籤2為獨立的兩個標籤。</p>
-<p>第二種寫法:分類2為分類1底下的子分類，而標籤1, 標籤2依舊為獨立的兩個標籤。</p>
 <br/>
 
-<h3 id="Markdown語法編輯內文"><a href="#Markdown語法編輯內文" class="headerlink" title="Markdown語法編輯內文"></a><strong>Markdown語法編輯內文</strong></h3><p>hexo的文章是以markdown語法格式來編寫的，我自己是習慣用Notion或VScode來寫，至於要在文章中插入的圖片我選擇將圖片先丟到<a href="https://imgur.com/">Imgur</a>當作圖床再用連結導入，因為Github Page有容量限制，如果直接在專案資料夾引入很快就沒空間了。</p>
-<p>在編輯文章內容時可同時用<code>hexo server</code>在本地端預覽文章在網站上的樣子來做排版。</p>
-<p><img src="https://i.imgur.com/fptfNuB.png" alt="Imgur"></p>
-<br/>
-
-<h3 id="隱藏過長的文章內容"><a href="#隱藏過長的文章內容" class="headerlink" title="隱藏過長的文章內容"></a><strong>隱藏過長的文章內容</strong></h3><p>打完一篇文章發布後發現首頁完全被這片文章給佔據了，要如何讓文章只在首頁顯示部分內容，讓讀者想閱讀全文再點擊進入該文章呢？</p>
-<p>只要在想要開始隱藏的內文上頭加上<code>&lt;!-- more --&gt;</code>，首頁就會出現閱讀全文按鈕並隱藏內文。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 會顯示出來的部分</span></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"><span class="comment"># 會隱藏起來的部分</span></span><br></pre></td></tr></table></figure>
+<p>接著打開<code>./themes/next/_config.yml</code>，設定側欄顯示清單，完成後側邊欄就多了剛剛新增的幾個頁面連結了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || fa fa-home</span><br><span class="line">  about: /about/ || fa fa-user</span><br><span class="line">  tags: /tags/ || fa fa-tags</span><br><span class="line">  categories: /categories/ || fa fa-th</span><br><span class="line">  archives: /archives/ || fa fa-archive</span><br></pre></td></tr></table></figure>
 
 <br/>
 
@@ -129,47 +121,58 @@
       </tags>
   </entry>
   <entry>
-    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(2) - Hexo基本設定</title>
-    <url>/Bosh-Hexo-Blog/hexo-from-scratch-2/</url>
-    <content><![CDATA[<h2 id="Hexo網站基本設定介紹"><a href="#Hexo網站基本設定介紹" class="headerlink" title="Hexo網站基本設定介紹"></a><strong>Hexo網站基本設定介紹</strong></h2><p>用hexo架設網站非常的方便，hexo把所有網站的基本設定參數都放在<code>_config.uml</code>裡面，我們可以根據自己對網站的需求調整這些晚站配置參數。配置參數很多這裡就不一一列舉，只記錄一些重要需要更改的參數。詳細也可以參考<a href="https://hexo.io/zh-tw/docs/configuration">官方配置文件</a></p>
-<blockquote>
-<p><code>任何有關設定檔案的設定值，一定要在冒號後加上一個空格再接設定值</code></p>
-</blockquote>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(10) - 客製化NexT主題：美化NexT背景主題</title>
+    <url>/Bosh-Hexo-Blog/hexo-from-scratch-10/</url>
+    <content><![CDATA[<h2 id="設置左上角或右上角-github-圖標"><a href="#設置左上角或右上角-github-圖標" class="headerlink" title="設置左上角或右上角 github 圖標"></a><strong>設置左上角或右上角 github 圖標</strong></h2><p>打開hexo根目錄的<code>_config.yml</code>，將enable改為true即可</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># `Follow me on GitHub` banner in the top-right corner.</span></span><br><span class="line">github_banner:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># 點擊即跳轉到該鏈接，自行設定</span></span><br><span class="line">  permalink: https://github.com/yourname</span><br><span class="line">  <span class="comment"># 當鼠標懸浮於上方時顯示的文本</span></span><br><span class="line">  title: Follow me on GitHub</span><br></pre></td></tr></table></figure>
+
 <span id="more"></span>
 
 <br/>
 
-<h3 id="網站基本資訊"><a href="#網站基本資訊" class="headerlink" title="網站基本資訊"></a><strong>網站基本資訊</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line">title: Hexo <span class="comment"># 部落格標題</span></span><br><span class="line">subtitle: <span class="string">&#x27;&#x27;</span> <span class="comment"># 部落格副標題</span></span><br><span class="line">description: <span class="string">&#x27;&#x27;</span> <span class="comment"># 部落格簡介</span></span><br><span class="line">keywords: <span class="string">&#x27;關鍵字1&#x27;</span>, <span class="string">&#x27;關鍵字2&#x27;</span> <span class="comment"># 網站關鍵字，多個關鍵字用逗號隔開</span></span><br><span class="line">author: John Doe <span class="comment"># 作者名字</span></span><br><span class="line">language: en <span class="comment"># 語言，繁體中文設定 zh-TW</span></span><br><span class="line">timezone: <span class="string">&#x27;&#x27;</span> <span class="comment"># 使用系統時間即可</span></span><br></pre></td></tr></table></figure>
+<h2 id="可切換式Dark-mode"><a href="#可切換式Dark-mode" class="headerlink" title="可切換式Dark mode"></a><strong>可切換式Dark mode</strong></h2><p>next雖然有支援dark mode，但沒有直接支援手動切換dark/light mode的功能，因此我們要使用一個plug-in：<code>hexo-next-darkmode</code>，先到Blog專案目錄npm安裝</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-next-darkmode --save</span><br></pre></td></tr></table></figure>
 
 <br/>
 
-<h3 id="URL設定"><a href="#URL設定" class="headerlink" title="URL設定"></a><strong>URL設定</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as &#x27;http://example.com/child&#x27; and root as &#x27;/child/&#x27;</span></span><br><span class="line">url: http://example.com <span class="comment"># 正式部落格網址</span></span><br><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/ # 文章路徑</span></span><br><span class="line">permalink: :title/  <span class="comment"># 可以設定網址後直接接文章名稱，網址整體才比較短</span></span><br><span class="line">permalink_defaults:</span><br><span class="line">pretty_urls:</span><br><span class="line">  trailing_index: <span class="literal">false</span> <span class="comment"># 設置 false 會移除網址中的 index.html</span></span><br><span class="line">  trailing_html: <span class="literal">false</span> <span class="comment"># 設置 false 會移除網址中的 html</span></span><br></pre></td></tr></table></figure>
+<p>接著更改 Next 主题的配置文件 <code>themes/next/_config.yml</code>，在底下添加下列程式碼</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Darkmode JS</span></span><br><span class="line"><span class="comment"># For more information: https://github.com/rqh656418510/hexo-next-darkmode, https://github.com/sandoche/Darkmode.js</span></span><br><span class="line">darkmode_js:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  bottom: <span class="string">&#x27;64px&#x27;</span> <span class="comment"># default: &#x27;32px&#x27;</span></span><br><span class="line">  right: <span class="string">&#x27;unset&#x27;</span> <span class="comment"># default: &#x27;32px&#x27;</span></span><br><span class="line">  left: <span class="string">&#x27;32px&#x27;</span> <span class="comment"># default: &#x27;unset&#x27;</span></span><br><span class="line">  time: <span class="string">&#x27;0.5s&#x27;</span> <span class="comment"># default: &#x27;0.3s&#x27;</span></span><br><span class="line">  mixColor: <span class="string">&#x27;transparent&#x27;</span> <span class="comment"># default: &#x27;#fff&#x27;</span></span><br><span class="line">  backgroundColor: <span class="string">&#x27;transparent&#x27;</span> <span class="comment"># default: &#x27;#fff&#x27;</span></span><br><span class="line">  buttonColorDark: <span class="string">&#x27;#100f2c&#x27;</span> <span class="comment"># default: &#x27;#100f2c&#x27;</span></span><br><span class="line">  buttonColorLight: <span class="string">&#x27;#fff&#x27;</span> <span class="comment"># default: &#x27;#fff&#x27;</span></span><br><span class="line">  isActivated: <span class="literal">false</span> <span class="comment"># default false</span></span><br><span class="line">  saveInCookies: <span class="literal">true</span> <span class="comment"># default: true</span></span><br><span class="line">  label: <span class="string">&#x27;🌓&#x27;</span> <span class="comment"># default: &#x27;&#x27;</span></span><br><span class="line">  autoMatchOsTheme: <span class="literal">true</span> <span class="comment"># default: true</span></span><br><span class="line">  libUrl: <span class="comment"># Set custom library cdn url for Darkmode.js</span></span><br></pre></td></tr></table></figure>
 
 <br/>
 
-<h3 id="載入文章"><a href="#載入文章" class="headerlink" title="載入文章"></a><strong>載入文章</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="comment"># new_post_name: :title.md  設定對應的文章原始編輯檔</span></span><br><span class="line">new_post_name: :year-:month-:day-:title.md  <span class="comment"># 這樣設定會在生成新文章.md檔時將文章生成日輸入進檔名，方便日後管理</span></span><br></pre></td></tr></table></figure>
+<p><code>isActivated: true</code>: 默認激活dark mode, 必須搭配 <code>saveInCookies: false</code> 與 <code>autoMatchOsTheme: false</code></p>
+<p>關於如何調整dark mode的css 可以參考plug-in作者的repo: <strong><a href="https://github.com/rqh656418510/hexo-next-darkmode">Hexo NexT Darkmode</a></strong></p>
+<p><img src="https://i.imgur.com/HlhDqFH.png" alt="Imgur"></p>
+<br/>
+
+<h2 id="加上Canvas-Ribbon背景"><a href="#加上Canvas-Ribbon背景" class="headerlink" title="加上Canvas Ribbon背景"></a><strong>加上Canvas Ribbon背景</strong></h2><p>加上dark mode後現在的背景不是全黑就是全白，要如何讓背景更豐富呢？NexT 默認提供3種背景配置，但都需要安裝依賴，這邊選擇Canvas Ribbon背景。</p>
+<ol>
+<li>首先進入next資料夾</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/next</span><br></pre></td></tr></table></figure>
+<br/>
+
+<ol start="2">
+<li>安裝模塊到 source/lib 目錄下：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/theme-next-canvas-ribbon <span class="built_in">source</span>/lib/canvas-ribbon</span><br></pre></td></tr></table></figure>
 
 <br/>
 
-<h3 id="中文分類與標籤"><a href="#中文分類與標籤" class="headerlink" title="中文分類與標籤"></a><strong>中文分類與標籤</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Category &amp; Tag</span></span><br><span class="line">default_category: uncategorized</span><br><span class="line">category_map:</span><br><span class="line">  <span class="comment"># 中文分類: english-category  一個分類一列</span></span><br><span class="line">	學習: Learning</span><br><span class="line">tag_map:</span><br><span class="line">  <span class="comment"># 中文標籤: english-tag  一個標籤一列</span></span><br><span class="line">	學習: Learning</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>編輯<code>/theme/next/_config.yml</code>，將enable改為true</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 更改 Next 主题的配置文件 themes/next/_config.yml，设置以下内容</span></span><br><span class="line">canvas_ribbon:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  size: 300           <span class="comment"># Ribbon的寬度</span></span><br><span class="line">  alpha: 0.6          <span class="comment"># Ribbon的透明度</span></span><br><span class="line">  zIndex: -1          <span class="comment"># Ribbon的顯示級別</span></span><br></pre></td></tr></table></figure>
 
-<p>如果新增文章分類或是標籤是中文，因為預設網址會抓分類與標籤名稱，網址就會跟著是中文。因此若要改成是英文網址，就要透過以上範例方式，即可將中文網址改為英文。不過這個部分不用一開始就設定，之後新增分類或標籤有設定到中文名稱時再設定就可以。</p>
 <br/>
 
-<h2 id="換一個好看的佈景主題"><a href="#換一個好看的佈景主題" class="headerlink" title="換一個好看的佈景主題"></a><strong>換一個好看的佈景主題</strong></h2><p>我以hexo主題中最多人使用的<code>NexT</code>佈景主題作為我佈景主題。</p>
-<p>第一步先將next clone進theme資料夾。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-
-<p>接下來修改<code>_config.yml</code>檔案</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: next </span><br></pre></td></tr></table></figure>
-
-<p>修改完後重新 hexo generate、hexo server就可以看到<code>next</code>主題被套上去了</p>
+<p>修改完成後Canvas Ribbon背景就出現了～</p>
+<p><img src="https://i.imgur.com/vN40tT5.png" alt="Imgur"></p>
 <br/>
 
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a><strong>參考資料</strong></h2><ul>
-<li><a href="https://hackmd.io/@Heidi-Liu/note-hexo-github#%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD">【學習筆記】如何使用 Hexo + GitHub Pages 架設個人網誌</a></li>
-<li><a href="https://ithelp.ithome.com.tw/users/20139218/ironman/3910">30 天利用 Hexo 打造技術部落格系列</a></li>
-<li><a href="https://hexo.io/zh-tw/docs/configuration">Hexo文件-配置</a></li>
+<li><a href="https://www.techgrow.cn/posts/abf4aee1.html">Hexo Next 8.x 主题添加可切换的暗黑模式</a></li>
+<li><a href="https://www.twblogs.net/a/5ef7dc58f638e9bb9bd55a57">Hexo 搭建個人博客（九）NexT 主題進階配置</a></li>
 </ul>
 ]]></content>
       <categories>
@@ -238,6 +241,354 @@
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a><strong>參考資料</strong></h2><ul>
 <li><a href="https://ithelp.ithome.com.tw/users/20139218/ironman/3910">30 天利用 Hexo 打造技術部落格系列</a></li>
 <li><a href="https://github.com/next-theme/hexo-theme-next">NexT</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(2) - Hexo基本設定</title>
+    <url>/Bosh-Hexo-Blog/hexo-from-scratch-2/</url>
+    <content><![CDATA[<h2 id="Hexo網站基本設定介紹"><a href="#Hexo網站基本設定介紹" class="headerlink" title="Hexo網站基本設定介紹"></a><strong>Hexo網站基本設定介紹</strong></h2><p>用hexo架設網站非常的方便，hexo把所有網站的基本設定參數都放在<code>_config.uml</code>裡面，我們可以根據自己對網站的需求調整這些晚站配置參數。配置參數很多這裡就不一一列舉，只記錄一些重要需要更改的參數。詳細也可以參考<a href="https://hexo.io/zh-tw/docs/configuration">官方配置文件</a></p>
+<blockquote>
+<p><code>任何有關設定檔案的設定值，一定要在冒號後加上一個空格再接設定值</code></p>
+</blockquote>
+<span id="more"></span>
+
+<br/>
+
+<h3 id="網站基本資訊"><a href="#網站基本資訊" class="headerlink" title="網站基本資訊"></a><strong>網站基本資訊</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line">title: Hexo <span class="comment"># 部落格標題</span></span><br><span class="line">subtitle: <span class="string">&#x27;&#x27;</span> <span class="comment"># 部落格副標題</span></span><br><span class="line">description: <span class="string">&#x27;&#x27;</span> <span class="comment"># 部落格簡介</span></span><br><span class="line">keywords: <span class="string">&#x27;關鍵字1&#x27;</span>, <span class="string">&#x27;關鍵字2&#x27;</span> <span class="comment"># 網站關鍵字，多個關鍵字用逗號隔開</span></span><br><span class="line">author: John Doe <span class="comment"># 作者名字</span></span><br><span class="line">language: en <span class="comment"># 語言，繁體中文設定 zh-TW</span></span><br><span class="line">timezone: <span class="string">&#x27;&#x27;</span> <span class="comment"># 使用系統時間即可</span></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<h3 id="URL設定"><a href="#URL設定" class="headerlink" title="URL設定"></a><strong>URL設定</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as &#x27;http://example.com/child&#x27; and root as &#x27;/child/&#x27;</span></span><br><span class="line">url: http://example.com <span class="comment"># 正式部落格網址</span></span><br><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/ # 文章路徑</span></span><br><span class="line">permalink: :title/  <span class="comment"># 可以設定網址後直接接文章名稱，網址整體才比較短</span></span><br><span class="line">permalink_defaults:</span><br><span class="line">pretty_urls:</span><br><span class="line">  trailing_index: <span class="literal">false</span> <span class="comment"># 設置 false 會移除網址中的 index.html</span></span><br><span class="line">  trailing_html: <span class="literal">false</span> <span class="comment"># 設置 false 會移除網址中的 html</span></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<h3 id="載入文章"><a href="#載入文章" class="headerlink" title="載入文章"></a><strong>載入文章</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="comment"># new_post_name: :title.md  設定對應的文章原始編輯檔</span></span><br><span class="line">new_post_name: :year-:month-:day-:title.md  <span class="comment"># 這樣設定會在生成新文章.md檔時將文章生成日輸入進檔名，方便日後管理</span></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<h3 id="中文分類與標籤"><a href="#中文分類與標籤" class="headerlink" title="中文分類與標籤"></a><strong>中文分類與標籤</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Category &amp; Tag</span></span><br><span class="line">default_category: uncategorized</span><br><span class="line">category_map:</span><br><span class="line">  <span class="comment"># 中文分類: english-category  一個分類一列</span></span><br><span class="line">	學習: Learning</span><br><span class="line">tag_map:</span><br><span class="line">  <span class="comment"># 中文標籤: english-tag  一個標籤一列</span></span><br><span class="line">	學習: Learning</span><br></pre></td></tr></table></figure>
+
+<p>如果新增文章分類或是標籤是中文，因為預設網址會抓分類與標籤名稱，網址就會跟著是中文。因此若要改成是英文網址，就要透過以上範例方式，即可將中文網址改為英文。不過這個部分不用一開始就設定，之後新增分類或標籤有設定到中文名稱時再設定就可以。</p>
+<br/>
+
+<h2 id="換一個好看的佈景主題"><a href="#換一個好看的佈景主題" class="headerlink" title="換一個好看的佈景主題"></a><strong>換一個好看的佈景主題</strong></h2><p>我以hexo主題中最多人使用的<code>NexT</code>佈景主題作為我佈景主題。</p>
+<p>第一步先將next clone進theme資料夾。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+<p>接下來修改<code>_config.yml</code>檔案</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: next </span><br></pre></td></tr></table></figure>
+
+<p>修改完後重新 hexo generate、hexo server就可以看到<code>next</code>主題被套上去了</p>
+<br/>
+
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a><strong>參考資料</strong></h2><ul>
+<li><a href="https://hackmd.io/@Heidi-Liu/note-hexo-github#%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD">【學習筆記】如何使用 Hexo + GitHub Pages 架設個人網誌</a></li>
+<li><a href="https://ithelp.ithome.com.tw/users/20139218/ironman/3910">30 天利用 Hexo 打造技術部落格系列</a></li>
+<li><a href="https://hexo.io/zh-tw/docs/configuration">Hexo文件-配置</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(6) - Github Page 部署</title>
+    <url>/Bosh-Hexo-Blog/hexo-from-scratch-6/</url>
+    <content><![CDATA[<h2 id="終於要上架Hexo部落格了！"><a href="#終於要上架Hexo部落格了！" class="headerlink" title="終於要上架Hexo部落格了！"></a><strong>終於要上架Hexo部落格了！</strong></h2><p>到目前為止我們做的所有操作與設定雖然可以透過<code>hexo server</code>指令在本機看到網頁的樣貌，但只有自己看得到的網站真的很難說服自己在寫網站。那要怎麼做才能讓其他人也能使用我寫的網站呢？其實概念很簡單，就是找一台機器（自己的也行）全年無休運行server程式，並且提供外界連接進來的窗口（也就是網址）。我們可以選擇網路上主機租用的服務或是用自己的機器架設，但這兩種方法對一個靜態網頁來說好像又略嫌麻煩或是需要花上一些錢。<code>Github Page</code>剛好提供了一個免費的靜態網站架設環境，它提供了：</p>
+<ul>
+<li>免費的靜態網頁空間</li>
+<li>1GB 空間容量</li>
+<li>100GB 月流量</li>
+<li>提供一組 Github帳號.github.io 子網域</li>
+<li>能夠使用 Git 部署並進行版本控制</li>
+</ul>
+<p>雖然空間與流量上有所限制，但對個人技術部落格來說已經非常夠用了！</p>
+<span id="more"></span>
+
+<br/>
+
+<h2 id="創建Github-repo"><a href="#創建Github-repo" class="headerlink" title="創建Github repo"></a><strong>創建Github repo</strong></h2><p>首先新增一個github repo，<code>注意!</code>，幾乎所有教學文章都寫Repository name要命名成<code>&lt;github account&gt;.github.io</code>，如果我的github帳號叫<code>Bosh-Kuo</code>，那新增的repo就要叫<code>Bosh-Kuo.github.io</code>，這樣連到該專案的網址才會是 <code>https://Bosh-Kuo.github.io/</code>。</p>
+<p>但是要是我有第二個部落格想架設呢？或是我覺得repo就是想取其他名字呢？其實是可以的，這篇示範的就是用別的方式命名來架設Github page，我把我的github repo取名為<code>Bosh-Hexo-Blog</code>，接下來部署github-page一樣可以在這個repo下完成，但有些設定需要稍微改動。</p>
+<p><img src="https://i.imgur.com/VXDYXW9.png" alt="Imgur"></p>
+<br/>
+
+<h3 id="設定-Hexo-連結github-repo"><a href="#設定-Hexo-連結github-repo" class="headerlink" title="設定 Hexo 連結github repo"></a><strong>設定 Hexo 連結github repo</strong></h3><p>部署前要先設定 Hexo 的 <code>_config.yml</code> 檔案中連接到 Github 儲存庫的相關設定，</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git <span class="comment"># 使用 Git 部署</span></span><br><span class="line">  repo: https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git <span class="comment"># repo clone link</span></span><br><span class="line">  branch: gh-pages <span class="comment"># hexo 會將靜態網頁內容放到這個repo分支</span></span><br><span class="line">  message: <span class="string">&quot;First Commit&quot;</span> <span class="comment"># Commit 訊息</span></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p>接著進入至關重要的一環，因為我們的命名方式並不是以<code>&lt;github account&gt;.github.io</code>來命名，因此我的網站網址會在<code>Bosh-Kuo.github.io</code>的下一層，舉例來說我的repo命名為Bosh-Hexo-Blog因此這個Github Page架設的網站網址就會是<code>https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/</code>，因此我們必須去改<code>_config.yml</code>中的<code>url</code>和<code>root</code>，讓hexo架在正確的位置上，並且設置正確的網站根目錄，可以參考官方文件的<strong>網站存放在子目錄</strong>部分</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span></span><br><span class="line">url: https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/  <span class="comment"># 網站的網址</span></span><br><span class="line">root: /Bosh-Hexo-Blog/  <span class="comment"># 網站的根目錄</span></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p>注意！當我們這麼設定完後以後開local server也會把根目錄設在Bosh-Hexo-Blog，local網址就會變成: <code>http://localhost:4000/Bosh-Hexo-Blog/</code></p>
+<br/>
+
+<h3 id="使用指令部署"><a href="#使用指令部署" class="headerlink" title="使用指令部署"></a><strong>使用指令部署</strong></h3><p>設定完成後首先安裝hexo的git部署套件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p>接著清理之前建立的靜態檔案 → 建立靜態檔案 → 部署至 Github Pages</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clear</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p>完成後就會看到github頁面被更新囉～</p>
+<p><img src="https://i.imgur.com/WVdsOnY.png" alt="Imgur"></p>
+<br/>
+
+<p>接著前往設定Settings開啟Github Pages</p>
+<p><img src="https://i.imgur.com/IEJmSRU.png" alt="Imgur"></p>
+<p><img src="https://i.imgur.com/xhYGzp6.png" alt="Imgur"></p>
+<br/>
+
+<p>接著點選repo頁面的火箭圖示，可以看到deploy的狀況，當部署完成網址就生效囉！</p>
+<blockquote>
+<p><strong>耶～ 我的部落格正式誕生了 撒花慶祝～</strong></p>
+</blockquote>
+<p><img src="https://i.imgur.com/rZCmFoq.png" alt="Imgur"></p>
+<br/>
+
+<h3 id="補充-移除網址末端的-more"><a href="#補充-移除網址末端的-more" class="headerlink" title="補充-移除網址末端的 #more"></a><strong><code>補充-移除網址末端的 #more</code></strong></h3><p>如果是點選<code>閱讀全文</code>按鍵進入文章的，文章網址後面不但會有 <code>#more</code> 的後綴詞，而且瀏覽器會自動跳到閱讀全文後的網頁內容，而不是最上層。原因是 #more 是 HTML 元素裡的一個 ID，如果進入以 ID 為 more 的文章網址，就會自動跳到 ID 為 more 的區塊。</p>
+<p>解決方法就是修改<code>themes/next/lauout/_macro/post.swig</code>這個檔案</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;!--/noindex--&gt;</span><br><span class="line">&#123;% <span class="keyword">elif</span> post.excerpt %&#125;</span><br><span class="line">        &#123;&#123; post.excerpt &#125;&#125;</span><br><span class="line">        &lt;!--noindex--&gt;</span><br><span class="line">        &#123;%- <span class="keyword">if</span> theme.read_more_btn %&#125;</span><br><span class="line">    &lt;div class=<span class="string">&quot;post-button&quot;</span>&gt;</span><br><span class="line">            &lt;a class=<span class="string">&quot;btn&quot;</span> href=<span class="string">&quot;&#123;&#123; url_for(post.path) &#125;&#125;#more&quot;</span> rel=<span class="string">&quot;contents&quot;</span>&gt;</span><br><span class="line">        &#123;&#123; __(<span class="string">&#x27;post.read_more&#x27;</span>) &#125;&#125; &amp;raquo;</span><br><span class="line">            &lt;/a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">        &#123;%- endif %&#125;</span><br><span class="line">        &lt;!--/noindex--&gt;</span><br></pre></td></tr></table></figure>
+
+<p>將<code>&lt;a class=&quot;btn&quot; href=&quot;&#123;&#123; url_for(post.path) &#125;&#125;#more&quot; rel=&quot;contents&quot;&gt;</code>的#more刪除就ok了</p>
+<br/>
+
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a><strong>參考資料</strong></h2><ul>
+<li><a href="https://ithelp.ithome.com.tw/users/20139218/ironman/3910"><strong>30 天利用 Hexo 打造技術部落格系列</strong></a></li>
+<li><a href="https://ed521.github.io/2019/07/hexo-install/">[教學] 使用 GitHub Pages + Hexo 來架設個人部落格</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(4) - 寫下第一篇部落格文章</title>
+    <url>/Bosh-Hexo-Blog/hexo-from-scratch-4/</url>
+    <content><![CDATA[<h2 id="來寫第一篇部落格文章吧！"><a href="#來寫第一篇部落格文章吧！" class="headerlink" title="來寫第一篇部落格文章吧！"></a><strong>來寫第一篇部落格文章吧！</strong></h2><p>接下來使用hexo指令來創建這個部落格的第一篇文章!</p>
+<span id="more"></span>
+
+<br/>
+
+<h3 id="創建新文章或草稿-md檔"><a href="#創建新文章或草稿-md檔" class="headerlink" title="創建新文章或草稿.md檔"></a><strong>創建新文章或草稿.md檔</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> 專案目錄</span><br><span class="line"></span><br><span class="line">hexo new <span class="string">&quot;&lt;文章名稱&gt;&quot;</span></span><br><span class="line"><span class="comment"># hexo new draft &quot;文章名稱&quot; 用來建立草稿 .md 檔</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>輸入指令後<code>source/_posts</code>中會自動新增一個md檔，指令中輸入的文章名稱則是用於網站中該篇文章的網址。若是建立草稿（文章與頁面都可以），建立的 .md 檔會放置在 <code>./source/_drafts</code> 內，存放在 <code>_drafts</code> 目錄內的檔案不會被建立成文章或是頁面，因此如果想先建立檔案但不一定要先發佈，可以先建立成草稿，等到要發佈時，再移動到 <code>_post</code> 目錄內或是獨立建成一個頁面。</p>
+<br/>
+
+<h3 id="設定文章資訊"><a href="#設定文章資訊" class="headerlink" title="設定文章資訊"></a><strong>設定文章資訊</strong></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: first-test-article</span><br><span class="line">date: 2022-01-20 16:58:52</span><br><span class="line">tags:</span><br><span class="line">- [<span class="built_in">test</span>]</span><br><span class="line">category:</span><br><span class="line">- [<span class="built_in">test</span>]</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>創建好文章後一開始會是一個空白頁面，以及預設的post layout (不會顯示於內文)，<code>title</code>為在網頁中的王張標題，<code>date</code>為文章創建日期，文章資訊可以日後再進行修改，tags與categoty與接下面提到標籤頁面與分類頁面有關。</p>
+<br/>
+
+<h3 id="分類與標籤"><a href="#分類與標籤" class="headerlink" title="分類與標籤"></a><strong>分類與標籤</strong></h3><p>tags欄與category欄就是標籤頁與分類頁對應的標籤與分類，而category又有兩種不同寫法會影響文章的分類方式。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: first-test-article</span><br><span class="line">date: 2022-01-20 16:58:52</span><br><span class="line">tags:</span><br><span class="line">- [標籤1]</span><br><span class="line">- [標籤2]</span><br><span class="line">category:</span><br><span class="line">- [分類1]</span><br><span class="line">- [分類2]</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: first-test-article</span><br><span class="line">date: 2022-01-20 16:58:52</span><br><span class="line">tags:</span><br><span class="line">- 標籤1</span><br><span class="line">- 標籤2</span><br><span class="line">category:</span><br><span class="line">- 分類1</span><br><span class="line">- 分類2</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>第一種寫法:分類1, 分類2為獨立的兩個分類，標籤1, 標籤2為獨立的兩個標籤。</p>
+<p>第二種寫法:分類2為分類1底下的子分類，而標籤1, 標籤2依舊為獨立的兩個標籤。</p>
+<br/>
+
+<h3 id="Markdown語法編輯內文"><a href="#Markdown語法編輯內文" class="headerlink" title="Markdown語法編輯內文"></a><strong>Markdown語法編輯內文</strong></h3><p>hexo的文章是以markdown語法格式來編寫的，我自己是習慣用Notion或VScode來寫，至於要在文章中插入的圖片我選擇將圖片先丟到<a href="https://imgur.com/">Imgur</a>當作圖床再用連結導入，因為Github Page有容量限制，如果直接在專案資料夾引入很快就沒空間了。</p>
+<p>在編輯文章內容時可同時用<code>hexo server</code>在本地端預覽文章在網站上的樣子來做排版。</p>
+<p><img src="https://i.imgur.com/fptfNuB.png" alt="Imgur"></p>
+<br/>
+
+<h3 id="隱藏過長的文章內容"><a href="#隱藏過長的文章內容" class="headerlink" title="隱藏過長的文章內容"></a><strong>隱藏過長的文章內容</strong></h3><p>打完一篇文章發布後發現首頁完全被這片文章給佔據了，要如何讓文章只在首頁顯示部分內容，讓讀者想閱讀全文再點擊進入該文章呢？</p>
+<p>只要在想要開始隱藏的內文上頭加上<code>&lt;!-- more --&gt;</code>，首頁就會出現閱讀全文按鈕並隱藏內文。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 會顯示出來的部分</span></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"><span class="comment"># 會隱藏起來的部分</span></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a><strong>參考資料</strong></h2><ul>
+<li><a href="https://ithelp.ithome.com.tw/users/20139218/ironman/3910">30 天利用 Hexo 打造技術部落格系列</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(7) - 客製化NexT主題：Google Analytics分析部落格文章流量</title>
+    <url>/Bosh-Hexo-Blog/hexo-from-scratch-7/</url>
+    <content><![CDATA[<h2 id="用Google-Analytics服務追蹤我的部落格"><a href="#用Google-Analytics服務追蹤我的部落格" class="headerlink" title="用Google Analytics服務追蹤我的部落格"></a>用Google Analytics服務追蹤我的部落格</h2><p>雖然目前我對這個技術部落格的文章定位都還是寫給自己看為主，但要是幾年後開始有其他人看我的文章了，用GA這個服務我就能知道訪客瀏覽我的網站的一些資訊，比如說訪客年齡層、訪客尖峰時段、最多人瀏覽的文章等資訊。</p>
+<span id="more"></span>
+
+<br/>
+
+<h3 id="申請Google-Analytics"><a href="#申請Google-Analytics" class="headerlink" title="申請Google Analytics"></a><strong>申請Google Analytics</strong></h3><ul>
+<li>首先進入<a href="https://analytics.google.com/analytics/web/provision/#/provision">Google Analytics</a>官方網站，第一頁<code>帳戶設定</code>會需要填寫帳戶名稱，可以填寫任意名稱，下方選項默認就好點選下一頁。</li>
+<li>第二頁<code>資源設定</code>必須提供長度必須介於 4 至 100 個半形字元之間的資源名稱，可以填寫網站名稱</li>
+<li>第三頁<code>提供商家相關資訊</code>依照自己網站狀況勾選選項後案建立，會出現Google Analytics (分析) 服務條款合約，點選接受後接受後會跳出我的電子郵件通訊，點擊全部取消勾選並儲存就完成了建立流程。</li>
+</ul>
+<p>完成建立後會進入以下頁面</p>
+<p><img src="https://i.imgur.com/ZA3fErJ.png" alt="Imgur"></p>
+<br/>
+
+<h3 id="設定-Google-Analytics-追蹤碼並埋入Hexo"><a href="#設定-Google-Analytics-追蹤碼並埋入Hexo" class="headerlink" title="設定 Google Analytics 追蹤碼並埋入Hexo"></a><strong>設定 Google Analytics 追蹤碼並埋入Hexo</strong></h3><p>點擊網站，輸入網址並取一個串流名稱後點選建立串流</p>
+<p><img src="https://i.imgur.com/MjqSDdc.png" alt="Imgur"></p>
+<br/>
+
+<p>完成後會看到建立好的網站追蹤ID，待會要回到hexo主題設定檔中進行設定</p>
+<p><img src="https://i.imgur.com/SvtDwtY.png" alt="Imgur"></p>
+<br/>
+
+<p>回到/theme/next/_congig.yml中，找到下列這段，將追蹤碼貼到tracking_id</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Google Analytics</span></span><br><span class="line">google_analytics:</span><br><span class="line">  tracking_id: <span class="comment"># &lt;app_id&gt;</span></span><br><span class="line">  <span class="comment"># By default, NexT will load an external gtag.js script on your site.</span></span><br><span class="line">  <span class="comment"># If you only need the pageview feature, set the following option to true to get a better performance.</span></span><br><span class="line">  only_pageview: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>接下來點擊同一頁的<code>全域網頁代碼</code>將程式碼複製起來，並找到<code>themes/next/layout/_partials/head/head.swig</code>，將程式碼貼到最下面即可。</p>
+<br/>
+
+<h3 id="GA報表"><a href="#GA報表" class="headerlink" title="GA報表"></a><strong>GA報表</strong></h3><p>完成後重新產生靜態頁面檔案再開啟server就可以看到GA已經成功追蹤到了，就可以再次部署到Github Page上，日後就可以觀察網站的流量數據。</p>
+<p><img src="https://i.imgur.com/mSXb3ul.png" alt="Imgur"></p>
+<br/>
+
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a><strong>參考資料</strong></h2><ul>
+<li><a href="https://ithelp.ithome.com.tw/users/20139218/ironman/3910">30 天利用 Hexo 打造技術部落格系列</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(8) - 客製化NexT主題：統計訪客人數與閱讀次數</title>
+    <url>/Bosh-Hexo-Blog/hexo-from-scratch-8/</url>
+    <content><![CDATA[<h2 id="添加網站訪客計數器"><a href="#添加網站訪客計數器" class="headerlink" title="添加網站訪客計數器"></a><strong>添加網站訪客計數器</strong></h2><p>hexo主題可以搭配第三方計數器來統計訪客人數，這邊我選擇的是<a href="https://busuanzi.ibruce.info/">不蒜子</a>，因為它有內建在next主題內所以設定起來很方便。</p>
+<span id="more"></span>
+
+<br/>
+
+<h3 id="修改hexo-next主題配置檔"><a href="#修改hexo-next主題配置檔" class="headerlink" title="修改hexo next主題配置檔"></a><strong>修改hexo next主題配置檔</strong></h3><p>首先打開<code>theme/next/_config.yml</code>，將<code>enable</code>改為true</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Show Views / Visitors of the website / page with busuanzi.</span></span><br><span class="line"><span class="comment"># Get more information on http://ibruce.info/2015/04/04/busuanzi</span></span><br><span class="line">busuanzi_count:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">false</span></span><br><span class="line">  total_visitors: <span class="literal">true</span></span><br><span class="line">  total_visitors_icon: fa fa-user</span><br><span class="line">  total_views: <span class="literal">true</span></span><br><span class="line">  total_views_icon: fa fa-eye</span><br><span class="line">  post_views: <span class="literal">true</span></span><br><span class="line">  post_views_icon: fa fa-eye</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p>接著打開<code>themes\next\layout\_third-party\analytics\busuanzi-counter.swig</code>，確認src後面接的網址為<a href="https://busuanzi.ibruce.info/">不蒜子</a>官方提供的最新網址。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;%- <span class="keyword">if</span> theme.busuanzi_count.enable %&#125;</span><br><span class="line">&lt;div class=<span class="string">&quot;busuanzi-count&quot;</span>&gt;</span><br><span class="line">  &lt;script&#123;&#123; pjax &#125;&#125; async src=<span class="string">&quot;https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">  &#123;%- <span class="keyword">if</span> theme.busuanzi_count.total_visitors %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>到這裡打開<code>hexo server</code>應該就能看到網站底下出現統計人數跟觀看數量的圖標與數字了，在local端會看到異常大的統計數字這是正常的，部署到github page後就會顯示正常。</p>
+<br/>
+
+<h3 id="統計網站uv-pv"><a href="#統計網站uv-pv" class="headerlink" title="統計網站uv, pv"></a><strong>統計網站uv, pv</strong></h3><p>不蒜子計算計算晚站訪客數有兩種算法：</p>
+<ul>
+<li>uv: 單個用戶連續點擊n篇文章只紀錄一次訪客數。</li>
+<li>pv: 單個用戶連續點擊n篇文章紀錄n次訪客數。</li>
+</ul>
+<p>若要在統計數字與圖標間加上文字則可以在同個文件中找到下列程式碼，改動如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;%- <span class="keyword">if</span> theme.busuanzi_count.total_visitors %&#125;</span><br><span class="line">    &lt;span class=<span class="string">&quot;post-meta-item&quot;</span> id=<span class="string">&quot;busuanzi_container_site_uv&quot;</span> style=<span class="string">&quot;display: none;&quot;</span>&gt;</span><br><span class="line">      &lt;span class=<span class="string">&quot;post-meta-item-icon&quot;</span>&gt;</span><br><span class="line">        &lt;i class=<span class="string">&quot;&#123;&#123; theme.busuanzi_count.total_visitors_icon &#125;&#125;&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">      &lt;/span&gt;</span><br><span class="line">      &lt;span class=<span class="string">&quot;site-uv&quot;</span> title=<span class="string">&quot;&#123;&#123; __(&#x27;footer.total_visitors&#x27;) &#125;&#125;&quot;</span>&gt;</span><br><span class="line">				總訪客：&lt;span id=<span class="string">&quot;busuanzi_value_site_uv&quot;</span>&gt;&lt;/span&gt;人</span><br><span class="line">      &lt;/span&gt;</span><br><span class="line">    &lt;/span&gt;</span><br><span class="line">  &#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;%- <span class="keyword">if</span> theme.busuanzi_count.total_views %&#125;</span><br><span class="line">    &lt;span class=<span class="string">&quot;post-meta-item&quot;</span> id=<span class="string">&quot;busuanzi_container_site_pv&quot;</span> style=<span class="string">&quot;display: none;&quot;</span>&gt;</span><br><span class="line">      &lt;span class=<span class="string">&quot;post-meta-item-icon&quot;</span>&gt;</span><br><span class="line">        &lt;i class=<span class="string">&quot;&#123;&#123; theme.busuanzi_count.total_views_icon &#125;&#125;&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">      &lt;/span&gt;</span><br><span class="line">      &lt;span class=<span class="string">&quot;site-pv&quot;</span> title=<span class="string">&quot;&#123;&#123; __(&#x27;footer.total_views&#x27;) &#125;&#125;&quot;</span>&gt;</span><br><span class="line">        總閱讀量：&lt;span id=<span class="string">&quot;busuanzi_value_site_pv&quot;</span>&gt;&lt;/span&gt;次</span><br><span class="line">      &lt;/span&gt;</span><br><span class="line">    &lt;/span&gt;</span><br><span class="line">  &#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/Q8gI2fg.png" alt="Imgur"></p>
+<br/>
+
+<h3 id="統計單頁pv"><a href="#統計單頁pv" class="headerlink" title="統計單頁pv"></a><strong>統計單頁pv</strong></h3><p>打開<code>themes/next/layout/_macro/post.swig</code>找到下列程式碼，這邊next主題已經幫我們設定好了只要確定有以下程式碼就沒問題了</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;%- <span class="keyword">if</span> not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.post_views %&#125;</span><br><span class="line">            &lt;span class=<span class="string">&quot;post-meta-item&quot;</span> title=<span class="string">&quot;&#123;&#123; __(&#x27;post.views&#x27;) &#125;&#125;&quot;</span> id=<span class="string">&quot;busuanzi_container_page_pv&quot;</span> style=<span class="string">&quot;display: none;&quot;</span>&gt;</span><br><span class="line">              &lt;span class=<span class="string">&quot;post-meta-item-icon&quot;</span>&gt;</span><br><span class="line">                &lt;i class=<span class="string">&quot;&#123;&#123; theme.busuanzi_count.post_views_icon &#125;&#125;&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">              &lt;/span&gt;</span><br><span class="line">              &lt;span class=<span class="string">&quot;post-meta-item-text&quot;</span>&gt;&#123;&#123; __(<span class="string">&#x27;post.views&#x27;</span>) + __(<span class="string">&#x27;symbol.colon&#x27;</span>) &#125;&#125;&lt;/span&gt;</span><br><span class="line">              &lt;span id=<span class="string">&quot;busuanzi_value_page_pv&quot;</span>&gt;&lt;/span&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">          &#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/RVIPnaq.png" alt="Imgur"></p>
+<br/>
+
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a><strong>參考資料</strong></h2><ul>
+<li><a href="https://www.lcd1024.xyz/2020/05/31/busuanzi/">Hexo Next主题不蒜子统计的使用。</a></li>
+<li><a href="https://blog.mikelyou.com/2020/08/18/busuanzi-visitor-counts-and-sitetime/">使用不蒜子添加访客统计</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(9) - 客製化NexT主題：網站運行時間與文章長度和閱讀時間與搜尋功能</title>
+    <url>/Bosh-Hexo-Blog/hexo-from-scratch-9/</url>
+    <content><![CDATA[<h2 id="網站運行時間"><a href="#網站運行時間" class="headerlink" title="網站運行時間"></a><strong>網站運行時間</strong></h2><p>在 <code>/themes/next/layout/_custom</code> 文件夾下新建一個名稱爲 <code>site-runtime.swig</code> 的文件，並添加內容如下：</p>
+<span id="more"></span>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;site-runtime&quot;</span>&gt;</span><br><span class="line">  &lt;span class=<span class="string">&quot;post-meta-item-icon&quot;</span>&gt;</span><br><span class="line">    &lt;i class=<span class="string">&quot;fa fa-clock-o&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">  &lt;/span&gt;</span><br><span class="line">  &lt;span id=<span class="string">&quot;runtime&quot;</span>&gt;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script language=<span class="string">&quot;javascript&quot;</span>&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="function"><span class="title">isPC</span></span>() &#123;</span><br><span class="line">    var userAgentInfo = navigator.userAgent;</span><br><span class="line">    var agents = [<span class="string">&quot;Android&quot;</span>, <span class="string">&quot;iPhone&quot;</span>, <span class="string">&quot;SymbianOS&quot;</span>, <span class="string">&quot;Windows Phone&quot;</span>, <span class="string">&quot;iPad&quot;</span>, <span class="string">&quot;iPod&quot;</span>];</span><br><span class="line">    <span class="keyword">for</span> (var i = 0; i &lt; agents.length; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (userAgentInfo.indexOf(agents[i]) &gt; 0) &#123;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">function</span> siteTime(openOnPC, start) &#123;</span><br><span class="line">    window.setTimeout(<span class="string">&quot;siteTime(openOnPC, start)&quot;</span>, 1000);</span><br><span class="line">    var seconds = 1000;</span><br><span class="line">    var minutes = seconds * 60;</span><br><span class="line">    var hours = minutes * 60;</span><br><span class="line">    var days = hours * 24;</span><br><span class="line">    var years = days * 365;</span><br><span class="line"></span><br><span class="line">    &#123;%- <span class="keyword">if</span> theme.runtime.start %&#125;</span><br><span class="line">      start = new Date(<span class="string">&quot;&#123;&#123; theme.runtime.start &#125;&#125;&quot;</span>);</span><br><span class="line">    &#123;%- endif %&#125;</span><br><span class="line">    var now = new Date();</span><br><span class="line">    var year = now.getFullYear();</span><br><span class="line">    var month = now.getMonth() + 1;</span><br><span class="line">    var date = now.getDate();</span><br><span class="line">    var hour = now.getHours();</span><br><span class="line">    var minute = now.getMinutes();</span><br><span class="line">    var second = now.getSeconds();</span><br><span class="line">    var diff = now - start;</span><br><span class="line"></span><br><span class="line">    var diffYears = Math.floor(diff / years);</span><br><span class="line">    var diffDays = Math.floor((diff / days) - diffYears * 365);</span><br><span class="line">    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);</span><br><span class="line">    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);</span><br><span class="line">    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (openOnPC) &#123;</span><br><span class="line">      document.getElementById(<span class="string">&quot;runtime&quot;</span>).innerHTML = <span class="string">&quot;Running: &quot;</span> + diffYears + <span class="string">&quot; years &quot;</span> + diffDays + <span class="string">&quot; days &quot;</span> + diffHours + <span class="string">&quot; hours &quot;</span> + diffMinutes + <span class="string">&quot; mins &quot;</span> + diffSeconds + <span class="string">&quot; secs&quot;</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      document.getElementById(<span class="string">&quot;runtime&quot;</span>).innerHTML = <span class="string">&quot;Running: &quot;</span> + diffYears + <span class="string">&quot;y &quot;</span> + diffDays + <span class="string">&quot;d &quot;</span> + diffHours + <span class="string">&quot;h &quot;</span> + diffMinutes + <span class="string">&quot;m &quot;</span> + diffSeconds + <span class="string">&quot;s&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment"># 這邊可以決定要在頁面上顯示的時間精度，我覺得顯示到小時比較順眼，因此我從+ diffHours + &quot; hours &quot; 後面分鐘與秒鐘的部分就刪掉了（未來要加回來再看這篇文就好ＸＤ這就是寫文章的好處）</span></span><br><span class="line"></span><br><span class="line">  var showOnMobile = &#123;&#123; theme.runtime.mobile &#125;&#125;;</span><br><span class="line">  var openOnPC = isPC();</span><br><span class="line">  var start = new Date();</span><br><span class="line">  siteTime(openOnPC, start);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!openOnPC &amp;&amp; !showOnMobile) &#123;</span><br><span class="line">    document.getElementById(<span class="string">&#x27;site-runtime&#x27;</span>).style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p>編輯文件 <code>/themes/next/layout/_partials/footer.swig</code>，在文件底部添加這幾行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;%- <span class="keyword">if</span> theme.runtime.enable %&#125;</span><br><span class="line">  &#123;% include <span class="string">&#x27;runtime.swig&#x27;</span> %&#125;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p>更改 Next 主题的配置文件 <code>themes/next/_config.yml</code>，在文件底部添加以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site Runtime</span></span><br><span class="line">runtime:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># The time of the site started running. If not defined, current time of local time zone will be used.</span></span><br><span class="line">  <span class="comment"># You can specify the time zone by adding the `+HOURS` or `-HOURS` format time zone.</span></span><br><span class="line">  <span class="comment"># If not specify the time zone, it will use `+0000` as default.</span></span><br><span class="line">  <span class="comment"># ex: &quot;2015-06-08 07:24:13 +0800&quot;, `+0800` specify that it is the time in the East Eight Time Zone.</span></span><br><span class="line">  start: 2022-01-20 18:00:00 +0800  <span class="comment"># 部落格開始運行的時間</span></span><br><span class="line">  <span class="comment"># Whether to show on the mobile side</span></span><br><span class="line">  mobile: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p>完工後就會顯示在網站最下面囉。</p>
+<p><img src="https://i.imgur.com/UCZM1ZB.png" alt="Imgur"></p>
+<br/>
+
+<h2 id="添加文章字數與所需閱讀時間"><a href="#添加文章字數與所需閱讀時間" class="headerlink" title="添加文章字數與所需閱讀時間"></a><strong>添加文章字數與所需閱讀時間</strong></h2><p>要實現自動產生文章字數與所需閱讀時間這個功能我們要使用一個plug-in：<code>hexo-symbols-count-time</code>，先到Blog專案目錄npm安裝</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p>打開<code>theme/next/_config.yml</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Post wordcount display settings</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-symbols-count-time</span></span><br><span class="line">symbols_count_time:</span><br><span class="line">  separated_meta: <span class="literal">true</span> <span class="comment"># 是否獨立一行</span></span><br><span class="line">  item_text_post: <span class="literal">true</span> <span class="comment"># page</span></span><br><span class="line">  item_text_total: <span class="literal">true</span> <span class="comment"># footer</span></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p>打開hexo根目錄的<code>_config.yml</code>，加入以下內容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># count</span></span><br><span class="line">symbols_count_time:</span><br><span class="line">  symbols: <span class="literal">true</span> <span class="comment"># page字數顯示</span></span><br><span class="line">  time: <span class="literal">true</span> <span class="comment"># page時間顯示</span></span><br><span class="line">  total_symbols: <span class="literal">true</span> <span class="comment"># footer字數統計顯示</span></span><br><span class="line">  total_time: <span class="literal">true</span> <span class="comment"># footer閱讀時間顯示</span></span><br><span class="line">  exclude_codeblock: <span class="literal">false</span> <span class="comment"># 字數統計是否排除程式碼</span></span><br><span class="line">  awl: 4  <span class="comment"># 平均文字長度</span></span><br><span class="line">  wpm: 275  <span class="comment"># 一分鐘閱讀字數</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>在部署或開啟local端server前若沒有先clean再生成，所需閱讀時間很可能會出現NaN的字樣</code></p>
+</blockquote>
+<br/>
+
+<p>完成後大概會長這樣。</p>
+<p><img src="https://i.imgur.com/O6cjq0Y.png" alt="Imgur"></p>
+<br/>
+
+<h2 id="搜尋功能"><a href="#搜尋功能" class="headerlink" title="搜尋功能"></a><strong>搜尋功能</strong></h2><p>要實現在網站內搜尋這個功能我們要使用另外一個plug-in：<code>hexo-generator-searchdb</code>，先到Blog專案目錄npm安裝。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p>接著到<code>themes/_config.yml</code>將enable改為true就可以了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Local Search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-generator-searchdb</span></span><br><span class="line">local_search:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If auto, trigger search by changing input.</span></span><br><span class="line">  <span class="comment"># If manual, trigger search by pressing enter key or search button.</span></span><br><span class="line">  trigger: auto</span><br><span class="line">  <span class="comment"># Show top n results per article, show all results by setting to -1</span></span><br><span class="line">  top_n_per_article: 1</span><br><span class="line">  <span class="comment"># Unescape html strings to the readable one.</span></span><br><span class="line">  unescape: <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Preload the search data when the page loads.</span></span><br><span class="line">  preload: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<p>完成後就會看到邊欄上多了一個搜尋可選，點擊後就可以搜尋站內文章資訊了。</p>
+<p><img src="https://i.imgur.com/zH6EPCO.png" alt="Imgur"></p>
+<br/>
+
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://www.techgrow.cn/posts/755ff30d.html">Hexo Next 主题详细配置之一</a></li>
+<li><a href="https://ithelp.ithome.com.tw/users/20139218/ironman/3910">30 天利用 Hexo 打造技術部落格系列</a></li>
+<li><a href="https://ithelp.ithome.com.tw/articles/10248214">(20) 試著學 Hexo - NexT 主題篇 - 可以安裝的套件</a></li>
 </ul>
 ]]></content>
       <categories>
