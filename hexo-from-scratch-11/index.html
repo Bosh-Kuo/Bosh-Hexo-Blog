@@ -40,7 +40,7 @@
 <meta property="og:image" content="https://i.imgur.com/Ie8LCNh.png">
 <meta property="og:image" content="https://i.imgur.com/22cNiCK.png">
 <meta property="article:published_time" content="2022-01-24T06:14:19.000Z">
-<meta property="article:modified_time" content="2022-01-24T06:20:11.814Z">
+<meta property="article:modified_time" content="2022-01-31T14:15:51.296Z">
 <meta property="article:author" content="Bosh-Kuo">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
@@ -237,10 +237,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2022-01-24 14:14:19 / 修改時間：14:20:11" itemprop="dateCreated datePublished" datetime="2022-01-24T14:14:19+08:00">2022-01-24</time>
+              <time title="創建時間：2022-01-24 14:14:19" itemprop="dateCreated datePublished" datetime="2022-01-24T14:14:19+08:00">2022-01-24</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-01-31 22:15:51" itemprop="dateModified" datetime="2022-01-31T22:15:51+08:00">2022-01-31</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -284,10 +290,10 @@
 
       
         <h2 id="備份hexo設定與文章"><a href="#備份hexo設定與文章" class="headerlink" title="備份hexo設定與文章"></a><strong>備份hexo設定與文章</strong></h2><p>到目前為止我們做了一系列的操作客製化hexo部落格，但有沒有想過，有沒有可能真的這麼衰，好不容易完成了hexo的一系列設定，照著各種教學文章安裝了一堆套件，在看起來莫名其妙的檔案中加了那麼幾句我自己也看不懂的程式碼後，終於開開心心的發了幾篇文章後結果電腦莫名其妙掛了資料全不見了？如果沒有備份習慣，當發生這種事情的時候還真的只能乾瞪著眼看著那曾經美好的Blog，偷流幾滴淚把repo從github上刪掉後再重來一次。(可能有其他補救辦法啦但我的話會乾脆再重頭來XD)</p>
-<p>因此當決定自用hexo搭建部落格時備份就成為了必學的功課，我們可以土法煉鋼每次改完設定後都把專案檔copy到一顆硬碟或雲端空間，但這麼做久了其實滿麻煩，而且還需要花錢購買備份空間，而且也得承擔備份空間會不會哪天也一起壞掉的風險，這時候<code>Git &amp; Github</code>就顯的非常高效好用了，我們可以在自己的電腦上的專案資料夾新增一個git專案，接下來再連接自己的github repo，就可以在每次更新完hexo專案檔案、更換主題、發新文章後就把當前的專案文件push到github上，這樣就可以保證就算即使自己的電腦壞掉檔案損壞我的Hexo設定檔與文章都還在自己的Github上(ＧGithub掛掉機率應該比自己的硬碟掛掉機率小很多吧)。甚至哪天我突然想換別台電腦來寫文章，我也可以直接clone我的專案repo到另一台電腦，再用<code>npm install</code>把套件裝回來就可以直接開始寫文章了。</p>
-<p>所以這篇文章就是要示範如何將hexo專案push到github作為遠端備份。</p>
 <span id="more"></span>
 
+<p>因此當決定自用hexo搭建部落格時，備份就成為了必學的功課，我們可以土法煉鋼每次改完設定後都把專案檔copy到一顆硬碟或雲端空間，但這麼做久了其實滿麻煩，而且還需要花錢購買備份空間，而且也得承擔備份空間會不會哪天也一起壞掉的風險，這時候<code>Git &amp; Github</code>就顯的非常高效好用了，我們可以在自己的電腦上的專案資料夾新增一個git專案，接下來再連接自己的github repo，就可以在每次更新完hexo專案檔案、更換主題、發新文章後就把當前的專案文件push到github上，這樣就可以保證就算即使自己的電腦壞掉檔案損壞我的Hexo設定檔與文章都還在自己的Github上(ＧGithub掛掉機率應該比自己的硬碟掛掉機率小很多吧)。甚至哪天我突然想換別台電腦來寫文章，我也可以直接clone我的專案repo到另一台電腦，再用<code>npm install</code>把套件裝回來就可以直接開始寫文章了。</p>
+<p>所以這篇文章就是要示範如何將hexo專案push到github作為遠端備份。</p>
 <br/>
 
 <h3 id="建立本地端Git儲存庫"><a href="#建立本地端Git儲存庫" class="headerlink" title="建立本地端Git儲存庫"></a><strong>建立本地端Git儲存庫</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> Blog  <span class="comment"># 我的hexo專案根目錄</span></span><br><span class="line"></span><br><span class="line">git init  <span class="comment"># 建立本地端Git儲存庫</span></span><br><span class="line"></span><br><span class="line">git status  <span class="comment"># 看一下檔案追蹤狀況 </span></span><br></pre></td></tr></table></figure>
@@ -358,7 +364,10 @@
     <a href="/Bosh-Hexo-Blog/hexo-from-scratch-10/" rel="prev" title="從零開始使用Hexo + Github Page搭建個人技術筆記網站(10) - 客製化NexT主題：美化NexT背景主題">
       <i class="fa fa-chevron-left"></i> 從零開始使用Hexo + Github Page搭建個人技術筆記網站(10) - 客製化NexT主題：美化NexT背景主題
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/Bosh-Hexo-Blog/hexo-from-scratch-12/" rel="next" title="從零開始使用Hexo + Github Page搭建個人技術筆記網站(12) - 第一階段結尾篇:從管理到發布，如何規劃與管理一篇文章？">
+      從零開始使用Hexo + Github Page搭建個人技術筆記網站(12) - 第一階段結尾篇:從管理到發布，如何規劃與管理一篇文章？ <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -433,7 +442,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Bosh-Hexo-Blog/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -501,13 +510,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">總字數：</span>
-    <span title="總字數">23k</span>
+    <span title="總字數">26k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">所需總閱讀時間 &asymp;</span>
-    <span title="所需總閱讀時間">21 分鐘</span>
+    <span title="所需總閱讀時間">23 分鐘</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
   </div>
