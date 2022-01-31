@@ -77,7 +77,7 @@ npm install hexo-deployer-git --save
 接著清理之前建立的靜態檔案 → 建立靜態檔案 → 部署至 Github Pages
 
 ```bash
-hexo clear
+hexo clean
 hexo generate
 hexo deploy
 ```
