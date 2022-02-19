@@ -113,10 +113,17 @@ symbols_count_time:
   wpm: 275  # 一分鐘閱讀字數
   suffix: "分鐘"
 
+# mermaid chart
+mermaid: ## mermaid url https://github.com/knsv/mermaid
+  enable: true  # default true
+  version: "7.1.2 " # default v7.1.2
+  options:  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
+    #startOnload: true  // default true
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
   repo: https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git
   branch: gh-pages  # repo分支
-  message: "發布從零開始使用Hexo + Github Page搭建個人技術筆記網站(12)"  # Commit 訊息
+  message: "發布C++ Programming Design - Variables and Arrays"  # Commit 訊息
