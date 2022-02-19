@@ -29,30 +29,34 @@
 
   gtag('config', 'G-THMGTWZ6T9');
 </script>
-  <meta name="description" content="轉職路上的土木系碩班生">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bosh的技術部落格">
-<meta property="og:url" content="https://bosh-kuo.github.io/Bosh-Hexo-Blog/page/3/">
+  <meta name="description" content="CH1 IntroductionC Program 執行階段 (補充)graph LR;     id1(Edit) --&gt; id2(Preprocess);     id2 --&gt; id3(Compile);     id3 --&gt; id4(Link);     id4 --&gt; id5(Load);     id5 --&gt; id6(Execute);">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ Programming Design - Introduction">
+<meta property="og:url" content="https://bosh-kuo.github.io/Bosh-Hexo-Blog/Cplusplus-Programming-Design-Introduction/">
 <meta property="og:site_name" content="Bosh的技術部落格">
-<meta property="og:description" content="轉職路上的土木系碩班生">
+<meta property="og:description" content="CH1 IntroductionC Program 執行階段 (補充)graph LR;     id1(Edit) --&gt; id2(Preprocess);     id2 --&gt; id3(Compile);     id3 --&gt; id4(Link);     id4 --&gt; id5(Load);     id5 --&gt; id6(Execute);">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-02-19T16:06:28.000Z">
+<meta property="article:modified_time" content="2022-02-19T17:22:38.955Z">
 <meta property="article:author" content="Bosh-Kuo">
+<meta property="article:tag" content="Programming">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/page/3/">
+<link rel="canonical" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/Cplusplus-Programming-Design-Introduction/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>Bosh的技術部落格</title>
+  <title>C++ Programming Design - Introduction | Bosh的技術部落格</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-THMGTWZ6T9"></script>
     <script>
@@ -201,13 +205,14 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-5/">
+    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/Cplusplus-Programming-Design-Introduction/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Bosh-Hexo-Blog/images/Bosh2.jpg">
@@ -219,10 +224,9 @@
       <meta itemprop="name" content="Bosh的技術部落格">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Bosh-Hexo-Blog/hexo-from-scratch-5/" class="post-title-link" itemprop="url">從零開始使用Hexo + Github Page搭建個人技術筆記網站(5) - 標籤、分類與關於頁面</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          C++ Programming Design - Introduction
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -232,7 +236,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2022-01-24 11:29:55 / 修改時間：11:55:43" itemprop="dateCreated datePublished" datetime="2022-01-24T11:29:55+08:00">2022-01-24</time>
+              <time title="創建時間：2022-02-20 00:06:28 / 修改時間：01:22:38" itemprop="dateCreated datePublished" datetime="2022-02-20T00:06:28+08:00">2022-02-20</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -240,17 +244,28 @@
               </span>
               <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Bosh-Hexo-Blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                  <a href="/Bosh-Hexo-Blog/categories/Programming-Language/" itemprop="url" rel="index"><span itemprop="name">Programming Language</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Bosh-Hexo-Blog/categories/Programming-Language/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
                 </span>
             </span>
 
-          <br>
+          
+            <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
             <span class="post-meta-item" title="文章字數">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">文章字數：</span>
-              <span>1k</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="所需閱讀時間">
               <span class="post-meta-item-icon">
@@ -269,410 +284,83 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="幫部落格添加標籤、分類與關於頁面！"><a href="#幫部落格添加標籤、分類與關於頁面！" class="headerlink" title="幫部落格添加標籤、分類與關於頁面！"></a><strong>幫部落格添加標籤、分類與關於頁面！</strong></h2><h3 id="建立新自訂頁面"><a href="#建立新自訂頁面" class="headerlink" title="建立新自訂頁面"></a><strong>建立新自訂頁面</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;頁面名稱&quot;</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Bosh-Hexo-Blog/hexo-from-scratch-5/" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
+        <h1 id="CH1-Introduction"><a href="#CH1-Introduction" class="headerlink" title="CH1 Introduction"></a><strong>CH1 Introduction</strong></h1><h2 id="C-Program-執行階段-補充"><a href="#C-Program-執行階段-補充" class="headerlink" title="C Program 執行階段 (補充)"></a><strong>C Program 執行階段 (補充)</strong></h2><pre class="mermaid">graph LR;
+    id1(Edit) --> id2(Preprocess);
+    id2 --> id3(Compile);
+    id3 --> id4(Link);
+    id4 --> id5(Load);
+    id5 --> id6(Execute);</pre>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+<span id="more"></span>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Bosh-Hexo-Blog/images/Bosh2.jpg">
-      <meta itemprop="name" content="Bosh-Kuo">
-      <meta itemprop="description" content="轉職路上的土木系碩班生">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bosh的技術部落格">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Bosh-Hexo-Blog/hexo-from-scratch-4/" class="post-title-link" itemprop="url">從零開始使用Hexo + Github Page搭建個人技術筆記網站(4) - 寫下第一篇部落格文章</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
-
-              <time title="創建時間：2022-01-23 20:07:29 / 修改時間：20:19:50" itemprop="dateCreated datePublished" datetime="2022-01-23T20:07:29+08:00">2022-01-23</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Bosh-Hexo-Blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>1.3k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="來寫第一篇部落格文章吧！"><a href="#來寫第一篇部落格文章吧！" class="headerlink" title="來寫第一篇部落格文章吧！"></a><strong>來寫第一篇部落格文章吧！</strong></h2><p>接下來使用hexo指令來創建這個部落格的第一篇文章!</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Bosh-Hexo-Blog/hexo-from-scratch-4/" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Bosh-Hexo-Blog/images/Bosh2.jpg">
-      <meta itemprop="name" content="Bosh-Kuo">
-      <meta itemprop="description" content="轉職路上的土木系碩班生">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bosh的技術部落格">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Bosh-Hexo-Blog/hexo-from-scratch-3/" class="post-title-link" itemprop="url">從零開始使用Hexo + Github Page搭建個人技術筆記網站(3) - NexT佈景主題基本設置</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
-
-              <time title="創建時間：2022-01-23 19:54:23 / 修改時間：20:01:58" itemprop="dateCreated datePublished" datetime="2022-01-23T19:54:23+08:00">2022-01-23</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Bosh-Hexo-Blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>2.8k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>3 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="客製化自己的NexT佈景主題"><a href="#客製化自己的NexT佈景主題" class="headerlink" title="客製化自己的NexT佈景主題"></a><strong>客製化自己的NexT佈景主題</strong></h2><p>因為接下來要調整的設定參數是針對NexT佈景主題而不是整個網站，我們要開啟的檔案是在 Hexo 根目錄下的 <code>thems/next/_config.yml</code> 這個檔案，而不是根目錄下的<code>_config.yml</code>。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Bosh-Hexo-Blog/hexo-from-scratch-3/" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Bosh-Hexo-Blog/images/Bosh2.jpg">
-      <meta itemprop="name" content="Bosh-Kuo">
-      <meta itemprop="description" content="轉職路上的土木系碩班生">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bosh的技術部落格">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Bosh-Hexo-Blog/hexo-from-scratch-2/" class="post-title-link" itemprop="url">從零開始使用Hexo + Github Page搭建個人技術筆記網站(2) - Hexo基本設定</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2022-01-23 19:49:48" itemprop="dateCreated datePublished" datetime="2022-01-23T19:49:48+08:00">2022-01-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-02-03 11:18:57" itemprop="dateModified" datetime="2022-02-03T11:18:57+08:00">2022-02-03</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Bosh-Hexo-Blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>1.6k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Hexo網站基本設定介紹"><a href="#Hexo網站基本設定介紹" class="headerlink" title="Hexo網站基本設定介紹"></a><strong>Hexo網站基本設定介紹</strong></h2><p>用hexo架設網站非常的方便，hexo把所有網站的基本設定參數都放在<code>_config.yml</code>裡面，我們可以根據自己對網站的需求調整這些晚站配置參數。配置參數很多這裡就不一一列舉，只記錄一些重要需要更改的參數。詳細也可以參考<a target="_blank" rel="noopener" href="https://hexo.io/zh-tw/docs/configuration">官方配置文件</a></p>
-<blockquote>
-<p><code>任何有關設定檔案的設定值，一定要在冒號後加上一個空格再接設定值</code></p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Bosh-Hexo-Blog/hexo-from-scratch-2/" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Bosh-Hexo-Blog/images/Bosh2.jpg">
-      <meta itemprop="name" content="Bosh-Kuo">
-      <meta itemprop="description" content="轉職路上的土木系碩班生">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bosh的技術部落格">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Bosh-Hexo-Blog/hexo-from-scratch-1/" class="post-title-link" itemprop="url">從零開始使用Hexo + Github Page搭建個人技術筆記網站(1) - 建立hexo部落格模板</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2022-01-20 16:58:52" itemprop="dateCreated datePublished" datetime="2022-01-20T16:58:52+08:00">2022-01-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-01-23 20:04:30" itemprop="dateModified" datetime="2022-01-23T20:04:30+08:00">2022-01-23</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Bosh-Hexo-Blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>1.7k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>2 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h2><p>在開始搭建hexo部落格前需要先安裝以下軟體，可以參考<a target="_blank" rel="noopener" href="https://hexo.io/zh-tw/docs/">官方文件</a>依照自己的作業系統安裝。</p>
 <ul>
-<li>Git</li>
-<li>Node.js</li>
-<li>VScode</li>
+<li><em>1. Edit</em>: 編輯程式碼，即Coding</li>
+<li><em>2. Preprocess</em>: C preprocessor在編譯前會先執行一些特殊指令一些特殊指令，包含包裹其他檔案已進行文本交換。<br>ex: <code>#include &lt;stdio.h&gt;</code></li>
+<li><em>3. Compile</em>: 編譯器將C語言程式碼編譯成機器語言程式碼。</li>
+<li><em>4. Link</em>: 程式碼通常參考在其他地方的function，如standard libaries, etc. <code>Compiler</code> 編譯的objet code包含許多“missing part”，linker會連接objet code與missing functions，生成<code>executable image</code>。在Linux中compiler+link指令為<code>gcc</code>。</li>
+<li><em>5. Loading</em>: <code>loader</code>將<code>executable image</code>從磁碟轉移到記憶體上。</li>
+<li><em>6. Execution</em>: 最後電腦在CPU控制之下運行程式。</li>
 </ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Bosh-Hexo-Blog/hexo-from-scratch-1/" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+<br>
+
+<h2 id="C-Program-執行階段"><a href="#C-Program-執行階段" class="headerlink" title="C++ Program 執行階段"></a><strong>C++ Program 執行階段</strong></h2><pre class="mermaid">graph LR;
+    id1(Preprpcessor) --> id2(namespace) 
+    id2 --> id3(main faunction) 
+    id3 --> id4(statemaents)</pre>
+
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span>  </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//statement</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li><em>preprocessor</em>: 開始於<code>#include</code>&lt;標頭檔&gt;（package)，在compiler編譯之前執行一些指令</li>
+<li><em>header file</em>: 標頭檔，記錄一些通用得變數與函數的定義<ul>
+<li><code>&lt;iostream&gt;</code>: 為一標頭檔header file，此為C++標準libary，cout,cin皆為iostream定義的變數</li>
+<li><code>#include &quot;路徑&quot;</code>：引進自己寫的函式</li>
+</ul>
+</li>
+<li><em>namespace</em>: 命名空間：裝變數、函數、物件名稱的空間，程式執行時compiler會搜尋所看到的名稱是否定義於程式中或者是std namespace中</li>
+</ul>
+<br>
+
+<h2 id="編譯與執行"><a href="#編譯與執行" class="headerlink" title="編譯與執行"></a><strong>編譯與執行</strong></h2><p>in terminal:<br>cd 檔案所放的目錄<br>(1) g++ 檔名.cpp (3-1).&#x2F;a.out<br>or<br>(2) g++ 檔名.cpp -o 檔名 （3-2).&#x2F;檔名</p>
+<blockquote>
+<p>本文章同步於我的<a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/tree/master/Lecture_Code/1.Introduction">github repo</a></p>
+</blockquote>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a><strong>Reference</strong></h2><p><a target="_blank" rel="noopener" href="http://www.im.ntu.edu.tw/~lckung/courses/public/PD/">IM 1003 Programming Design</a></p>
+
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+          <div class="post-tags">
+              <a href="/Bosh-Hexo-Blog/tags/Programming/" rel="tag"># Programming</a>
+              <a href="/Bosh-Hexo-Blog/tags/C/" rel="tag"># C++</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Bosh-Hexo-Blog/hexo-from-scratch-12/" rel="prev" title="從零開始使用Hexo + Github Page搭建個人技術筆記網站(12) - 第一階段結尾篇:從管理到發布，如何規劃與管理一篇文章？">
+      <i class="fa fa-chevron-left"></i> 從零開始使用Hexo + Github Page搭建個人技術筆記網站(12) - 第一階段結尾篇:從管理到發布，如何規劃與管理一篇文章？
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/Bosh-Hexo-Blog/Cplusplus-Programming-Desig-Selection-and-Repetition/" rel="next" title="C++ Programming Design - Selection and Repetition">
+      C++ Programming Design - Selection and Repetition <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
+    
   </article>
   
   
   
-
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/Bosh-Hexo-Blog/page/2/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/Bosh-Hexo-Blog/">1</a><a class="page-number" href="/Bosh-Hexo-Blog/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
 
 
 
@@ -724,6 +412,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CH1-Introduction"><span class="nav-number">1.</span> <span class="nav-text">CH1 Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-Program-%E5%9F%B7%E8%A1%8C%E9%9A%8E%E6%AE%B5-%E8%A3%9C%E5%85%85"><span class="nav-number">1.1.</span> <span class="nav-text">C Program 執行階段 (補充)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-Program-%E5%9F%B7%E8%A1%8C%E9%9A%8E%E6%AE%B5"><span class="nav-number">1.2.</span> <span class="nav-text">C++ Program 執行階段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B7%A8%E8%AD%AF%E8%88%87%E5%9F%B7%E8%A1%8C"><span class="nav-number">1.3.</span> <span class="nav-text">編譯與執行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.4.</span> <span class="nav-text">Reference</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
