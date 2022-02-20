@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Bosh-Hexo-Blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Bosh-Hexo-Blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Bosh-Hexo-Blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Bosh-Hexo-Blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/Bosh-Hexo-Blog/css/main.css">
+
+
+<link rel="stylesheet" href="/Bosh-Hexo-Blog/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"bosh-kuo.github.io","root":"/Bosh-Hexo-Blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-THMGTWZ6T9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-THMGTWZ6T9');
+</script>
+  <meta name="description" content="CH6 Algorithms and RecursionAlgorithms and complexityExample: listing all prime numbers Idea:  If any number j &lt; i can divide i, i is not a prime number. Algotithm: For each number j &lt; i, check">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ Programming Design - Algorithms and Recursion">
+<meta property="og:url" content="https://bosh-kuo.github.io/Bosh-Hexo-Blog/Cplusplus-Programming-Algorithms-and-Recursion/">
+<meta property="og:site_name" content="Bosh的技術部落格">
+<meta property="og:description" content="CH6 Algorithms and RecursionAlgorithms and complexityExample: listing all prime numbers Idea:  If any number j &lt; i can divide i, i is not a prime number. Algotithm: For each number j &lt; i, check">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-02-20T12:13:55.000Z">
+<meta property="article:modified_time" content="2022-02-20T12:20:05.604Z">
+<meta property="article:author" content="Bosh-Kuo">
+<meta property="article:tag" content="Programming">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="Recursion">
+<meta property="article:tag" content="Algorithms">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/Cplusplus-Programming-Algorithms-and-Recursion/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>C++ Programming Design - Algorithms and Recursion | Bosh的技術部落格</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-THMGTWZ6T9"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-THMGTWZ6T9');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Bosh-Hexo-Blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Bosh的技術部落格</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">歡迎來到我Blog! 我將會在這裡分享我的學習經驗、知識、生活，記錄不同人生階段的自己</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/Bosh-Hexo-Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/Bosh-Hexo-Blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/Bosh-Hexo-Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/Bosh-Hexo-Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/Bosh-Hexo-Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+  <a href="https://github.com/Bosh-Kuo" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/Cplusplus-Programming-Algorithms-and-Recursion/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Bosh-Hexo-Blog/images/Bosh2.jpg">
+      <meta itemprop="name" content="Bosh-Kuo">
+      <meta itemprop="description" content="轉職路上的土木系碩班生">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bosh的技術部落格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C++ Programming Design - Algorithms and Recursion
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2022-02-20 20:13:55 / 修改時間：20:20:05" itemprop="dateCreated datePublished" datetime="2022-02-20T20:13:55+08:00">2022-02-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Bosh-Hexo-Blog/categories/Programming-Language/" itemprop="url" rel="index"><span itemprop="name">Programming Language</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Bosh-Hexo-Blog/categories/Programming-Language/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>6.6k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>6 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="CH6-Algorithms-and-Recursion"><a href="#CH6-Algorithms-and-Recursion" class="headerlink" title="CH6 Algorithms and Recursion"></a><strong>CH6 Algorithms and Recursion</strong></h1><h2 id="Algorithms-and-complexity"><a href="#Algorithms-and-complexity" class="headerlink" title="Algorithms and complexity"></a><strong>Algorithms and complexity</strong></h2><h3 id="Example-listing-all-prime-numbers"><a href="#Example-listing-all-prime-numbers" class="headerlink" title="Example: listing all prime numbers"></a><strong>Example: listing all prime numbers</strong></h3><ul>
+<li>Idea:  If any number j &lt; i can divide i, i is not a prime number.</li>
+<li>Algotithm: For each number j &lt; i, check whether j divides i. If there is any<br>j that divides i, report no; otherwise, report yes.</li>
+</ul>
+<blockquote>
+<p><code>pseudocodes: 用程式結構來描述一系列的步驟，也就是把人話排列成程式碼的樣貌。忽略一切語言文法以及如何implement有關的議題。</code></p>
+</blockquote>
+<span id="more"></span>
+
+<p><strong>pseudocode:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Given an integer n:</span><br><span class="line">for i from 2 to n</span><br><span class="line">    assume that i is a prime number if(i % j == 0) &#123;</span><br><span class="line">    for j from 2 to i – 1</span><br><span class="line">        if j divides i</span><br><span class="line">            set i to be a composite number</span><br><span class="line">    if i is still considered as prime</span><br><span class="line">        print i</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>Implementation:</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="keyword">bool</span> isPrime = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">2</span>; j &lt; i; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(i % j == <span class="number">0</span>) &#123;</span><br><span class="line">            isPrime = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">if</span>(isPrime == <span class="literal">true</span>)</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>implementation 參考<a href="./6_1.cpp">6_1.cpp</a></p>
+<br>
+
+<h3 id="Improving-our-algorithm"><a href="#Improving-our-algorithm" class="headerlink" title="Improving our algorithm"></a><strong>Improving our algorithm</strong></h3><p><strong>original:</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> x)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(x % i == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>faster:</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> x)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i*i &lt; x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(x % i == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p> We improved the <code>algorithm</code>, not the <code>implementation</code>.</p>
+</blockquote>
+<br>
+
+<h3 id="Improving-our-algorithm-1"><a href="#Improving-our-algorithm-1" class="headerlink" title="Improving our algorithm"></a><strong>Improving our algorithm</strong></h3><p>We may use a bottom-up approach to eliminate composite numbers. </p>
+<p>The pseudocode:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Given a Boolean array A of length n</span><br><span class="line">Initialize all elements in A to be true // assuming prime for i from 2 to n</span><br><span class="line">    if A is true </span><br><span class="line">        print i </span><br><span class="line">        for j from 1 to n/i  // eliminating composite numbers</span><br><span class="line">            Set A[𝑖 × 𝑗] to fals</span><br></pre></td></tr></table></figure>
+
+<p>implementation 參考<a href="./6_2.cpp">6_2.cpp</a></p>
+<br/>
+
+<h3 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a><strong>Complexity</strong></h3><ul>
+<li><p><strong>Time complexity:</strong> the running<br>time of an algorithm.<br>(The number of basic operations is a better measurement)</p>
+</li>
+<li><p><strong>Space complexity:</strong>  the amount<br>of spaces used by an algorithm.</p>
+</li>
+</ul>
+<br/>
+
+<h2 id="Recursion"><a href="#Recursion" class="headerlink" title="Recursion"></a><strong>Recursion</strong></h2><h3 id="Recursive-functions"><a href="#Recursive-functions" class="headerlink" title="Recursive functions"></a><strong>Recursive functions</strong></h3><ul>
+<li>A function is recursive if it invokes itself (directly or indirectly). </li>
+<li>The process of using recursive functions is called recursion(遞迴).</li>
+</ul>
+<p>當某問題可以被切割成多個重複或相近的子問題，且這些子問題都可以用同一個function來解決時，就很適合用recursion。</p>
+<br/>
+
+<h3 id="Example-1-finding-the-maximum"><a href="#Example-1-finding-the-maximum" class="headerlink" title="Example 1: finding the maximum"></a><strong>Example 1: finding the maximum</strong></h3><ul>
+<li><p>Suppose that we want to find the maximum number in an array A[1..n] (which means A is of size n).</p>
+</li>
+<li><p>A strategy:  </p>
+<ul>
+<li>Subtask 1: First find the maximum of A[1..(n– 1)]. </li>
+<li>Subtask 2: Then compare that with A[n].</li>
+</ul>
+</li>
+</ul>
+<p>While subtask 2 is simple, subtask 1 is <strong>similar</strong> to the original task.</p>
+<ul>
+<li><p>First, I know I need to write a function whose header is:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">max</span><span class="params">(<span class="keyword">double</span> array[], <span class="keyword">int</span> len)</span></span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>If the function really works, subtask 1 can be completed by invoking</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> subMax = <span class="built_in">max</span>(array, len - <span class="number">1</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>implementation 參考<a href="./6_3.cpp">6_3.cpp</a></p>
+<br/>
+
+<h3 id="Example-2-computing-factorials"><a href="#Example-2-computing-factorials" class="headerlink" title="Example 2: computing factorials"></a><strong>Example 2: computing factorials</strong></h3><ul>
+<li>A subproblem: computing the factorial of n – 1.</li>
+<li>A strategy: First calculate the factorial of n – 1, then multiply it with n.</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">factorial</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="comment">// stopping condition</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>; </span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="comment">// recursive call</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">factorial</span>(n - <span class="number">1</span>) * n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<h3 id="Example-3-the-Fibonacci-sequence"><a href="#Example-3-the-Fibonacci-sequence" class="headerlink" title="Example 3: the Fibonacci sequence"></a><strong>Example 3: the Fibonacci sequence</strong></h3><ul>
+<li>The Fibonacci sequence is 1, 1, 2, 3, 5, 8, 13, 21, …. Each number is the<br>sum of the two proceeding numbers. </li>
+<li>The nth value can be found once we know the (n – 1)th and (n – 2)th values.</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>; </span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>; </span><br><span class="line">    <span class="keyword">else</span> <span class="comment">// two recursive calls</span></span><br><span class="line">        <span class="built_in"><span class="keyword">return</span></span> (<span class="built_in">fib</span>(n - <span class="number">1</span>) + <span class="built_in">fib</span>(n - <span class="number">2</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<h3 id="Complexity-issue-of-recursion"><a href="#Complexity-issue-of-recursion" class="headerlink" title="Complexity issue of recursion"></a><strong>Complexity issue of recursion</strong></h3><p><strong>recursion:</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(n == <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> <span class="comment">// two recursive calls</span></span><br><span class="line">    <span class="built_in"><span class="keyword">return</span></span> (<span class="built_in">fib</span>(n - <span class="number">1</span>) + <span class="built_in">fib</span>(n - <span class="number">2</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>repetitive:</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">fibRepetitive</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(n == <span class="number">1</span> || n == <span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">int</span> fib1 = <span class="number">1</span>, fib2 = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">int</span> fib3 = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++)</span><br><span class="line">  &#123;</span><br><span class="line">    fib3 = fib1 + fib2;</span><br><span class="line">    fib1 = fib2;</span><br><span class="line">    fib2 = fib3;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> fib3;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Technically, we say that:</p>
+<ul>
+<li>The repetitive way is a <code>polynomial-time</code> algorithm</li>
+<li>The recursive way is an <code>exponential-time</code> algorithm.</li>
+</ul>
+<br/>
+
+<h3 id="Power-of-recursion"><a href="#Power-of-recursion" class="headerlink" title="Power of recursion"></a><strong>Power of recursion</strong></h3><p>Though recursion is sometimes inefficient, typically implementation is easier. </p>
+<p>Let’s consider the classic example “Hanoi Tower”.<br>implementation 參考<a href="./6_4.cpp">6_4.cpp</a></p>
+<br/>
+
+<h2 id="Searching-and-sorting"><a href="#Searching-and-sorting" class="headerlink" title="Searching and sorting"></a><strong>Searching and sorting</strong></h2><h3 id="Binary-search"><a href="#Binary-search" class="headerlink" title="Binary search"></a><strong>Binary search</strong></h3><p>if the array is sorted:</p>
+<ul>
+<li>First, we compare p with the median m (e.g., A[(n + 1) &#x2F; 2] if n is odd).</li>
+<li>If p equals m, bingo!</li>
+<li>If p &lt; m, we know p must exist in the first half of A if it exists.</li>
+<li>If p &gt; m, we know p must exist in the second half of A if it exists</li>
+</ul>
+<p>pseudocode:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">binarySearch(a sorted array A, search in between from and to, search for p) </span><br><span class="line">if n = 1</span><br><span class="line">    return true if A_from= p; return false otherwise</span><br><span class="line">else</span><br><span class="line">    let median be floor((from + to) / 2)</span><br><span class="line">    if p = A_median</span><br><span class="line">        return true</span><br><span class="line">    else if p &lt; A_median</span><br><span class="line">        return binarySearch(A, from, median, p) </span><br><span class="line">    else</span><br><span class="line">        return binarySearch(A, median + 1, to, p)</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<h3 id="Linear-search-vs-binary-search"><a href="#Linear-search-vs-binary-search" class="headerlink" title="Linear search vs. binary search"></a><strong>Linear search vs. binary search</strong></h3><ul>
+<li><p>In binary search, the number of instructions to be executed is roughly<br>proportional to log n.</p>
+</li>
+<li><p>So binary search is much more efficient than linear search!</p>
+</li>
+</ul>
+<br/>
+
+<h3 id="Insertion-sort"><a href="#Insertion-sort" class="headerlink" title="Insertion sort"></a><strong>Insertion sort</strong></h3><ul>
+<li>The key is to maintain a sorted list.</li>
+<li>Then for each number in the unsorted list, insert it into the proper location<br>so that the sorted list remains sorted.</li>
+</ul>
+<p>pseudocode(Non-repetitive):</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">insertionSort(a non-repetitive array A, the array length n, an index cutoff &lt; n)</span><br><span class="line">// at any time, A_(1..cutoff) is sorted and A_(cutoff + 1..n) is unsorted</span><br><span class="line">if A_(cutoff + 1) &lt; A_(1..cutoff)</span><br><span class="line">    let p be 1 </span><br><span class="line">else</span><br><span class="line">    find p such that A_(p–1) &lt; A_(cutoff + 1) &lt; A_p</span><br><span class="line">insert A_(cutoff + 1) to A_p and  shift A_(p..cutoff) to A_(p + 1)..(cutoff + 1)</span><br><span class="line">    if cutoff + 1 &lt; n</span><br><span class="line">        insertionSort(A, n, cutoff + 1)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>We need to do n insertions.</li>
+<li>To insert the kth value, we search for a position and shift some elements.<ul>
+<li>A linear search: at most k comparisons. </li>
+<li>Shifting: at most k shifts.</li>
+</ul>
+</li>
+<li>Roughly we need 1 + 2 + … + n operations, which is proportional to n^2.</li>
+</ul>
+<br/>
+
+<h3 id="Merge-sort"><a href="#Merge-sort" class="headerlink" title="Merge sort"></a><strong>Merge sort</strong></h3><ul>
+<li>Insertion sort is simple and fast!</li>
+<li>A key observation is that “inserting” <code>another sorted list</code> of size k into a sorted<br>list can be faster than inserting k separate numbers one by one!</li>
+<li>Given an unsorted array, we will:<ul>
+<li>First split the array into two parts, the first half and second half.</li>
+<li>Then sort each subarray.</li>
+<li>Finally, merge these two subarrays.</li>
+</ul>
+</li>
+</ul>
+<p>pseudocode:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mergeSort(an array A, the array length n)</span><br><span class="line">    let median be floor((1 + n) / 2)</span><br><span class="line">    mergeSort(A_(1..median) , median) // now A_(1..median) is sorted</span><br><span class="line">    mergeSort(A_(median + 1)..n , n – median + 1) // now A_(median + 1)..n is sorted</span><br><span class="line">    merge A_(1..median) and A_(median + 1)..n  // how?</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Insertion sort: Roughly proportional to n^2.</li>
+<li>Merge sort: Roughly proportional to n log n.</li>
+</ul>
+<br>
+
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a><strong>Reference</strong></h2><p><a target="_blank" rel="noopener" href="http://www.im.ntu.edu.tw/~lckung/courses/public/PD/">IM 1003 Programming Design</a></p>
+<br>
+
+<blockquote>
+<p>本文章同步發表於我的<a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/tree/master/Lecture_Code/">github repo</a></p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/Bosh-Hexo-Blog/tags/Programming/" rel="tag"># Programming</a>
+              <a href="/Bosh-Hexo-Blog/tags/C/" rel="tag"># C++</a>
+              <a href="/Bosh-Hexo-Blog/tags/Recursion/" rel="tag"># Recursion</a>
+              <a href="/Bosh-Hexo-Blog/tags/Algorithms/" rel="tag"># Algorithms</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Bosh-Hexo-Blog/Cplusplus-Programming-Functions/" rel="prev" title="C++ Programming Design - Functions">
+      <i class="fa fa-chevron-left"></i> C++ Programming Design - Functions
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CH6-Algorithms-and-Recursion"><span class="nav-number">1.</span> <span class="nav-text">CH6 Algorithms and Recursion</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithms-and-complexity"><span class="nav-number">1.1.</span> <span class="nav-text">Algorithms and complexity</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-listing-all-prime-numbers"><span class="nav-number">1.1.1.</span> <span class="nav-text">Example: listing all prime numbers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Improving-our-algorithm"><span class="nav-number">1.1.2.</span> <span class="nav-text">Improving our algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Improving-our-algorithm-1"><span class="nav-number">1.1.3.</span> <span class="nav-text">Improving our algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Complexity"><span class="nav-number">1.1.4.</span> <span class="nav-text">Complexity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Recursion"><span class="nav-number">1.2.</span> <span class="nav-text">Recursion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Recursive-functions"><span class="nav-number">1.2.1.</span> <span class="nav-text">Recursive functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-1-finding-the-maximum"><span class="nav-number">1.2.2.</span> <span class="nav-text">Example 1: finding the maximum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-2-computing-factorials"><span class="nav-number">1.2.3.</span> <span class="nav-text">Example 2: computing factorials</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-3-the-Fibonacci-sequence"><span class="nav-number">1.2.4.</span> <span class="nav-text">Example 3: the Fibonacci sequence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Complexity-issue-of-recursion"><span class="nav-number">1.2.5.</span> <span class="nav-text">Complexity issue of recursion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Power-of-recursion"><span class="nav-number">1.2.6.</span> <span class="nav-text">Power of recursion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Searching-and-sorting"><span class="nav-number">1.3.</span> <span class="nav-text">Searching and sorting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Binary-search"><span class="nav-number">1.3.1.</span> <span class="nav-text">Binary search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linear-search-vs-binary-search"><span class="nav-number">1.3.2.</span> <span class="nav-text">Linear search vs. binary search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Insertion-sort"><span class="nav-number">1.3.3.</span> <span class="nav-text">Insertion sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Merge-sort"><span class="nav-number">1.3.4.</span> <span class="nav-text">Merge sort</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.4.</span> <span class="nav-text">Reference</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Bosh-Kuo"
+      src="/Bosh-Hexo-Blog/images/Bosh2.jpg">
+  <p class="site-author-name" itemprop="name">Bosh-Kuo</p>
+  <div class="site-description" itemprop="description">轉職路上的土木系碩班生</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/Bosh-Hexo-Blog/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/Bosh-Hexo-Blog/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/Bosh-Hexo-Blog/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Bosh-Kuo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Bosh-Kuo" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:evaktm1680@gmail.com" title="E-Mail → mailto:evaktm1680@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/a.zhi.731/" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;a.zhi.731&#x2F;" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCV5iS4O95pCO0humhYXnrwg" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCV5iS4O95pCO0humhYXnrwg" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+      
+        <script type="text/javascript" charset="utf-8" src="/Bosh-Hexo-Blog/js/tagcloud.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/Bosh-Hexo-Blog/js/tagcanvas.js"></script>
+        <div class="widget-wrap">
+          <h3 class="widget-title">Tag Cloud</h3>
+          <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="250" height="250" id="resCanvas" style="width:100%">
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Algorithms/" rel="tag">Algorithms</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Arrays/" rel="tag">Arrays</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/C/" rel="tag">C++</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Function/" rel="tag">Function</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Programming/" rel="tag">Programming</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Recursion/" rel="tag">Recursion</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+          </div>
+        </div>
+      
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/Bosh-Kuo'>Bosh</a></span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">總字數：</span>
+    <span title="總字數">41k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">所需總閱讀時間 &asymp;</span>
+    <span title="所需總閱讀時間">37 分鐘</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
+  </div>
+  <div id="site-runtime">
+  <span class="post-meta-item-icon">
+    <i class="fa fa-clock-o"></i>
+  </span>
+  <span id="runtime"></span>
+</div>
+
+<script language="javascript">
+  function isPC() {
+    var userAgentInfo = navigator.userAgent;
+    var agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+    for (var i = 0; i < agents.length; i++) {
+      if (userAgentInfo.indexOf(agents[i]) > 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function siteTime(openOnPC, start) {
+    window.setTimeout("siteTime(openOnPC, start)", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+      start = new Date("2022-01-20 17:00:00 +0800");
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var date = now.getDate();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    var diff = now - start;
+
+    var diffYears = Math.floor(diff / years);
+    var diffDays = Math.floor((diff / days) - diffYears * 365);
+    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+
+    if (openOnPC) {
+      document.getElementById("runtime").innerHTML = "Running: " + diffYears + " years " + diffDays + " days " + diffHours + " hours ";
+    } else {
+      document.getElementById("runtime").innerHTML = "Running: " + diffYears + "y " + diffDays + "d " + diffHours + "h ";
+    }
+  }
+
+  var showOnMobile = false;
+  var openOnPC = isPC();
+  var start = new Date();
+  siteTime(openOnPC, start);
+
+  if (!openOnPC && !showOnMobile) {
+    document.getElementById('site-runtime').style.display = 'none';
+  }
+</script>
+
+
+
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="訪客總數">
+        總訪客數：<span id="busuanzi_value_site_uv"></span>人
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="總瀏覽次數">
+        總閱讀量：<span id="busuanzi_value_site_pv"></span>次
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/Bosh-Hexo-Blog/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/Bosh-Hexo-Blog/lib/anime.min.js"></script>
+  <script src="/Bosh-Hexo-Blog/lib/velocity/velocity.min.js"></script>
+  <script src="/Bosh-Hexo-Blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/Bosh-Hexo-Blog/js/utils.js"></script>
+
+<script src="/Bosh-Hexo-Blog/js/motion.js"></script>
+
+
+<script src="/Bosh-Hexo-Blog/js/schemes/pisces.js"></script>
+
+
+<script src="/Bosh-Hexo-Blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/Bosh-Hexo-Blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+</body>
+</html>

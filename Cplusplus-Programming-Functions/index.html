@@ -29,17 +29,22 @@
 
   gtag('config', 'G-THMGTWZ6T9');
 </script>
-  <meta name="description" content="轉職路上的土木系碩班生">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bosh的技術部落格">
-<meta property="og:url" content="https://bosh-kuo.github.io/Bosh-Hexo-Blog/archives/2022/01/page/2/">
+  <meta name="description" content="CH5 FunctionsFounctionC++中function是由header與body組成，分別有system-defined functions, user-defined functions宣告的prototype:     return_type function_name(parameter_type parameter_name);    另外C++ funtion一次只能回傳一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ Programming Design - Functions">
+<meta property="og:url" content="https://bosh-kuo.github.io/Bosh-Hexo-Blog/Cplusplus-Programming-Functions/">
 <meta property="og:site_name" content="Bosh的技術部落格">
-<meta property="og:description" content="轉職路上的土木系碩班生">
+<meta property="og:description" content="CH5 FunctionsFounctionC++中function是由header與body組成，分別有system-defined functions, user-defined functions宣告的prototype:     return_type function_name(parameter_type parameter_name);    另外C++ funtion一次只能回傳一">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-02-20T12:05:49.000Z">
+<meta property="article:modified_time" content="2022-02-20T12:12:36.134Z">
 <meta property="article:author" content="Bosh-Kuo">
+<meta property="article:tag" content="Programming">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="Function">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/archives/2022/01/page/2/">
+<link rel="canonical" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/Cplusplus-Programming-Functions/">
 
 
 <script id="page-configurations">
@@ -47,12 +52,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>歸檔 | Bosh的技術部落格</title>
+  <title>C++ Programming Design - Functions | Bosh的技術部落格</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-THMGTWZ6T9"></script>
     <script>
@@ -201,54 +206,167 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共有 17 篇文章。 繼續努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/Cplusplus-Programming-Functions/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Bosh-Hexo-Blog/images/Bosh2.jpg">
+      <meta itemprop="name" content="Bosh-Kuo">
+      <meta itemprop="description" content="轉職路上的土木系碩班生">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bosh的技術部落格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C++ Programming Design - Functions
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2022-02-20 20:05:49 / 修改時間：20:12:36" itemprop="dateCreated datePublished" datetime="2022-02-20T20:05:49+08:00">2022-02-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Bosh-Hexo-Blog/categories/Programming-Language/" itemprop="url" rel="index"><span itemprop="name">Programming Language</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Bosh-Hexo-Blog/categories/Programming-Language/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>1.9k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>2 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+        <h1 id="CH5-Functions"><a href="#CH5-Functions" class="headerlink" title="CH5 Functions"></a><strong>CH5 Functions</strong></h1><h2 id="Founction"><a href="#Founction" class="headerlink" title="Founction"></a><strong>Founction</strong></h2><p>C++中function是由header與body組成，分別有system-defined functions, user-defined functions宣告的prototype:   </p>
+<blockquote>
+<p><code>return_type function_name(parameter_type parameter_name);</code>  </p>
+</blockquote>
+<p>另外C++ funtion一次只能回傳一個變數，若要回傳多個值，要用class與object。<br>參考<a href="./5_1.cpp">5_1.cpp</a></p>
+<span id="more"></span>
+
+<br>
+
+<h2 id="funtion-prototype"><a href="#funtion-prototype" class="headerlink" title="funtion prototype"></a><strong>funtion prototype</strong></h2><p>在C++中funtion 須在main()前先declare,並在main()後define內容。同樣也可以在main()前直接defination取代declaration，就不用另外做declaration。但需要小心若多個function間有互相呼叫關係，那要確保呼叫的function以經被define好了，若兩function間互相呼叫，就一定只能用function prototype。<br>參考<a href="./5_2.cpp">5_2.cpp</a>, <a href="./5_3.cpp">5_3.cpp</a></p>
+<br>
+
+<h2 id="Function-parameters-v-s-arguments"><a href="#Function-parameters-v-s-arguments" class="headerlink" title="Function parameters v.s. arguments"></a><strong>Function parameters v.s. arguments</strong></h2><p>parameters: 用來稱函數block內的變數。 (function內)<br>arguments: 用來稱傳入函數的原始變數。 (function外)<br>參考<a href="./5_4.cpp">5_4.cpp</a></p>
+<br>
+
+<h2 id="Function-return-value"><a href="#Function-return-value" class="headerlink" title="Function return value"></a><strong>Function return value</strong></h2><p>若函數在if else控制流程中沒有return指定數值，函數仍然會回傳一任意數字，這就像是宣告變數但未指定初始值的狀況一樣。<br>參考<a href="./5_5.cpp">5_5.cpp</a> </p>
+<br>
+
+<h2 id="Operator-also-return-value"><a href="#Operator-also-return-value" class="headerlink" title="Operator also return value"></a><strong>Operator also return value</strong></h2><p><code>cin &gt;&gt;, cout &lt;&lt;</code> 本身會回傳<code>istream&amp; object</code>作為回傳值，當將cin &gt;&gt; 寫在while中時，若是以鍵盤輸入就會永遠跳不出while迴圈，但若是以指令直接讀取文檔時，當<code>cin&gt;&gt;</code>讀不到檔案內的資料就會回傳一個false value。<br>參考<a href="./5_6.cpp">5_6.cpp</a> </p>
+<br>
+
+<h2 id="變數生命週期"><a href="#變數生命週期" class="headerlink" title="變數生命週期"></a><strong>變數生命週期</strong></h2><p><code>1. local variable:</code> 出了block就消失。<br>參考<a href="./5_7.cpp">5_7.cpp</a><br><code>2. global variable:</code> 不定義在任何block裡面，因此任何block都可以使用它。（不建議使用）<br>呼叫時可以使用operator::來指定使用global variable。<br>參考<a href="./5_8.cpp">5_8.cpp</a><br><code>3. external variable:</code> keyword: <code>external</code>，當大型系統中多個程式同時存取同個變數<code>extermal int a</code>，在其中一個程式改動這個a，其他城市中的a也會一起變動。（不建議使用）<br><code>4. static variable:</code> 雖然是在block裡面被宣告，但其特性像global variable一樣在程式結束前都不會被清除。<br>參考<a href="./5_9.cpp">5_9.cpp</a>, <a href="./5_10.cpp">5_10.cpp</a>, <a href="./5_11.cpp">5_11.cpp</a>          </p>
+<br>
+
+<h2 id="Call-by-value"><a href="#Call-by-value" class="headerlink" title="Call by value"></a><strong>Call by value</strong></h2><p>當使用call by value mechanism時，會在funtion block內建立記憶體空間宣告local variable作為parameter，再將argument的值複製給parameter，等block執行結束後便會清除local variable，釋放記憶體空間。<br>其特點是function可被寫為independent entities，寫function時不需要管外部的任何變數，不會影響或被影響。<br>參考<a href="./5_12.cpp">5_12.cpp</a></p>
+<p>但有些情境我們會需要function去改變傳入的arguments本身的值，我們可以：</p>
+<ul>
+<li>call by reference</li>
+<li>傳入array(傳址)</li>
+</ul>
+<br>
+
+<h2 id="Passing-an-1d-array-as-an-argument"><a href="#Passing-an-1d-array-as-an-argument" class="headerlink" title="Passing an 1d array as an argument"></a><strong>Passing an 1d array as an argument</strong></h2><p>範例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printArray</span><span class="params">(<span class="keyword">int</span> arr[])</span></span>;</span><br></pre></td></tr></table></figure>
+<p>Array 變數事實上存的是第一個變數的address。<br>參考<a href="./5_13.cpp">5_13.cpp</a>, <a href="./5_14.cpp">5_14.cpp</a>    </p>
+<br>
+
+<h2 id="Passing-an-1d-array-as-an-argument-1"><a href="#Passing-an-1d-array-as-an-argument-1" class="headerlink" title="Passing an 1d array as an argument"></a><strong>Passing an 1d array as an argument</strong></h2><p>範例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num[<span class="number">5</span>][<span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printArray</span><span class="params">(<span class="keyword">int</span> arr[][<span class="number">2</span>])</span></span>;</span><br></pre></td></tr></table></figure>
+<p>C++在處理２維陣列會理解為１排１維陣列，因此必須告訴compiler傳入的一排東西是長度為2的１維陣列。 </p>
+<br>
+
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a><strong>Reference</strong></h2><p><a target="_blank" rel="noopener" href="http://www.im.ntu.edu.tw/~lckung/courses/public/PD/">IM 1003 Programming Design</a></p>
+<br>
+
+<blockquote>
+<p>本文章同步發表於我的<a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/tree/master/Lecture_Code/">github repo</a></p>
+</blockquote>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-01-20T16:58:52+08:00"
-              content="2022-01-20">
-          01-20
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/Bosh-Hexo-Blog/tags/Programming/" rel="tag"># Programming</a>
+              <a href="/Bosh-Hexo-Blog/tags/C/" rel="tag"># C++</a>
+              <a href="/Bosh-Hexo-Blog/tags/Function/" rel="tag"># Function</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/Bosh-Hexo-Blog/hexo-from-scratch-1/" itemprop="url">
-            <span itemprop="name">從零開始使用Hexo + Github Page搭建個人技術筆記網站(1) - 建立hexo部落格模板</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Bosh-Hexo-Blog/Cplusplus-Programming-Desig-Variables-and-Arrays/" rel="prev" title="C++ Programming Design - Variables and Arrays">
+      <i class="fa fa-chevron-left"></i> C++ Programming Design - Variables and Arrays
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/Bosh-Hexo-Blog/Cplusplus-Programming-Algorithms-and-Recursion/" rel="next" title="C++ Programming Design - Algorithms and Recursion">
+      C++ Programming Design - Algorithms and Recursion <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-
-
-    </div>
-  </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/Bosh-Hexo-Blog/archives/2022/01/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/Bosh-Hexo-Blog/archives/2022/01/">1</a><span class="page-number current">2</span>
-  </nav>
 
 
 
@@ -300,6 +418,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CH5-Functions"><span class="nav-number">1.</span> <span class="nav-text">CH5 Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Founction"><span class="nav-number">1.1.</span> <span class="nav-text">Founction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#funtion-prototype"><span class="nav-number">1.2.</span> <span class="nav-text">funtion prototype</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function-parameters-v-s-arguments"><span class="nav-number">1.3.</span> <span class="nav-text">Function parameters v.s. arguments</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function-return-value"><span class="nav-number">1.4.</span> <span class="nav-text">Function return value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Operator-also-return-value"><span class="nav-number">1.5.</span> <span class="nav-text">Operator also return value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%8A%E6%95%B8%E7%94%9F%E5%91%BD%E9%80%B1%E6%9C%9F"><span class="nav-number">1.6.</span> <span class="nav-text">變數生命週期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Call-by-value"><span class="nav-number">1.7.</span> <span class="nav-text">Call by value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Passing-an-1d-array-as-an-argument"><span class="nav-number">1.8.</span> <span class="nav-text">Passing an 1d array as an argument</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Passing-an-1d-array-as-an-argument-1"><span class="nav-number">1.9.</span> <span class="nav-text">Passing an 1d array as an argument</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.10.</span> <span class="nav-text">Reference</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
