@@ -126,4 +126,4 @@ deploy:
   type: git
   repo: https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git
   branch: gh-pages  # repo分支
-  message: "發布C++ Programming Design - Variables and Arrays"  # Commit 訊息
+  message: "發布C++ Programming Design - Algorithms and Recursion"  # Commit 訊息

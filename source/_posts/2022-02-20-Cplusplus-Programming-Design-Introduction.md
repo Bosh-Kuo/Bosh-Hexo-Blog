@@ -68,11 +68,11 @@ cd 檔案所放的目錄
 or  
 (2) g++ 檔名.cpp -o 檔名 （3-2)./檔名
 
-> 本文章同步於我的[github repo](https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/tree/master/Lecture_Code/1.Introduction)
-
 
 ## **Reference**
 [IM 1003 Programming Design](http://www.im.ntu.edu.tw/~lckung/courses/public/PD/)
 
+<br>
 
+> 本文章同步發表於我的[github repo](https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/tree/master/Lecture_Code/)
 
