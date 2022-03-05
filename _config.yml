@@ -120,10 +120,20 @@ mermaid: ## mermaid url https://github.com/knsv/mermaid
   options:  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
     #startOnload: true  // default true
 
+# math
+markdown:
+  plugins:
+    - markdown-it-footnote
+    - markdown-it-sup
+    - markdown-it-sub
+    - markdown-it-abbr
+    - markdown-it-emoji
+    - hexo-math
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
   repo: https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git
   branch: gh-pages  # repo分支
-  message: "發布C++ Programming Design - Algorithms and Recursion"  # Commit 訊息
+  message: "發布C++ Programming Design - CStrings"  # Commit 訊息
