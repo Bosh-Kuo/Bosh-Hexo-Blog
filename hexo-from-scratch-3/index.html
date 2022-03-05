@@ -29,12 +29,12 @@
 
   gtag('config', 'G-THMGTWZ6T9');
 </script>
-  <meta name="description" content="客製化自己的NexT佈景主題因為接下來要調整的設定參數是針對NexT佈景主題而不是整個網站，我們要開啟的檔案是在 Hexo 根目錄下的 thems&#x2F;next&#x2F;_config.yml 這個檔案，而不是根目錄下的_config.yml。">
+  <meta name="description" content="客製化自己的NexT佈景主題 因為接下來要調整的設定參數是針對NexT佈景主題而不是整個網站，我們要開啟的檔案是在 Hexo 根目錄下的 thems&#x2F;next&#x2F;_config.yml 這個檔案，而不是根目錄下的_config.yml。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="從零開始使用Hexo + Github Page搭建個人技術筆記網站(3) - NexT佈景主題基本設置">
 <meta property="og:url" content="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-3/">
 <meta property="og:site_name" content="Bosh的技術部落格">
-<meta property="og:description" content="客製化自己的NexT佈景主題因為接下來要調整的設定參數是針對NexT佈景主題而不是整個網站，我們要開啟的檔案是在 Hexo 根目錄下的 thems&#x2F;next&#x2F;_config.yml 這個檔案，而不是根目錄下的_config.yml。">
+<meta property="og:description" content="客製化自己的NexT佈景主題 因為接下來要調整的設定參數是針對NexT佈景主題而不是整個網站，我們要開啟的檔案是在 Hexo 根目錄下的 thems&#x2F;next&#x2F;_config.yml 這個檔案，而不是根目錄下的_config.yml。">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://i.imgur.com/Gx4WOju.png">
 <meta property="article:published_time" content="2022-01-23T11:54:23.000Z">
@@ -97,7 +97,11 @@
   </style>
 </noscript>
 
-<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -281,60 +285,48 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="客製化自己的NexT佈景主題"><a href="#客製化自己的NexT佈景主題" class="headerlink" title="客製化自己的NexT佈景主題"></a><strong>客製化自己的NexT佈景主題</strong></h2><p>因為接下來要調整的設定參數是針對NexT佈景主題而不是整個網站，我們要開啟的檔案是在 Hexo 根目錄下的 <code>thems/next/_config.yml</code> 這個檔案，而不是根目錄下的<code>_config.yml</code>。</p>
+        <h2 id="客製化自己的next佈景主題"><strong>客製化自己的NexT佈景主題</strong></h2>
+<p>因為接下來要調整的設定參數是針對NexT佈景主題而不是整個網站，我們要開啟的檔案是在 Hexo 根目錄下的 <code>thems/next/_config.yml</code> 這個檔案，而不是根目錄下的<code>_config.yml</code>。</p>
 <span id="more"></span>
-
-<br/>
-
-<h3 id="Scheme設置"><a href="#Scheme設置" class="headerlink" title="Scheme設置"></a><strong>Scheme設置</strong></h3><p>調整scheme可以變換部落格主頁、邊欄等的擺放位置，可以參考官方文件的範例<a target="_blank" rel="noopener" href="https://github.com/next-theme/awesome-next#live-preview">https://github.com/next-theme/awesome-next#live-preview</a>，或自己動手調整看看哪整編排方式最順眼，我目前是比較喜歡<code>Gemini</code>的編排。</p>
+<p><br/></p>
+<h3 id="scheme設置"><strong>Scheme設置</strong></h3>
+<p>調整scheme可以變換部落格主頁、邊欄等的擺放位置，可以參考官方文件的範例<a target="_blank" rel="noopener" href="https://github.com/next-theme/awesome-next#live-preview">https://github.com/next-theme/awesome-next#live-preview</a>，或自己動手調整看看哪整編排方式最順眼，我目前是比較喜歡<code>Gemini</code>的編排。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Scheme Settings</span></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Schemes</span></span><br><span class="line">scheme: Muse</span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"><span class="comment">#scheme: Gemini</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Dark Mode</span></span><br><span class="line">darkmode: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<h3 id="頁尾作者連結"><a href="#頁尾作者連結" class="headerlink" title="頁尾作者連結"></a><strong>頁尾作者連結</strong></h3><p>正常來說頁尾部分就會顯示自己在根目錄<code>_config.yml</code>設定的作者名稱。若要將文字設定成一個鏈結，可以透過Html <code>&lt;a&gt;&lt;/a&gt;</code>語法嵌入指定的連結。</p>
+<p><br/></p>
+<h3 id="頁尾作者連結"><strong>頁尾作者連結</strong></h3>
+<p>正常來說頁尾部分就會顯示自己在根目錄<code>_config.yml</code>設定的作者名稱。若要將文字設定成一個鏈結，可以透過Html <code>&lt;a&gt;&lt;/a&gt;</code>語法嵌入指定的連結。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copyright: <span class="string">&quot;&lt;a href=&#x27;&lt;指定連結&gt;&#x27;&gt;作者名字&lt;/a&gt;&quot;</span></span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<h3 id="主選單配置"><a href="#主選單配置" class="headerlink" title="主選單配置"></a><strong>主選單配置</strong></h3><p>一開始next預設開啟的選單為首頁以及歸檔</p>
-<p><img src="https://i.imgur.com/Gx4WOju.png" alt="Imgur"></p>
+<p><br/></p>
+<h3 id="主選單配置"><strong>主選單配置</strong></h3>
+<p>一開始next預設開啟的選單為首頁以及歸檔</p>
+<figure>
+<img src="https://i.imgur.com/Gx4WOju.png" alt="" /><figcaption>Imgur</figcaption>
+</figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line"><span class="comment"># 分頁名稱: 路徑 || Icon 圖示</span></span><br><span class="line">  home: / || fa fa-home</span><br><span class="line">  <span class="comment">#about: /about/ || fa fa-user</span></span><br><span class="line">  <span class="comment">#tags: /tags/ || fa fa-tags</span></span><br><span class="line">  <span class="comment">#categories: /categories/ || fa fa-th</span></span><br><span class="line">  archives: /archives/ || fa fa-archive</span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || fa fa-sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat</span></span><br></pre></td></tr></table></figure>
-
 <p>關於、標籤以及分類頁都需要我們額外新增頁面，因此在這裡就先不開啟。</p>
-<br/>
-
+<p><br/></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Enable / Disable menu icons / item badges.</span></span><br><span class="line">menu_settings:</span><br><span class="line">  icons: <span class="literal">true</span></span><br><span class="line">  badges: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
 <p><code>icons</code> 控制選單是否要顯示圖示，<code>badges</code> 旁邊會顯示有幾篇文章的數字，有點像Line的未讀訊息數</p>
-<br/>
-
+<p><br/></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sidebar:</span><br><span class="line">  <span class="comment"># Sidebar Position.</span></span><br><span class="line">  position: left</span><br><span class="line">  <span class="comment">#position: right</span></span><br></pre></td></tr></table></figure>
-
 <p>Scheme 是選擇 Pisces 或 Gemini 的話，就會直接看到文章列表旁邊的邊欄（如果是 Muse 跟 Mist 的話，可以看到左下角的方形內三條線的按鈕，點一下就會跑出邊欄了），預設是靠左。</p>
-<br/>
-
+<p><br/></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">avatar:</span><br><span class="line">  <span class="comment"># Replace the default image and set the url here.</span></span><br><span class="line">  url: /images/avatar.gif</span><br></pre></td></tr></table></figure>
-
 <p>url認的網址為next資料夾下的<code>source</code>資料夾</p>
-<br/>
-
+<p><br/></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">social:</span><br><span class="line">  <span class="comment">#GitHub: https://github.com/yourname || fab fa-github</span></span><br><span class="line">  <span class="comment">#E-Mail: mailto:yourname@gmail.com || fa fa-envelope</span></span><br><span class="line">  <span class="comment">#Weibo: https://weibo.com/yourname || fab fa-weibo</span></span><br><span class="line">  <span class="comment">#Google: https://plus.google.com/yourname || fab fa-google</span></span><br><span class="line">  <span class="comment">#Twitter: https://twitter.com/yourname || fab fa-twitter</span></span><br><span class="line">  <span class="comment">#FB Page: https://www.facebook.com/yourname || fab fa-facebook</span></span><br><span class="line">  <span class="comment">#StackOverflow: https://stackoverflow.com/yourname || fab fa-stack-overflow</span></span><br><span class="line">  <span class="comment">#YouTube: https://youtube.com/yourname || fab fa-youtube</span></span><br><span class="line">  <span class="comment">#Instagram: https://instagram.com/yourname || fab fa-instagram</span></span><br><span class="line">  <span class="comment">#Skype: skype:yourname?call|chat || fab fa-skype</span></span><br></pre></td></tr></table></figure>
-
 <p>跟menu主選單很像，提供連結社群媒體的icon與連結</p>
-<br/>
-
+<p><br/></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">back2top:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Back to top in sidebar.</span></span><br><span class="line">  sidebar: <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Scroll percent label in b2t button.</span></span><br><span class="line">  scrollpercent: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>sidebar: 設定在側邊欄的個人資訊區塊中，Social Links 下，顯示回到頂部按鈕。</li>
 <li>scrollpercent:閱讀進度百分比。</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">codeblock:</span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic</span></span><br><span class="line">  <span class="comment"># See: https://github.com/chriskempson/tomorrow-theme</span></span><br><span class="line">  highlight_theme: normal</span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  copy_button:</span><br><span class="line">    <span class="built_in">enable</span>: <span class="literal">false</span></span><br><span class="line">    <span class="comment"># Show text copy result.</span></span><br><span class="line">    show_result: <span class="literal">false</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    style: mac</span><br></pre></td></tr></table></figure>
-
 <p>文章中出現的程式碼的佈景顏色、主題以及複製特效，可以試試看哪個風格和胃口</p>
-<br/>
-
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a><strong>參考資料</strong></h2><ul>
+<p><br/></p>
+<h2 id="參考資料"><strong>參考資料</strong></h2>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20139218/ironman/3910">30 天利用 Hexo 打造技術部落格系列</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next">NexT</a></li>
 </ul>
@@ -421,7 +413,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A2%E8%A3%BD%E5%8C%96%E8%87%AA%E5%B7%B1%E7%9A%84NexT%E4%BD%88%E6%99%AF%E4%B8%BB%E9%A1%8C"><span class="nav-number">1.</span> <span class="nav-text">客製化自己的NexT佈景主題</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Scheme%E8%A8%AD%E7%BD%AE"><span class="nav-number">1.1.</span> <span class="nav-text">Scheme設置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A0%81%E5%B0%BE%E4%BD%9C%E8%80%85%E9%80%A3%E7%B5%90"><span class="nav-number">1.2.</span> <span class="nav-text">頁尾作者連結</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E9%81%B8%E5%96%AE%E9%85%8D%E7%BD%AE"><span class="nav-number">1.3.</span> <span class="nav-text">主選單配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">2.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A2%E8%A3%BD%E5%8C%96%E8%87%AA%E5%B7%B1%E7%9A%84next%E4%BD%88%E6%99%AF%E4%B8%BB%E9%A1%8C"><span class="nav-number">1.</span> <span class="nav-text">客製化自己的NexT佈景主題</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#scheme%E8%A8%AD%E7%BD%AE"><span class="nav-number">1.1.</span> <span class="nav-text">Scheme設置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A0%81%E5%B0%BE%E4%BD%9C%E8%80%85%E9%80%A3%E7%B5%90"><span class="nav-number">1.2.</span> <span class="nav-text">頁尾作者連結</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E9%81%B8%E5%96%AE%E9%85%8D%E7%BD%AE"><span class="nav-number">1.3.</span> <span class="nav-text">主選單配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">2.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -437,7 +429,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Bosh-Hexo-Blog/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -450,7 +442,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/Bosh-Hexo-Blog/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -485,7 +477,7 @@
           <h3 class="widget-title">Tag Cloud</h3>
           <div id="myCanvasContainer" class="widget tagcloud">
             <canvas width="250" height="250" id="resCanvas" style="width:100%">
-              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Algorithms/" rel="tag">Algorithms</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Arrays/" rel="tag">Arrays</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/C/" rel="tag">C++</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Function/" rel="tag">Function</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Programming/" rel="tag">Programming</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Recursion/" rel="tag">Recursion</a><span class="tag-list-count">1</span></li></ul>
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Algorithms/" rel="tag">Algorithms</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Arrays/" rel="tag">Arrays</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/C/" rel="tag">C++</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Function/" rel="tag">Function</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Pointer/" rel="tag">Pointer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Programming/" rel="tag">Programming</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Recursion/" rel="tag">Recursion</a><span class="tag-list-count">1</span></li></ul>
             </canvas>
           </div>
         </div>
@@ -517,13 +509,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">總字數：</span>
-    <span title="總字數">41k</span>
+    <span title="總字數">60k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">所需總閱讀時間 &asymp;</span>
-    <span title="所需總閱讀時間">37 分鐘</span>
+    <span title="所需總閱讀時間">55 分鐘</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
   </div>
@@ -679,6 +671,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 }
 </script>
 
+
+  
 
   
 

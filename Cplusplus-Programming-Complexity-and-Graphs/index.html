@@ -29,30 +29,34 @@
 
   gtag('config', 'G-THMGTWZ6T9');
 </script>
-  <meta name="description" content="轉職路上的土木系碩班生">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bosh的技術部落格">
-<meta property="og:url" content="https://bosh-kuo.github.io/Bosh-Hexo-Blog/page/4/">
+  <meta name="description" content="CH7 Complexity and Graphs Complexity 演算法可以理解為能夠完成特定任務的一系列步驟，而演算法的優劣我們會以複雜度complexity去比較。 Time complexity and space complexity: - Time: 花越少時間越好 - Space: 花越少空間越好">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ Programming Design - Complexity and Graphs">
+<meta property="og:url" content="https://bosh-kuo.github.io/Bosh-Hexo-Blog/Cplusplus-Programming-Complexity-and-Graphs/">
 <meta property="og:site_name" content="Bosh的技術部落格">
-<meta property="og:description" content="轉職路上的土木系碩班生">
+<meta property="og:description" content="CH7 Complexity and Graphs Complexity 演算法可以理解為能夠完成特定任務的一系列步驟，而演算法的優劣我們會以複雜度complexity去比較。 Time complexity and space complexity: - Time: 花越少時間越好 - Space: 花越少空間越好">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-03-05T06:23:00.000Z">
+<meta property="article:modified_time" content="2022-03-05T07:24:47.300Z">
 <meta property="article:author" content="Bosh-Kuo">
+<meta property="article:tag" content="Programming">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/page/4/">
+<link rel="canonical" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/Cplusplus-Programming-Complexity-and-Graphs/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>Bosh的技術部落格</title>
+  <title>C++ Programming Design - Complexity and Graphs | Bosh的技術部落格</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-THMGTWZ6T9"></script>
     <script>
@@ -205,13 +209,14 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-6/">
+    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/Cplusplus-Programming-Complexity-and-Graphs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Bosh-Hexo-Blog/images/Bosh2.jpg">
@@ -223,114 +228,9 @@
       <meta itemprop="name" content="Bosh的技術部落格">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Bosh-Hexo-Blog/hexo-from-scratch-6/" class="post-title-link" itemprop="url">從零開始使用Hexo + Github Page搭建個人技術筆記網站(6) - Github Page 部署</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2022-01-24 11:44:51" itemprop="dateCreated datePublished" datetime="2022-01-24T11:44:51+08:00">2022-01-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-02-01 00:45:44" itemprop="dateModified" datetime="2022-02-01T00:45:44+08:00">2022-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Bosh-Hexo-Blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>2.8k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>3 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="終於要上架hexo部落格了"><strong>終於要上架Hexo部落格了！</strong></h2>
-<p>到目前為止我們做的所有操作與設定雖然可以透過<code>hexo server</code>指令在本機看到網頁的樣貌，但只有自己看得到的網站真的很難說服自己在寫網站。那要怎麼做才能讓其他人也能使用我寫的網站呢？其實概念很簡單，就是找一台機器（自己的也行）全年無休運行server程式，並且提供外界連接進來的窗口（也就是網址）。我們可以選擇網路上主機租用的服務或是用自己的機器架設，但這兩種方法對一個靜態網頁來說好像又略嫌麻煩或是需要花上一些錢。<code>Github Page</code>剛好提供了一個免費的靜態網站架設環境，它提供了：</p>
-<ul>
-<li>免費的靜態網頁空間</li>
-<li>1GB 空間容量</li>
-<li>100GB 月流量</li>
-<li>提供一組 Github帳號.github.io 子網域</li>
-<li>能夠使用 Git 部署並進行版本控制</li>
-</ul>
-<p>雖然空間與流量上有所限制，但對個人技術部落格來說已經非常夠用了！</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Bosh-Hexo-Blog/hexo-from-scratch-6/" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Bosh-Hexo-Blog/images/Bosh2.jpg">
-      <meta itemprop="name" content="Bosh-Kuo">
-      <meta itemprop="description" content="轉職路上的土木系碩班生">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bosh的技術部落格">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Bosh-Hexo-Blog/hexo-from-scratch-5/" class="post-title-link" itemprop="url">從零開始使用Hexo + Github Page搭建個人技術筆記網站(5) - 標籤、分類與關於頁面</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          C++ Programming Design - Complexity and Graphs
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -340,7 +240,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2022-01-24 11:29:55 / 修改時間：11:55:43" itemprop="dateCreated datePublished" datetime="2022-01-24T11:29:55+08:00">2022-01-24</time>
+              <time title="創建時間：2022-03-05 14:23:00 / 修改時間：15:24:47" itemprop="dateCreated datePublished" datetime="2022-03-05T14:23:00+08:00">2022-03-05</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -348,102 +248,22 @@
               </span>
               <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Bosh-Hexo-Blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                  <a href="/Bosh-Hexo-Blog/categories/Programming-Language/" itemprop="url" rel="index"><span itemprop="name">Programming Language</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Bosh-Hexo-Blog/categories/Programming-Language/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
                 </span>
             </span>
 
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>1k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="幫部落格添加標籤分類與關於頁面"><strong>幫部落格添加標籤、分類與關於頁面！</strong></h2>
-<h3 id="建立新自訂頁面"><strong>建立新自訂頁面</strong></h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;頁面名稱&quot;</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Bosh-Hexo-Blog/hexo-from-scratch-5/" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Bosh-Hexo-Blog/images/Bosh2.jpg">
-      <meta itemprop="name" content="Bosh-Kuo">
-      <meta itemprop="description" content="轉職路上的土木系碩班生">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bosh的技術部落格">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
           
-            <a href="/Bosh-Hexo-Blog/hexo-from-scratch-4/" class="post-title-link" itemprop="url">從零開始使用Hexo + Github Page搭建個人技術筆記網站(4) - 寫下第一篇部落格文章</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
+            <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv" style="display: none;">
               <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
+                <i class="fa fa-eye"></i>
               </span>
-              <span class="post-meta-item-text">發表於</span>
-              
-
-              <time title="創建時間：2022-01-23 20:07:29 / 修改時間：20:19:50" itemprop="dateCreated datePublished" datetime="2022-01-23T20:07:29+08:00">2022-01-23</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Bosh-Hexo-Blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-                </span>
-            </span>
-
-          <br>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
             <span class="post-meta-item" title="文章字數">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
@@ -468,224 +288,65 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="來寫第一篇部落格文章吧"><strong>來寫第一篇部落格文章吧！</strong></h2>
-<p>接下來使用hexo指令來創建這個部落格的第一篇文章!</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Bosh-Hexo-Blog/hexo-from-scratch-4/" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Bosh-Hexo-Blog/images/Bosh2.jpg">
-      <meta itemprop="name" content="Bosh-Kuo">
-      <meta itemprop="description" content="轉職路上的土木系碩班生">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bosh的技術部落格">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Bosh-Hexo-Blog/hexo-from-scratch-3/" class="post-title-link" itemprop="url">從零開始使用Hexo + Github Page搭建個人技術筆記網站(3) - NexT佈景主題基本設置</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
-
-              <time title="創建時間：2022-01-23 19:54:23 / 修改時間：20:01:58" itemprop="dateCreated datePublished" datetime="2022-01-23T19:54:23+08:00">2022-01-23</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Bosh-Hexo-Blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>2.8k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>3 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="客製化自己的next佈景主題"><strong>客製化自己的NexT佈景主題</strong></h2>
-<p>因為接下來要調整的設定參數是針對NexT佈景主題而不是整個網站，我們要開啟的檔案是在 Hexo 根目錄下的 <code>thems/next/_config.yml</code> 這個檔案，而不是根目錄下的<code>_config.yml</code>。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Bosh-Hexo-Blog/hexo-from-scratch-3/" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Bosh-Hexo-Blog/images/Bosh2.jpg">
-      <meta itemprop="name" content="Bosh-Kuo">
-      <meta itemprop="description" content="轉職路上的土木系碩班生">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bosh的技術部落格">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Bosh-Hexo-Blog/hexo-from-scratch-2/" class="post-title-link" itemprop="url">從零開始使用Hexo + Github Page搭建個人技術筆記網站(2) - Hexo基本設定</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2022-01-23 19:49:48" itemprop="dateCreated datePublished" datetime="2022-01-23T19:49:48+08:00">2022-01-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-02-03 11:18:57" itemprop="dateModified" datetime="2022-02-03T11:18:57+08:00">2022-02-03</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Bosh-Hexo-Blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>1.6k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="hexo網站基本設定介紹"><strong>Hexo網站基本設定介紹</strong></h2>
-<p>用hexo架設網站非常的方便，hexo把所有網站的基本設定參數都放在<code>_config.yml</code>裡面，我們可以根據自己對網站的需求調整這些晚站配置參數。配置參數很多這裡就不一一列舉，只記錄一些重要需要更改的參數。詳細也可以參考<a target="_blank" rel="noopener" href="https://hexo.io/zh-tw/docs/configuration">官方配置文件</a></p>
+        <h1 id="ch7-complexity-and-graphs"><strong>CH7 Complexity and Graphs</strong></h1>
+<h2 id="complexity"><strong>Complexity</strong></h2>
+<p>演算法可以理解為能夠完成特定任務的一系列步驟，而演算法的優劣我們會以<code>複雜度complexity</code>去比較。</p>
+<p>Time complexity and space complexity: - Time: 花越少時間越好 - Space: 花越少空間越好</p>
+<span id="more"></span>
+<h3 id="time-complexity"><strong>Time complexity</strong></h3>
+<p>為了移除機器硬體效能之間的差異，通常以計算基本operations數量來代替計算時間。 &gt; 假設一alogorithm的基本operations數為5𝑚𝑛+10𝑚+2 - 當n或m夠大時用<strong>5mn</strong>來估計就足夠了 - 再者<strong>常數5</strong>也沒有太重要 - 我們通常只關注<strong>bottleneck</strong>上的operations是如何增長的</p>
+<p><br/></p>
+<h2 id="the-big-o-notation"><strong>The “big O” notation</strong></h2>
+<p>for <span class="math inline">\(n ∈ ℕ\)</span> :</p>
 <blockquote>
-<p><code>任何有關設定檔案的設定值，一定要在冒號後加上一個空格再接設定值</code></p>
+<p><span class="math inline">\(f(n) ∈ O(g(n))\)</span></p>
 </blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Bosh-Hexo-Blog/hexo-from-scratch-2/" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+<p>if and only if there exists a positive number <span class="math inline">\(c\)</span> and a number <span class="math inline">\(𝑁\)</span> such that <span class="math inline">\(𝑛 ≥ 𝑁\)</span>: &gt; <span class="math inline">\(f(n) ≤ cg(n)\)</span></p>
+<p>That means when 𝒏 is large enough, <span class="math inline">\(g(n)\)</span> will dominate <span class="math inline">\(f(n)\)</span> - We say the algorithm’s time complexity is <span class="math inline">\(g(n)\)</span> - We write <span class="math inline">\(f(n) ∈ O(g(n))\)</span>, but some people write <span class="math inline">\(f(n) = O(g(n))\)</span></p>
+<p>We use the “big O” notation: - We ignore tedious details, non-bottlenecks, and constants. - We focus on the worst case.</p>
+<p>Exp:<br />
+Let <span class="math inline">\(𝑓(n) = nlog(n) + n^2\)</span>, we have <span class="math inline">\(g(n) = n^2\)</span></p>
+<p><br/></p>
+<h3 id="example1"><strong>Example1</strong></h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; x; i++)</span><br><span class="line">        <span class="keyword">if</span>(x % i == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>; &#125;</span><br></pre></td></tr></table></figure>
+<p><span class="math inline">\(O(1+2+3+..+n) = O(n^2)\)</span> The most naïve algorithm’s complexity is <span class="math inline">\(O(n^2)\)</span></p>
+<p><br/></p>
+<h3 id="example2"><strong>Example2</strong></h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i*i &lt; x; i++)</span><br><span class="line">        <span class="keyword">if</span>(x % i == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>; &#125;</span><br></pre></td></tr></table></figure>
+<p>the complexity is <span class="math inline">\(O(\sqrt(x))\)</span></p>
+
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+          <div class="post-tags">
+              <a href="/Bosh-Hexo-Blog/tags/Programming/" rel="tag"># Programming</a>
+              <a href="/Bosh-Hexo-Blog/tags/C/" rel="tag"># C++</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Bosh-Hexo-Blog/Cplusplus-Programming-Algorithms-and-Recursion/" rel="prev" title="C++ Programming Design - Algorithms and Recursion">
+      <i class="fa fa-chevron-left"></i> C++ Programming Design - Algorithms and Recursion
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/Bosh-Hexo-Blog/Cplusplus-Programming-Digital-Systems/" rel="next" title="C++ Programming Design - Digital Systems">
+      C++ Programming Design - Digital Systems <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
+    
   </article>
   
   
   
-
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/Bosh-Hexo-Blog/page/3/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/Bosh-Hexo-Blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/Bosh-Hexo-Blog/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/Bosh-Hexo-Blog/page/5/">5</a><a class="extend next" rel="next" href="/Bosh-Hexo-Blog/page/5/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
-  </nav>
 
 
 
@@ -737,6 +398,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ch7-complexity-and-graphs"><span class="nav-number">1.</span> <span class="nav-text">CH7 Complexity and Graphs</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#complexity"><span class="nav-number">1.1.</span> <span class="nav-text">Complexity</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#time-complexity"><span class="nav-number">1.1.1.</span> <span class="nav-text">Time complexity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#the-big-o-notation"><span class="nav-number">1.2.</span> <span class="nav-text">The “big O” notation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#example1"><span class="nav-number">1.2.1.</span> <span class="nav-text">Example1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#example2"><span class="nav-number">1.2.2.</span> <span class="nav-text">Example2</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -998,6 +660,59 @@ if (document.querySelectorAll('pre.mermaid').length) {
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>

@@ -29,12 +29,12 @@
 
   gtag('config', 'G-THMGTWZ6T9');
 </script>
-  <meta name="description" content="CH4 Variables and ArraysBasic data typeLimit of C++一個可以查看各個資料型態極限大小的Libary，https:&#x2F;&#x2F;www.cplusplus.com&#x2F;reference&#x2F;climits&#x2F; ，使用時加上：">
+  <meta name="description" content="CH4 Variables and Arrays Basic data type Limit of C++ 一個可以查看各個資料型態極限大小的Libary，https:&#x2F;&#x2F;www.cplusplus.com&#x2F;reference&#x2F;climits&#x2F; ，使用時加上：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++ Programming Design - Variables and Arrays">
 <meta property="og:url" content="https://bosh-kuo.github.io/Bosh-Hexo-Blog/Cplusplus-Programming-Desig-Variables-and-Arrays/">
 <meta property="og:site_name" content="Bosh的技術部落格">
-<meta property="og:description" content="CH4 Variables and ArraysBasic data typeLimit of C++一個可以查看各個資料型態極限大小的Libary，https:&#x2F;&#x2F;www.cplusplus.com&#x2F;reference&#x2F;climits&#x2F; ，使用時加上：">
+<meta property="og:description" content="CH4 Variables and Arrays Basic data type Limit of C++ 一個可以查看各個資料型態極限大小的Libary，https:&#x2F;&#x2F;www.cplusplus.com&#x2F;reference&#x2F;climits&#x2F; ，使用時加上：">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2022-02-19T17:25:33.000Z">
 <meta property="article:modified_time" content="2022-02-20T12:10:09.691Z">
@@ -97,7 +97,11 @@
   </style>
 </noscript>
 
-<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -285,71 +289,69 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="CH4-Variables-and-Arrays"><a href="#CH4-Variables-and-Arrays" class="headerlink" title="CH4 Variables and Arrays"></a><strong>CH4 Variables and Arrays</strong></h1><h2 id="Basic-data-type"><a href="#Basic-data-type" class="headerlink" title="Basic data type"></a><strong>Basic data type</strong></h2><h3 id="Limit-of-C"><a href="#Limit-of-C" class="headerlink" title="Limit of C++"></a><strong>Limit of C++</strong></h3><p>一個可以查看各個資料型態極限大小的Libary，<a target="_blank" rel="noopener" href="https://www.cplusplus.com/reference/climits/">https://www.cplusplus.com/reference/climits/</a> ，使用時加上：  </p>
+        <h1 id="ch4-variables-and-arrays"><strong>CH4 Variables and Arrays</strong></h1>
+<h2 id="basic-data-type"><strong>Basic data type</strong></h2>
+<h3 id="limit-of-c"><strong>Limit of C++</strong></h3>
+<p>一個可以查看各個資料型態極限大小的Libary，https://www.cplusplus.com/reference/climits/ ，使用時加上：</p>
 <span id="more"></span>
-
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;climits&gt;</span></span></span><br><span class="line"><span class="comment">// 從C語言就有的函式庫會以c開頭</span></span><br></pre></td></tr></table></figure>
 <p>參考<a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_1.cpp">4_1.cpp</a></p>
-<br>
-
-<h3 id="sizeof"><a href="#sizeof" class="headerlink" title="sizeof"></a><strong>sizeof</strong></h3><p>回傳一資料型態佔有的空間大小(byte)</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="built_in"><span class="keyword">sizeof</span></span>(a);</span><br></pre></td></tr></table></figure>
-<p>參考<a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_2.cpp">4_2.cpp</a></p>
-<br>
-
-<h3 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a><strong>overflow</strong></h3><p>儲存超出該資量料型態範圍的數值<br>參考<a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_3.cpp">4_3.cpp</a></p>
-<br>
-
-<h3 id="char"><a href="#char" class="headerlink" title="char"></a><strong>char</strong></h3><p>用one byte(-128~127)將字元編碼，<code>it&#39;s also integer!</code>  </p>
+<p><br></p>
+<h3 id="sizeof"><strong>sizeof</strong></h3>
+<p>回傳一資料型態佔有的空間大小(byte) <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="built_in"><span class="keyword">sizeof</span></span>(a);</span><br></pre></td></tr></table></figure> 參考<a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_2.cpp">4_2.cpp</a></p>
+<p><br></p>
+<h3 id="overflow"><strong>overflow</strong></h3>
+<p>儲存超出該資量料型態範圍的數值 參考<a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_3.cpp">4_3.cpp</a></p>
+<p><br></p>
+<h3 id="char"><strong>char</strong></h3>
+<p>用one byte(-128~127)將字元編碼，<code>it's also integer!</code><br />
+- char c = 'c';<br />
+- char c = 99; 參考<a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_4.cpp">4_4.cpp</a>, <a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_5.cpp">4_5.cpp</a></p>
+<p><br></p>
+<h3 id="bool"><strong>bool</strong></h3>
+<p>在c++中，非0數都被認定為<code>true</code>，在做控制流程時需注意</p>
+<p><br></p>
+<h3 id="precision"><strong>precision</strong></h3>
+<p>浮點數在２進位表示法中常常無法被精確表示，如：<br />
+<span class="math inline">\(3.5 = 011.1, 3.25=011.01, 3.375=011.011\)</span> 但是,<br />
+<span class="math inline">\(3.4?\)</span><br />
+僅有部分數字恰巧可以用２的冪次方相加來表示，因此浮點數幾乎都會遇到精確度的問題。<br />
+參考<a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_6.cpp">4_6.cpp</a>, <a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_7.cpp">4_7.cpp</a></p>
+<p><br></p>
+<h2 id="constants-and-casting"><strong>Constants and casting</strong></h2>
+<p>變數就像是容器，不同型態的變數就像容量大小與形狀不同的容器，舉例來說： - long &gt;= int &gt;= short - “Shapes” of int and float are different</p>
+<h3 id="casting"><strong>Casting</strong></h3>
 <ul>
-<li>char c &#x3D; ‘c’;  </li>
-<li>char c &#x3D; 99;<br>參考<a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_4.cpp">4_4.cpp</a>, <a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_5.cpp">4_5.cpp</a></li>
-</ul>
-<br>
-
-<h3 id="bool"><a href="#bool" class="headerlink" title="bool"></a><strong>bool</strong></h3><p>在c++中，非0數都被認定為<code>true</code>，在做控制流程時需注意</p>
-<br>
-
-<h3 id="precision"><a href="#precision" class="headerlink" title="precision"></a><strong>precision</strong></h3><p>浮點數在２進位表示法中常常無法被精確表示，如：<br>$3.5 &#x3D; 011.1, 3.25&#x3D;011.01, 3.375&#x3D;011.011$  但是,<br>$3.4?$<br>僅有部分數字恰巧可以用２的冪次方相加來表示，因此浮點數幾乎都會遇到精確度的問題。<br>參考<a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_6.cpp">4_6.cpp</a>, <a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_7.cpp">4_7.cpp</a></p>
-<br>
-
-<h2 id="Constants-and-casting"><a href="#Constants-and-casting" class="headerlink" title="Constants and casting"></a><strong>Constants and casting</strong></h2><p>變數就像是容器，不同型態的變數就像容量大小與形狀不同的容器，舉例來說：</p>
-<ul>
-<li>long &gt;&#x3D; int &gt;&#x3D; short</li>
-<li>“Shapes” of int and float are different</li>
-</ul>
-<h3 id="Casting"><a href="#Casting" class="headerlink" title="Casting"></a><strong>Casting</strong></h3><ul>
 <li>Implicit casting: from a small type to a large type.</li>
 <li>Explicit casting: from a large type to a small type. (工程師需要明確指出如何cast)</li>
 </ul>
-<br>
-
-<h3 id="Explicit-casting"><a href="#Explicit-casting" class="headerlink" title="Explicit casting"></a><strong>Explicit casting</strong></h3><ul>
-<li>int a &#x3D; 5.6; is not good.  </li>
-<li>int a &#x3D; <code>static_cast&lt;int&gt;(5.6)</code>; is better.</li>
+<p><br></p>
+<h3 id="explicit-casting"><strong>Explicit casting</strong></h3>
+<ul>
+<li>int a = 5.6; is not good.<br />
+</li>
+<li>int a = <code>static_cast&lt;int&gt;(5.6)</code>; is better.</li>
 </ul>
-<p>To cast basic data types, we use static_cast:</p>
-<blockquote>
-<p><code>static_cast&lt;type&gt;(expression)</code></p>
-</blockquote>
-<br>
-
-<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a><strong>Array</strong></h2><h3 id="1d-Array"><a href="#1d-Array" class="headerlink" title="1d Array"></a><strong>1d Array</strong></h3><p>宣告方式： <code>data_type array_name [number of elements]  </code><br>佔據number of elements * sizeof(data_type) 的空間(byte)<br>參考<a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_8.cpp">4_8.cpp</a></p>
-<p>C++ array不會自動初始化，在宣告array時電腦只是劃出一塊記憶體空間而已，這塊記憶體空間上可能存著任意的數值。並且就算存取超出array宣告範圍的index也可能不會發生compilation error，因此需要小心array boundary，若不小心存取到超出範圍的記憶體空間剛好是別的應用程式的空間，就會發生run time error。<br>參考<a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_9.cpp">4_9.cpp</a>, <a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_10.cpp">4_10.cpp</a>, <a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_11.cpp">4_11.cpp</a>, <a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_12.cpp">4_12.cpp</a></p>
-<br>
-
-<h3 id="Things-you-cannot-should-not-do"><a href="#Things-you-cannot-should-not-do" class="headerlink" title="Things you cannot (should not) do"></a><strong>Things you cannot (should not) do</strong></h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// DO NOT do this </span></span><br><span class="line"><span class="keyword">int</span> x = <span class="number">0</span>; </span><br><span class="line">cin &gt;&gt; x; </span><br><span class="line"><span class="comment">// very bad! </span></span><br><span class="line"><span class="keyword">int</span> array[x]; </span><br><span class="line">array[<span class="number">2</span>] = <span class="number">3</span>; <span class="comment">// etc</span></span><br></pre></td></tr></table></figure>
-
+<p>To cast basic data types, we use static_cast: &gt; <code>static_cast&lt;type&gt;(expression)</code></p>
+<p><br></p>
+<h2 id="array"><strong>Array</strong></h2>
+<h3 id="d-array"><strong>1d Array</strong></h3>
+<p>宣告方式： <code>data_type array_name [number of elements]</code><br />
+佔據number of elements * sizeof(data_type) 的空間(byte)<br />
+參考<a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_8.cpp">4_8.cpp</a></p>
+<p>C++ array不會自動初始化，在宣告array時電腦只是劃出一塊記憶體空間而已，這塊記憶體空間上可能存著任意的數值。並且就算存取超出array宣告範圍的index也可能不會發生compilation error，因此需要小心array boundary，若不小心存取到超出範圍的記憶體空間剛好是別的應用程式的空間，就會發生run time error。<br />
+參考<a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_9.cpp">4_9.cpp</a>, <a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_10.cpp">4_10.cpp</a>, <a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_11.cpp">4_11.cpp</a>, <a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_12.cpp">4_12.cpp</a></p>
+<p><br></p>
+<h3 id="things-you-cannot-should-not-do"><strong>Things you cannot (should not) do</strong></h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// DO NOT do this </span></span><br><span class="line"><span class="keyword">int</span> x = <span class="number">0</span>; </span><br><span class="line">cin &gt;&gt; x; </span><br><span class="line"><span class="comment">// very bad! </span></span><br><span class="line"><span class="keyword">int</span> array[x]; </span><br><span class="line">array[<span class="number">2</span>] = <span class="number">3</span>; <span class="comment">// etc</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Do this </span></span><br><span class="line"><span class="keyword">int</span> x = <span class="number">0</span>; </span><br><span class="line">cin &gt;&gt; x; <span class="comment">// good! </span></span><br><span class="line"><span class="keyword">int</span>* array = <span class="keyword">new</span> <span class="keyword">int</span>[x]; </span><br><span class="line">array[<span class="number">2</span>] = <span class="number">3</span>; <span class="comment">// etc.</span></span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h3 id="2d-Array"><a href="#2d-Array" class="headerlink" title="2d Array"></a><strong>2d Array</strong></h3><p>2d Array在記憶體上沒有column的概念，2d Array 實際上就是多個1d Array，假設一陣列array[2][3]，那麼a[1], &amp;a[1], &amp;a[1][0]回傳的都是同一個記憶體位置，2d Array的記憶體快快儲存方式是線性且連續的，也就是說array中相鄰的兩個index記憶體區塊也是相鄰的。<br>參考<a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_13.cpp">4_13.cpp</a>, <a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_14.cpp">4_14.cpp</a>, <a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_15.cpp">4_15.cpp</a>, <a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_16.cpp">4_16.cpp</a></p>
-<br>
-
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a><strong>Reference</strong></h2><p><a target="_blank" rel="noopener" href="http://www.im.ntu.edu.tw/~lckung/courses/public/PD/">IM 1003 Programming Design</a></p>
-<br>
-
+<p><br></p>
+<h3 id="d-array-1"><strong>2d Array</strong></h3>
+<p>2d Array在記憶體上沒有column的概念，2d Array 實際上就是多個1d Array，假設一陣列array[2][3]，那麼a[1], &amp;a[1], &amp;a[1][0]回傳的都是同一個記憶體位置，2d Array的記憶體快快儲存方式是線性且連續的，也就是說array中相鄰的兩個index記憶體區塊也是相鄰的。 參考<a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_13.cpp">4_13.cpp</a>, <a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_14.cpp">4_14.cpp</a>, <a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_15.cpp">4_15.cpp</a>, <a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/blob/master/Lecture_Code/4.Variables%20and%20Arrays/4_16.cpp">4_16.cpp</a></p>
+<p><br></p>
+<h2 id="reference"><strong>Reference</strong></h2>
+<p><a target="_blank" rel="noopener" href="http://www.im.ntu.edu.tw/~lckung/courses/public/PD/">IM 1003 Programming Design</a></p>
+<p><br></p>
 <blockquote>
 <p>本文章同步發表於我的<a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/tree/master/Lecture_Code/">github repo</a></p>
 </blockquote>
@@ -438,7 +440,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CH4-Variables-and-Arrays"><span class="nav-number">1.</span> <span class="nav-text">CH4 Variables and Arrays</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-data-type"><span class="nav-number">1.1.</span> <span class="nav-text">Basic data type</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Limit-of-C"><span class="nav-number">1.1.1.</span> <span class="nav-text">Limit of C++</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sizeof"><span class="nav-number">1.1.2.</span> <span class="nav-text">sizeof</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#overflow"><span class="nav-number">1.1.3.</span> <span class="nav-text">overflow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#char"><span class="nav-number">1.1.4.</span> <span class="nav-text">char</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bool"><span class="nav-number">1.1.5.</span> <span class="nav-text">bool</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#precision"><span class="nav-number">1.1.6.</span> <span class="nav-text">precision</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Constants-and-casting"><span class="nav-number">1.2.</span> <span class="nav-text">Constants and casting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Casting"><span class="nav-number">1.2.1.</span> <span class="nav-text">Casting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Explicit-casting"><span class="nav-number">1.2.2.</span> <span class="nav-text">Explicit casting</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Array"><span class="nav-number">1.3.</span> <span class="nav-text">Array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1d-Array"><span class="nav-number">1.3.1.</span> <span class="nav-text">1d Array</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Things-you-cannot-should-not-do"><span class="nav-number">1.3.2.</span> <span class="nav-text">Things you cannot (should not) do</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2d-Array"><span class="nav-number">1.3.3.</span> <span class="nav-text">2d Array</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.4.</span> <span class="nav-text">Reference</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ch4-variables-and-arrays"><span class="nav-number">1.</span> <span class="nav-text">CH4 Variables and Arrays</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-data-type"><span class="nav-number">1.1.</span> <span class="nav-text">Basic data type</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#limit-of-c"><span class="nav-number">1.1.1.</span> <span class="nav-text">Limit of C++</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sizeof"><span class="nav-number">1.1.2.</span> <span class="nav-text">sizeof</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#overflow"><span class="nav-number">1.1.3.</span> <span class="nav-text">overflow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#char"><span class="nav-number">1.1.4.</span> <span class="nav-text">char</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bool"><span class="nav-number">1.1.5.</span> <span class="nav-text">bool</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#precision"><span class="nav-number">1.1.6.</span> <span class="nav-text">precision</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#constants-and-casting"><span class="nav-number">1.2.</span> <span class="nav-text">Constants and casting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#casting"><span class="nav-number">1.2.1.</span> <span class="nav-text">Casting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#explicit-casting"><span class="nav-number">1.2.2.</span> <span class="nav-text">Explicit casting</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#array"><span class="nav-number">1.3.</span> <span class="nav-text">Array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#d-array"><span class="nav-number">1.3.1.</span> <span class="nav-text">1d Array</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#things-you-cannot-should-not-do"><span class="nav-number">1.3.2.</span> <span class="nav-text">Things you cannot (should not) do</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#d-array-1"><span class="nav-number">1.3.3.</span> <span class="nav-text">2d Array</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-number">1.4.</span> <span class="nav-text">Reference</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -454,7 +456,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Bosh-Hexo-Blog/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -467,7 +469,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/Bosh-Hexo-Blog/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -502,7 +504,7 @@
           <h3 class="widget-title">Tag Cloud</h3>
           <div id="myCanvasContainer" class="widget tagcloud">
             <canvas width="250" height="250" id="resCanvas" style="width:100%">
-              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Algorithms/" rel="tag">Algorithms</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Arrays/" rel="tag">Arrays</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/C/" rel="tag">C++</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Function/" rel="tag">Function</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Programming/" rel="tag">Programming</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Recursion/" rel="tag">Recursion</a><span class="tag-list-count">1</span></li></ul>
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Algorithms/" rel="tag">Algorithms</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Arrays/" rel="tag">Arrays</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/C/" rel="tag">C++</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Function/" rel="tag">Function</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Pointer/" rel="tag">Pointer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Programming/" rel="tag">Programming</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Recursion/" rel="tag">Recursion</a><span class="tag-list-count">1</span></li></ul>
             </canvas>
           </div>
         </div>
@@ -534,13 +536,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">總字數：</span>
-    <span title="總字數">41k</span>
+    <span title="總字數">60k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">所需總閱讀時間 &asymp;</span>
-    <span title="所需總閱讀時間">37 分鐘</span>
+    <span title="所需總閱讀時間">55 分鐘</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
   </div>
@@ -696,6 +698,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 }
 </script>
 
+
+  
 
   
 

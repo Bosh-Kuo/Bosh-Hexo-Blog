@@ -29,12 +29,12 @@
 
   gtag('config', 'G-THMGTWZ6T9');
 </script>
-  <meta name="description" content="CH6 Algorithms and RecursionAlgorithms and complexityExample: listing all prime numbers Idea:  If any number j &lt; i can divide i, i is not a prime number. Algotithm: For each number j &lt; i, check">
+  <meta name="description" content="CH6 Algorithms and Recursion Algorithms and complexity Example: listing all prime numbers  Idea: If any number j &lt; i can divide i, i is not a prime number. Algotithm: For each number j &lt; i, chec">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++ Programming Design - Algorithms and Recursion">
 <meta property="og:url" content="https://bosh-kuo.github.io/Bosh-Hexo-Blog/Cplusplus-Programming-Algorithms-and-Recursion/">
 <meta property="og:site_name" content="Bosh的技術部落格">
-<meta property="og:description" content="CH6 Algorithms and RecursionAlgorithms and complexityExample: listing all prime numbers Idea:  If any number j &lt; i can divide i, i is not a prime number. Algotithm: For each number j &lt; i, check">
+<meta property="og:description" content="CH6 Algorithms and Recursion Algorithms and complexity Example: listing all prime numbers  Idea: If any number j &lt; i can divide i, i is not a prime number. Algotithm: For each number j &lt; i, chec">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2022-02-20T12:13:55.000Z">
 <meta property="article:modified_time" content="2022-02-20T12:20:05.604Z">
@@ -98,7 +98,11 @@
   </style>
 </noscript>
 
-<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -286,171 +290,133 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="CH6-Algorithms-and-Recursion"><a href="#CH6-Algorithms-and-Recursion" class="headerlink" title="CH6 Algorithms and Recursion"></a><strong>CH6 Algorithms and Recursion</strong></h1><h2 id="Algorithms-and-complexity"><a href="#Algorithms-and-complexity" class="headerlink" title="Algorithms and complexity"></a><strong>Algorithms and complexity</strong></h2><h3 id="Example-listing-all-prime-numbers"><a href="#Example-listing-all-prime-numbers" class="headerlink" title="Example: listing all prime numbers"></a><strong>Example: listing all prime numbers</strong></h3><ul>
-<li>Idea:  If any number j &lt; i can divide i, i is not a prime number.</li>
-<li>Algotithm: For each number j &lt; i, check whether j divides i. If there is any<br>j that divides i, report no; otherwise, report yes.</li>
+        <h1 id="ch6-algorithms-and-recursion"><strong>CH6 Algorithms and Recursion</strong></h1>
+<h2 id="algorithms-and-complexity"><strong>Algorithms and complexity</strong></h2>
+<h3 id="example-listing-all-prime-numbers"><strong>Example: listing all prime numbers</strong></h3>
+<ul>
+<li>Idea: If any number j &lt; i can divide i, i is not a prime number.</li>
+<li>Algotithm: For each number j &lt; i, check whether j divides i. If there is any j that divides i, report no; otherwise, report yes.</li>
 </ul>
 <blockquote>
 <p><code>pseudocodes: 用程式結構來描述一系列的步驟，也就是把人話排列成程式碼的樣貌。忽略一切語言文法以及如何implement有關的議題。</code></p>
 </blockquote>
 <span id="more"></span>
-
-<p><strong>pseudocode:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Given an integer n:</span><br><span class="line">for i from 2 to n</span><br><span class="line">    assume that i is a prime number if(i % j == 0) &#123;</span><br><span class="line">    for j from 2 to i – 1</span><br><span class="line">        if j divides i</span><br><span class="line">            set i to be a composite number</span><br><span class="line">    if i is still considered as prime</span><br><span class="line">        print i</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><strong>Implementation:</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="keyword">bool</span> isPrime = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">2</span>; j &lt; i; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(i % j == <span class="number">0</span>) &#123;</span><br><span class="line">            isPrime = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">if</span>(isPrime == <span class="literal">true</span>)</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<p><strong>pseudocode:</strong> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Given an integer n:</span><br><span class="line">for i from 2 to n</span><br><span class="line">    assume that i is a prime number if(i % j == 0) &#123;</span><br><span class="line">    for j from 2 to i – 1</span><br><span class="line">        if j divides i</span><br><span class="line">            set i to be a composite number</span><br><span class="line">    if i is still considered as prime</span><br><span class="line">        print i</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p><strong>Implementation:</strong> <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="keyword">bool</span> isPrime = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">2</span>; j &lt; i; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(i % j == <span class="number">0</span>) &#123;</span><br><span class="line">            isPrime = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">if</span>(isPrime == <span class="literal">true</span>)</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>implementation 參考<a href="./6_1.cpp">6_1.cpp</a></p>
-<br>
-
-<h3 id="Improving-our-algorithm"><a href="#Improving-our-algorithm" class="headerlink" title="Improving our algorithm"></a><strong>Improving our algorithm</strong></h3><p><strong>original:</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> x)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(x % i == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>faster:</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> x)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i*i &lt; x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(x % i == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<p><br></p>
+<h3 id="improving-our-algorithm"><strong>Improving our algorithm</strong></h3>
+<p><strong>original:</strong> <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> x)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(x % i == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>faster:</strong> <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> x)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i*i &lt; x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(x % i == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <blockquote>
-<p> We improved the <code>algorithm</code>, not the <code>implementation</code>.</p>
+<p>We improved the <code>algorithm</code>, not the <code>implementation</code>.</p>
 </blockquote>
-<br>
-
-<h3 id="Improving-our-algorithm-1"><a href="#Improving-our-algorithm-1" class="headerlink" title="Improving our algorithm"></a><strong>Improving our algorithm</strong></h3><p>We may use a bottom-up approach to eliminate composite numbers. </p>
-<p>The pseudocode:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Given a Boolean array A of length n</span><br><span class="line">Initialize all elements in A to be true // assuming prime for i from 2 to n</span><br><span class="line">    if A is true </span><br><span class="line">        print i </span><br><span class="line">        for j from 1 to n/i  // eliminating composite numbers</span><br><span class="line">            Set A[𝑖 × 𝑗] to fals</span><br></pre></td></tr></table></figure>
-
+<p><br></p>
+<h3 id="improving-our-algorithm-1"><strong>Improving our algorithm</strong></h3>
+<p>We may use a bottom-up approach to eliminate composite numbers.</p>
+<p>The pseudocode: <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Given a Boolean array A of length n</span><br><span class="line">Initialize all elements in A to be true // assuming prime for i from 2 to n</span><br><span class="line">    if A is true </span><br><span class="line">        print i </span><br><span class="line">        for j from 1 to n/i  // eliminating composite numbers</span><br><span class="line">            Set A[𝑖 × 𝑗] to fals</span><br></pre></td></tr></table></figure></p>
 <p>implementation 參考<a href="./6_2.cpp">6_2.cpp</a></p>
-<br/>
-
-<h3 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a><strong>Complexity</strong></h3><ul>
-<li><p><strong>Time complexity:</strong> the running<br>time of an algorithm.<br>(The number of basic operations is a better measurement)</p>
-</li>
-<li><p><strong>Space complexity:</strong>  the amount<br>of spaces used by an algorithm.</p>
-</li>
+<p><br/></p>
+<h3 id="complexity"><strong>Complexity</strong></h3>
+<ul>
+<li><p><strong>Time complexity:</strong> the running time of an algorithm. (The number of basic operations is a better measurement)</p></li>
+<li><p><strong>Space complexity:</strong> the amount of spaces used by an algorithm.</p></li>
 </ul>
-<br/>
-
-<h2 id="Recursion"><a href="#Recursion" class="headerlink" title="Recursion"></a><strong>Recursion</strong></h2><h3 id="Recursive-functions"><a href="#Recursive-functions" class="headerlink" title="Recursive functions"></a><strong>Recursive functions</strong></h3><ul>
-<li>A function is recursive if it invokes itself (directly or indirectly). </li>
+<p><br/></p>
+<h2 id="recursion"><strong>Recursion</strong></h2>
+<h3 id="recursive-functions"><strong>Recursive functions</strong></h3>
+<ul>
+<li>A function is recursive if it invokes itself (directly or indirectly).</li>
 <li>The process of using recursive functions is called recursion(遞迴).</li>
 </ul>
 <p>當某問題可以被切割成多個重複或相近的子問題，且這些子問題都可以用同一個function來解決時，就很適合用recursion。</p>
-<br/>
-
-<h3 id="Example-1-finding-the-maximum"><a href="#Example-1-finding-the-maximum" class="headerlink" title="Example 1: finding the maximum"></a><strong>Example 1: finding the maximum</strong></h3><ul>
-<li><p>Suppose that we want to find the maximum number in an array A[1..n] (which means A is of size n).</p>
-</li>
-<li><p>A strategy:  </p>
+<p><br/></p>
+<h3 id="example-1-finding-the-maximum"><strong>Example 1: finding the maximum</strong></h3>
 <ul>
-<li>Subtask 1: First find the maximum of A[1..(n– 1)]. </li>
+<li><p>Suppose that we want to find the maximum number in an array A[1..n] (which means A is of size n).</p></li>
+<li><p>A strategy:</p>
+<ul>
+<li>Subtask 1: First find the maximum of A[1..(n– 1)].</li>
 <li>Subtask 2: Then compare that with A[n].</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <p>While subtask 2 is simple, subtask 1 is <strong>similar</strong> to the original task.</p>
 <ul>
-<li><p>First, I know I need to write a function whose header is:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">max</span><span class="params">(<span class="keyword">double</span> array[], <span class="keyword">int</span> len)</span></span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>If the function really works, subtask 1 can be completed by invoking</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> subMax = <span class="built_in">max</span>(array, len - <span class="number">1</span>);</span><br></pre></td></tr></table></figure></li>
+<li><p>First, I know I need to write a function whose header is: <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">max</span><span class="params">(<span class="keyword">double</span> array[], <span class="keyword">int</span> len)</span></span>;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>If the function really works, subtask 1 can be completed by invoking <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> subMax = <span class="built_in">max</span>(array, len - <span class="number">1</span>);</span><br></pre></td></tr></table></figure></p></li>
 </ul>
 <p>implementation 參考<a href="./6_3.cpp">6_3.cpp</a></p>
-<br/>
-
-<h3 id="Example-2-computing-factorials"><a href="#Example-2-computing-factorials" class="headerlink" title="Example 2: computing factorials"></a><strong>Example 2: computing factorials</strong></h3><ul>
+<p><br/></p>
+<h3 id="example-2-computing-factorials"><strong>Example 2: computing factorials</strong></h3>
+<ul>
 <li>A subproblem: computing the factorial of n – 1.</li>
 <li>A strategy: First calculate the factorial of n – 1, then multiply it with n.</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">factorial</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="comment">// stopping condition</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>; </span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="comment">// recursive call</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">factorial</span>(n - <span class="number">1</span>) * n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<h3 id="Example-3-the-Fibonacci-sequence"><a href="#Example-3-the-Fibonacci-sequence" class="headerlink" title="Example 3: the Fibonacci sequence"></a><strong>Example 3: the Fibonacci sequence</strong></h3><ul>
-<li>The Fibonacci sequence is 1, 1, 2, 3, 5, 8, 13, 21, …. Each number is the<br>sum of the two proceeding numbers. </li>
+<p><br/></p>
+<h3 id="example-3-the-fibonacci-sequence"><strong>Example 3: the Fibonacci sequence</strong></h3>
+<ul>
+<li>The Fibonacci sequence is 1, 1, 2, 3, 5, 8, 13, 21, …. Each number is the sum of the two proceeding numbers.</li>
 <li>The nth value can be found once we know the (n – 1)th and (n – 2)th values.</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>; </span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>; </span><br><span class="line">    <span class="keyword">else</span> <span class="comment">// two recursive calls</span></span><br><span class="line">        <span class="built_in"><span class="keyword">return</span></span> (<span class="built_in">fib</span>(n - <span class="number">1</span>) + <span class="built_in">fib</span>(n - <span class="number">2</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<h3 id="Complexity-issue-of-recursion"><a href="#Complexity-issue-of-recursion" class="headerlink" title="Complexity issue of recursion"></a><strong>Complexity issue of recursion</strong></h3><p><strong>recursion:</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(n == <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> <span class="comment">// two recursive calls</span></span><br><span class="line">    <span class="built_in"><span class="keyword">return</span></span> (<span class="built_in">fib</span>(n - <span class="number">1</span>) + <span class="built_in">fib</span>(n - <span class="number">2</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>repetitive:</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">fibRepetitive</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(n == <span class="number">1</span> || n == <span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">int</span> fib1 = <span class="number">1</span>, fib2 = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">int</span> fib3 = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++)</span><br><span class="line">  &#123;</span><br><span class="line">    fib3 = fib1 + fib2;</span><br><span class="line">    fib1 = fib2;</span><br><span class="line">    fib2 = fib3;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> fib3;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Technically, we say that:</p>
+<p><br/></p>
+<h3 id="complexity-issue-of-recursion"><strong>Complexity issue of recursion</strong></h3>
+<p><strong>recursion:</strong> <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(n == <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> <span class="comment">// two recursive calls</span></span><br><span class="line">    <span class="built_in"><span class="keyword">return</span></span> (<span class="built_in">fib</span>(n - <span class="number">1</span>) + <span class="built_in">fib</span>(n - <span class="number">2</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>repetitive:</strong> <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">fibRepetitive</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(n == <span class="number">1</span> || n == <span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">int</span> fib1 = <span class="number">1</span>, fib2 = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">int</span> fib3 = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++)</span><br><span class="line">  &#123;</span><br><span class="line">    fib3 = fib1 + fib2;</span><br><span class="line">    fib1 = fib2;</span><br><span class="line">    fib2 = fib3;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> fib3;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Technically, we say that: - The repetitive way is a <code>polynomial-time</code> algorithm - The recursive way is an <code>exponential-time</code> algorithm.</p>
+<p><br/></p>
+<h3 id="power-of-recursion"><strong>Power of recursion</strong></h3>
+<p>Though recursion is sometimes inefficient, typically implementation is easier.</p>
+<p>Let’s consider the classic example “Hanoi Tower”. implementation 參考<a href="./6_4.cpp">6_4.cpp</a></p>
+<p><br/></p>
+<h2 id="searching-and-sorting"><strong>Searching and sorting</strong></h2>
+<h3 id="binary-search"><strong>Binary search</strong></h3>
+<p>if the array is sorted: - First, we compare p with the median m (e.g., A[(n + 1) / 2] if n is odd). - If p equals m, bingo! - If p &lt; m, we know p must exist in the first half of A if it exists. - If p &gt; m, we know p must exist in the second half of A if it exists</p>
+<p>pseudocode: <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">binarySearch(a sorted array A, search in between from and to, search for p) </span><br><span class="line">if n = 1</span><br><span class="line">    return true if A_from= p; return false otherwise</span><br><span class="line">else</span><br><span class="line">    let median be floor((from + to) / 2)</span><br><span class="line">    if p = A_median</span><br><span class="line">        return true</span><br><span class="line">    else if p &lt; A_median</span><br><span class="line">        return binarySearch(A, from, median, p) </span><br><span class="line">    else</span><br><span class="line">        return binarySearch(A, median + 1, to, p)</span><br></pre></td></tr></table></figure></p>
+<p><br/></p>
+<h3 id="linear-search-vs.-binary-search"><strong>Linear search vs. binary search</strong></h3>
 <ul>
-<li>The repetitive way is a <code>polynomial-time</code> algorithm</li>
-<li>The recursive way is an <code>exponential-time</code> algorithm.</li>
+<li><p>In binary search, the number of instructions to be executed is roughly proportional to log n.</p></li>
+<li><p>So binary search is much more efficient than linear search!</p></li>
 </ul>
-<br/>
-
-<h3 id="Power-of-recursion"><a href="#Power-of-recursion" class="headerlink" title="Power of recursion"></a><strong>Power of recursion</strong></h3><p>Though recursion is sometimes inefficient, typically implementation is easier. </p>
-<p>Let’s consider the classic example “Hanoi Tower”.<br>implementation 參考<a href="./6_4.cpp">6_4.cpp</a></p>
-<br/>
-
-<h2 id="Searching-and-sorting"><a href="#Searching-and-sorting" class="headerlink" title="Searching and sorting"></a><strong>Searching and sorting</strong></h2><h3 id="Binary-search"><a href="#Binary-search" class="headerlink" title="Binary search"></a><strong>Binary search</strong></h3><p>if the array is sorted:</p>
+<p><br/></p>
+<h3 id="insertion-sort"><strong>Insertion sort</strong></h3>
 <ul>
-<li>First, we compare p with the median m (e.g., A[(n + 1) &#x2F; 2] if n is odd).</li>
-<li>If p equals m, bingo!</li>
-<li>If p &lt; m, we know p must exist in the first half of A if it exists.</li>
-<li>If p &gt; m, we know p must exist in the second half of A if it exists</li>
-</ul>
-<p>pseudocode:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">binarySearch(a sorted array A, search in between from and to, search for p) </span><br><span class="line">if n = 1</span><br><span class="line">    return true if A_from= p; return false otherwise</span><br><span class="line">else</span><br><span class="line">    let median be floor((from + to) / 2)</span><br><span class="line">    if p = A_median</span><br><span class="line">        return true</span><br><span class="line">    else if p &lt; A_median</span><br><span class="line">        return binarySearch(A, from, median, p) </span><br><span class="line">    else</span><br><span class="line">        return binarySearch(A, median + 1, to, p)</span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<h3 id="Linear-search-vs-binary-search"><a href="#Linear-search-vs-binary-search" class="headerlink" title="Linear search vs. binary search"></a><strong>Linear search vs. binary search</strong></h3><ul>
-<li><p>In binary search, the number of instructions to be executed is roughly<br>proportional to log n.</p>
-</li>
-<li><p>So binary search is much more efficient than linear search!</p>
-</li>
-</ul>
-<br/>
-
-<h3 id="Insertion-sort"><a href="#Insertion-sort" class="headerlink" title="Insertion sort"></a><strong>Insertion sort</strong></h3><ul>
 <li>The key is to maintain a sorted list.</li>
-<li>Then for each number in the unsorted list, insert it into the proper location<br>so that the sorted list remains sorted.</li>
+<li>Then for each number in the unsorted list, insert it into the proper location so that the sorted list remains sorted.</li>
 </ul>
-<p>pseudocode(Non-repetitive):</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">insertionSort(a non-repetitive array A, the array length n, an index cutoff &lt; n)</span><br><span class="line">// at any time, A_(1..cutoff) is sorted and A_(cutoff + 1..n) is unsorted</span><br><span class="line">if A_(cutoff + 1) &lt; A_(1..cutoff)</span><br><span class="line">    let p be 1 </span><br><span class="line">else</span><br><span class="line">    find p such that A_(p–1) &lt; A_(cutoff + 1) &lt; A_p</span><br><span class="line">insert A_(cutoff + 1) to A_p and  shift A_(p..cutoff) to A_(p + 1)..(cutoff + 1)</span><br><span class="line">    if cutoff + 1 &lt; n</span><br><span class="line">        insertionSort(A, n, cutoff + 1)</span><br></pre></td></tr></table></figure>
-
+<p>pseudocode(Non-repetitive): <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">insertionSort(a non-repetitive array A, the array length n, an index cutoff &lt; n)</span><br><span class="line">// at any time, A_(1..cutoff) is sorted and A_(cutoff + 1..n) is unsorted</span><br><span class="line">if A_(cutoff + 1) &lt; A_(1..cutoff)</span><br><span class="line">    let p be 1 </span><br><span class="line">else</span><br><span class="line">    find p such that A_(p–1) &lt; A_(cutoff + 1) &lt; A_p</span><br><span class="line">insert A_(cutoff + 1) to A_p and  shift A_(p..cutoff) to A_(p + 1)..(cutoff + 1)</span><br><span class="line">    if cutoff + 1 &lt; n</span><br><span class="line">        insertionSort(A, n, cutoff + 1)</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>We need to do n insertions.</li>
-<li>To insert the kth value, we search for a position and shift some elements.<ul>
-<li>A linear search: at most k comparisons. </li>
+<li>To insert the kth value, we search for a position and shift some elements.
+<ul>
+<li>A linear search: at most k comparisons.</li>
 <li>Shifting: at most k shifts.</li>
-</ul>
-</li>
+</ul></li>
 <li>Roughly we need 1 + 2 + … + n operations, which is proportional to n^2.</li>
 </ul>
-<br/>
-
-<h3 id="Merge-sort"><a href="#Merge-sort" class="headerlink" title="Merge sort"></a><strong>Merge sort</strong></h3><ul>
+<p><br/></p>
+<h3 id="merge-sort"><strong>Merge sort</strong></h3>
+<ul>
 <li>Insertion sort is simple and fast!</li>
-<li>A key observation is that “inserting” <code>another sorted list</code> of size k into a sorted<br>list can be faster than inserting k separate numbers one by one!</li>
-<li>Given an unsorted array, we will:<ul>
+<li>A key observation is that “inserting” <code>another sorted list</code> of size k into a sorted list can be faster than inserting k separate numbers one by one!</li>
+<li>Given an unsorted array, we will:
+<ul>
 <li>First split the array into two parts, the first half and second half.</li>
 <li>Then sort each subarray.</li>
 <li>Finally, merge these two subarrays.</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<p>pseudocode:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mergeSort(an array A, the array length n)</span><br><span class="line">    let median be floor((1 + n) / 2)</span><br><span class="line">    mergeSort(A_(1..median) , median) // now A_(1..median) is sorted</span><br><span class="line">    mergeSort(A_(median + 1)..n , n – median + 1) // now A_(median + 1)..n is sorted</span><br><span class="line">    merge A_(1..median) and A_(median + 1)..n  // how?</span><br></pre></td></tr></table></figure>
-
+<p>pseudocode: <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mergeSort(an array A, the array length n)</span><br><span class="line">    let median be floor((1 + n) / 2)</span><br><span class="line">    mergeSort(A_(1..median) , median) // now A_(1..median) is sorted</span><br><span class="line">    mergeSort(A_(median + 1)..n , n – median + 1) // now A_(median + 1)..n is sorted</span><br><span class="line">    merge A_(1..median) and A_(median + 1)..n  // how?</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>Insertion sort: Roughly proportional to n^2.</li>
 <li>Merge sort: Roughly proportional to n log n.</li>
 </ul>
-<br>
-
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a><strong>Reference</strong></h2><p><a target="_blank" rel="noopener" href="http://www.im.ntu.edu.tw/~lckung/courses/public/PD/">IM 1003 Programming Design</a></p>
-<br>
-
+<p><br></p>
+<h2 id="reference"><strong>Reference</strong></h2>
+<p><a target="_blank" rel="noopener" href="http://www.im.ntu.edu.tw/~lckung/courses/public/PD/">IM 1003 Programming Design</a></p>
+<p><br></p>
 <blockquote>
 <p>本文章同步發表於我的<a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/tree/master/Lecture_Code/">github repo</a></p>
 </blockquote>
@@ -478,7 +444,10 @@
     <a href="/Bosh-Hexo-Blog/Cplusplus-Programming-Functions/" rel="prev" title="C++ Programming Design - Functions">
       <i class="fa fa-chevron-left"></i> C++ Programming Design - Functions
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/Bosh-Hexo-Blog/Cplusplus-Programming-Complexity-and-Graphs/" rel="next" title="C++ Programming Design - Complexity and Graphs">
+      C++ Programming Design - Complexity and Graphs <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -537,7 +506,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CH6-Algorithms-and-Recursion"><span class="nav-number">1.</span> <span class="nav-text">CH6 Algorithms and Recursion</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithms-and-complexity"><span class="nav-number">1.1.</span> <span class="nav-text">Algorithms and complexity</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-listing-all-prime-numbers"><span class="nav-number">1.1.1.</span> <span class="nav-text">Example: listing all prime numbers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Improving-our-algorithm"><span class="nav-number">1.1.2.</span> <span class="nav-text">Improving our algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Improving-our-algorithm-1"><span class="nav-number">1.1.3.</span> <span class="nav-text">Improving our algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Complexity"><span class="nav-number">1.1.4.</span> <span class="nav-text">Complexity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Recursion"><span class="nav-number">1.2.</span> <span class="nav-text">Recursion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Recursive-functions"><span class="nav-number">1.2.1.</span> <span class="nav-text">Recursive functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-1-finding-the-maximum"><span class="nav-number">1.2.2.</span> <span class="nav-text">Example 1: finding the maximum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-2-computing-factorials"><span class="nav-number">1.2.3.</span> <span class="nav-text">Example 2: computing factorials</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-3-the-Fibonacci-sequence"><span class="nav-number">1.2.4.</span> <span class="nav-text">Example 3: the Fibonacci sequence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Complexity-issue-of-recursion"><span class="nav-number">1.2.5.</span> <span class="nav-text">Complexity issue of recursion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Power-of-recursion"><span class="nav-number">1.2.6.</span> <span class="nav-text">Power of recursion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Searching-and-sorting"><span class="nav-number">1.3.</span> <span class="nav-text">Searching and sorting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Binary-search"><span class="nav-number">1.3.1.</span> <span class="nav-text">Binary search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linear-search-vs-binary-search"><span class="nav-number">1.3.2.</span> <span class="nav-text">Linear search vs. binary search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Insertion-sort"><span class="nav-number">1.3.3.</span> <span class="nav-text">Insertion sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Merge-sort"><span class="nav-number">1.3.4.</span> <span class="nav-text">Merge sort</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.4.</span> <span class="nav-text">Reference</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ch6-algorithms-and-recursion"><span class="nav-number">1.</span> <span class="nav-text">CH6 Algorithms and Recursion</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#algorithms-and-complexity"><span class="nav-number">1.1.</span> <span class="nav-text">Algorithms and complexity</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#example-listing-all-prime-numbers"><span class="nav-number">1.1.1.</span> <span class="nav-text">Example: listing all prime numbers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#improving-our-algorithm"><span class="nav-number">1.1.2.</span> <span class="nav-text">Improving our algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#improving-our-algorithm-1"><span class="nav-number">1.1.3.</span> <span class="nav-text">Improving our algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#complexity"><span class="nav-number">1.1.4.</span> <span class="nav-text">Complexity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#recursion"><span class="nav-number">1.2.</span> <span class="nav-text">Recursion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#recursive-functions"><span class="nav-number">1.2.1.</span> <span class="nav-text">Recursive functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#example-1-finding-the-maximum"><span class="nav-number">1.2.2.</span> <span class="nav-text">Example 1: finding the maximum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#example-2-computing-factorials"><span class="nav-number">1.2.3.</span> <span class="nav-text">Example 2: computing factorials</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#example-3-the-fibonacci-sequence"><span class="nav-number">1.2.4.</span> <span class="nav-text">Example 3: the Fibonacci sequence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#complexity-issue-of-recursion"><span class="nav-number">1.2.5.</span> <span class="nav-text">Complexity issue of recursion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#power-of-recursion"><span class="nav-number">1.2.6.</span> <span class="nav-text">Power of recursion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#searching-and-sorting"><span class="nav-number">1.3.</span> <span class="nav-text">Searching and sorting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#binary-search"><span class="nav-number">1.3.1.</span> <span class="nav-text">Binary search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linear-search-vs.-binary-search"><span class="nav-number">1.3.2.</span> <span class="nav-text">Linear search vs. binary search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insertion-sort"><span class="nav-number">1.3.3.</span> <span class="nav-text">Insertion sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#merge-sort"><span class="nav-number">1.3.4.</span> <span class="nav-text">Merge sort</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-number">1.4.</span> <span class="nav-text">Reference</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -553,7 +522,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Bosh-Hexo-Blog/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -566,7 +535,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/Bosh-Hexo-Blog/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -601,7 +570,7 @@
           <h3 class="widget-title">Tag Cloud</h3>
           <div id="myCanvasContainer" class="widget tagcloud">
             <canvas width="250" height="250" id="resCanvas" style="width:100%">
-              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Algorithms/" rel="tag">Algorithms</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Arrays/" rel="tag">Arrays</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/C/" rel="tag">C++</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Function/" rel="tag">Function</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Programming/" rel="tag">Programming</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Recursion/" rel="tag">Recursion</a><span class="tag-list-count">1</span></li></ul>
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Algorithms/" rel="tag">Algorithms</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Arrays/" rel="tag">Arrays</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/C/" rel="tag">C++</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Function/" rel="tag">Function</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Pointer/" rel="tag">Pointer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Programming/" rel="tag">Programming</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Recursion/" rel="tag">Recursion</a><span class="tag-list-count">1</span></li></ul>
             </canvas>
           </div>
         </div>
@@ -633,13 +602,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">總字數：</span>
-    <span title="總字數">41k</span>
+    <span title="總字數">60k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">所需總閱讀時間 &asymp;</span>
-    <span title="所需總閱讀時間">37 分鐘</span>
+    <span title="所需總閱讀時間">55 分鐘</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
   </div>
@@ -795,6 +764,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 }
 </script>
 
+
+  
 
   
 

@@ -29,12 +29,12 @@
 
   gtag('config', 'G-THMGTWZ6T9');
 </script>
-  <meta name="description" content="添加網站訪客計數器hexo主題可以搭配第三方計數器來統計訪客人數，這邊我選擇的是不蒜子，因為它有內建在next主題內所以設定起來很方便。">
+  <meta name="description" content="添加網站訪客計數器 hexo主題可以搭配第三方計數器來統計訪客人數，這邊我選擇的是不蒜子，因為它有內建在next主題內所以設定起來很方便。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="從零開始使用Hexo + Github Page搭建個人技術筆記網站(8) - 客製化NexT主題：統計訪客人數與閱讀次數">
 <meta property="og:url" content="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-8/">
 <meta property="og:site_name" content="Bosh的技術部落格">
-<meta property="og:description" content="添加網站訪客計數器hexo主題可以搭配第三方計數器來統計訪客人數，這邊我選擇的是不蒜子，因為它有內建在next主題內所以設定起來很方便。">
+<meta property="og:description" content="添加網站訪客計數器 hexo主題可以搭配第三方計數器來統計訪客人數，這邊我選擇的是不蒜子，因為它有內建在next主題內所以設定起來很方便。">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://i.imgur.com/Q8gI2fg.png">
 <meta property="og:image" content="https://i.imgur.com/RVIPnaq.png">
@@ -98,7 +98,11 @@
   </style>
 </noscript>
 
-<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -282,42 +286,40 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="添加網站訪客計數器"><a href="#添加網站訪客計數器" class="headerlink" title="添加網站訪客計數器"></a><strong>添加網站訪客計數器</strong></h2><p>hexo主題可以搭配第三方計數器來統計訪客人數，這邊我選擇的是<a target="_blank" rel="noopener" href="https://busuanzi.ibruce.info/">不蒜子</a>，因為它有內建在next主題內所以設定起來很方便。</p>
+        <h2 id="添加網站訪客計數器"><strong>添加網站訪客計數器</strong></h2>
+<p>hexo主題可以搭配第三方計數器來統計訪客人數，這邊我選擇的是<a target="_blank" rel="noopener" href="https://busuanzi.ibruce.info/">不蒜子</a>，因為它有內建在next主題內所以設定起來很方便。</p>
 <span id="more"></span>
-
-<br/>
-
-<h3 id="修改hexo-next主題配置檔"><a href="#修改hexo-next主題配置檔" class="headerlink" title="修改hexo next主題配置檔"></a><strong>修改hexo next主題配置檔</strong></h3><p>首先打開<code>theme/next/_config.yml</code>，將<code>enable</code>改為true</p>
+<p><br/></p>
+<h3 id="修改hexo-next主題配置檔"><strong>修改hexo next主題配置檔</strong></h3>
+<p>首先打開<code>theme/next/_config.yml</code>，將<code>enable</code>改為true</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Show Views / Visitors of the website / page with busuanzi.</span></span><br><span class="line"><span class="comment"># Get more information on http://ibruce.info/2015/04/04/busuanzi</span></span><br><span class="line">busuanzi_count:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">false</span></span><br><span class="line">  total_visitors: <span class="literal">true</span></span><br><span class="line">  total_visitors_icon: fa fa-user</span><br><span class="line">  total_views: <span class="literal">true</span></span><br><span class="line">  total_views_icon: fa fa-eye</span><br><span class="line">  post_views: <span class="literal">true</span></span><br><span class="line">  post_views_icon: fa fa-eye</span><br></pre></td></tr></table></figure>
-
-<br/>
-
+<p><br/></p>
 <p>接著打開<code>themes\next\layout\_third-party\analytics\busuanzi-counter.swig</code>，確認src後面接的網址為<a target="_blank" rel="noopener" href="https://busuanzi.ibruce.info/">不蒜子</a>官方提供的最新網址。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- <span class="keyword">if</span> theme.busuanzi_count.enable %&#125;</span><br><span class="line">&lt;div class=<span class="string">&quot;busuanzi-count&quot;</span>&gt;</span><br><span class="line">  &lt;script&#123;&#123; pjax &#125;&#125; async src=<span class="string">&quot;https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">  &#123;%- <span class="keyword">if</span> theme.busuanzi_count.total_visitors %&#125;</span><br></pre></td></tr></table></figure>
-
 <p>到這裡打開<code>hexo server</code>應該就能看到網站底下出現統計人數跟觀看數量的圖標與數字了，在local端會看到異常大的統計數字這是正常的，部署到github page後就會顯示正常。</p>
-<br/>
-
-<h3 id="統計網站uv-pv"><a href="#統計網站uv-pv" class="headerlink" title="統計網站uv, pv"></a><strong>統計網站uv, pv</strong></h3><p>不蒜子計算計算晚站訪客數有兩種算法：</p>
+<p><br/></p>
+<h3 id="統計網站uv-pv"><strong>統計網站uv, pv</strong></h3>
+<p>不蒜子計算計算晚站訪客數有兩種算法：</p>
 <ul>
 <li>uv: 單個用戶連續點擊n篇文章只紀錄一次訪客數。</li>
 <li>pv: 單個用戶連續點擊n篇文章紀錄n次訪客數。</li>
 </ul>
 <p>若要在統計數字與圖標間加上文字則可以在同個文件中找到下列程式碼，改動如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- <span class="keyword">if</span> theme.busuanzi_count.total_visitors %&#125;</span><br><span class="line">    &lt;span class=<span class="string">&quot;post-meta-item&quot;</span> id=<span class="string">&quot;busuanzi_container_site_uv&quot;</span> style=<span class="string">&quot;display: none;&quot;</span>&gt;</span><br><span class="line">      &lt;span class=<span class="string">&quot;post-meta-item-icon&quot;</span>&gt;</span><br><span class="line">        &lt;i class=<span class="string">&quot;&#123;&#123; theme.busuanzi_count.total_visitors_icon &#125;&#125;&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">      &lt;/span&gt;</span><br><span class="line">      &lt;span class=<span class="string">&quot;site-uv&quot;</span> title=<span class="string">&quot;&#123;&#123; __(&#x27;footer.total_visitors&#x27;) &#125;&#125;&quot;</span>&gt;</span><br><span class="line">				總訪客：&lt;span id=<span class="string">&quot;busuanzi_value_site_uv&quot;</span>&gt;&lt;/span&gt;人</span><br><span class="line">      &lt;/span&gt;</span><br><span class="line">    &lt;/span&gt;</span><br><span class="line">  &#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- <span class="keyword">if</span> theme.busuanzi_count.total_views %&#125;</span><br><span class="line">    &lt;span class=<span class="string">&quot;post-meta-item&quot;</span> id=<span class="string">&quot;busuanzi_container_site_pv&quot;</span> style=<span class="string">&quot;display: none;&quot;</span>&gt;</span><br><span class="line">      &lt;span class=<span class="string">&quot;post-meta-item-icon&quot;</span>&gt;</span><br><span class="line">        &lt;i class=<span class="string">&quot;&#123;&#123; theme.busuanzi_count.total_views_icon &#125;&#125;&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">      &lt;/span&gt;</span><br><span class="line">      &lt;span class=<span class="string">&quot;site-pv&quot;</span> title=<span class="string">&quot;&#123;&#123; __(&#x27;footer.total_views&#x27;) &#125;&#125;&quot;</span>&gt;</span><br><span class="line">        總閱讀量：&lt;span id=<span class="string">&quot;busuanzi_value_site_pv&quot;</span>&gt;&lt;/span&gt;次</span><br><span class="line">      &lt;/span&gt;</span><br><span class="line">    &lt;/span&gt;</span><br><span class="line">  &#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/Q8gI2fg.png" alt="Imgur"></p>
-<br/>
-
-<h3 id="統計單頁pv"><a href="#統計單頁pv" class="headerlink" title="統計單頁pv"></a><strong>統計單頁pv</strong></h3><p>打開<code>themes/next/layout/_macro/post.swig</code>找到下列程式碼，這邊next主題已經幫我們設定好了只要確定有以下程式碼就沒問題了</p>
+<figure>
+<img src="https://i.imgur.com/Q8gI2fg.png" alt="" /><figcaption>Imgur</figcaption>
+</figure>
+<p><br/></p>
+<h3 id="統計單頁pv"><strong>統計單頁pv</strong></h3>
+<p>打開<code>themes/next/layout/_macro/post.swig</code>找到下列程式碼，這邊next主題已經幫我們設定好了只要確定有以下程式碼就沒問題了</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- <span class="keyword">if</span> not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.post_views %&#125;</span><br><span class="line">            &lt;span class=<span class="string">&quot;post-meta-item&quot;</span> title=<span class="string">&quot;&#123;&#123; __(&#x27;post.views&#x27;) &#125;&#125;&quot;</span> id=<span class="string">&quot;busuanzi_container_page_pv&quot;</span> style=<span class="string">&quot;display: none;&quot;</span>&gt;</span><br><span class="line">              &lt;span class=<span class="string">&quot;post-meta-item-icon&quot;</span>&gt;</span><br><span class="line">                &lt;i class=<span class="string">&quot;&#123;&#123; theme.busuanzi_count.post_views_icon &#125;&#125;&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">              &lt;/span&gt;</span><br><span class="line">              &lt;span class=<span class="string">&quot;post-meta-item-text&quot;</span>&gt;&#123;&#123; __(<span class="string">&#x27;post.views&#x27;</span>) + __(<span class="string">&#x27;symbol.colon&#x27;</span>) &#125;&#125;&lt;/span&gt;</span><br><span class="line">              &lt;span id=<span class="string">&quot;busuanzi_value_page_pv&quot;</span>&gt;&lt;/span&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">          &#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/RVIPnaq.png" alt="Imgur"></p>
-<br/>
-
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a><strong>參考資料</strong></h2><ul>
+<figure>
+<img src="https://i.imgur.com/RVIPnaq.png" alt="" /><figcaption>Imgur</figcaption>
+</figure>
+<p><br/></p>
+<h2 id="參考資料"><strong>參考資料</strong></h2>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://www.lcd1024.xyz/2020/05/31/busuanzi/">Hexo Next主题不蒜子统计的使用。</a></li>
 <li><a target="_blank" rel="noopener" href="https://blog.mikelyou.com/2020/08/18/busuanzi-visitor-counts-and-sitetime/">使用不蒜子添加访客统计</a></li>
 </ul>
@@ -420,7 +422,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Bosh-Hexo-Blog/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -433,7 +435,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/Bosh-Hexo-Blog/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -468,7 +470,7 @@
           <h3 class="widget-title">Tag Cloud</h3>
           <div id="myCanvasContainer" class="widget tagcloud">
             <canvas width="250" height="250" id="resCanvas" style="width:100%">
-              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Algorithms/" rel="tag">Algorithms</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Arrays/" rel="tag">Arrays</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/C/" rel="tag">C++</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Function/" rel="tag">Function</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Programming/" rel="tag">Programming</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Recursion/" rel="tag">Recursion</a><span class="tag-list-count">1</span></li></ul>
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Algorithms/" rel="tag">Algorithms</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Arrays/" rel="tag">Arrays</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/C/" rel="tag">C++</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Function/" rel="tag">Function</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Pointer/" rel="tag">Pointer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Programming/" rel="tag">Programming</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Recursion/" rel="tag">Recursion</a><span class="tag-list-count">1</span></li></ul>
             </canvas>
           </div>
         </div>
@@ -500,13 +502,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">總字數：</span>
-    <span title="總字數">41k</span>
+    <span title="總字數">60k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">所需總閱讀時間 &asymp;</span>
-    <span title="所需總閱讀時間">37 分鐘</span>
+    <span title="所需總閱讀時間">55 分鐘</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
   </div>
@@ -662,6 +664,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 }
 </script>
 
+
+  
 
   
 

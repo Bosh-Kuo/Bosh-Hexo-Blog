@@ -29,12 +29,12 @@
 
   gtag('config', 'G-THMGTWZ6T9');
 </script>
-  <meta name="description" content="幫部落格添加標籤、分類與關於頁面！建立新自訂頁面1hexo new page &quot;頁面名稱&quot;">
+  <meta name="description" content="幫部落格添加標籤、分類與關於頁面！ 建立新自訂頁面 1hexo new page &quot;頁面名稱&quot;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="從零開始使用Hexo + Github Page搭建個人技術筆記網站(5) - 標籤、分類與關於頁面">
 <meta property="og:url" content="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-5/">
 <meta property="og:site_name" content="Bosh的技術部落格">
-<meta property="og:description" content="幫部落格添加標籤、分類與關於頁面！建立新自訂頁面1hexo new page &quot;頁面名稱&quot;">
+<meta property="og:description" content="幫部落格添加標籤、分類與關於頁面！ 建立新自訂頁面 1hexo new page &quot;頁面名稱&quot;">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://i.imgur.com/zNvPADU.png">
 <meta property="article:published_time" content="2022-01-24T03:29:55.000Z">
@@ -97,7 +97,11 @@
   </style>
 </noscript>
 
-<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -281,34 +285,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="幫部落格添加標籤、分類與關於頁面！"><a href="#幫部落格添加標籤、分類與關於頁面！" class="headerlink" title="幫部落格添加標籤、分類與關於頁面！"></a><strong>幫部落格添加標籤、分類與關於頁面！</strong></h2><h3 id="建立新自訂頁面"><a href="#建立新自訂頁面" class="headerlink" title="建立新自訂頁面"></a><strong>建立新自訂頁面</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;頁面名稱&quot;</span></span><br></pre></td></tr></table></figure>
+        <h2 id="幫部落格添加標籤分類與關於頁面"><strong>幫部落格添加標籤、分類與關於頁面！</strong></h2>
+<h3 id="建立新自訂頁面"><strong>建立新自訂頁面</strong></h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;頁面名稱&quot;</span></span><br></pre></td></tr></table></figure>
 <span id="more"></span>
-
-<p><img src="https://i.imgur.com/zNvPADU.png" alt="Imgur"></p>
+<figure>
+<img src="https://i.imgur.com/zNvPADU.png" alt="" /><figcaption>Imgur</figcaption>
+</figure>
 <p>hexo會自動在source資料夾建立一個跟該新建頁面名稱相同的資料夾，裡面放著一個index.md檔用來編寫頁面內容。若是原本存為草稿的md檔編輯好要發布成頁面，就以同個道理在source創建一個該頁面名稱的資料夾，並將草稿從草稿資料夾移到該資料夾並將檔案改命名為index.md。</p>
-<br/>
-
-<h3 id="頁面資訊"><a href="#頁面資訊" class="headerlink" title="頁面資訊"></a><strong>頁面資訊</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2022-01-20 20:16:29</span><br><span class="line">comments: <span class="literal">false</span>  <span class="comment"># 設定為 false 表示不開放留言</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
+<p><br/></p>
+<h3 id="頁面資訊"><strong>頁面資訊</strong></h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2022-01-20 20:16:29</span><br><span class="line">comments: <span class="literal">false</span>  <span class="comment"># 設定為 false 表示不開放留言</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 <p>有些頁面的目的為專門提供資訊或指引，沒有互動的需求，因此可以設定使該頁面不開放留言，當然現在還沒有打算加入留言功能所以有沒有這一行都沒關係。</p>
-<br/>
-
-<h3 id="建立分類頁與標籤頁"><a href="#建立分類頁與標籤頁" class="headerlink" title="建立分類頁與標籤頁"></a><strong>建立分類頁與標籤頁</strong></h3><p>Hexo 本身就有提供一些能夠連動網站資訊的頁面，例如文章分類與標籤頁，建立的方式就跟建立自訂頁面一樣。</p>
+<p><br/></p>
+<h3 id="建立分類頁與標籤頁"><strong>建立分類頁與標籤頁</strong></h3>
+<p>Hexo 本身就有提供一些能夠連動網站資訊的頁面，例如文章分類與標籤頁，建立的方式就跟建立自訂頁面一樣。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 建立標籤頁</span></span><br><span class="line">hexo new page tags</span><br><span class="line"><span class="comment"># 建立分類頁</span></span><br><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
-
-<br/>
-
+<p><br/></p>
 <p>打開新建的分頁index.md，會發現其實跟前述自訂分頁一樣一開始一開始只有title和date兩欄，如果要連接 Hexo 資訊，就要加上 <code>type</code> 資訊，並設定為 <code>tags</code>或<code>categories</code>。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tags/index.md</span></span><br><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2022-01-20 20:58:13</span><br><span class="line"><span class="built_in">type</span>: tags </span><br><span class="line">comments: <span class="literal">false</span> </span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"><span class="comment"># categorues/index.md</span></span><br><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2022-01-20 20:58:31</span><br><span class="line"><span class="built_in">type</span>: categories </span><br><span class="line">comments: <span class="literal">false</span> </span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<br/>
-
+<p><br/></p>
 <p>接著打開<code>./themes/next/_config.yml</code>，設定側欄顯示清單，完成後側邊欄就多了剛剛新增的幾個頁面連結了。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || fa fa-home</span><br><span class="line">  about: /about/ || fa fa-user</span><br><span class="line">  tags: /tags/ || fa fa-tags</span><br><span class="line">  categories: /categories/ || fa fa-th</span><br><span class="line">  archives: /archives/ || fa fa-archive</span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a><strong>參考資料</strong></h2><ul>
+<p><br/></p>
+<h2 id="參考資料"><strong>參考資料</strong></h2>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20139218/ironman/3910">30 天利用 Hexo 打造技術部落格系列</a></li>
 </ul>
 
@@ -394,7 +395,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%AB%E9%83%A8%E8%90%BD%E6%A0%BC%E6%B7%BB%E5%8A%A0%E6%A8%99%E7%B1%A4%E3%80%81%E5%88%86%E9%A1%9E%E8%88%87%E9%97%9C%E6%96%BC%E9%A0%81%E9%9D%A2%EF%BC%81"><span class="nav-number">1.</span> <span class="nav-text">幫部落格添加標籤、分類與關於頁面！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E6%96%B0%E8%87%AA%E8%A8%82%E9%A0%81%E9%9D%A2"><span class="nav-number">1.1.</span> <span class="nav-text">建立新自訂頁面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A0%81%E9%9D%A2%E8%B3%87%E8%A8%8A"><span class="nav-number">1.2.</span> <span class="nav-text">頁面資訊</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E5%88%86%E9%A1%9E%E9%A0%81%E8%88%87%E6%A8%99%E7%B1%A4%E9%A0%81"><span class="nav-number">1.3.</span> <span class="nav-text">建立分類頁與標籤頁</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">2.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%AB%E9%83%A8%E8%90%BD%E6%A0%BC%E6%B7%BB%E5%8A%A0%E6%A8%99%E7%B1%A4%E5%88%86%E9%A1%9E%E8%88%87%E9%97%9C%E6%96%BC%E9%A0%81%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">幫部落格添加標籤、分類與關於頁面！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E6%96%B0%E8%87%AA%E8%A8%82%E9%A0%81%E9%9D%A2"><span class="nav-number">1.1.</span> <span class="nav-text">建立新自訂頁面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A0%81%E9%9D%A2%E8%B3%87%E8%A8%8A"><span class="nav-number">1.2.</span> <span class="nav-text">頁面資訊</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E5%88%86%E9%A1%9E%E9%A0%81%E8%88%87%E6%A8%99%E7%B1%A4%E9%A0%81"><span class="nav-number">1.3.</span> <span class="nav-text">建立分類頁與標籤頁</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">2.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -410,7 +411,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Bosh-Hexo-Blog/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -423,7 +424,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/Bosh-Hexo-Blog/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -458,7 +459,7 @@
           <h3 class="widget-title">Tag Cloud</h3>
           <div id="myCanvasContainer" class="widget tagcloud">
             <canvas width="250" height="250" id="resCanvas" style="width:100%">
-              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Algorithms/" rel="tag">Algorithms</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Arrays/" rel="tag">Arrays</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/C/" rel="tag">C++</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Function/" rel="tag">Function</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Programming/" rel="tag">Programming</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Recursion/" rel="tag">Recursion</a><span class="tag-list-count">1</span></li></ul>
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Algorithms/" rel="tag">Algorithms</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Arrays/" rel="tag">Arrays</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/C/" rel="tag">C++</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Function/" rel="tag">Function</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Pointer/" rel="tag">Pointer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Programming/" rel="tag">Programming</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Recursion/" rel="tag">Recursion</a><span class="tag-list-count">1</span></li></ul>
             </canvas>
           </div>
         </div>
@@ -490,13 +491,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">總字數：</span>
-    <span title="總字數">41k</span>
+    <span title="總字數">60k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">所需總閱讀時間 &asymp;</span>
-    <span title="所需總閱讀時間">37 分鐘</span>
+    <span title="所需總閱讀時間">55 分鐘</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
   </div>
@@ -652,6 +653,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 }
 </script>
 
+
+  
 
   
 

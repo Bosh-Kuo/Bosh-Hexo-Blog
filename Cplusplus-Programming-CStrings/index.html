@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Bosh-Hexo-Blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Bosh-Hexo-Blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Bosh-Hexo-Blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Bosh-Hexo-Blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/Bosh-Hexo-Blog/css/main.css">
+
+
+<link rel="stylesheet" href="/Bosh-Hexo-Blog/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"bosh-kuo.github.io","root":"/Bosh-Hexo-Blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-THMGTWZ6T9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-THMGTWZ6T9');
+</script>
+  <meta name="description" content="CH9 CStrings Characters char  Use one byte (–128 to 127) to store English letters, numbers, symbols, and special characters(但不能儲存中文符號) It is also an integer! 字元本身儲存的是一個整數，再經由ASCII code encode成我們看到的符號，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ Programming Design - CStrings">
+<meta property="og:url" content="https://bosh-kuo.github.io/Bosh-Hexo-Blog/Cplusplus-Programming-CStrings/">
+<meta property="og:site_name" content="Bosh的技術部落格">
+<meta property="og:description" content="CH9 CStrings Characters char  Use one byte (–128 to 127) to store English letters, numbers, symbols, and special characters(但不能儲存中文符號) It is also an integer! 字元本身儲存的是一個整數，再經由ASCII code encode成我們看到的符號，">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-03-05T07:34:26.000Z">
+<meta property="article:modified_time" content="2022-03-05T07:40:13.966Z">
+<meta property="article:author" content="Bosh-Kuo">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/Cplusplus-Programming-CStrings/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>C++ Programming Design - CStrings | Bosh的技術部落格</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-THMGTWZ6T9"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-THMGTWZ6T9');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Bosh-Hexo-Blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Bosh的技術部落格</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">歡迎來到我Blog! 我將會在這裡分享我的學習經驗、知識、生活，記錄不同人生階段的自己</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/Bosh-Hexo-Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/Bosh-Hexo-Blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/Bosh-Hexo-Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/Bosh-Hexo-Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/Bosh-Hexo-Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+  <a href="https://github.com/Bosh-Kuo" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/Cplusplus-Programming-CStrings/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Bosh-Hexo-Blog/images/Bosh2.jpg">
+      <meta itemprop="name" content="Bosh-Kuo">
+      <meta itemprop="description" content="轉職路上的土木系碩班生">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bosh的技術部落格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C++ Programming Design - CStrings
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2022-03-05 15:34:26 / 修改時間：15:40:13" itemprop="dateCreated datePublished" datetime="2022-03-05T15:34:26+08:00">2022-03-05</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>7.9k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>7 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="ch9-cstrings"><strong>CH9 CStrings</strong></h1>
+<h2 id="characters"><strong>Characters</strong></h2>
+<h3 id="char"><strong>char</strong></h3>
+<ul>
+<li>Use one byte (–128 to 127) to store English letters, numbers, symbols, and special characters(但不能儲存中文符號)</li>
+<li>It is also an <code>integer</code>! 字元本身儲存的是一個整數，再經由<code>ASCII code</code> encode成我們看到的符號，因此每個char其實都可以轉成int，也可以最整數運算，參考<a href="%5B./9_1.cpp%5D(https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/tree/master/Lecture_Code/9.CStrings)">9_1.cpp</a>, <a target="_blank" rel="noopener" href="https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/tree/master/Lecture_Code/9.CStrings">9_2.cpp</a></li>
+</ul>
+<p>The C++ standard library <cctype> contains some useful functions for processing characters. <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">islower</span><span class="params">(<span class="keyword">int</span> c)</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isupper</span><span class="params">(<span class="keyword">int</span> c)</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">tolower</span><span class="params">(<span class="keyword">int</span> c)</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">toupper</span><span class="params">(<span class="keyword">int</span> c)</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isalpha</span><span class="params">(<span class="keyword">int</span> c)</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isdigit</span><span class="params">(<span class="keyword">int</span> c)</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isalnum</span><span class="params">(<span class="keyword">int</span> c)</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isprint</span><span class="params">(<span class="keyword">int</span> c)</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isspace</span><span class="params">(<span class="keyword">int</span> c)</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ispunct</span><span class="params">(<span class="keyword">int</span> c)</span></span></span><br></pre></td></tr></table></figure></p>
+<span id="more"></span>
+<p><br/></p>
+<h2 id="c-strings"><strong>C strings</strong></h2>
+<h3 id="string"><strong>String</strong></h3>
+<p>在C++中Strings有兩種形式: - C strings as character arrays, A character array can be initialized as a usual array. - C++ strings as objects. (後面章節會提)</p>
+<p><br></p>
+<h3 id="a-special-way-to-input-a-string"><strong>A special way to input a string</strong></h3>
+<p>在C++中char arrays被用來作為string，因此很多opration都會為了char arrays被overloaded，exp: <code>cin &gt;&gt;, cout &lt;&lt;</code><br />
+對一般array來說沒辦法一次輸入或輸出多個元素但char array可以 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> str[<span class="number">10</span>]; </span><br><span class="line">cin &gt;&gt; str; <span class="comment">// if we type &quot;abcde&quot; </span></span><br><span class="line">cout &lt;&lt; str[<span class="number">0</span>]; <span class="comment">// a </span></span><br><span class="line">cout &lt;&lt; str[<span class="number">2</span>]; <span class="comment">// c</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> values[<span class="number">5</span>] = &#123;<span class="number">0</span>&#125;; </span><br><span class="line">cout &lt;&lt; values; <span class="comment">// an address </span></span><br><span class="line"><span class="keyword">char</span> str[<span class="number">10</span>]; </span><br><span class="line">cin &gt;&gt; str; <span class="comment">// if we type &quot;abcde&quot; </span></span><br><span class="line">cout &lt;&lt; str; <span class="comment">// abcde</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="the-null-character"><strong>The null character</strong></h3>
+<p>When we use cin &gt;&gt; to input a string, a null character <code>\0</code> will be appended at the end automatically.</p>
+<ul>
+<li><code>\0</code> is an escape sequence. It marks the end of a string.</li>
+<li>When you declare a character array of length n, you can store a string of length at most n – 1.</li>
+<li>A C string may be initialized with a double quotation
+<ul>
+<li>char s[100] = "abc"</li>
+</ul></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a[<span class="number">100</span>] = <span class="string">&quot;abcde FGH&quot;</span>;</span><br><span class="line">cout &lt;&lt; a &lt;&lt; <span class="string">&quot;\n&quot;</span>; <span class="comment">// abcde FGH </span></span><br><span class="line"><span class="keyword">char</span> b[<span class="number">100</span>] = <span class="string">&quot;abcde\0FGH&quot;</span>;  </span><br><span class="line">cout &lt;&lt; b &lt;&lt; <span class="string">&quot;\n&quot;</span>; <span class="comment">// abcd</span></span><br></pre></td></tr></table></figure>
+<p>One may also initialize a C string by assigning multiple characters. - char s[100] = {'a', 'b', 'c'}; - No null character will be appended (though uninitialized values will be initialized to 0, which is the null character). - = is overloaded for “a C string” and “some characters” in different ways.</p>
+<p><br/></p>
+<h3 id="comparisons"><strong>Comparisons</strong></h3>
+<p>Will a null character be appended?</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> s[<span class="number">10</span>] = <span class="string">&quot;abc&quot;</span>;  <span class="comment">// Yes </span></span><br><span class="line"><span class="keyword">char</span> s[<span class="number">100</span>] = &#123;<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>&#125;;  <span class="comment">// No</span></span><br><span class="line">cin &gt;&gt; s;  <span class="comment">// Yes </span></span><br><span class="line">cin &gt;&gt; s[<span class="number">0</span>];  <span class="comment">// No</span></span><br></pre></td></tr></table></figure>
+<p><br/></p>
+<h3 id="string-assignments"><strong>String assignments</strong></h3>
+<p>用""來 assign string 只能用在宣告時，宣告後char array variable存的就是address了 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> s[<span class="number">100</span>]; </span><br><span class="line">s = <span class="string">&quot;this is a string&quot;</span>; <span class="comment">// compilation error!</span></span><br></pre></td></tr></table></figure></p>
+<p>How to explain the outputs of this program? <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> c[<span class="number">100</span>] = &#123;<span class="number">0</span>&#125;;  <span class="comment">// (1)</span></span><br><span class="line">cin &gt;&gt; c;  <span class="comment">// (2) &quot;123456789&quot; </span></span><br><span class="line">cin &gt;&gt; c; <span class="comment">// (3) &quot;abcde&quot;; </span></span><br><span class="line">cout &lt;&lt; c &lt;&lt; <span class="string">&quot;\n&quot;</span>; <span class="comment">// &quot;abcde&quot; </span></span><br><span class="line">c[<span class="number">5</span>] = <span class="string">&#x27;*&#x27;</span>; </span><br><span class="line">cout &lt;&lt; c &lt;&lt; <span class="string">&quot;\n&quot;</span>; <span class="comment">// (4) &quot;abcde*789&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// (1) 0000000……0</span></span><br><span class="line"><span class="comment">// (2) 123456789\0</span></span><br><span class="line"><span class="comment">// (3) abcde\0789\0</span></span><br><span class="line"><span class="comment">// (4) abcde*789\0</span></span><br></pre></td></tr></table></figure></p>
+<p><br/></p>
+<h3 id="array-boundary"><strong>Array boundary</strong></h3>
+<p>C++ does not check array boundary! <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a[<span class="number">5</span>] = &#123;<span class="number">0</span>&#125;; </span><br><span class="line">cin &gt;&gt; a; <span class="comment">// &quot;123456789&quot; </span></span><br><span class="line">cout &lt;&lt; a; <span class="comment">// &quot;123456789&quot; or an error</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="a-strange-case"><strong>A strange case</strong></h3>
+<p>並不是因為空白鍵被當作C strings的結尾，而是因為<code>cin</code> <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a1[<span class="number">100</span>] = &#123;<span class="number">0</span>&#125;; </span><br><span class="line">cin &gt;&gt; a1; <span class="comment">// &quot;this is a string&quot; </span></span><br><span class="line">cout &lt;&lt; a1; <span class="comment">// &quot;this&quot;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a2[<span class="number">100</span>] = &#123;<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27; &#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;\0&#x27;</span>, <span class="string">&#x27;e&#x27;</span>&#125;; </span><br><span class="line">cout &lt;&lt; a2; <span class="comment">// ab c</span></span><br></pre></td></tr></table></figure>
+<p><br/></p>
+<h3 id="cin-vs.-cin.getline"><strong>cin &gt;&gt; vs. cin.getline()</strong></h3>
+<p><code>cin &gt;&gt;</code> splits the input stream into char pieces according to white spaces. The same thing happens for the <code>newline character</code> and <code>tab</code>.</p>
+<p>To input a string with white spaces, use <code>cin.getline()</code>.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a[<span class="number">100</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">char</span> b[<span class="number">100</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">cin &gt;&gt; a &gt;&gt; b; <span class="comment">// this is</span></span><br><span class="line">cout &lt;&lt; a &lt;&lt; <span class="string">&quot;\n&quot;</span>; <span class="comment">// this</span></span><br><span class="line">cout &lt;&lt; b &lt;&lt; <span class="string">&quot;\n&quot;</span>; <span class="comment">// is</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> a[<span class="number">100</span>];</span><br><span class="line">cin.<span class="built_in">getline</span>(a, <span class="number">100</span>); <span class="comment">// Hi, it&#x27;s me</span></span><br><span class="line">cout &lt;&lt; a &lt;&lt; <span class="string">&quot;\n&quot;</span>; <span class="comment">// Hi, it&#x27;s me</span></span><br></pre></td></tr></table></figure>
+<p><br/></p>
+<h3 id="string-literals-and-character-pointers"><strong>String literals and character pointers</strong></h3>
+<p>A character pointer may also be initialized as a string literal. <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span>* p = <span class="string">&quot;12345&quot;</span>; </span><br><span class="line">cout &lt;&lt; p + <span class="number">2</span> &lt;&lt; <span class="string">&quot;\n&quot;</span>; <span class="comment">// 345</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>When we do so, the system allocates space storing “12345”.</li>
+<li>That space is <code>read-only</code>.</li>
+<li>p stores the address of that space.</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a[<span class="number">100</span>] = &#123;<span class="number">0</span>&#125;; </span><br><span class="line">a = <span class="string">&quot;123&quot;</span>; <span class="comment">// compilation error</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span>* p; </span><br><span class="line">p = <span class="string">&quot;abc&quot;</span>; <span class="comment">// okay</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a[<span class="number">100</span>] = <span class="string">&quot;12345&quot;</span>;  </span><br><span class="line"><span class="keyword">char</span>* p = a;  </span><br><span class="line">p = <span class="string">&quot;abc&quot;</span>; <span class="comment">// does not affect a  </span></span><br><span class="line">cout &lt;&lt; p &lt;&lt; <span class="string">&quot;\n&quot;</span>; <span class="comment">// abc  </span></span><br><span class="line">cout &lt;&lt; a &lt;&lt; <span class="string">&quot;\n&quot;</span>; <span class="comment">// 12345</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> a[<span class="number">100</span>] = <span class="string">&quot;12345&quot;</span>;</span><br><span class="line"><span class="keyword">char</span>* p = a;</span><br><span class="line">p = <span class="string">&quot;abc&quot;</span>;</span><br><span class="line">cout &lt;&lt; p &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">cin &gt;&gt; p; <span class="comment">// run-time error 因為character pointer為read-only</span></span><br></pre></td></tr></table></figure>
+<h3 id="main-function-arguments"><strong>Main function arguments</strong></h3>
+<p>我們可以在main function傳入arguments <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span> </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; argc; i++)</span><br><span class="line">        cout &lt;&lt; argv[i] &lt;&lt; <span class="string">&quot;\n&quot;</span>; </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> - <code>argv[0]</code> is the name of the executable file. - <code>argv[i]</code> is the ith string passed into main.</p>
+<p><br/></p>
+<h2 id="c-string-processing-functions"><strong>C string processing functions</strong></h2>
+<p>The C++ standard library <cstring> contains many useful pointer-based string processing functions. - Query and searching strlen, strchr, strstr. - Comparison: strcmp, strncmp. - Concatenation: strcat, strncat. - Copying: strcpy, strncpy. - Splitting: strtok.</p>
+<p>The C++ standard library <cstdlib> contains some more. - String-number conversion: atoi, atof, itoa. - Look for detailed explanations by yourselves!</p>
+<h3 id="string-length-query"><strong>String length query</strong></h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span>* p = <span class="string">&quot;12345&quot;</span>; </span><br><span class="line">cout &lt;&lt; <span class="built_in">strlen</span>(p) &lt;&lt; <span class="string">&quot;\n&quot;</span>;  <span class="comment">// 5</span></span><br><span class="line"><span class="keyword">char</span> a[<span class="number">100</span>] = <span class="string">&quot;1234567890&quot;</span>;  </span><br><span class="line">cout &lt;&lt; <span class="built_in">strlen</span>(a) &lt;&lt; <span class="string">&quot;\n&quot;</span>;  <span class="comment">// 10</span></span><br><span class="line">cout &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(a) &lt;&lt; <span class="string">&quot;\n&quot;</span>;  <span class="comment">// 100(陣列空間大小)</span></span><br><span class="line">cout &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(a + <span class="number">2</span>) &lt;&lt; <span class="string">&quot;\n&quot;</span>;  <span class="comment">// 8(單獨一個記憶體位置，被解讀成pointer的size)</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="searching-in-a-string"><strong>Searching in a string</strong></h3>
+<p>To find the location of a character in a string (or conclude that it does not exist in the string), use <code>strchr</code>.</p>
+<p>It returns the address of the first occurrence of the character. If the character does not exist, it returns nullptr. - The returned address may be used to modify the given string. - The returned address may be used as the starting location of a “new string” to search for the next occurrence of the character. <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">strchr</span><span class="params">(<span class="keyword">char</span>* str, <span class="keyword">int</span> character)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<h3 id="searching-for-a-substring"><strong>Searching for a substring</strong></h3>
+<p>If we want to search for a substring, we use <code>strstr</code>.<br />
+This returns the address of the first occurrence of <code>str2</code> in <code>str1</code>.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">strstr</span><span class="params">(<span class="keyword">char</span>* str1, <span class="keyword">const</span> <span class="keyword">char</span>* str2)</span></span>;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="string-number-conversion"><strong>String-number conversion</strong></h3>
+<p>In <code>&lt;cstdlib&gt;</code>, two functions converts a character array into a number:</p>
+<ul>
+<li>For atoi, str should contain only digits</li>
+<li>For atof, str may contain at most one ‘.’ <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">atoi</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* str)</span></span>;  </span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">atof</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* str)</span></span>;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>A function converts a number into a character array <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">itoa</span><span class="params">(<span class="keyword">int</span> value, <span class="keyword">char</span>* str, <span class="keyword">int</span> base)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p><br></p>
+<h3 id="string-comparisons"><strong>String comparisons</strong></h3>
+<p>Strings may also be compared alphabetically <code>strcmp</code> compares the entire strings. <code>strncmp</code> does up to num characters. <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">strcmp</span> <span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* str1, <span class="keyword">const</span> <span class="keyword">char</span>* str2)</span></span>; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">strncmp</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* str1, <span class="keyword">const</span> <span class="keyword">char</span>* str2, <span class="keyword">unsigned</span> <span class="keyword">int</span> num)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p>They returns 0 if the two strings are identical, a negative number if str1 is in front of str2, and a positive number if str2 is in front of str1.</p>
+<p><br></p>
+<h3 id="string-copying"><strong>String copying</strong></h3>
+<p>It copies the string at source into the array at dest, including the terminating null character in source. It returns dest.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">strcpy</span><span class="params">(<span class="keyword">char</span>* dest, <span class="keyword">const</span> <span class="keyword">char</span>* source)</span></span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a[<span class="number">100</span>] = <span class="string">&quot;watermelon&quot;</span>;  <span class="comment">//(1)</span></span><br><span class="line"><span class="keyword">char</span> b[<span class="number">100</span>] = <span class="string">&quot;orange&quot;</span>;  <span class="comment">//(2)</span></span><br><span class="line">cout &lt;&lt; a &lt;&lt; <span class="string">&quot;\n&quot;</span>; </span><br><span class="line"><span class="built_in">strcpy</span>(a, b);  <span class="comment">//(3)</span></span><br><span class="line">cout &lt;&lt; a &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//(1) a watermelon\0</span></span><br><span class="line"><span class="comment">//(2) b orange\0</span></span><br><span class="line"><span class="comment">//(3) a orange\0lon\0</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="string-concatenation"><strong>String concatenation</strong></h3>
+<p>A similar task is to concatenate two strings. This copies source to the end of dest. The <code>\0</code> of dest is replaced by the first character of source. The <code>\0</code> of source is also copied. It returns dest. - The destination must be an array (static or dynamic), not just a pointer. - A programmer must make sure that there is enough space of the modification. <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">strcat</span><span class="params">(<span class="keyword">char</span>* dest, <span class="keyword">const</span> <span class="keyword">char</span>* source)</span></span>;</span><br></pre></td></tr></table></figure></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Bosh-Hexo-Blog/Cplusplus-Programming-Pointers/" rel="prev" title="C++ Programming Design - Pointers">
+      <i class="fa fa-chevron-left"></i> C++ Programming Design - Pointers
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ch9-cstrings"><span class="nav-number">1.</span> <span class="nav-text">CH9 CStrings</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#characters"><span class="nav-number">1.1.</span> <span class="nav-text">Characters</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#char"><span class="nav-number">1.1.1.</span> <span class="nav-text">char</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#c-strings"><span class="nav-number">1.2.</span> <span class="nav-text">C strings</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#string"><span class="nav-number">1.2.1.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a-special-way-to-input-a-string"><span class="nav-number">1.2.2.</span> <span class="nav-text">A special way to input a string</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#the-null-character"><span class="nav-number">1.2.3.</span> <span class="nav-text">The null character</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#comparisons"><span class="nav-number">1.2.4.</span> <span class="nav-text">Comparisons</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string-assignments"><span class="nav-number">1.2.5.</span> <span class="nav-text">String assignments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#array-boundary"><span class="nav-number">1.2.6.</span> <span class="nav-text">Array boundary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a-strange-case"><span class="nav-number">1.2.7.</span> <span class="nav-text">A strange case</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cin-vs.-cin.getline"><span class="nav-number">1.2.8.</span> <span class="nav-text">cin &gt;&gt; vs. cin.getline()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string-literals-and-character-pointers"><span class="nav-number">1.2.9.</span> <span class="nav-text">String literals and character pointers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#main-function-arguments"><span class="nav-number">1.2.10.</span> <span class="nav-text">Main function arguments</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#c-string-processing-functions"><span class="nav-number">1.3.</span> <span class="nav-text">C string processing functions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#string-length-query"><span class="nav-number">1.3.1.</span> <span class="nav-text">String length query</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#searching-in-a-string"><span class="nav-number">1.3.2.</span> <span class="nav-text">Searching in a string</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#searching-for-a-substring"><span class="nav-number">1.3.3.</span> <span class="nav-text">Searching for a substring</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string-number-conversion"><span class="nav-number">1.3.4.</span> <span class="nav-text">String-number conversion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string-comparisons"><span class="nav-number">1.3.5.</span> <span class="nav-text">String comparisons</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string-copying"><span class="nav-number">1.3.6.</span> <span class="nav-text">String copying</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string-concatenation"><span class="nav-number">1.3.7.</span> <span class="nav-text">String concatenation</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Bosh-Kuo"
+      src="/Bosh-Hexo-Blog/images/Bosh2.jpg">
+  <p class="site-author-name" itemprop="name">Bosh-Kuo</p>
+  <div class="site-description" itemprop="description">轉職路上的土木系碩班生</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/Bosh-Hexo-Blog/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/Bosh-Hexo-Blog/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/Bosh-Hexo-Blog/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Bosh-Kuo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Bosh-Kuo" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:evaktm1680@gmail.com" title="E-Mail → mailto:evaktm1680@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/a.zhi.731/" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;a.zhi.731&#x2F;" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCV5iS4O95pCO0humhYXnrwg" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCV5iS4O95pCO0humhYXnrwg" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+      
+        <script type="text/javascript" charset="utf-8" src="/Bosh-Hexo-Blog/js/tagcloud.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/Bosh-Hexo-Blog/js/tagcanvas.js"></script>
+        <div class="widget-wrap">
+          <h3 class="widget-title">Tag Cloud</h3>
+          <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="250" height="250" id="resCanvas" style="width:100%">
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Algorithms/" rel="tag">Algorithms</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Arrays/" rel="tag">Arrays</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/C/" rel="tag">C++</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Function/" rel="tag">Function</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Pointer/" rel="tag">Pointer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Programming/" rel="tag">Programming</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Recursion/" rel="tag">Recursion</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+          </div>
+        </div>
+      
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/Bosh-Kuo'>Bosh</a></span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">總字數：</span>
+    <span title="總字數">60k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">所需總閱讀時間 &asymp;</span>
+    <span title="所需總閱讀時間">55 分鐘</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
+  </div>
+  <div id="site-runtime">
+  <span class="post-meta-item-icon">
+    <i class="fa fa-clock-o"></i>
+  </span>
+  <span id="runtime"></span>
+</div>
+
+<script language="javascript">
+  function isPC() {
+    var userAgentInfo = navigator.userAgent;
+    var agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+    for (var i = 0; i < agents.length; i++) {
+      if (userAgentInfo.indexOf(agents[i]) > 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function siteTime(openOnPC, start) {
+    window.setTimeout("siteTime(openOnPC, start)", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+      start = new Date("2022-01-20 17:00:00 +0800");
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var date = now.getDate();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    var diff = now - start;
+
+    var diffYears = Math.floor(diff / years);
+    var diffDays = Math.floor((diff / days) - diffYears * 365);
+    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+
+    if (openOnPC) {
+      document.getElementById("runtime").innerHTML = "Running: " + diffYears + " years " + diffDays + " days " + diffHours + " hours ";
+    } else {
+      document.getElementById("runtime").innerHTML = "Running: " + diffYears + "y " + diffDays + "d " + diffHours + "h ";
+    }
+  }
+
+  var showOnMobile = false;
+  var openOnPC = isPC();
+  var start = new Date();
+  siteTime(openOnPC, start);
+
+  if (!openOnPC && !showOnMobile) {
+    document.getElementById('site-runtime').style.display = 'none';
+  }
+</script>
+
+
+
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="訪客總數">
+        總訪客數：<span id="busuanzi_value_site_uv"></span>人
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="總瀏覽次數">
+        總閱讀量：<span id="busuanzi_value_site_pv"></span>次
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/Bosh-Hexo-Blog/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/Bosh-Hexo-Blog/lib/anime.min.js"></script>
+  <script src="/Bosh-Hexo-Blog/lib/velocity/velocity.min.js"></script>
+  <script src="/Bosh-Hexo-Blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/Bosh-Hexo-Blog/js/utils.js"></script>
+
+<script src="/Bosh-Hexo-Blog/js/motion.js"></script>
+
+
+<script src="/Bosh-Hexo-Blog/js/schemes/pisces.js"></script>
+
+
+<script src="/Bosh-Hexo-Blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/Bosh-Hexo-Blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+  
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+</body>
+</html>

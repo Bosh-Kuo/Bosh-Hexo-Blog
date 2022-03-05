@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Bosh-Hexo-Blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Bosh-Hexo-Blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Bosh-Hexo-Blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Bosh-Hexo-Blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/Bosh-Hexo-Blog/css/main.css">
+
+
+<link rel="stylesheet" href="/Bosh-Hexo-Blog/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"bosh-kuo.github.io","root":"/Bosh-Hexo-Blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-THMGTWZ6T9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-THMGTWZ6T9');
+</script>
+  <meta name="description" content="CH8 Pointers Basics of pointers pointer是一種儲存記憶體位置的變數，Array也是儲存儲存記憶體位置的一種變數，但Array存的是一排變數中的第一個變數的記憶體位置。  To declare a pointer, use *  type pointed* pointer name;  Exp:  int *ptrInt; 儲存int變數記憶體位置的指標">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ Programming Design - Pointers">
+<meta property="og:url" content="https://bosh-kuo.github.io/Bosh-Hexo-Blog/Cplusplus-Programming-Pointers/">
+<meta property="og:site_name" content="Bosh的技術部落格">
+<meta property="og:description" content="CH8 Pointers Basics of pointers pointer是一種儲存記憶體位置的變數，Array也是儲存儲存記憶體位置的一種變數，但Array存的是一排變數中的第一個變數的記憶體位置。  To declare a pointer, use *  type pointed* pointer name;  Exp:  int *ptrInt; 儲存int變數記憶體位置的指標">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-03-05T07:28:47.000Z">
+<meta property="article:modified_time" content="2022-03-05T07:38:11.687Z">
+<meta property="article:author" content="Bosh-Kuo">
+<meta property="article:tag" content="Programming">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="Pointer">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/Cplusplus-Programming-Pointers/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>C++ Programming Design - Pointers | Bosh的技術部落格</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-THMGTWZ6T9"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-THMGTWZ6T9');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Bosh-Hexo-Blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Bosh的技術部落格</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">歡迎來到我Blog! 我將會在這裡分享我的學習經驗、知識、生活，記錄不同人生階段的自己</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/Bosh-Hexo-Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/Bosh-Hexo-Blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/Bosh-Hexo-Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/Bosh-Hexo-Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/Bosh-Hexo-Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+  <a href="https://github.com/Bosh-Kuo" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://bosh-kuo.github.io/Bosh-Hexo-Blog/Cplusplus-Programming-Pointers/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Bosh-Hexo-Blog/images/Bosh2.jpg">
+      <meta itemprop="name" content="Bosh-Kuo">
+      <meta itemprop="description" content="轉職路上的土木系碩班生">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bosh的技術部落格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C++ Programming Design - Pointers
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2022-03-05 15:28:47 / 修改時間：15:38:11" itemprop="dateCreated datePublished" datetime="2022-03-05T15:28:47+08:00">2022-03-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Bosh-Hexo-Blog/categories/Programming-Language/" itemprop="url" rel="index"><span itemprop="name">Programming Language</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Bosh-Hexo-Blog/categories/Programming-Language/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>7k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>6 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="ch8-pointers"><strong>CH8 Pointers</strong></h1>
+<h2 id="basics-of-pointers"><strong>Basics of pointers</strong></h2>
+<p><code>pointer</code>是一種儲存記憶體位置的變數，<code>Array</code>也是儲存儲存記憶體位置的一種變數，但<code>Array</code>存的是<strong>一排變數中的第一個變數的記憶體位置</strong>。</p>
+<ul>
+<li><p>To declare a pointer, use <code>*</code></p>
+<blockquote>
+<p>type pointed* pointer name;</p>
+</blockquote></li>
+<li><p>Exp:</p>
+<blockquote>
+<p>int *ptrInt; 儲存int變數記憶體位置的指標</p>
+</blockquote></li>
+</ul>
+<span id="more"></span>
+<p><br></p>
+<h3 id="pointer-assignment"><strong>Pointer assignment</strong></h3>
+<p>We use the <code>address-of operator &amp;</code> to obtain a variable’s address(取址)</p>
+<blockquote>
+<p>pointer name = &amp;variable name</p>
+</blockquote>
+<p>Exp: <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">5</span>;   </span><br><span class="line"><span class="keyword">int</span>* ptr = &amp;a;</span><br></pre></td></tr></table></figure></p>
+<p><br/></p>
+<h3 id="address-operators"><strong>Address operators</strong></h3>
+<ul>
+<li><code>&amp;</code>: <strong>The address-of operator.</strong> It returns a variable’s address. (變數-&gt;變數的位址)</li>
+<li><code>*</code>: <strong>The dereference operator.</strong> It returns the pointed variable.（指標-&gt;被指到的變數）</li>
+</ul>
+<p>Exp:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>; </span><br><span class="line"><span class="keyword">int</span>* p1 = &amp;a; </span><br><span class="line">cout &lt;&lt; <span class="string">&quot;value of a = &quot;</span> &lt;&lt; a &lt;&lt; <span class="string">&quot;\n&quot;</span>; <span class="comment">// 10 </span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;value of p1 = &quot;</span> &lt;&lt; p1 &lt;&lt; <span class="string">&quot;\n&quot;</span>; <span class="comment">// 0x123450 </span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;address of a = &quot;</span> &lt;&lt; &amp;a &lt;&lt; <span class="string">&quot;\n&quot;</span>; <span class="comment">// 0x123450 </span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;address of p1 = &quot;</span> &lt;&lt; &amp;p1 &lt;&lt; <span class="string">&quot;\n&quot;</span>; <span class="comment">// 0x543210 </span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;value of the variable pointed by p1 = &quot;</span> &lt;&lt; *p1 &lt;&lt; <span class="string">&quot;\n&quot;</span>; <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>&amp;</code> returns a <code>variable’s address</code>.
+<ul>
+<li>We cannot use<code>&amp;100</code>, <code>&amp;(a++)</code></li>
+<li>We can only perform <code>&amp;</code> on a variable.</li>
+<li>We cannot assign a value to <code>&amp;x</code> (<code>&amp;x</code> is a value!).</li>
+</ul></li>
+<li><code>*</code> returns the pointed variable.
+<ul>
+<li>We can perform <code>*</code> on a pointer variable.</li>
+<li>We cannot perform <code>*</code> on a usual variable.</li>
+</ul></li>
+<li><code>&amp;</code> and <code>*</code> cancel each other. <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// if x is a variable</span></span><br><span class="line">*&amp;x == x</span><br><span class="line"></span><br><span class="line"><span class="comment">// if x is a pointer</span></span><br><span class="line">&amp;*x == x</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><br/></p>
+<h3 id="null-pointers"><strong>Null pointers</strong></h3>
+<p>If we dereference a pointers of unknown value, the outcome is unpredictable <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* ptr; </span><br><span class="line">cout &lt;&lt; *ptr; <span class="comment">// ?</span></span><br></pre></td></tr></table></figure></p>
+<p>A pointer <code>pointing to nothing</code> should be assigned <code>nullptr, NULL, or 0</code>.(讓程式保證會出錯)<br />
+By using nullptr (instead of 0), everyone knows the variable must be a pointer, and you are not talking about a number or character.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* p2 = <span class="literal">nullptr</span>; </span><br><span class="line">cout &lt;&lt; <span class="string">&quot;value of p2 = &quot;</span> &lt;&lt; p2 &lt;&lt; <span class="string">&quot;\n&quot;</span>; <span class="comment">// 0 </span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;address of p2 = &quot;</span> &lt;&lt; &amp;p2 &lt;&lt; <span class="string">&quot;\n&quot;</span>; <span class="comment">// 0x123450 </span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;the variable pointed by p2 = &quot;</span> &lt;&lt; *p2 &lt;&lt; <span class="string">&quot;\n&quot;</span>; <span class="comment">// run-time error!</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>When we use <code>*</code> in <code>declaring</code> a pointer, that <code>*</code> is not a dereference operator.</li>
+<li>When we use <code>&amp;</code> in <code>declaring</code> a reference, that <code>&amp;</code> is not an address-of operator.</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* p, q;   <span class="comment">// p is int*, q is int </span></span><br><span class="line"><span class="keyword">int</span> *p, *q;  <span class="comment">// two pointers </span></span><br><span class="line"><span class="keyword">int</span>* p, *q;  <span class="comment">// two pointers </span></span><br><span class="line"><span class="keyword">int</span>* p, * q; <span class="comment">// two pointers</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><br/></p>
+<h2 id="using-pointers-in-functions"><strong>Using pointers in functions</strong></h2>
+<h3 id="references-and-pointers"><strong>References and pointers</strong></h3>
+<p>When invoking a function and passing parameters, the default scheme is to <code>“call by value”</code> (or <code>“pass by value”</code>) - function會宣告自己的local variable，傳入的arguments values會被複製成local variable的initial values</p>
+<p>當我們想要改變傳入的變數本身時，可以用<code>“call by reference” or “call by pointer.”</code></p>
+<p><br/></p>
+<h3 id="references"><strong>References</strong></h3>
+<ul>
+<li><p>A <code>reference</code> is a variable’s <code>alias</code>. (變數的別名)</p></li>
+<li><p><code>int&amp; d = c</code> is to declare d as c’s reference</p>
+<ul>
+<li>這跟 <code>address-of operator 的 &amp;</code> 是不一樣的</li>
+</ul></li>
+</ul>
+<p><br/></p>
+<h3 id="call-by-reference"><strong>Call by reference</strong></h3>
+<p>Instead of declaring a usual local variable as a parameter, declare a <code>reference variable</code>. Thus we can call by reference and modify our arguments’ values.<br />
+原本x, y是兩個<code>local value</code>，現在變成兩個<code>local reference</code>。<br />
+通常reference只有call by reference的時候才會用。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>&amp; x, <span class="keyword">int</span>&amp; y)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; &amp;x &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    <span class="keyword">int</span> temp = x;</span><br><span class="line">    x = y;</span><br><span class="line">    y = temp; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br/></p>
+<h3 id="call-by-pointers"><strong>Call by pointers</strong></h3>
+<ul>
+<li>Declare a pointer variable as a parameter.</li>
+<li>Pass a pointer variable or an address (e.g., returned by &amp;) at invocation.</li>
+</ul>
+<p>You can view calling by reference as a special tool made by using pointers. <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>* ptrA, <span class="keyword">int</span>* ptrB)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp = *ptrA;</span><br><span class="line">    *ptrA = *ptrB;</span><br><span class="line">    *ptrB = temp; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><br/></p>
+<h3 id="returning-a-pointer"><strong>Returning a pointer</strong></h3>
+<p>May a function return a pointer? Yes!</p>
+<p>Why returning an address? - With the address, we also know the value.<br />
+- If we only have the value, we do not know its address (and index). - To obtain the index, we need <code>pointer arithmetic.</code></p>
+<p><br/></p>
+<h2 id="dynamic-memory-allocation-dma"><strong>Dynamic memory allocation (DMA)</strong></h2>
+<p>The operator <code>new</code> allocates a memory space and <strong>returns the address</strong>.(請求空間，並且回傳空間位址) - In C, we use a different keyword melloc.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* a = <span class="keyword">new</span> <span class="keyword">int</span>  <span class="comment">//makes a store the address of the 4-byte space. </span></span><br><span class="line"><span class="keyword">int</span>* a = <span class="keyword">new</span> <span class="built_in"><span class="keyword">int</span></span>(<span class="number">5</span>)  <span class="comment">//makes the space contain 5 as the value. </span></span><br><span class="line"><span class="keyword">int</span>* a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>]  <span class="comment">//allocates 20 bytes (for 5 integers).</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>動態宣告陣列就不能用<code>&#123;&#125;</code>來初始化陣列。</li>
+<li>動態宣告出來的空間是沒有變數名字的，只有空間與位址，因此必須使用指標。</li>
+</ul>
+<p><br/></p>
+<h3 id="memory-leak"><strong>Memory leak</strong></h3>
+<p>For space allocated during the compilation time, the system will release this space automatically when the corresponding variables no longer exist.</p>
+<p>For space allocated during the run time, the system will not release this space unless it is asked to do so. <code>Because the space has no name!</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span>* bPtr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>]; </span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">// 8 bytes for bPtr are released </span></span><br><span class="line"><span class="comment">// 12 bytes for integers are not </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">func</span>( );</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span>* b = <span class="keyword">new</span> <span class="keyword">double</span>; </span><br><span class="line">*b = <span class="number">5.2</span>; </span><br><span class="line"><span class="keyword">double</span> c = <span class="number">10.6</span>; </span><br><span class="line">b = &amp;c; </span><br><span class="line"><span class="comment">// now no one can access (沒有變數連接這塊記憶體空間了)</span></span><br><span class="line"><span class="comment">// the space containing 5.2</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><code>記憶體用不到也清不掉就是 mermory leak</code></p>
+<p><br/></p>
+<h3 id="releasing-space-manually"><strong>Releasing space manually</strong></h3>
+<p>手動用<code>delete operator</code>釋放記憶體空間，並且將本來指向這塊空間的指標改指向nullptr <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* a = <span class="keyword">new</span> <span class="keyword">int</span>; </span><br><span class="line"><span class="keyword">delete</span> a; <span class="comment">// release 4 bytes </span></span><br><span class="line">a = <span class="literal">nullptr</span>; <span class="comment">// now a points to nothing </span></span><br><span class="line"><span class="keyword">int</span>* b = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>]; a</span><br><span class="line"><span class="keyword">delete</span> b; <span class="comment">// release only 4 bytes!</span></span><br><span class="line">          <span class="comment">// Unpredictable results may happen</span></span><br><span class="line"><span class="keyword">delete</span> [] b; <span class="comment">// release all 20 bytes</span></span><br><span class="line">b = <span class="literal">nullptr</span>; <span class="comment">// now b points to nothing</span></span><br></pre></td></tr></table></figure></p>
+<p><br/></p>
+<h3 id="two-dimensional-dynamic-arrays"><strong>Two-dimensional dynamic arrays</strong></h3>
+<p>With dynamic arrays, we now may create matrices with different row lengths</p>
+<p><br/></p>
+<h3 id="example-lower-triangular-arrays"><strong>Example: lower triangular arrays</strong></h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//宣告10個整數空間，把第一個整數空間的位址存起來</span></span><br><span class="line"><span class="keyword">int</span>* array = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>]  <span class="comment">// 接下來當作一般array用</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//宣告10個整數指標空間，把第一個整數指標空間的位址存起來(指向整數指標的指標)</span></span><br><span class="line"><span class="keyword">int</span>** array = <span class="keyword">new</span> <span class="keyword">int</span>*[<span class="number">10</span>]  </span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">    array[i] = <span class="keyword">new</span> <span class="keyword">int</span>[該row長度]  <span class="comment">// 接下來當作一般array用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>The type of array[0] is <strong>int</strong>* (指標)</li>
+<li>The type of array[1] is <strong>int</strong>* (指標)</li>
+<li>(然後再去指向一個動態陣列就好了)</li>
+</ul>
+<p>釋放2d動態陣列記憶體： <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">delete</span>[] array[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> <br/></p>
+<h2 id="arrays-and-pointer-arithmetic"><strong>Arrays and pointer arithmetic</strong></h2>
+<h3 id="pointer-arithmetic-and---"><strong>Pointer arithmetic: ++ and --</strong></h3>
+<ul>
+<li>++: point to the next variable</li>
+<li>--: point to the previous variable</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> a[<span class="number">3</span>] = &#123;<span class="number">10.5</span>, <span class="number">11.5</span>, <span class="number">12.5</span>&#125;; </span><br><span class="line"><span class="keyword">double</span>* b = &amp;a[<span class="number">0</span>]; </span><br><span class="line">cout &lt;&lt; *b &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; b &lt;&lt; <span class="string">&quot;\n&quot;</span>;  <span class="comment">// 10.5 </span></span><br><span class="line">b = b + <span class="number">2</span>; <span class="comment">// b++ and then b++ </span></span><br><span class="line">cout &lt;&lt; *b &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; b &lt;&lt; <span class="string">&quot;\n&quot;</span>;  <span class="comment">// 12.5 </span></span><br><span class="line">b--; </span><br><span class="line">cout &lt;&lt; *b &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; b &lt;&lt; <span class="string">&quot;\n&quot;</span>;  <span class="comment">// 11.5</span></span><br></pre></td></tr></table></figure>
+<p><br/></p>
+<h3 id="pointers-and-arrays"><strong>Pointers and arrays</strong></h3>
+<blockquote>
+<p>x[ i ] and *(x + i) are identical, but using the former is safer and easier <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> y[<span class="number">3</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="keyword">int</span>* x = y;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">    cout &lt;&lt; *(x + i) &lt;&lt; <span class="string">&quot; &quot;</span>; <span class="comment">// 1 2 3 </span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">    cout &lt;&lt; *(x++) &lt;&lt; <span class="string">&quot; &quot;</span>; <span class="comment">// 1 2 3 (pointer variable存的address是可以改的)</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">    cout &lt;&lt; *(x + i) &lt;&lt; <span class="string">&quot; &quot;</span>; <span class="comment">// unpredictable</span></span><br><span class="line"><span class="comment">// 修改指標的內容是危險的</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x[<span class="number">3</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;; </span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">    cout &lt;&lt; x[i] &lt;&lt; <span class="string">&quot; &quot;</span>; <span class="comment">// x[i] == *(x + i) </span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">    cout &lt;&lt; *(x + i) &lt;&lt; <span class="string">&quot; &quot;</span>; <span class="comment">// 1 2 3</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x[<span class="number">3</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;; <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">cout &lt;&lt; *(x++) &lt;&lt; <span class="string">&quot; &quot;</span>; <span class="comment">// error! (array variable存的address是不可以改的)</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/Bosh-Hexo-Blog/tags/Programming/" rel="tag"># Programming</a>
+              <a href="/Bosh-Hexo-Blog/tags/C/" rel="tag"># C++</a>
+              <a href="/Bosh-Hexo-Blog/tags/Pointer/" rel="tag"># Pointer</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Bosh-Hexo-Blog/Cplusplus-Programming-Digital-Systems/" rel="prev" title="C++ Programming Design - Digital Systems">
+      <i class="fa fa-chevron-left"></i> C++ Programming Design - Digital Systems
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/Bosh-Hexo-Blog/Cplusplus-Programming-CStrings/" rel="next" title="C++ Programming Design - CStrings">
+      C++ Programming Design - CStrings <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ch8-pointers"><span class="nav-number">1.</span> <span class="nav-text">CH8 Pointers</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#basics-of-pointers"><span class="nav-number">1.1.</span> <span class="nav-text">Basics of pointers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pointer-assignment"><span class="nav-number">1.1.1.</span> <span class="nav-text">Pointer assignment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#address-operators"><span class="nav-number">1.1.2.</span> <span class="nav-text">Address operators</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null-pointers"><span class="nav-number">1.1.3.</span> <span class="nav-text">Null pointers</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#using-pointers-in-functions"><span class="nav-number">1.2.</span> <span class="nav-text">Using pointers in functions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#references-and-pointers"><span class="nav-number">1.2.1.</span> <span class="nav-text">References and pointers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#references"><span class="nav-number">1.2.2.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#call-by-reference"><span class="nav-number">1.2.3.</span> <span class="nav-text">Call by reference</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#call-by-pointers"><span class="nav-number">1.2.4.</span> <span class="nav-text">Call by pointers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#returning-a-pointer"><span class="nav-number">1.2.5.</span> <span class="nav-text">Returning a pointer</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dynamic-memory-allocation-dma"><span class="nav-number">1.3.</span> <span class="nav-text">Dynamic memory allocation (DMA)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#memory-leak"><span class="nav-number">1.3.1.</span> <span class="nav-text">Memory leak</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#releasing-space-manually"><span class="nav-number">1.3.2.</span> <span class="nav-text">Releasing space manually</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#two-dimensional-dynamic-arrays"><span class="nav-number">1.3.3.</span> <span class="nav-text">Two-dimensional dynamic arrays</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#example-lower-triangular-arrays"><span class="nav-number">1.3.4.</span> <span class="nav-text">Example: lower triangular arrays</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arrays-and-pointer-arithmetic"><span class="nav-number">1.4.</span> <span class="nav-text">Arrays and pointer arithmetic</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pointer-arithmetic-and---"><span class="nav-number">1.4.1.</span> <span class="nav-text">Pointer arithmetic: ++ and --</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pointers-and-arrays"><span class="nav-number">1.4.2.</span> <span class="nav-text">Pointers and arrays</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Bosh-Kuo"
+      src="/Bosh-Hexo-Blog/images/Bosh2.jpg">
+  <p class="site-author-name" itemprop="name">Bosh-Kuo</p>
+  <div class="site-description" itemprop="description">轉職路上的土木系碩班生</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/Bosh-Hexo-Blog/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/Bosh-Hexo-Blog/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/Bosh-Hexo-Blog/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Bosh-Kuo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Bosh-Kuo" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:evaktm1680@gmail.com" title="E-Mail → mailto:evaktm1680@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/a.zhi.731/" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;a.zhi.731&#x2F;" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCV5iS4O95pCO0humhYXnrwg" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCV5iS4O95pCO0humhYXnrwg" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+      
+        <script type="text/javascript" charset="utf-8" src="/Bosh-Hexo-Blog/js/tagcloud.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/Bosh-Hexo-Blog/js/tagcanvas.js"></script>
+        <div class="widget-wrap">
+          <h3 class="widget-title">Tag Cloud</h3>
+          <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="250" height="250" id="resCanvas" style="width:100%">
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Algorithms/" rel="tag">Algorithms</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Arrays/" rel="tag">Arrays</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/C/" rel="tag">C++</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Function/" rel="tag">Function</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Pointer/" rel="tag">Pointer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Programming/" rel="tag">Programming</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Recursion/" rel="tag">Recursion</a><span class="tag-list-count">1</span></li></ul>
+            </canvas>
+          </div>
+        </div>
+      
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/Bosh-Kuo'>Bosh</a></span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">總字數：</span>
+    <span title="總字數">60k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">所需總閱讀時間 &asymp;</span>
+    <span title="所需總閱讀時間">55 分鐘</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
+  </div>
+  <div id="site-runtime">
+  <span class="post-meta-item-icon">
+    <i class="fa fa-clock-o"></i>
+  </span>
+  <span id="runtime"></span>
+</div>
+
+<script language="javascript">
+  function isPC() {
+    var userAgentInfo = navigator.userAgent;
+    var agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+    for (var i = 0; i < agents.length; i++) {
+      if (userAgentInfo.indexOf(agents[i]) > 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function siteTime(openOnPC, start) {
+    window.setTimeout("siteTime(openOnPC, start)", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+      start = new Date("2022-01-20 17:00:00 +0800");
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var date = now.getDate();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    var diff = now - start;
+
+    var diffYears = Math.floor(diff / years);
+    var diffDays = Math.floor((diff / days) - diffYears * 365);
+    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+
+    if (openOnPC) {
+      document.getElementById("runtime").innerHTML = "Running: " + diffYears + " years " + diffDays + " days " + diffHours + " hours ";
+    } else {
+      document.getElementById("runtime").innerHTML = "Running: " + diffYears + "y " + diffDays + "d " + diffHours + "h ";
+    }
+  }
+
+  var showOnMobile = false;
+  var openOnPC = isPC();
+  var start = new Date();
+  siteTime(openOnPC, start);
+
+  if (!openOnPC && !showOnMobile) {
+    document.getElementById('site-runtime').style.display = 'none';
+  }
+</script>
+
+
+
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="訪客總數">
+        總訪客數：<span id="busuanzi_value_site_uv"></span>人
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="總瀏覽次數">
+        總閱讀量：<span id="busuanzi_value_site_pv"></span>次
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/Bosh-Hexo-Blog/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/Bosh-Hexo-Blog/lib/anime.min.js"></script>
+  <script src="/Bosh-Hexo-Blog/lib/velocity/velocity.min.js"></script>
+  <script src="/Bosh-Hexo-Blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/Bosh-Hexo-Blog/js/utils.js"></script>
+
+<script src="/Bosh-Hexo-Blog/js/motion.js"></script>
+
+
+<script src="/Bosh-Hexo-Blog/js/schemes/pisces.js"></script>
+
+
+<script src="/Bosh-Hexo-Blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/Bosh-Hexo-Blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+</body>
+</html>

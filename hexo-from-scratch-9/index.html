@@ -29,12 +29,12 @@
 
   gtag('config', 'G-THMGTWZ6T9');
 </script>
-  <meta name="description" content="網站運行時間在 &#x2F;themes&#x2F;next&#x2F;layout&#x2F;_custom 文件夾下新建一個名稱爲 site-runtime.swig 的文件，並添加內容如下：">
+  <meta name="description" content="網站運行時間 在 &#x2F;themes&#x2F;next&#x2F;layout&#x2F;_custom 文件夾下新建一個名稱爲 site-runtime.swig 的文件，並添加內容如下：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="從零開始使用Hexo + Github Page搭建個人技術筆記網站(9) - 客製化NexT主題：網站運行時間與文章長度和閱讀時間與搜尋功能">
 <meta property="og:url" content="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-9/">
 <meta property="og:site_name" content="Bosh的技術部落格">
-<meta property="og:description" content="網站運行時間在 &#x2F;themes&#x2F;next&#x2F;layout&#x2F;_custom 文件夾下新建一個名稱爲 site-runtime.swig 的文件，並添加內容如下：">
+<meta property="og:description" content="網站運行時間 在 &#x2F;themes&#x2F;next&#x2F;layout&#x2F;_custom 文件夾下新建一個名稱爲 site-runtime.swig 的文件，並添加內容如下：">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://i.imgur.com/UCZM1ZB.png">
 <meta property="og:image" content="https://i.imgur.com/O6cjq0Y.png">
@@ -99,7 +99,11 @@
   </style>
 </noscript>
 
-<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -283,64 +287,54 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="網站運行時間"><a href="#網站運行時間" class="headerlink" title="網站運行時間"></a><strong>網站運行時間</strong></h2><p>在 <code>/themes/next/layout/_custom</code> 文件夾下新建一個名稱爲 <code>site-runtime.swig</code> 的文件，並添加內容如下：</p>
+        <h2 id="網站運行時間"><strong>網站運行時間</strong></h2>
+<p>在 <code>/themes/next/layout/_custom</code> 文件夾下新建一個名稱爲 <code>site-runtime.swig</code> 的文件，並添加內容如下：</p>
 <span id="more"></span>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;site-runtime&quot;</span>&gt;</span><br><span class="line">  &lt;span class=<span class="string">&quot;post-meta-item-icon&quot;</span>&gt;</span><br><span class="line">    &lt;i class=<span class="string">&quot;fa fa-clock-o&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">  &lt;/span&gt;</span><br><span class="line">  &lt;span id=<span class="string">&quot;runtime&quot;</span>&gt;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script language=<span class="string">&quot;javascript&quot;</span>&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="function"><span class="title">isPC</span></span>() &#123;</span><br><span class="line">    var userAgentInfo = navigator.userAgent;</span><br><span class="line">    var agents = [<span class="string">&quot;Android&quot;</span>, <span class="string">&quot;iPhone&quot;</span>, <span class="string">&quot;SymbianOS&quot;</span>, <span class="string">&quot;Windows Phone&quot;</span>, <span class="string">&quot;iPad&quot;</span>, <span class="string">&quot;iPod&quot;</span>];</span><br><span class="line">    <span class="keyword">for</span> (var i = 0; i &lt; agents.length; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (userAgentInfo.indexOf(agents[i]) &gt; 0) &#123;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">function</span> siteTime(openOnPC, start) &#123;</span><br><span class="line">    window.setTimeout(<span class="string">&quot;siteTime(openOnPC, start)&quot;</span>, 1000);</span><br><span class="line">    var seconds = 1000;</span><br><span class="line">    var minutes = seconds * 60;</span><br><span class="line">    var hours = minutes * 60;</span><br><span class="line">    var days = hours * 24;</span><br><span class="line">    var years = days * 365;</span><br><span class="line"></span><br><span class="line">    &#123;%- <span class="keyword">if</span> theme.runtime.start %&#125;</span><br><span class="line">      start = new Date(<span class="string">&quot;&#123;&#123; theme.runtime.start &#125;&#125;&quot;</span>);</span><br><span class="line">    &#123;%- endif %&#125;</span><br><span class="line">    var now = new Date();</span><br><span class="line">    var year = now.getFullYear();</span><br><span class="line">    var month = now.getMonth() + 1;</span><br><span class="line">    var date = now.getDate();</span><br><span class="line">    var hour = now.getHours();</span><br><span class="line">    var minute = now.getMinutes();</span><br><span class="line">    var second = now.getSeconds();</span><br><span class="line">    var diff = now - start;</span><br><span class="line"></span><br><span class="line">    var diffYears = Math.floor(diff / years);</span><br><span class="line">    var diffDays = Math.floor((diff / days) - diffYears * 365);</span><br><span class="line">    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);</span><br><span class="line">    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);</span><br><span class="line">    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (openOnPC) &#123;</span><br><span class="line">      document.getElementById(<span class="string">&quot;runtime&quot;</span>).innerHTML = <span class="string">&quot;Running: &quot;</span> + diffYears + <span class="string">&quot; years &quot;</span> + diffDays + <span class="string">&quot; days &quot;</span> + diffHours + <span class="string">&quot; hours &quot;</span> + diffMinutes + <span class="string">&quot; mins &quot;</span> + diffSeconds + <span class="string">&quot; secs&quot;</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      document.getElementById(<span class="string">&quot;runtime&quot;</span>).innerHTML = <span class="string">&quot;Running: &quot;</span> + diffYears + <span class="string">&quot;y &quot;</span> + diffDays + <span class="string">&quot;d &quot;</span> + diffHours + <span class="string">&quot;h &quot;</span> + diffMinutes + <span class="string">&quot;m &quot;</span> + diffSeconds + <span class="string">&quot;s&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment"># 這邊可以決定要在頁面上顯示的時間精度，我覺得顯示到小時比較順眼，因此我從+ diffHours + &quot; hours &quot; 後面分鐘與秒鐘的部分就刪掉了（未來要加回來再看這篇文就好ＸＤ這就是寫文章的好處）</span></span><br><span class="line"></span><br><span class="line">  var showOnMobile = &#123;&#123; theme.runtime.mobile &#125;&#125;;</span><br><span class="line">  var openOnPC = isPC();</span><br><span class="line">  var start = new Date();</span><br><span class="line">  siteTime(openOnPC, start);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!openOnPC &amp;&amp; !showOnMobile) &#123;</span><br><span class="line">    document.getElementById(<span class="string">&#x27;site-runtime&#x27;</span>).style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<br/>
-
+<p><br/></p>
 <p>編輯文件 <code>/themes/next/layout/_partials/footer.swig</code>，在文件底部添加這幾行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- <span class="keyword">if</span> theme.runtime.enable %&#125;</span><br><span class="line">  &#123;% include <span class="string">&#x27;runtime.swig&#x27;</span> %&#125;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
-
-<br/>
-
+<p><br/></p>
 <p>更改 Next 主题的配置文件 <code>themes/next/_config.yml</code>，在文件底部添加以下内容：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site Runtime</span></span><br><span class="line">runtime:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># The time of the site started running. If not defined, current time of local time zone will be used.</span></span><br><span class="line">  <span class="comment"># You can specify the time zone by adding the `+HOURS` or `-HOURS` format time zone.</span></span><br><span class="line">  <span class="comment"># If not specify the time zone, it will use `+0000` as default.</span></span><br><span class="line">  <span class="comment"># ex: &quot;2015-06-08 07:24:13 +0800&quot;, `+0800` specify that it is the time in the East Eight Time Zone.</span></span><br><span class="line">  start: 2022-01-20 18:00:00 +0800  <span class="comment"># 部落格開始運行的時間</span></span><br><span class="line">  <span class="comment"># Whether to show on the mobile side</span></span><br><span class="line">  mobile: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<br/>
-
+<p><br/></p>
 <p>完工後就會顯示在網站最下面囉。</p>
-<p><img src="https://i.imgur.com/UCZM1ZB.png" alt="Imgur"></p>
-<br/>
-
-<h2 id="添加文章字數與所需閱讀時間"><a href="#添加文章字數與所需閱讀時間" class="headerlink" title="添加文章字數與所需閱讀時間"></a><strong>添加文章字數與所需閱讀時間</strong></h2><p>要實現自動產生文章字數與所需閱讀時間這個功能我們要使用一個plug-in：<code>hexo-symbols-count-time</code>，先到Blog專案目錄npm安裝</p>
+<figure>
+<img src="https://i.imgur.com/UCZM1ZB.png" alt="" /><figcaption>Imgur</figcaption>
+</figure>
+<p><br/></p>
+<h2 id="添加文章字數與所需閱讀時間"><strong>添加文章字數與所需閱讀時間</strong></h2>
+<p>要實現自動產生文章字數與所需閱讀時間這個功能我們要使用一個plug-in：<code>hexo-symbols-count-time</code>，先到Blog專案目錄npm安裝</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
-
-<br/>
-
+<p><br/></p>
 <p>打開<code>theme/next/_config.yml</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Post wordcount display settings</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-symbols-count-time</span></span><br><span class="line">symbols_count_time:</span><br><span class="line">  separated_meta: <span class="literal">true</span> <span class="comment"># 是否獨立一行</span></span><br><span class="line">  item_text_post: <span class="literal">true</span> <span class="comment"># page</span></span><br><span class="line">  item_text_total: <span class="literal">true</span> <span class="comment"># footer</span></span><br></pre></td></tr></table></figure>
-
-<br/>
-
+<p><br/></p>
 <p>打開hexo根目錄的<code>_config.yml</code>，加入以下內容：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># count</span></span><br><span class="line">symbols_count_time:</span><br><span class="line">  symbols: <span class="literal">true</span> <span class="comment"># page字數顯示</span></span><br><span class="line">  time: <span class="literal">true</span> <span class="comment"># page時間顯示</span></span><br><span class="line">  total_symbols: <span class="literal">true</span> <span class="comment"># footer字數統計顯示</span></span><br><span class="line">  total_time: <span class="literal">true</span> <span class="comment"># footer閱讀時間顯示</span></span><br><span class="line">  exclude_codeblock: <span class="literal">false</span> <span class="comment"># 字數統計是否排除程式碼</span></span><br><span class="line">  awl: 4  <span class="comment"># 平均文字長度</span></span><br><span class="line">  wpm: 275  <span class="comment"># 一分鐘閱讀字數</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p><code>在部署或開啟local端server前若沒有先clean再生成，所需閱讀時間很可能會出現NaN的字樣</code></p>
 </blockquote>
-<br/>
-
+<p><br/></p>
 <p>完成後大概會長這樣。</p>
-<p><img src="https://i.imgur.com/O6cjq0Y.png" alt="Imgur"></p>
-<br/>
-
-<h2 id="搜尋功能"><a href="#搜尋功能" class="headerlink" title="搜尋功能"></a><strong>搜尋功能</strong></h2><p>要實現在網站內搜尋這個功能我們要使用另外一個plug-in：<code>hexo-generator-searchdb</code>，先到Blog專案目錄npm安裝。</p>
+<figure>
+<img src="https://i.imgur.com/O6cjq0Y.png" alt="" /><figcaption>Imgur</figcaption>
+</figure>
+<p><br/></p>
+<h2 id="搜尋功能"><strong>搜尋功能</strong></h2>
+<p>要實現在網站內搜尋這個功能我們要使用另外一個plug-in：<code>hexo-generator-searchdb</code>，先到Blog專案目錄npm安裝。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
-
-<br/>
-
+<p><br/></p>
 <p>接著到<code>themes/_config.yml</code>將enable改為true就可以了。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Local Search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-generator-searchdb</span></span><br><span class="line">local_search:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If auto, trigger search by changing input.</span></span><br><span class="line">  <span class="comment"># If manual, trigger search by pressing enter key or search button.</span></span><br><span class="line">  trigger: auto</span><br><span class="line">  <span class="comment"># Show top n results per article, show all results by setting to -1</span></span><br><span class="line">  top_n_per_article: 1</span><br><span class="line">  <span class="comment"># Unescape html strings to the readable one.</span></span><br><span class="line">  unescape: <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Preload the search data when the page loads.</span></span><br><span class="line">  preload: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<br/>
-
+<p><br/></p>
 <p>完成後就會看到邊欄上多了一個搜尋可選，點擊後就可以搜尋站內文章資訊了。</p>
-<p><img src="https://i.imgur.com/zH6EPCO.png" alt="Imgur"></p>
-<br/>
-
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<figure>
+<img src="https://i.imgur.com/zH6EPCO.png" alt="" /><figcaption>Imgur</figcaption>
+</figure>
+<p><br/></p>
+<h2 id="參考資料">參考資料</h2>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://www.techgrow.cn/posts/755ff30d.html">Hexo Next 主题详细配置之一</a></li>
 <li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20139218/ironman/3910">30 天利用 Hexo 打造技術部落格系列</a></li>
 <li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10248214">(20) 試著學 Hexo - NexT 主題篇 - 可以安裝的套件</a></li>
@@ -444,7 +438,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Bosh-Hexo-Blog/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -457,7 +451,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/Bosh-Hexo-Blog/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -492,7 +486,7 @@
           <h3 class="widget-title">Tag Cloud</h3>
           <div id="myCanvasContainer" class="widget tagcloud">
             <canvas width="250" height="250" id="resCanvas" style="width:100%">
-              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Algorithms/" rel="tag">Algorithms</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Arrays/" rel="tag">Arrays</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/C/" rel="tag">C++</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Function/" rel="tag">Function</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Programming/" rel="tag">Programming</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Recursion/" rel="tag">Recursion</a><span class="tag-list-count">1</span></li></ul>
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Algorithms/" rel="tag">Algorithms</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Arrays/" rel="tag">Arrays</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/C/" rel="tag">C++</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Function/" rel="tag">Function</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Pointer/" rel="tag">Pointer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Programming/" rel="tag">Programming</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Recursion/" rel="tag">Recursion</a><span class="tag-list-count">1</span></li></ul>
             </canvas>
           </div>
         </div>
@@ -524,13 +518,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">總字數：</span>
-    <span title="總字數">41k</span>
+    <span title="總字數">60k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">所需總閱讀時間 &asymp;</span>
-    <span title="所需總閱讀時間">37 分鐘</span>
+    <span title="所需總閱讀時間">55 分鐘</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
   </div>
@@ -686,6 +680,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 }
 </script>
 
+
+  
 
   
 

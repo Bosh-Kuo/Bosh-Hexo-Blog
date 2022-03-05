@@ -29,12 +29,12 @@
 
   gtag('config', 'G-THMGTWZ6T9');
 </script>
-  <meta name="description" content="設置左上角或右上角 github 圖標打開hexo根目錄的_config.yml，將enable改為true即可 1234567# &#96;Follow me on GitHub&#96; banner in the top-right corner.github_banner:  enable: true  # 點擊即跳轉到該鏈接，自行設定  permalink: https:&#x2F;&#x2F;github.com&#x2F;you">
+  <meta name="description" content="設置左上角或右上角 github 圖標 打開hexo根目錄的_config.yml，將enable改為true即可 1234567# &#96;Follow me on GitHub&#96; banner in the top-right corner.github_banner:  enable: true  # 點擊即跳轉到該鏈接，自行設定  permalink: https:&#x2F;&#x2F;github.com&#x2F;yo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="從零開始使用Hexo + Github Page搭建個人技術筆記網站(10) - 客製化NexT主題：美化NexT背景主題">
 <meta property="og:url" content="https://bosh-kuo.github.io/Bosh-Hexo-Blog/hexo-from-scratch-10/">
 <meta property="og:site_name" content="Bosh的技術部落格">
-<meta property="og:description" content="設置左上角或右上角 github 圖標打開hexo根目錄的_config.yml，將enable改為true即可 1234567# &#96;Follow me on GitHub&#96; banner in the top-right corner.github_banner:  enable: true  # 點擊即跳轉到該鏈接，自行設定  permalink: https:&#x2F;&#x2F;github.com&#x2F;you">
+<meta property="og:description" content="設置左上角或右上角 github 圖標 打開hexo根目錄的_config.yml，將enable改為true即可 1234567# &#96;Follow me on GitHub&#96; banner in the top-right corner.github_banner:  enable: true  # 點擊即跳轉到該鏈接，自行設定  permalink: https:&#x2F;&#x2F;github.com&#x2F;yo">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://i.imgur.com/HlhDqFH.png">
 <meta property="og:image" content="https://i.imgur.com/vN40tT5.png">
@@ -98,7 +98,11 @@
   </style>
 </noscript>
 
-<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -282,54 +286,48 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="設置左上角或右上角-github-圖標"><a href="#設置左上角或右上角-github-圖標" class="headerlink" title="設置左上角或右上角 github 圖標"></a><strong>設置左上角或右上角 github 圖標</strong></h2><p>打開hexo根目錄的<code>_config.yml</code>，將enable改為true即可</p>
+        <h2 id="設置左上角或右上角-github-圖標"><strong>設置左上角或右上角 github 圖標</strong></h2>
+<p>打開hexo根目錄的<code>_config.yml</code>，將enable改為true即可</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># `Follow me on GitHub` banner in the top-right corner.</span></span><br><span class="line">github_banner:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># 點擊即跳轉到該鏈接，自行設定</span></span><br><span class="line">  permalink: https://github.com/yourname</span><br><span class="line">  <span class="comment"># 當鼠標懸浮於上方時顯示的文本</span></span><br><span class="line">  title: Follow me on GitHub</span><br></pre></td></tr></table></figure>
-
 <span id="more"></span>
-
-<br/>
-
-<h2 id="可切換式Dark-mode"><a href="#可切換式Dark-mode" class="headerlink" title="可切換式Dark mode"></a><strong>可切換式Dark mode</strong></h2><p>next雖然有支援dark mode，但沒有直接支援手動切換dark&#x2F;light mode的功能，因此我們要使用一個plug-in：<code>hexo-next-darkmode</code>，先到Blog專案目錄npm安裝</p>
+<p><br/></p>
+<h2 id="可切換式dark-mode"><strong>可切換式Dark mode</strong></h2>
+<p>next雖然有支援dark mode，但沒有直接支援手動切換dark/light mode的功能，因此我們要使用一個plug-in：<code>hexo-next-darkmode</code>，先到Blog專案目錄npm安裝</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-next-darkmode --save</span><br></pre></td></tr></table></figure>
-
-<br/>
-
+<p><br/></p>
 <p>接著更改 Next 主题的配置文件 <code>themes/next/_config.yml</code>，在底下添加下列程式碼</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Darkmode JS</span></span><br><span class="line"><span class="comment"># For more information: https://github.com/rqh656418510/hexo-next-darkmode, https://github.com/sandoche/Darkmode.js</span></span><br><span class="line">darkmode_js:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  bottom: <span class="string">&#x27;64px&#x27;</span> <span class="comment"># default: &#x27;32px&#x27;</span></span><br><span class="line">  right: <span class="string">&#x27;unset&#x27;</span> <span class="comment"># default: &#x27;32px&#x27;</span></span><br><span class="line">  left: <span class="string">&#x27;32px&#x27;</span> <span class="comment"># default: &#x27;unset&#x27;</span></span><br><span class="line">  time: <span class="string">&#x27;0.5s&#x27;</span> <span class="comment"># default: &#x27;0.3s&#x27;</span></span><br><span class="line">  mixColor: <span class="string">&#x27;transparent&#x27;</span> <span class="comment"># default: &#x27;#fff&#x27;</span></span><br><span class="line">  backgroundColor: <span class="string">&#x27;transparent&#x27;</span> <span class="comment"># default: &#x27;#fff&#x27;</span></span><br><span class="line">  buttonColorDark: <span class="string">&#x27;#100f2c&#x27;</span> <span class="comment"># default: &#x27;#100f2c&#x27;</span></span><br><span class="line">  buttonColorLight: <span class="string">&#x27;#fff&#x27;</span> <span class="comment"># default: &#x27;#fff&#x27;</span></span><br><span class="line">  isActivated: <span class="literal">false</span> <span class="comment"># default false</span></span><br><span class="line">  saveInCookies: <span class="literal">true</span> <span class="comment"># default: true</span></span><br><span class="line">  label: <span class="string">&#x27;🌓&#x27;</span> <span class="comment"># default: &#x27;&#x27;</span></span><br><span class="line">  autoMatchOsTheme: <span class="literal">true</span> <span class="comment"># default: true</span></span><br><span class="line">  libUrl: <span class="comment"># Set custom library cdn url for Darkmode.js</span></span><br></pre></td></tr></table></figure>
-
-<br/>
-
+<p><br/></p>
 <p><code>isActivated: true</code>: 默認激活dark mode, 必須搭配 <code>saveInCookies: false</code> 與 <code>autoMatchOsTheme: false</code></p>
 <p>關於如何調整dark mode的css 可以參考plug-in作者的repo: <strong><a target="_blank" rel="noopener" href="https://github.com/rqh656418510/hexo-next-darkmode">Hexo NexT Darkmode</a></strong></p>
-<p><img src="https://i.imgur.com/HlhDqFH.png" alt="Imgur"></p>
-<br/>
-
-<h2 id="加上Canvas-Ribbon背景"><a href="#加上Canvas-Ribbon背景" class="headerlink" title="加上Canvas Ribbon背景"></a><strong>加上Canvas Ribbon背景</strong></h2><p>加上dark mode後現在的背景不是全黑就是全白，要如何讓背景更豐富呢？NexT 默認提供3種背景配置，但都需要安裝依賴，這邊選擇Canvas Ribbon背景。</p>
-<ol>
+<figure>
+<img src="https://i.imgur.com/HlhDqFH.png" alt="" /><figcaption>Imgur</figcaption>
+</figure>
+<p><br/></p>
+<h2 id="加上canvas-ribbon背景"><strong>加上Canvas Ribbon背景</strong></h2>
+<p>加上dark mode後現在的背景不是全黑就是全白，要如何讓背景更豐富呢？NexT 默認提供3種背景配置，但都需要安裝依賴，這邊選擇Canvas Ribbon背景。</p>
+<ol type="1">
 <li>首先進入next資料夾</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/next</span><br></pre></td></tr></table></figure>
-<br/>
-
-<ol start="2">
-<li>安裝模塊到 source&#x2F;lib 目錄下：</li>
+<p><br/></p>
+<ol start="2" type="1">
+<li>安裝模塊到 source/lib 目錄下：</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/theme-next-canvas-ribbon <span class="built_in">source</span>/lib/canvas-ribbon</span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<ol start="3">
+<p><br/></p>
+<ol start="3" type="1">
 <li>編輯<code>/theme/next/_config.yml</code>，將enable改為true</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 更改 Next 主题的配置文件 themes/next/_config.yml，设置以下内容</span></span><br><span class="line">canvas_ribbon:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  size: 300           <span class="comment"># Ribbon的寬度</span></span><br><span class="line">  alpha: 0.6          <span class="comment"># Ribbon的透明度</span></span><br><span class="line">  zIndex: -1          <span class="comment"># Ribbon的顯示級別</span></span><br></pre></td></tr></table></figure>
-
-<br/>
-
+<p><br/></p>
 <p>修改完成後Canvas Ribbon背景就出現了～</p>
-<p><img src="https://i.imgur.com/vN40tT5.png" alt="Imgur"></p>
-<br/>
-
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a><strong>參考資料</strong></h2><ul>
+<figure>
+<img src="https://i.imgur.com/vN40tT5.png" alt="" /><figcaption>Imgur</figcaption>
+</figure>
+<p><br/></p>
+<h2 id="參考資料"><strong>參考資料</strong></h2>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://www.techgrow.cn/posts/abf4aee1.html">Hexo Next 8.x 主题添加可切换的暗黑模式</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.twblogs.net/a/5ef7dc58f638e9bb9bd55a57">Hexo 搭建個人博客（九）NexT 主題進階配置</a></li>
 </ul>
@@ -416,7 +414,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A8%AD%E7%BD%AE%E5%B7%A6%E4%B8%8A%E8%A7%92%E6%88%96%E5%8F%B3%E4%B8%8A%E8%A7%92-github-%E5%9C%96%E6%A8%99"><span class="nav-number">1.</span> <span class="nav-text">設置左上角或右上角 github 圖標</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E5%88%87%E6%8F%9B%E5%BC%8FDark-mode"><span class="nav-number">2.</span> <span class="nav-text">可切換式Dark mode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E4%B8%8ACanvas-Ribbon%E8%83%8C%E6%99%AF"><span class="nav-number">3.</span> <span class="nav-text">加上Canvas Ribbon背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A8%AD%E7%BD%AE%E5%B7%A6%E4%B8%8A%E8%A7%92%E6%88%96%E5%8F%B3%E4%B8%8A%E8%A7%92-github-%E5%9C%96%E6%A8%99"><span class="nav-number">1.</span> <span class="nav-text">設置左上角或右上角 github 圖標</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E5%88%87%E6%8F%9B%E5%BC%8Fdark-mode"><span class="nav-number">2.</span> <span class="nav-text">可切換式Dark mode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E4%B8%8Acanvas-ribbon%E8%83%8C%E6%99%AF"><span class="nav-number">3.</span> <span class="nav-text">加上Canvas Ribbon背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -432,7 +430,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Bosh-Hexo-Blog/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -445,7 +443,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/Bosh-Hexo-Blog/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -480,7 +478,7 @@
           <h3 class="widget-title">Tag Cloud</h3>
           <div id="myCanvasContainer" class="widget tagcloud">
             <canvas width="250" height="250" id="resCanvas" style="width:100%">
-              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Algorithms/" rel="tag">Algorithms</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Arrays/" rel="tag">Arrays</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/C/" rel="tag">C++</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Function/" rel="tag">Function</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Programming/" rel="tag">Programming</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Recursion/" rel="tag">Recursion</a><span class="tag-list-count">1</span></li></ul>
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Algorithms/" rel="tag">Algorithms</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Arrays/" rel="tag">Arrays</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/C/" rel="tag">C++</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Function/" rel="tag">Function</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Pointer/" rel="tag">Pointer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Programming/" rel="tag">Programming</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Bosh-Hexo-Blog/tags/Recursion/" rel="tag">Recursion</a><span class="tag-list-count">1</span></li></ul>
             </canvas>
           </div>
         </div>
@@ -512,13 +510,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">總字數：</span>
-    <span title="總字數">41k</span>
+    <span title="總字數">60k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">所需總閱讀時間 &asymp;</span>
-    <span title="所需總閱讀時間">37 分鐘</span>
+    <span title="所需總閱讀時間">55 分鐘</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
   </div>
@@ -674,6 +672,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 }
 </script>
 
+
+  
 
   
 
