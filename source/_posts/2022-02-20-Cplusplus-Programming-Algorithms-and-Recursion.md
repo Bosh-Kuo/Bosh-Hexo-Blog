@@ -51,7 +51,7 @@ for(int i = 2; i <= n; i++) {
 }
 ```
 
-implementation 參考[6_1.cpp](./6_1.cpp)
+implementation 參考[6_1.cpp](https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/tree/master/Lecture_Code/6.Algorithms%20and%20Recursion/6_1.cpp)
 
 <br>
 
@@ -99,7 +99,7 @@ Initialize all elements in A to be true // assuming prime for i from 2 to n
             Set A[𝑖 × 𝑗] to fals
 ```
 
-implementation 參考[6_2.cpp](./6_2.cpp)
+implementation 參考[6_2.cpp](https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/tree/master/Lecture_Code/6.Algorithms%20and%20Recursion/6_2.cpp)
 
 <br/>
 
@@ -143,7 +143,7 @@ double max(double array[], int len);
 double subMax = max(array, len - 1);
 ```
 
-implementation 參考[6_3.cpp](./6_3.cpp)
+implementation 參考[6_3.cpp](https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/tree/master/Lecture_Code/6.Algorithms%20and%20Recursion/6_3.cpp)
 
 <br/>
 
@@ -229,7 +229,7 @@ Technically, we say that:
 Though recursion is sometimes inefficient, typically implementation is easier. 
 
 Let’s consider the classic example “Hanoi Tower”.
-implementation 參考[6_4.cpp](./6_4.cpp)
+implementation 參考[6_4.cpp](https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/tree/master/Lecture_Code/6.Algorithms%20and%20Recursion/6_4.cpp)
 
 <br/>
 
