@@ -315,3 +315,13 @@ for(int i = 0; i < 3; i++)
 int x[3] = {1, 2, 3}; for(int i = 0; i < 3; i++)
 cout << *(x++) << " "; // error! (array variable存的address是不可以改的)
 ```
+
+
+<br>
+
+## **Reference**
+[IM 1003 Programming Design](http://www.im.ntu.edu.tw/~lckung/courses/public/PD/)
+
+<br>
+
+> 本文章同步發表於我的[github repo](https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/tree/master/Lecture_Code/)

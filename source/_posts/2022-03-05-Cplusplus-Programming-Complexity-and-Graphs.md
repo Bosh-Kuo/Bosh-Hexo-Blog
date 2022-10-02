@@ -78,3 +78,12 @@ bool isPrime(int x) {
 ```
 
 the complexity is $O(\sqrt(x))$
+
+<br>
+
+## **Reference**
+[IM 1003 Programming Design](http://www.im.ntu.edu.tw/~lckung/courses/public/PD/)
+
+<br>
+
+> 本文章同步發表於我的[github repo](https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/tree/master/Lecture_Code/)

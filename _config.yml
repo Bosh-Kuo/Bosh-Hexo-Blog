@@ -136,4 +136,4 @@ deploy:
   type: git
   repo: https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git
   branch: gh-pages  # repo分支
-  message: "use boshkuo.com"  # Commit 訊息
+  message: "發布 C++ 系列全部內容"  # Commit 訊息
