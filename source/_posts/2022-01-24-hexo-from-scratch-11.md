@@ -30,7 +30,7 @@ git init  # 建立本地端Git儲存庫
 git status  # 看一下檔案追蹤狀況 
 ```
 
-![Imgur](https://i.imgur.com/mjLGOUS.png)
+![](https://i.imgur.com/mjLGOUS.png)
 
 <br/>
 
@@ -108,7 +108,7 @@ git push -u origin master
 
 如此一來遠端就有電腦上hexo專案檔案的備份了！
 
-![Imgur](https://i.imgur.com/Ie8LCNh.png)
+![](https://i.imgur.com/Ie8LCNh.png)
 
 <br/>
 
@@ -120,7 +120,7 @@ git push -u origin master
 git remote show origin
 ```
 
-![Imgur](https://i.imgur.com/22cNiCK.png)
+![](https://i.imgur.com/22cNiCK.png)
 
 從圖片中可以看到`Head branch`現在指的是`gh-pages`這個分支，所以如果我只輸入`git push`還真的會不小心推到gh-pages這個分支，因此之後推送時應該要輸入完整指令`git push [remote-name] [branch-name]`
 

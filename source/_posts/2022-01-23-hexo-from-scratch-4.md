@@ -88,7 +88,7 @@ hexo的文章是以markdown語法格式來編寫的，我自己是習慣用Notio
 
 在編輯文章內容時可同時用`hexo server`在本地端預覽文章在網站上的樣子來做排版。
 
-![Imgur](https://i.imgur.com/fptfNuB.png)
+![](https://i.imgur.com/fptfNuB.png)
 
 <br/>
 

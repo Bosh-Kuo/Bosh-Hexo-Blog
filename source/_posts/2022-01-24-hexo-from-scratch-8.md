@@ -83,7 +83,7 @@ busuanzi_count:
   {%- endif %}
 ```
 
-![Imgur](https://i.imgur.com/Q8gI2fg.png)
+![](https://i.imgur.com/Q8gI2fg.png)
 
 <br/>
 
@@ -103,7 +103,7 @@ busuanzi_count:
           {%- endif %}
 ```
 
-![Imgur](https://i.imgur.com/RVIPnaq.png)
+![](https://i.imgur.com/RVIPnaq.png)
 
 <br/>
 

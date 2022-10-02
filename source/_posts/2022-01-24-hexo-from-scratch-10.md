@@ -63,7 +63,7 @@ darkmode_js:
 
 關於如何調整dark mode的css 可以參考plug-in作者的repo: **[Hexo NexT Darkmode](https://github.com/rqh656418510/hexo-next-darkmode)**
 
-![Imgur](https://i.imgur.com/HlhDqFH.png)
+![](https://i.imgur.com/HlhDqFH.png)
 
 <br/>
 
@@ -101,7 +101,7 @@ canvas_ribbon:
 
 修改完成後Canvas Ribbon背景就出現了～
 
-![Imgur](https://i.imgur.com/vN40tT5.png)
+![](https://i.imgur.com/vN40tT5.png)
 
 <br/>
 

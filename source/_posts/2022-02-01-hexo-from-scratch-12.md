@@ -23,7 +23,7 @@ category:
 
 我平常在學新技術時本來就有稍做筆記的習慣，主要是我對我的記憶力非常有自信--我從來沒有懷疑過為什麼我記憶力可以麽爛XD 以第一次學git來說，當我照著教學一步一步從本地init一個儲存庫做到push本地commit到github，當我做到這步時我已經忘記git add是什麼鬼了。對當時的我來說command line interface就是一個莫名其妙黑黑的視窗，我只要照著指令打就會蹦出一東西的酷玩意。因此我把第一次學的東西忘得一乾二凈然後開始學第二次的時候，我一步一步把我稍微有印象，貌似頗重要的指令以及他在幹嘛記下來，大概長這樣：
 
-![Imgur](https://i.imgur.com/LQvH2Tv.png)
+![](https://i.imgur.com/LQvH2Tv.png)
 
 <br/>
 
@@ -32,7 +32,7 @@ category:
 
 我在這段想說的是，筆記其實可以很簡單，簡單到只有我得懂也可以，但最低標準就是不管時麼時候回來看我都看得懂，它可以是一堆查過的文章網址，可以是條列式的重點，whatever，重點是學習的時候不應該花過多的時間去讓所有人都看懂，自己看得懂就夠了，總之一句話：做筆記時不要浪費時間。下面再放一張之後可能也會發成技術筆記文的一篇筆記，大概就是這麼簡陋，大概也只有自己能完全看得懂，之後這篇筆記整理成文章時可以再來比較一下差別。
 
-![Imgur](https://i.imgur.com/JckcFDH.png)
+![](https://i.imgur.com/JckcFDH.png)
 
 <br/>
 
@@ -66,7 +66,7 @@ Notion除了可以用來寫一般的筆記之外，還可以用它來保存我�
 
 我會用Notion DataBase來管理我的文章，一方面我可以很清楚知道我發過什麼類型的文章，發布日與更新日也一目瞭然，當我當我要寫一篇新文章的時候我就能快速參考過去的文章。
 
-![Imgur](https://i.imgur.com/9SXVLVx.png)
+![](https://i.imgur.com/9SXVLVx.png)
 
 <br/>
 
@@ -74,7 +74,7 @@ Notion除了可以用來寫一般的筆記之外，還可以用它來保存我�
 
 雖然前面一直說發文從筆記開始，但恰巧這篇文不太算是技術筆記，所以就直接進入編寫文章的部分，以本篇為例，我的一篇Blog文章在Notion裡面大概都是長得像這樣子：
 
-![Imgur](https://i.imgur.com/FkVUspE.png)
+![](https://i.imgur.com/FkVUspE.png)
 
 <br/>
 
@@ -90,7 +90,7 @@ hexo new [layout] <title>
 
 接著更改.md檔中預設的title(同剛剛指令中的 title)，以及tag, categoriy。
 
-![Imgur](https://i.imgur.com/NJ6fW2J.png)
+![](https://i.imgur.com/NJ6fW2J.png)
 
 ### **Hexo: 預覽並發布**
 

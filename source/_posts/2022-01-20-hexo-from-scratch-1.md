@@ -30,7 +30,7 @@ npm install hexo-cli -g
 
 確認hexo-cli成功下載可以輸入`hexo -v` 查看 hexo-cli 版本，若有出現下方hexo-cli版本資訊就代表安裝成功囉，`注意，hexo-cli跟hexo是不一樣的東西`，如果熟悉react的朋友，我個人覺得`hexo-cli`跟`create-react-app`有點像，都是創建環境的工具，而`hexo`跟`react`才是框架本體。許多hexo主題套件會要求hexo的版本，並不是指這邊輸入`hexo -v`顯示的hexo-cli 版本，至於hexo版本怎麼看會在下方講到。
 
-![Imgur](https://i.imgur.com/hpd7mip.png)
+![](https://i.imgur.com/hpd7mip.png)
 
 <br/>
 
@@ -59,7 +59,7 @@ npm install
 ```
 
 完成後資料夾下應該會有下面這些檔案與資料夾：
-![Imgur](https://i.imgur.com/O5gaNO3.png)
+![](https://i.imgur.com/O5gaNO3.png)
 
 - _config.yml: 有關網站配置的檔案，可修改各種配置設定。例如：網站標題、網站的網址、使用主題名稱等等
 - package.json: 紀錄專案的基本資訊如載入的套件、script等
@@ -84,8 +84,8 @@ $ hexo new [layout] <title>
 
 建立一篇新的文章。如果沒有設定 `layout` 的話，則會使用 `_config.yml` 中的 `default_layout` 設定代替，`default_layout`為post。如果標題有包含空格，需使用引號括住，例如`" title"。`
 
-![Imgur](https://i.imgur.com/LCPIWQT.png)
-![Imgur](https://i.imgur.com/YgTqyW4.png)
+![](https://i.imgur.com/LCPIWQT.png)
+![](https://i.imgur.com/YgTqyW4.png)
 
 <br/>
 
@@ -117,8 +117,8 @@ $ hexo server
 
 在本地端啟動 Hexo 伺服器，預設路徑為：`localhost:4000/`，可在自己電腦上預覽設定結果
 
-![Imgur](https://i.imgur.com/SMPrFou.png)
-![Imgur](https://i.imgur.com/2yz3f5h.png)
+![](https://i.imgur.com/SMPrFou.png)
+![](https://i.imgur.com/2yz3f5h.png)
 
 <br/>
 

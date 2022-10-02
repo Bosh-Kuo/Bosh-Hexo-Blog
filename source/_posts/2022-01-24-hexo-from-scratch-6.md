@@ -86,15 +86,15 @@ hexo deploy
 
 完成後就會看到github頁面被更新囉～
 
-![Imgur](https://i.imgur.com/WVdsOnY.png)
+![](https://i.imgur.com/WVdsOnY.png)
 
 <br/>
 
 接著前往設定Settings開啟Github Pages
 
-![Imgur](https://i.imgur.com/IEJmSRU.png)
+![](https://i.imgur.com/IEJmSRU.png)
 
-![Imgur](https://i.imgur.com/xhYGzp6.png)
+![](https://i.imgur.com/xhYGzp6.png)
 
 <br/>
 
@@ -102,7 +102,7 @@ hexo deploy
 
 > **耶～ 我的部落格正式誕生了 撒花慶祝～**
 
-![Imgur](https://i.imgur.com/rZCmFoq.png)
+![](https://i.imgur.com/rZCmFoq.png)
 
 <br/>
 

@@ -109,7 +109,7 @@ runtime:
 
 完工後就會顯示在網站最下面囉。
 
-![Imgur](https://i.imgur.com/UCZM1ZB.png)
+![](https://i.imgur.com/UCZM1ZB.png)
 
 <br/>
 
@@ -157,7 +157,7 @@ symbols_count_time:
 
 完成後大概會長這樣。
 
-![Imgur](https://i.imgur.com/O6cjq0Y.png)
+![](https://i.imgur.com/O6cjq0Y.png)
 
 <br/>
 
@@ -193,7 +193,7 @@ local_search:
 
 完成後就會看到邊欄上多了一個搜尋可選，點擊後就可以搜尋站內文章資訊了。
 
-![Imgur](https://i.imgur.com/zH6EPCO.png)
+![](https://i.imgur.com/zH6EPCO.png)
 
 <br/>
 

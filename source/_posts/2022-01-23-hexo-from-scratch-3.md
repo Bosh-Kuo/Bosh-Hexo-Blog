@@ -50,7 +50,7 @@ copyright: "<a href='<指定連結>'>作者名字</a>"
 
 一開始next預設開啟的選單為首頁以及歸檔
 
-![Imgur](https://i.imgur.com/Gx4WOju.png)
+![](https://i.imgur.com/Gx4WOju.png)
 
 ```bash
 menu:
