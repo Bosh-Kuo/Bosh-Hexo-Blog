@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://boshkuo.com/  # 網站的網址:無個人網域(https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/)
+url: http://blog.boshkuo.com/  # 網站的網址:無個人網域(https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/)
 root: /  # 網站根目錄:無個人網域(/Bosh-Hexo-Blog/)
 # permalink: :year/:month/:day/:title/
 permalink: :title/
@@ -136,4 +136,4 @@ deploy:
   type: git
   repo: https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git
   branch: gh-pages  # repo分支
-  message: "發布 C++ 系列全部內容"  # Commit 訊息
+  message: "改成 sub-domain: blog.boshkuo.com"  # Commit 訊息
