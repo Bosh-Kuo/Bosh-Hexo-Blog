@@ -1,14 +1,16 @@
----
 title: Cplusplus-Programming-Templates-Vector-Exception
-date: 2022-10-03 01:17:38
 tags:
-- [Programming]
-- [C++]
-- [Template]
-- [STL]
+  - Programming
+  - C++
+  - Template
+  - STL
 category:
-- Programming Language
-- C++
+  - Programming Language
+  - C++
+categories:
+  - Programming Language
+  - C++
+date: 2022-10-03 01:17:00
 ---
 
 

@@ -136,4 +136,4 @@ deploy:
   type: git
   repo: https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git
   branch: gh-pages  # repo分支
-  message: "改成 sub-domain: blog.boshkuo.com"  # Commit 訊息
+  message: "修改 Hexo 補充系列 - 註冊個人網域域名(with Godaddy)與Github Page 設定"  # Commit 訊息
