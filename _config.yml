@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Bosh的技術部落格
-subtitle: '歡迎來到我Blog! 我將會在這裡分享我的學習經驗、知識、生活，記錄不同人生階段的自己'
-description: '轉職路上的土木系碩班生'
+title: Bosh's Blog
+subtitle: '歡迎來到我的 Blog! 我將會在這裡分享我的學習筆記！'
+description: 'AI/Frontend/Backend/DevOps 都想學的雜食性軟體工程師'
 keywords:
 author: Bosh-Kuo
 language: zh-TW
@@ -136,4 +136,4 @@ deploy:
   type: git
   repo: https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git
   branch: gh-pages  # repo分支
-  message: "修改 Hexo 補充系列 - 註冊個人網域域名(with Godaddy)與Github Page 設定"  # Commit 訊息
+  message: "refactor"  # Commit 訊息

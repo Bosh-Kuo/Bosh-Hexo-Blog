@@ -9,7 +9,7 @@ category:
 
 ## **Hexo網站基本設定介紹**
 
-用hexo架設網站非常的方便，hexo把所有網站的基本設定參數都放在`_config.yml`裡面，我們可以根據自己對網站的需求調整這些晚站配置參數。配置參數很多這裡就不一一列舉，只記錄一些重要需要更改的參數。詳細也可以參考[官方配置文件](https://hexo.io/zh-tw/docs/configuration)
+用 hexo 架設網站非常的方便，hexo 把所有網站的基本設定參數都放在 `_config.yml` 裡面，我們可以根據自己對網站的需求調整這些晚站配置參數。配置參數很多這裡就不一一列舉，只記錄一些重要需要更改的參數。詳細也可以參考[官方配置文件](https://hexo.io/zh-tw/docs/configuration)
 
 > `任何有關設定檔案的設定值，一定要在冒號後加上一個空格再接設定值`
 
@@ -76,28 +76,7 @@ tag_map:
 
 <br/>
 
-## **換一個好看的佈景主題**
 
-我以hexo主題中最多人使用的`NexT`佈景主題作為我佈景主題。
-
-第一步先將next clone進theme資料夾。
-
-```bash
-git clone https://github.com/theme-next/hexo-theme-next themes/next
-```
-
-接下來修改`_config.yml`檔案
-
-```bash
-# Extensions
-## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
-theme: next 
-```
-
-修改完後重新 hexo generate、hexo server就可以看到`next`主題被套上去了
-
-<br/>
 
 ## **參考資料**
 

@@ -42,13 +42,13 @@ category:
 ---
 ```
 
-創建好文章後一開始會是一個空白頁面，以及預設的post layout (不會顯示於內文)，`title`為在網頁中的王張標題，`date`為文章創建日期，文章資訊可以日後再進行修改，tags與categoty與接下面提到標籤頁面與分類頁面有關。
+創建好文章後一開始會是一個空白頁面，以及預設的post layout (不會顯示於內文)，`title`為在網頁中的文章標題，`date`為文章創建日期，文章資訊可以日後再進行修改，tags與categoty與接下面提到標籤頁面與分類頁面有關。
 
 <br/>
 
 ### **分類與標籤**
 
-tags欄與category欄就是標籤頁與分類頁對應的標籤與分類，而category又有兩種不同寫法會影響文章的分類方式。
+tags 欄與 category 欄就是標籤頁與分類頁對應的標籤與分類，而 category 又有兩種不同寫法會影響文章的分類方式。
 
 ```bash
 ---
@@ -84,11 +84,11 @@ category:
 
 ### **Markdown語法編輯內文**
 
-hexo的文章是以markdown語法格式來編寫的，我自己是習慣用Notion或VScode來寫，至於要在文章中插入的圖片我選擇將圖片先丟到[Imgur](https://imgur.com/)當作圖床再用連結導入，因為Github Page有容量限制，如果直接在專案資料夾引入很快就沒空間了。
+hexo 的文章是以 markdown 語法格式來編寫的，我自己是習慣用 Notion 或 VScode 來寫，至於要在文章中插入的圖片我選擇將圖片先丟到  [Cloudinary](https://cloudinary.com/) 圖床，再用連結導入文章當中。一方面方便管理部落格的圖片，另一方面因為 Github Page有容量限制，如果直接在專案資料夾引入很快就沒空間了。本來我是用 [Imgur](https://imgur.com/) 作為我的圖床，但由於 [Imgur](https://imgur.com/) 其實不鼓勵使用者將其作為圖床，且每半年未被瀏覽的圖片會被自動刪除，因此把部落格的圖片放在 [Imgur](https://imgur.com/) 其實有丟失的風險。
 
 在編輯文章內容時可同時用`hexo server`在本地端預覽文章在網站上的樣子來做排版。
 
-![](https://i.imgur.com/fptfNuB.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673801701/Hexo%20Blog/2022-01-23-hexo-from-scratch-4/markdown_m9lhcu.png)
 
 <br/>
 

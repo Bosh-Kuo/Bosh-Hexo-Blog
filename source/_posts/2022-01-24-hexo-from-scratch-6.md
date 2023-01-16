@@ -29,7 +29,7 @@ category:
 
 但是要是我有第二個部落格想架設呢？或是我覺得repo就是想取其他名字呢？其實是可以的，這篇示範的就是用別的方式命名來架設Github page，我把我的github repo取名為`Bosh-Hexo-Blog`，接下來部署github-page一樣可以在這個repo下完成，但有些設定需要稍微改動。
 
-![Imgur](https://i.imgur.com/VXDYXW9.png)
+![Imgur](https://res.cloudinary.com/djtoo8orh/image/upload/v1673802340/Hexo%20Blog/2022-01-24-hexo-from-scratch-6/repo_impbn9.png)
 
 <br/>
 
@@ -86,15 +86,15 @@ hexo deploy
 
 完成後就會看到github頁面被更新囉～
 
-![](https://i.imgur.com/WVdsOnY.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673802340/Hexo%20Blog/2022-01-24-hexo-from-scratch-6/github_gq6ign.png)
 
 <br/>
 
 接著前往設定Settings開啟Github Pages
 
-![](https://i.imgur.com/IEJmSRU.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673802340/Hexo%20Blog/2022-01-24-hexo-from-scratch-6/github_setting_rs9t0v.png)
 
-![](https://i.imgur.com/xhYGzp6.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673802340/Hexo%20Blog/2022-01-24-hexo-from-scratch-6/github_pages_bqiyp7.png)
 
 <br/>
 
@@ -102,7 +102,7 @@ hexo deploy
 
 > **耶～ 我的部落格正式誕生了 撒花慶祝～**
 
-![](https://i.imgur.com/rZCmFoq.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673802341/Hexo%20Blog/2022-01-24-hexo-from-scratch-6/blog_tc0lak.png)
 
 <br/>
 

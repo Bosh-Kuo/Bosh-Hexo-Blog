@@ -1,4 +1,4 @@
-title: Cplusplus-Programming-Templates-Vector-Exception
+title: C++ Programming Design - Templates, Vector and Exception
 tags:
   - Programming
   - C++

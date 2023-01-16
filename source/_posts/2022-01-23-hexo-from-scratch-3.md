@@ -7,6 +7,29 @@ category:
 - [Hexo]
 ---
 
+## **換一個好看的佈景主題**
+
+我以 hexo 主題中最多人使用的 `NexT` (version 7.8.0)作為我佈景主題。  
+
+第一步先將 `NexT` 佈景主題 clone 進 theme 資料夾。
+
+```bash
+git clone https://github.com/theme-next/hexo-theme-next themes/next
+```
+
+接下來修改 `_config.yml` 檔案
+
+```bash
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: next 
+```
+
+修改完後重新 hexo generate、hexo server就可以看到`next`主題被套上去了
+
+<br/>
+
 ## **客製化自己的NexT佈景主題**
 
 因為接下來要調整的設定參數是針對NexT佈景主題而不是整個網站，我們要開啟的檔案是在 Hexo 根目錄下的 `thems/next/_config.yml` 這個檔案，而不是根目錄下的`_config.yml`。
@@ -50,7 +73,7 @@ copyright: "<a href='<指定連結>'>作者名字</a>"
 
 一開始next預設開啟的選單為首頁以及歸檔
 
-![](https://i.imgur.com/Gx4WOju.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673801434/Hexo%20Blog/2022-01-23-hexo-from-scratch-3/menu_n03qji.png)
 
 ```bash
 menu:
@@ -97,7 +120,7 @@ avatar:
   url: /images/avatar.gif
 ```
 
-url認的網址為next資料夾下的`source`資料夾
+url 認的網址為 next 資料夾下的 `source` 資料夾
 
 <br/>
 
@@ -129,7 +152,7 @@ back2top:
 ```
 
 - sidebar: 設定在側邊欄的個人資訊區塊中，Social Links 下，顯示回到頂部按鈕。
-- scrollpercent:閱讀進度百分比。
+- scrollpercent: 閱讀進度百分比。
 
 ```bash
 codeblock:

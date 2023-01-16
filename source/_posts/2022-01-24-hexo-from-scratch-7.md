@@ -24,7 +24,7 @@ category:
 
 完成建立後會進入以下頁面
 
-![](https://i.imgur.com/ZA3fErJ.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673802901/Hexo%20Blog/2022-01-24-hexo-from-scratch-7/GA1_sgys9g.png)
 
 <br/>
 
@@ -32,13 +32,13 @@ category:
 
 點擊網站，輸入網址並取一個串流名稱後點選建立串流
 
-![](https://i.imgur.com/MjqSDdc.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673802902/Hexo%20Blog/2022-01-24-hexo-from-scratch-7/GA2_ce4gmt.png)
 
 <br/>
 
 完成後會看到建立好的網站追蹤ID，待會要回到hexo主題設定檔中進行設定
 
-![](https://i.imgur.com/SvtDwtY.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673802902/Hexo%20Blog/2022-01-24-hexo-from-scratch-7/GA3_gbzfhn.png)
 
 <br/>
 
@@ -61,7 +61,7 @@ google_analytics:
 
 完成後重新產生靜態頁面檔案再開啟server就可以看到GA已經成功追蹤到了，就可以再次部署到Github Page上，日後就可以觀察網站的流量數據。
 
-![](https://i.imgur.com/mSXb3ul.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673802902/Hexo%20Blog/2022-01-24-hexo-from-scratch-7/GA4_ganqdl.png)
 
 <br/>
 

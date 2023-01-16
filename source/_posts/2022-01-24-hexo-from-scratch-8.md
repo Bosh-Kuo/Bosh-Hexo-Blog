@@ -83,7 +83,7 @@ busuanzi_count:
   {%- endif %}
 ```
 
-![](https://i.imgur.com/Q8gI2fg.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673831994/Hexo%20Blog/2022-01-24-hexo-from-scratch-8/%E7%B8%BD%E4%BA%BA%E6%95%B8_g0q4cw.png)
 
 <br/>
 
@@ -103,7 +103,7 @@ busuanzi_count:
           {%- endif %}
 ```
 
-![](https://i.imgur.com/RVIPnaq.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673831993/Hexo%20Blog/2022-01-24-hexo-from-scratch-8/%E5%96%AE%E9%A0%81%E4%BA%BA%E6%95%B8_hunlcm.png)
 
 <br/>
 

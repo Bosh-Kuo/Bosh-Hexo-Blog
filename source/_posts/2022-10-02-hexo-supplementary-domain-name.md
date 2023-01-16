@@ -49,7 +49,7 @@ Github Pages 原本就會提供一個預設的網域: `<使用者名>.github.io`
 **2. CNAME**  
 新增一個類型為 `CNAME`，名稱為 `blog` 資料為 `bosh-kuo.github.io.` 的設定
 
-![](https://i.imgur.com/hYHBa42.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673863366/Hexo%20Blog/2022-10-02-hexo-supplementary-domain-name/godaddy_bndcfm.png)
 
 完成以上步驟後 `boshkuo.com` 與 `blog.boshkuo.com` 都指向了 github page 了
 
@@ -64,7 +64,7 @@ Github Pages 原本就會提供一個預設的網域: `<使用者名>.github.io`
 
 完成 Github Page 的設定後輸入 `blog.boshkuo.com` 可能會發現網站沒有 CSS 或是 404 not found，這是因為目前的網頁靜態內容還使用者舊的 hostname 跟 root，需要一併修改 hexo `_config.yml` 檔。
 
-![](https://i.imgur.com/f3G2gAD.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673863366/Hexo%20Blog/2022-10-02-hexo-supplementary-domain-name/github_page_r5zpw5.png)
 
 <br>
 
@@ -80,7 +80,7 @@ root: /  # 網站根目錄:無個人網域(/Bosh-Hexo-Blog/)
 我有嘗試過 url 用 `http://blog.boshkuo.com`，root 用 `/Bosh-Hexo-Blog/` ，但卻不 work，原因是尚未用 custom domain 時，這個網頁的網址為 `https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/`， hexo 會從url 找出 hostname: `https://Bosh-Kuo.github.io`，並接上設定的 root: `/Bosh-Hexo-Blog/` 作為靜態檔案的根路徑。但由於 http://blog.boshkuo.com 的 hostname 依然還是 `http://blog.boshkuo.com`，對應到原網址的 `https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/`，再加上 root 就會導到 `https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/Bosh-Hexo-Blog/`
 
 
-![](https://i.imgur.com/yYogAgt.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673863366/Hexo%20Blog/2022-10-02-hexo-supplementary-domain-name/new_link_vusjys.png)
 
 另外，要注意的是，雖然在 Goddady DNS server 設定了 boshkuo.com 與 blog.boshkuo.com 都都導向 github 的 ip 位置，但由於github repo 中設定的 CNAME 是 blog.boshkuo.com，因此只有 blog.boshkuo.com 找得到這個部落格的靜態檔案，boshkuo.com 則是會回傳 Github 404。
 

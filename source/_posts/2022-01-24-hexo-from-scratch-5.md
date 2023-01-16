@@ -16,7 +16,7 @@ hexo new page "頁面名稱"
 ```
 <!-- more -->
 
-![](https://i.imgur.com/zNvPADU.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673801933/Hexo%20Blog/2022-01-24-hexo-from-scratch-5/new_page_dvi8zn.png)
 
 hexo會自動在source資料夾建立一個跟該新建頁面名稱相同的資料夾，裡面放著一個index.md檔用來編寫頁面內容。若是原本存為草稿的md檔編輯好要發布成頁面，就以同個道理在source創建一個該頁面名稱的資料夾，並將草稿從草稿資料夾移到該資料夾並將檔案改命名為index.md。
 
@@ -60,7 +60,7 @@ type: tags
 comments: false 
 ---
 
-# categorues/index.md
+# categories/index.md
 ---
 title: categories
 date: 2022-01-20 20:58:31

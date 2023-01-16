@@ -7,6 +7,28 @@ category:
 - [Hexo]
 ---
 
+## 使用 Hexo 從零開始建立自己的部落格！
+### 該如何挑選架站工具？
+在建立部落格之前可以問問自己對部落格的需求，再來挑選適合的部落格架設工具。對我來說，我的需求有以下幾點：  
+1. 我只需要一個靜態的頁面可以呈現我的文章、筆記，並不需要與資料庫互動，因此靜態網站產生器是一個很好的選擇。  
+2. 因為這是第一個建立的部落格，其實也還不確定 hexo 這套架站工具是否適合我，以後若找到更好的工具是比得面對文章搬家問題，因此我希望文章容易搬遷，並且可以用我習慣的 Markdown 語法編輯。  
+3. 我希望可以客製化自己喜歡的樣式，還有擴充功能，除了可以建立自己的網站風格，也可以滿足動手實作過程中堆城堡的成就感。
+綜合上述需求，我就放棄了 `Medium`，選擇使用教學資源豐富的 `Hexo` 來建立我的筆記部落格 ～  
+
+### Hexo 的優點有哪些？
+Hexo 是一種以 Node.js 開發的輕量級靜態部落格生成工具，安裝和使用都非常簡單，只需要在本地端安裝 Node.js 和 Hexo 就可以使用了，非常適合稍微有學過一點程式的人來使用。它的使用方法為：在本地端寫文章、預覽、修改後，再將部落格發佈到遠端伺服器。而且它提供了許多主題可供選擇，並且支援 Markdown 語法來撰寫文章，它還支援多種插件，可以增加部落格的功能，例如SEO優化、訪客統計、註解等額外功能。而以下是幾個 Hexo 的優點：  
+**1. 開源且免費:** Hexo 是一個開源的工具，它是免費的且可以自由使用。  
+**2. 簡單易學:** Hexo 使用 Node.js 開發，並且使用 Markdown 語法來撰寫文章，這是一種簡單易學的文本格式，適合新手使用。  
+**3. 多樣性的主題:** Hexo 提供了許多主題可供選擇，還可以自定義主題。  
+**4. 支援插件:** Hexo 支援許多插件，可以增加部落格的功能，例如 SEO 优化、訪客統計、註解等。  
+**5. 容易部署:** Hexo 支持多種部署方式，可以輕鬆部署到遠端伺服器或是使用靜態網頁托管服務，例如Github pages。  
+**6. 輕量級:** Hexo 安裝和使用非常簡單, 是一種輕量級的部落格工具，不需要很高的服務器配置。  
+**7. 社群支援:** Hexo 有大量的社群支援，有許多文件和教程可以幫助使用者學習和解決問題。  
+
+<!-- more -->
+
+<br/>
+
 ## 前置作業
 
 在開始搭建hexo部落格前需要先安裝以下軟體，可以參考[官方文件](https://hexo.io/zh-tw/docs/)依照自己的作業系統安裝。
@@ -15,12 +37,11 @@ category:
 - Node.js
 - VScode
 
-<!-- more -->
+
 
 <br/>
 
 ## **安裝Hexo**
-
 ### **下載 Hexo 套件包**
 
 
@@ -30,7 +51,7 @@ npm install hexo-cli -g
 
 確認hexo-cli成功下載可以輸入`hexo -v` 查看 hexo-cli 版本，若有出現下方hexo-cli版本資訊就代表安裝成功囉，`注意，hexo-cli跟hexo是不一樣的東西`，如果熟悉react的朋友，我個人覺得`hexo-cli`跟`create-react-app`有點像，都是創建環境的工具，而`hexo`跟`react`才是框架本體。許多hexo主題套件會要求hexo的版本，並不是指這邊輸入`hexo -v`顯示的hexo-cli 版本，至於hexo版本怎麼看會在下方講到。
 
-![](https://i.imgur.com/hpd7mip.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673800365/Hexo%20Blog/2022-01-20-hexo-from-scratch-1/hexo_version_ijbhof.png)
 
 <br/>
 
@@ -59,7 +80,7 @@ npm install
 ```
 
 完成後資料夾下應該會有下面這些檔案與資料夾：
-![](https://i.imgur.com/O5gaNO3.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673800364/Hexo%20Blog/2022-01-20-hexo-from-scratch-1/folder_structure_ck5fam.png)
 
 - _config.yml: 有關網站配置的檔案，可修改各種配置設定。例如：網站標題、網站的網址、使用主題名稱等等
 - package.json: 紀錄專案的基本資訊如載入的套件、script等
@@ -84,8 +105,8 @@ $ hexo new [layout] <title>
 
 建立一篇新的文章。如果沒有設定 `layout` 的話，則會使用 `_config.yml` 中的 `default_layout` 設定代替，`default_layout`為post。如果標題有包含空格，需使用引號括住，例如`" title"。`
 
-![](https://i.imgur.com/LCPIWQT.png)
-![](https://i.imgur.com/YgTqyW4.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673800365/Hexo%20Blog/2022-01-20-hexo-from-scratch-1/hexo_new_title_qpopgr.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673800364/Hexo%20Blog/2022-01-20-hexo-from-scratch-1/new_article_fa9pml.png)
 
 <br/>
 
@@ -117,8 +138,8 @@ $ hexo server
 
 在本地端啟動 Hexo 伺服器，預設路徑為：`localhost:4000/`，可在自己電腦上預覽設定結果
 
-![](https://i.imgur.com/SMPrFou.png)
-![](https://i.imgur.com/2yz3f5h.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673800365/Hexo%20Blog/2022-01-20-hexo-from-scratch-1/hexo_server_xryytu.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673800365/Hexo%20Blog/2022-01-20-hexo-from-scratch-1/initial_blog_f4l2dm.png)
 
 <br/>
 

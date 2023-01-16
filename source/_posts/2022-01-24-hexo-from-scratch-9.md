@@ -9,7 +9,7 @@ category:
 
 ## **網站運行時間**
 
-在 `/themes/next/layout/_custom` 文件夾下新建一個名稱爲 `site-runtime.swig` 的文件，並添加內容如下：
+在 `/themes/next/layout/_partials` 文件夾下新建一個名稱爲 `runtime.swig` 的文件，並添加內容如下：
 
 <!-- more -->
 
@@ -109,7 +109,7 @@ runtime:
 
 完工後就會顯示在網站最下面囉。
 
-![](https://i.imgur.com/UCZM1ZB.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673832339/Hexo%20Blog/2022-01-24-hexo-from-scratch-9/%E9%81%8B%E8%A1%8C%E6%99%82%E9%96%93_qdcddf.png)
 
 <br/>
 
@@ -157,7 +157,7 @@ symbols_count_time:
 
 完成後大概會長這樣。
 
-![](https://i.imgur.com/O6cjq0Y.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673832339/Hexo%20Blog/2022-01-24-hexo-from-scratch-9/%E9%96%B1%E8%AE%80%E6%99%82%E9%96%93_h9i4cu.png)
 
 <br/>
 
@@ -193,7 +193,7 @@ local_search:
 
 完成後就會看到邊欄上多了一個搜尋可選，點擊後就可以搜尋站內文章資訊了。
 
-![](https://i.imgur.com/zH6EPCO.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673832340/Hexo%20Blog/2022-01-24-hexo-from-scratch-9/%E6%90%9C%E5%B0%8B_h7afyy.png)
 
 <br/>
 
