@@ -1,10 +1,11 @@
 ---
-title: 從零開始使用Hexo + Github Page搭建個人技術筆記網站(8) - 客製化NexT主題：統計訪客人數與閱讀次數
+title: 從零開始使用Hexo + Github Page搭建個人技術筆記網站(8) - 客製化 NexT 主題：統計訪客人數與閱讀次數
 date: 2022-01-24 12:09:50
 tags:
 - [Hexo]
 category:
-- [Hexo]
+- Hexo
+- Basic
 ---
 
 ## **添加網站訪客計數器**

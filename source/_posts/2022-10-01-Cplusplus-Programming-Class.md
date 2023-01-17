@@ -4,7 +4,6 @@ date: 2022-10-01 18:19:30
 tags:
 - [Programming]
 - [C++]
-- [Class]
 category:
 - Programming Language
 - C++

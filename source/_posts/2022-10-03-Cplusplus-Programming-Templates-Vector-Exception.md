@@ -1,15 +1,11 @@
+---
 title: C++ Programming Design - Templates, Vector and Exception
 tags:
-  - Programming
-  - C++
-  - Template
-  - STL
+- [Programming]
+- [C++]
 category:
-  - Programming Language
-  - C++
-categories:
-  - Programming Language
-  - C++
+- Programming Language
+- C++
 date: 2022-10-03 01:17:00
 ---
 

@@ -4,7 +4,6 @@ date: 2022-02-20 01:25:33
 tags:
 - [Programming]
 - [C++]
-- [Arrays]
 category:
 - Programming Language
 - C++

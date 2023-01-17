@@ -136,4 +136,4 @@ deploy:
   type: git
   repo: https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git
   branch: gh-pages  # repo分支
-  message: "refactor"  # Commit 訊息
+  message: "hexo-advanced-supplementary-2"  # Commit 訊息

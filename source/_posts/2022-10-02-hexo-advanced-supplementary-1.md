@@ -1,14 +1,14 @@
 ---
-title: Hexo 補充系列 - 註冊個人網域域名(with Godaddy)與Github Page 設定
+title: Hexo 進階補充系列(1) - 註冊個人網域域名(with Godaddy)與Github Page 設定
+date: 2022-12-02 16:16:00
 tags:
   - Hexo
-  - Hexo supplementary
+  - Domain Name Setting
 category:
-  - - Hexo
-categories:
   - Hexo
-date: 2022-12-02 16:16:00
+  - Advanced
 ---
+
 ## **自訂網域**
 
 Github Pages 原本就會提供一個預設的網域: `<使用者名>.github.io` ，以這個的部落格為例，我的 repo 名稱為 **Bosh-Kuo-Blog**，因此 Github Pages 提供預設的網址為 `bosh-kuo.github.io/Bosh-Hexo-Blog/` 。若想要把網址換成自己喜歡的名字，可以 “買” 一個屬於自己的網址，再將原網站綁到買來的網址上。

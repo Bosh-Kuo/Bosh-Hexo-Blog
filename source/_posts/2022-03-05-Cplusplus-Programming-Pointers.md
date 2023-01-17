@@ -4,7 +4,6 @@ date: 2022-03-05 15:28:47
 tags:
 - [Programming]
 - [C++]
-- [Pointer]
 category:
 - Programming Language
 - C++

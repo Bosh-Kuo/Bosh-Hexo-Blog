@@ -4,7 +4,8 @@ date: 2022-02-01 00:25:35
 tags:
 - [Hexo]
 category:
-- [Hexo]
+- Hexo
+- Basic
 ---
 
 ## **寫文章，從做筆記開始！**

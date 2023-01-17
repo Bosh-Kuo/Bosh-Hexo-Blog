@@ -1,10 +1,11 @@
 ---
-title: 從零開始使用Hexo + Github Page搭建個人技術筆記網站(10) - 客製化NexT主題：美化NexT背景主題
+title: 從零開始使用Hexo + Github Page搭建個人技術筆記網站(10) - 客製化 NexT 主題：github 圖標 / Dark mode / Canvas Ribbon背景
 date: 2022-01-24 12:23:21
 tags:
 - [Hexo]
 category:
-- [Hexo]
+- Hexo
+- Basic
 ---
 
 ## **設置左上角或右上角 github 圖標**
@@ -25,7 +26,7 @@ github_banner:
 
 <br/>
 
-## **可切換式Dark mode**
+## **可切換式 Dark mode**
 
 next雖然有支援dark mode，但沒有直接支援手動切換dark/light mode的功能，因此我們要使用一個plug-in：`hexo-next-darkmode`，先到Blog專案目錄npm安裝
 

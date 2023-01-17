@@ -4,7 +4,8 @@ date: 2022-01-23 19:54:23
 tags:
 - [Hexo]
 category:
-- [Hexo]
+- Hexo
+- Basic
 ---
 
 ## **換一個好看的佈景主題**

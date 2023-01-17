@@ -4,7 +4,8 @@ date: 2022-01-24 11:44:51
 tags:
 - [Hexo]
 category:
-- [Hexo]
+- Hexo
+- Basic
 ---
 
 ## **終於要上架Hexo部落格了！**

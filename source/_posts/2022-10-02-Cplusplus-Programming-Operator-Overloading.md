@@ -4,8 +4,6 @@ date: 2022-10-02 02:40:21
 tags:
 - [Programming]
 - [C++]
-- [Class]
-- [Operator Overloading]
 category:
 - Programming Language
 - C++

@@ -2,6 +2,11 @@
 title: C++ Programming Design - CStrings
 date: 2022-03-05 15:34:26
 tags:
+- [Programming]
+- [C++]
+category:
+- Programming Language
+- C++
 ---
 
 

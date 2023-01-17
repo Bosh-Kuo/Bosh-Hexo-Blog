@@ -4,7 +4,8 @@ date: 2022-01-23 19:49:48
 tags:
 - [Hexo]
 category:
-- [Hexo]
+- Hexo
+- Basic
 ---
 
 ## **Hexo網站基本設定介紹**

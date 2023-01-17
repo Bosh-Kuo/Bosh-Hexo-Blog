@@ -4,7 +4,8 @@ date: 2022-01-24 11:29:55
 tags:
 - [Hexo]
 category:
-- [Hexo]
+- Hexo
+- Basic
 ---
 
 ## **幫部落格添加標籤、分類與關於頁面！**

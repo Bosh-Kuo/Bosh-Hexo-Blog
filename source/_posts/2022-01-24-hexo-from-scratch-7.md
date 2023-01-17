@@ -1,10 +1,11 @@
 ---
-title: 從零開始使用Hexo + Github Page搭建個人技術筆記網站(7) - 客製化NexT主題：Google Analytics分析部落格文章流量
+title: 從零開始使用Hexo + Github Page搭建個人技術筆記網站(7) - 客製化 NexT 主題：Google Analytics 分析部落格文章流量
 date: 2022-01-24 12:01:27
 tags:
 - [Hexo]
 category:
-- [Hexo]
+- Hexo
+- Basic
 ---
 
 

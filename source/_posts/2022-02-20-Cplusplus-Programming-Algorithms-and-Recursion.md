@@ -4,8 +4,6 @@ date: 2022-02-20 20:13:55
 tags:
 - [Programming]
 - [C++]
-- [Recursion]
-- [Algorithms]
 category:
 - Programming Language
 - C++

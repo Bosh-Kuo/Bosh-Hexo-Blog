@@ -4,7 +4,8 @@ date: 2022-01-23 20:07:29
 tags:
 - [Hexo]
 category:
-- [Hexo]
+- Hexo
+- Basic
 ---
 
 ## **來寫第一篇部落格文章吧！**

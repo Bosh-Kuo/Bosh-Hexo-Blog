@@ -4,8 +4,6 @@ date: 2022-10-03 00:06:58
 tags:
 - [Programming]
 - [C++]
-- [String]
-- [File IO]
 category:
 - Programming Language
 - C++

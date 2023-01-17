@@ -4,7 +4,6 @@ date: 2022-02-20 20:05:49
 tags:
 - [Programming]
 - [C++]
-- [Function]
 category:
 - Programming Language
 - C++

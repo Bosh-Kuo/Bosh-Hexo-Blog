@@ -1,10 +1,11 @@
 ---
-title: 從零開始使用Hexo + Github Page搭建個人技術筆記網站(9) - 客製化NexT主題：網站運行時間與文章長度和閱讀時間與搜尋功能
+title: 從零開始使用Hexo + Github Page搭建個人技術筆記網站(9) - 客製化 NexT 主題：網站運行時間與文章長度和閱讀時間與搜尋功能
 date: 2022-01-24 12:16:00
 tags:
 - [Hexo]
 category:
-- [Hexo]
+- Hexo
+- Basic
 ---
 
 ## **網站運行時間**
