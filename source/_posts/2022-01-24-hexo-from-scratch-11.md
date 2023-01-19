@@ -23,7 +23,7 @@ category:
 
 ### **建立本地端Git儲存庫**
 
-```bash
+```shell
 cd Blog  # 我的hexo專案根目錄
 
 git init  # 建立本地端Git儲存庫
@@ -39,7 +39,7 @@ git status  # 看一下檔案追蹤狀況
 
 確認資料夾裡有`.gitignore`這個檔案並且檔案內容如下，定義不推送的資料（可自訂）
 
-```bash
+```plain text
 .DS_Store
 Thumbs.db
 db.json
@@ -55,13 +55,13 @@ public/
 
 `git`的`commit`指令有點像是為當前的儲存庫拍一張快照，紀錄當下的版本，在連結遠端github repo並推送之前必須先在本地端commit
 
-```bash
+```shell
 git add .
 ```
 
 `這時候我遇到了一個問題`
 
-```bash
+```shell
 warning: adding embedded git repository: themes/next
 hint: You’ve added another git repository inside your current repository.
 hint: Clones of the outer repository will not contain the contents of
@@ -82,7 +82,7 @@ hint: See “git help submodule” for more information.
 
 接下來更新此Git除存庫的版本也就是上面比喻的『拍一張快照』
 
-```bash
+```shell
 git commit -m "first commit"
 ```
 
@@ -92,7 +92,7 @@ git commit -m "first commit"
 
 我們可以專門創一個repo給hexo專案，但因為我們已經在搭建的過程中就有創一個用來架設Github Page的repo，所以這裡直接用這個repo來連結本地端的git儲存庫就好。
 
-```bash
+```shell
 # 以我的repo網址為例https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git
 git remote add origin https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git
 ```
@@ -101,7 +101,7 @@ git remote add origin https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git
 
 由於這個github repo已經存在gh-pages這個分支了，所以我們要推送到github的別的分支，這邊我們推到遠端的master分支，推送指令送出就會在遠端自動創建master分支。
 
-```bash
+```shell
 git push -u origin master
 ```
 
@@ -117,7 +117,7 @@ git push -u origin master
 
 現在我的遠端github上有兩個分支了，之後在推送時得小心不要不小心推到gh-pages這個分支，如果我們想知道遠端的更多資訊可以用`git remote show [remote-name]` 命令
 
-```bash
+```shell
 git remote show origin
 ```
 
@@ -125,7 +125,7 @@ git remote show origin
 
 從圖片中可以看到`Head branch`現在指的是`gh-pages`這個分支，所以如果我只輸入`git push`還真的會不小心推到gh-pages這個分支，因此之後推送時應該要輸入完整指令`git push [remote-name] [branch-name]`
 
-```bash
+```shell
 git push origin master
 ```
 

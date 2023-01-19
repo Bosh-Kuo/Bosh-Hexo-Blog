@@ -45,7 +45,7 @@ category:
 
 回到/theme/next/_congig.yml中，找到下列這段，將追蹤碼貼到tracking_id
 
-```bash
+```yaml
 # Google Analytics
 google_analytics:
   tracking_id: # <app_id>

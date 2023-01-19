@@ -38,7 +38,7 @@ category:
 
 部署前要先設定 Hexo 的 `_config.yml` 檔案中連接到 Github 儲存庫的相關設定，
 
-```bash
+```yaml
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
@@ -52,7 +52,7 @@ deploy:
 
 接著進入至關重要的一環，因為我們的命名方式並不是以`<github account>.github.io`來命名，因此我的網站網址會在`Bosh-Kuo.github.io`的下一層，舉例來說我的repo命名為Bosh-Hexo-Blog因此這個Github Page架設的網站網址就會是`https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/`，因此我們必須去改`_config.yml`中的`url`和`root`，讓hexo架在正確的位置上，並且設置正確的網站根目錄，可以參考官方文件的**網站存放在子目錄**部分
 
-```bash
+```yaml
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/  # 網站的網址
@@ -69,7 +69,7 @@ root: /Bosh-Hexo-Blog/  # 網站的根目錄
 
 設定完成後首先安裝hexo的git部署套件
 
-```bash
+```shell
 npm install hexo-deployer-git --save
 ```
 
@@ -77,7 +77,7 @@ npm install hexo-deployer-git --save
 
 接著清理之前建立的靜態檔案 → 建立靜態檔案 → 部署至 Github Pages
 
-```bash
+```shell
 hexo clean
 hexo generate
 hexo deploy
@@ -113,7 +113,7 @@ hexo deploy
 
 解決方法就是修改`themes/next/lauout/_macro/post.swig`這個檔案
 
-```bash
+```html
 <!--/noindex-->
 {% elif post.excerpt %}
         {{ post.excerpt }}

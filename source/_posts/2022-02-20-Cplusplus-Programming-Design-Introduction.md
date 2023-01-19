@@ -12,14 +12,14 @@ category:
 # **CH1 Introduction**
 
 ## **C Program 執行階段 (補充)**
-```mermaid
+{% mermaid %}
 graph LR;
     id1(Edit) --> id2(Preprocess);
     id2 --> id3(Compile);
     id3 --> id4(Link);
     id4 --> id5(Load);
     id5 --> id6(Execute);
-```
+{% endmermaid %}
 
 <!-- more -->
 
@@ -34,12 +34,12 @@ graph LR;
 <br>
 
 ## **C++ Program 執行階段**
-```mermaid
+{% mermaid %}
 graph LR;
     id1(Preprpcessor) --> id2(namespace) 
     id2 --> id3(main faunction) 
     id3 --> id4(statemaents)
-```
+{% endmermaid %}
 
 
 ```C++

@@ -21,7 +21,7 @@ category:
 
 ### **命令列安裝**
 
-```bash
+```shell
 npm install hexo-tag-cloud
 ```
 
@@ -34,7 +34,7 @@ npm install hexo-tag-cloud
 
 找到`theme/next/layout/_macro/sidebar.swig`文件，在文貼上下列程式碼
 
-```bash
+```html
 {% if site.tags.length > 1 %}
   <script type="text/javascript" charset="utf-8" src="{{ url_for('/js/tagcloud.js') }}"></script>
   <script type="text/javascript" charset="utf-8" src="{{ url_for('/js/tagcanvas.js') }}"></script>
@@ -55,7 +55,7 @@ npm install hexo-tag-cloud
 
 找到`theme/next/_config.yml`，在最下面貼上下列程式碼
 
-```bash
+```yaml
 # hexo-tag-cloud
 tag_cloud:
     textFont: Trebuchet MS, Helvetica
@@ -83,8 +83,8 @@ github repo: [hexo-filter-mermaid-diagrams](https://github.com/webappdevelp/hexo
 
 ### **命令列安裝**
 
-```bash
-$ npm install hexo-filter-mermaid-diagrams --save
+```shell
+npm install hexo-filter-mermaid-diagrams --save
 ```
 
 <br>
@@ -105,7 +105,7 @@ mermaid:
 
 找到`theme/next/layout/partials/footer.swig`，在最底加上下列程式碼
 
-```bash
+```html
 {% if theme.mermaid.enable %}
   <script src='https://unpkg.com/mermaid@{{ theme.mermaid.version }}/dist/mermaid.min.js'></script>
   <script>
@@ -122,7 +122,7 @@ mermaid:
 
 找到`_config.yml`文件，在最底加上下列程式碼
 
-```bash
+```yaml
 # mermaid chart
 mermaid: ## mermaid url https://github.com/knsv/mermaid
   enable: true  # default true

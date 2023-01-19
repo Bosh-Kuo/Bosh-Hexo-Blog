@@ -20,7 +20,7 @@ hexo主題可以搭配第三方計數器來統計訪客人數，這邊我選擇�
 
 首先打開`theme/next/_config.yml`，將`enable`改為true
 
-```bash
+```yaml
 # Show Views / Visitors of the website / page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
 busuanzi_count:
@@ -37,7 +37,7 @@ busuanzi_count:
 
 接著打開`themes\next\layout\_third-party\analytics\busuanzi-counter.swig`，確認src後面接的網址為[不蒜子](https://busuanzi.ibruce.info/)官方提供的最新網址。
 
-```bash
+```JS
 {%- if theme.busuanzi_count.enable %}
 <div class="busuanzi-count">
   <script{{ pjax }} async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -58,7 +58,7 @@ busuanzi_count:
 
 若要在統計數字與圖標間加上文字則可以在同個文件中找到下列程式碼，改動如下：
 
-```bash
+```html
 {%- if theme.busuanzi_count.total_visitors %}
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
@@ -71,7 +71,7 @@ busuanzi_count:
   {%- endif %}
 ```
 
-```bash
+```html
 {%- if theme.busuanzi_count.total_views %}
     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
       <span class="post-meta-item-icon">
@@ -92,7 +92,7 @@ busuanzi_count:
 
 打開`themes/next/layout/_macro/post.swig`找到下列程式碼，這邊next主題已經幫我們設定好了只要確定有以下程式碼就沒問題了
 
-```bash
+```html
 {%- if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.post_views %}
             <span class="post-meta-item" title="{{ __('post.views') }}" id="busuanzi_container_page_pv" style="display: none;">
               <span class="post-meta-item-icon">

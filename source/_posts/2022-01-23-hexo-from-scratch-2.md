@@ -21,7 +21,7 @@ category:
 
 ### **網站基本資訊**
 
-```bash
+```yaml
 # Site
 title: Hexo # 部落格標題
 subtitle: '' # 部落格副標題
@@ -36,7 +36,7 @@ timezone: '' # 使用系統時間即可
 
 ### **URL設定**
 
-```bash
+```yaml
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
 url: http://example.com # 正式部落格網址
@@ -52,7 +52,7 @@ pretty_urls:
 
 ### **載入文章**
 
-```bash
+```yaml
 # Writing
 # new_post_name: :title.md  設定對應的文章原始編輯檔
 new_post_name: :year-:month-:day-:title.md  # 這樣設定會在生成新文章.md檔時將文章生成日輸入進檔名，方便日後管理
@@ -62,7 +62,7 @@ new_post_name: :year-:month-:day-:title.md  # 這樣設定會在生成新文章.
 
 ### **中文分類與標籤**
 
-```bash
+```yaml
 # Category & Tag
 default_category: uncategorized
 category_map:

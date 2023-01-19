@@ -14,7 +14,7 @@ category:
 
 <!-- more -->
 
-```bash
+```html
 <div id="site-runtime">
   <span class="post-meta-item-icon">
     <i class="fa fa-clock-o"></i>
@@ -83,7 +83,7 @@ category:
 
 編輯文件 `/themes/next/layout/_partials/footer.swig`，在文件底部添加這幾行：
 
-```bash
+```html
 {%- if theme.runtime.enable %}
   {% include 'runtime.swig' %}
 {%- endif %}
@@ -93,7 +93,7 @@ category:
 
 更改 Next 主题的配置文件 `themes/next/_config.yml`，在文件底部添加以下内容：
 
-```bash
+```markdown
 # Site Runtime
 runtime:
   enable: true
@@ -118,7 +118,7 @@ runtime:
 
 要實現自動產生文章字數與所需閱讀時間這個功能我們要使用一個plug-in：`hexo-symbols-count-time`，先到Blog專案目錄npm安裝
 
-```bash
+```shell
 npm install hexo-symbols-count-time --save
 ```
 
@@ -126,7 +126,7 @@ npm install hexo-symbols-count-time --save
 
 打開`theme/next/_config.yml`
 
-```bash
+```yaml
 # Post wordcount display settings
 # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
 symbols_count_time:
@@ -139,7 +139,7 @@ symbols_count_time:
 
 打開hexo根目錄的`_config.yml`，加入以下內容：
 
-```bash
+```yaml
 # count
 symbols_count_time:
   symbols: true # page字數顯示
@@ -166,7 +166,7 @@ symbols_count_time:
 
 要實現在網站內搜尋這個功能我們要使用另外一個plug-in：`hexo-generator-searchdb`，先到Blog專案目錄npm安裝。
 
-```bash
+```shell
 npm install hexo-generator-searchdb --save
 ```
 
@@ -174,7 +174,7 @@ npm install hexo-generator-searchdb --save
 
 接著到`themes/_config.yml`將enable改為true就可以了。
 
-```bash
+```yaml
 # Local Search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
 local_search:

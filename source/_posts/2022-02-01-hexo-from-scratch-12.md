@@ -58,7 +58,7 @@ Notion除了可以用來寫一般的筆記之外，還可以用它來保存我�
 
 用hexo新增一篇文章的指令是：
 
-```bash
+```markdown
 hexo new [layout] <title>
 ```
 
@@ -72,26 +72,26 @@ hexo new [layout] <title>
 
 - 在本地端檢查文章
 
-```bash
+```shell
 hexo server
 ```
 
 - 清除靜態檔案與快取
 
-```bash
+```shell
 hexo clean
 ```
 
 - 產生靜態網頁檔案
 
-```bash
+```shell
 hexo generate
 ```
 
 - 修改_config.yml文件deploy commit文字
 - 部署至 Github Pages
 
-```bash
+```shell
 hexo deploy
 ```
 
@@ -99,14 +99,14 @@ hexo deploy
 
 - git add and commit
 
-```bash
+```shell
 git add .
 git commit -m ""
 ```
 
 - git推送至github備份
 
-```bash
+```shell
 git push origin master
 ```
 

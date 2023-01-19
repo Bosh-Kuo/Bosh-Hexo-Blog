@@ -46,7 +46,7 @@ Hexo 是一種以 Node.js 開發的輕量級靜態部落格生成工具，安裝
 ### **下載 Hexo 套件包**
 
 
-```bash
+```shell
 npm install hexo-cli -g
 ```
 
@@ -60,11 +60,11 @@ npm install hexo-cli -g
 
 我選擇將hexo專案資料夾創建於我的桌面上
 
-```bash
+```shell
 cd Desktop
 ```
 
-```bash
+```shell
 hexo init Blog
 ```
 
@@ -72,11 +72,11 @@ hexo init Blog
 
 ### **安裝專案需要的檔案**
 
-```bash
+```shell
 cd Blog
 ```
 
-```bash
+```shell
 npm install
 ```
 
@@ -100,8 +100,8 @@ npm install
 
 ### **新增文章**
 
-```bash
-$ hexo new [layout] <title>
+```shell
+hexo new [layout] <title>
 ```
 
 建立一篇新的文章。如果沒有設定 `layout` 的話，則會使用 `_config.yml` 中的 `default_layout` 設定代替，`default_layout`為post。如果標題有包含空格，需使用引號括住，例如`" title"。`
@@ -113,8 +113,8 @@ $ hexo new [layout] <title>
 
 ### **產生靜態網頁**
 
-```bash
-$ hexo generate
+```shell
+hexo generate
 ```
 
 執行後，多了一個 public 目錄，點擊進去後，會發現裡面有一些內容，這是 Hexo解析`source`資料夾產生的靜態網頁資料，也就是決定部落格內容與外觀的一些文件，之後部署到github page做的事情其實就是把`public`資料夾內容搬到github上
@@ -123,8 +123,8 @@ $ hexo generate
 
 ### **清除靜態檔案與快取**
 
-```bash
-$ hexo clean
+```shell
+hexo clean
 ```
 
 清除快取檔案 (`db.json`) 和已產生的靜態檔案 (`public`)。建議在每次更新部落格內容執行hexo generate之前先執行
@@ -133,8 +133,8 @@ $ hexo clean
 
 ### **本地伺服器**
 
-```bash
-$ hexo server
+```shell
+hexo server
 ```
 
 在本地端啟動 Hexo 伺服器，預設路徑為：`localhost:4000/`，可在自己電腦上預覽設定結果

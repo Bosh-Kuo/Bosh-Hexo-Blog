@@ -18,7 +18,7 @@ category:
 
 ### **創建新文章或草稿.md檔**
 
-```bash
+```shell
 cd 專案目錄
 
 hexo new "<文章名稱>"
@@ -32,7 +32,7 @@ hexo new "<文章名稱>"
 
 ### **設定文章資訊**
 
-```bash
+```markdown
 ---
 title: first-test-article
 date: 2022-01-20 16:58:52
@@ -51,7 +51,7 @@ category:
 
 tags 欄與 category 欄就是標籤頁與分類頁對應的標籤與分類，而 category 又有兩種不同寫法會影響文章的分類方式。
 
-```bash
+```markdown
 ---
 title: first-test-article
 date: 2022-01-20 16:58:52
@@ -64,7 +64,7 @@ category:
 ---
 ```
 
-```bash
+```markdown
 ---
 title: first-test-article
 date: 2022-01-20 16:58:52
@@ -99,7 +99,7 @@ hexo 的文章是以 markdown 語法格式來編寫的，我自己是習慣用 N
 
 只要在想要開始隱藏的內文上頭加上`<!-- more -->`，首頁就會出現閱讀全文按鈕並隱藏內文。
 
-```bash
+```markdown
 # 會顯示出來的部分
 <!-- more -->
 # 會隱藏起來的部分

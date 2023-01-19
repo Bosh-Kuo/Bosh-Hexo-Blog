@@ -12,7 +12,7 @@ category:
 
 打開hexo根目錄的`_config.yml`，將enable改為true即可
 
-```bash
+```yaml
 # `Follow me on GitHub` banner in the top-right corner.
 github_banner:
   enable: true
@@ -30,7 +30,7 @@ github_banner:
 
 next雖然有支援dark mode，但沒有直接支援手動切換dark/light mode的功能，因此我們要使用一個plug-in：`hexo-next-darkmode`，先到Blog專案目錄npm安裝
 
-```bash
+```shell
 npm install hexo-next-darkmode --save
 ```
 
@@ -38,7 +38,7 @@ npm install hexo-next-darkmode --save
 
 接著更改 Next 主题的配置文件 `themes/next/_config.yml`，在底下添加下列程式碼
 
-```bash
+```yaml
 # Darkmode JS
 # For more information: https://github.com/rqh656418510/hexo-next-darkmode, https://github.com/sandoche/Darkmode.js
 darkmode_js:
@@ -74,14 +74,14 @@ darkmode_js:
 
 1. 首先進入next資料夾
 
-```bash
+```shell
 cd themes/next
 ```
 <br/>
 
 2. 安裝模塊到 source/lib 目錄下：
 
-```bash
+```shell
 git clone https://github.com/theme-next/theme-next-canvas-ribbon source/lib/canvas-ribbon
 ```
 
@@ -89,7 +89,7 @@ git clone https://github.com/theme-next/theme-next-canvas-ribbon source/lib/canv
 
 3. 編輯`/theme/next/_config.yml`，將enable改為true
 
-```bash
+```yaml
 # 更改 Next 主题的配置文件 themes/next/_config.yml，设置以下内容
 canvas_ribbon:
   enable: true

@@ -14,13 +14,13 @@ category:
 
 第一步先將 `NexT` 佈景主題 clone 進 theme 資料夾。
 
-```bash
+```shell
 git clone https://github.com/theme-next/hexo-theme-next themes/next
 ```
 
 接下來修改 `_config.yml` 檔案
 
-```bash
+```yaml
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
@@ -43,7 +43,7 @@ theme: next
 
 調整scheme可以變換部落格主頁、邊欄等的擺放位置，可以參考官方文件的範例[https://github.com/next-theme/awesome-next#live-preview](https://github.com/next-theme/awesome-next#live-preview)，或自己動手調整看看哪整編排方式最順眼，我目前是比較喜歡`Gemini`的編排。
 
-```bash
+```yaml
 # ---------------------------------------------------------------
 # Scheme Settings
 # ---------------------------------------------------------------
@@ -64,7 +64,7 @@ darkmode: false
 
 正常來說頁尾部分就會顯示自己在根目錄`_config.yml`設定的作者名稱。若要將文字設定成一個鏈結，可以透過Html `<a></a>`語法嵌入指定的連結。
 
-```bash
+```yaml
 copyright: "<a href='<指定連結>'>作者名字</a>"
 ```
 
@@ -76,7 +76,7 @@ copyright: "<a href='<指定連結>'>作者名字</a>"
 
 ![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673801434/Hexo%20Blog/2022-01-23-hexo-from-scratch-3/menu_n03qji.png)
 
-```bash
+```yaml
 menu:
 # 分頁名稱: 路徑 || Icon 圖示
   home: / || fa fa-home
@@ -93,7 +93,7 @@ menu:
 
 <br/>
 
-```bash
+```yaml
 # Enable / Disable menu icons / item badges.
 menu_settings:
   icons: true
@@ -104,7 +104,7 @@ menu_settings:
 
 <br/>
 
-```bash
+```yaml
 sidebar:
   # Sidebar Position.
   position: left
@@ -115,7 +115,7 @@ Scheme 是選擇 Pisces 或 Gemini 的話，就會直接看到文章列表旁邊
 
 <br/>
 
-```bash
+```yaml
 avatar:
   # Replace the default image and set the url here.
   url: /images/avatar.gif
@@ -125,7 +125,7 @@ url 認的網址為 next 資料夾下的 `source` 資料夾
 
 <br/>
 
-```bash
+```yaml
 social:
   #GitHub: https://github.com/yourname || fab fa-github
   #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
@@ -143,7 +143,7 @@ social:
 
 <br/>
 
-```bash
+```yaml
 back2top:
   enable: true
   # Back to top in sidebar.
@@ -155,7 +155,7 @@ back2top:
 - sidebar: 設定在側邊欄的個人資訊區塊中，Social Links 下，顯示回到頂部按鈕。
 - scrollpercent: 閱讀進度百分比。
 
-```bash
+```yaml
 codeblock:
   # Code Highlight theme
   # Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic
