@@ -5,7 +5,7 @@
 # Site
 title: Bosh's Blog
 subtitle: '歡迎來到我的 Blog! 我將會在這裡分享我的學習筆記！'
-description: 'AI/Frontend/Backend/DevOps 都想學的雜食性軟體工程師'
+description: '| AI | Frontend | Backend | DevOps | 都想學的雜食軟體工程師'
 keywords:
 author: Bosh-Kuo
 language: zh-TW
@@ -99,8 +99,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-# theme: landscape
-theme: next
+theme: butterfly
 
 # count
 symbols_count_time:
@@ -136,4 +135,4 @@ deploy:
   type: git
   repo: https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git
   branch: gh-pages  # repo分支
-  message: "hexo-advanced-supplementary-2"  # Commit 訊息
+  message: "butterfly theme"  # Commit 訊息
