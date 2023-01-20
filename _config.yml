@@ -121,13 +121,11 @@ mermaid: ## mermaid url https://github.com/knsv/mermaid
 
 # math
 markdown:
-  plugins:
-    - markdown-it-footnote
-    - markdown-it-sup
-    - markdown-it-sub
-    - markdown-it-abbr
-    - markdown-it-emoji
-    - hexo-math
+    plugins:
+      - plugin:
+        name: '@renbaoshuo/markdown-it-katex'
+        options:
+          strict: false
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -135,4 +133,4 @@ deploy:
   type: git
   repo: https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git
   branch: gh-pages  # repo分支
-  message: "butterfly theme"  # Commit 訊息
+  message: "install ketax tool and remove old markdown render"  # Commit 訊息
