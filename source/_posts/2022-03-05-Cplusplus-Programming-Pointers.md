@@ -7,8 +7,6 @@ tags:
 category:
 - Programming Language
 - C++
-
-mathjax: true
 ---
 
 # **CH8 Pointers**

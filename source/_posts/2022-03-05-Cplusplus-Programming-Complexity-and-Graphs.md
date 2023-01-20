@@ -7,9 +7,7 @@ tags:
 category:
 - Programming Language
 - C++
-
-mathjax: true
-
+katex: true
 ---
 
 # **CH7 Complexity and Graphs**

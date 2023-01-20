@@ -7,8 +7,7 @@ tags:
 category:
 - Programming Language
 - C++
-
-mathjax: true
+katex: true
 ---
 
 
