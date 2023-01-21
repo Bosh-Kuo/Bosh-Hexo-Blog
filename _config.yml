@@ -127,10 +127,14 @@ markdown:
         options:
           strict: false
 
+# sitemap
+sitemap:
+  path: sitemap.xml
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
   repo: https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git
   branch: gh-pages  # repo分支
-  message: "revise url from http to https"  # Commit 訊息
+  message: "install sitemap package"  # Commit 訊息
