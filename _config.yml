@@ -137,4 +137,4 @@ deploy:
   type: git
   repo: https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git
   branch: gh-pages  # repo分支
-  message: "install sitemap package"  # Commit 訊息
+  message: "update css"  # Commit 訊息
