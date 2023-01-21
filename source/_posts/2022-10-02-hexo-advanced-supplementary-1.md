@@ -73,11 +73,11 @@ Github Pages 原本就會提供一個預設的網域: `<使用者名>.github.io`
 我們需要更改 `_config.yml` 檔中的 `url` 部分，因為他會影響到靜態網頁文件所有跟 url 有關聯的地方。
 
 ```yaml
-url: http://blog.boshkuo.com/  # 網站的網址:無個人網域(https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/)
+url: https://blog.boshkuo.com/  # 網站的網址:無個人網域(https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/)
 root: /  # 網站根目錄:無個人網域(/Bosh-Hexo-Blog/)
 ```
 
-我有嘗試過 url 用 `http://blog.boshkuo.com`，root 用 `/Bosh-Hexo-Blog/` ，但卻不 work，原因是尚未用 custom domain 時，這個網頁的網址為 `https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/`， hexo 會從url 找出 hostname: `https://Bosh-Kuo.github.io`，並接上設定的 root: `/Bosh-Hexo-Blog/` 作為靜態檔案的根路徑。但由於 http://blog.boshkuo.com 的 hostname 依然還是 `http://blog.boshkuo.com`，對應到原網址的 `https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/`，再加上 root 就會導到 `https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/Bosh-Hexo-Blog/`
+我有嘗試過 url 用 `https://blog.boshkuo.com`，root 用 `/Bosh-Hexo-Blog/` ，但卻不 work，原因是尚未用 custom domain 時，這個網頁的網址為 `https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/`， hexo 會從url 找出 hostname: `https://Bosh-Kuo.github.io`，並接上設定的 root: `/Bosh-Hexo-Blog/` 作為靜態檔案的根路徑。但由於 http://blog.boshkuo.com 的 hostname 依然還是 `https://blog.boshkuo.com`，對應到原網址的 `https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/`，再加上 root 就會導到 `https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/Bosh-Hexo-Blog/`
 
 
 ![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673863366/Hexo%20Blog/2022-10-02-hexo-supplementary-domain-name/new_link_vusjys.png)
