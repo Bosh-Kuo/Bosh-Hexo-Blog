@@ -68,7 +68,7 @@ tag_cloud:
 <br>
 
 ## **預覽**
-![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673940709/Hexo%20Blog/2023-01-17-hexo-advanced-supplementary-2/tag_cloud_zluzpc.png)
+![Tag Cloud 預覽](https://res.cloudinary.com/djtoo8orh/image/upload/v1673940709/Hexo%20Blog/2023-01-17-hexo-advanced-supplementary-2/tag_cloud_zluzpc.png)
 
 <br>
 
@@ -134,7 +134,7 @@ mermaid: ## mermaid url https://github.com/knsv/mermaid
 <br>
 
 ## **預覽**
-![](https://res.cloudinary.com/djtoo8orh/image/upload/v1673940708/Hexo%20Blog/2023-01-17-hexo-advanced-supplementary-2/mermaid_zl8ruh.png)
+![mermaid 畫面渲染](https://res.cloudinary.com/djtoo8orh/image/upload/v1673940708/Hexo%20Blog/2023-01-17-hexo-advanced-supplementary-2/mermaid_zl8ruh.png)
 
 <br>
 
