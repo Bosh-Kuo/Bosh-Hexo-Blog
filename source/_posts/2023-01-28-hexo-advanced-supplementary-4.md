@@ -1,5 +1,5 @@
 ---
-title: Hexo 進階補充系列(4) - Butterfly  主題： 內文客製化配置
+title: Hexo 進階補充系列(4) - Butterfly 主題： 內文客製化配置
 date: 2023-01-28 02:24:48
 tags:
   - Hexo
