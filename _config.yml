@@ -137,4 +137,4 @@ deploy:
   type: git
   repo: https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git
   branch: gh-pages  # repo分支
-  message: "new GSC articles"  # Commit 訊息
+  message: "revise description"  # Commit 訊息

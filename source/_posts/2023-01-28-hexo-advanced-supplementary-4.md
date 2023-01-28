@@ -8,7 +8,7 @@ category:
   - Hexo
   - Advanced
 cover: https://res.cloudinary.com/djtoo8orh/image/upload/v1674844446/Hexo%20Blog/2023-01-28-hexo-advanced-supplementary-4/DALL_E_2023-01-28_02.23.57_-_A_colorful_butterfly_stay_on_a_black_and_white_hexo_puzzle_odeqyu.png
-description: 本文章紀錄如何客製化內文版型，包含了程式碼、包含了程式碼、文章版權、贊助、評論等客製化功能，並紀錄配置 butterfly  theme 的數學環境
+description: 本文章紀錄如何客製化內文版型，包含了程式碼、文章版權、贊助、評論等客製化功能，並紀錄配置 butterfly  theme 的數學環境
 ---
 
 ## **Front-matter**
@@ -215,9 +215,9 @@ mermaid:
 ```markdown
 <script src="https://giscus.app/client.js"
         data-repo="Bosh-Kuo/Bosh-Hexo-Blog"
-        data-repo-id="R_kgDOGtQ_fw"
+        data-repo-id="your repo id"
         data-category="Announcements"
-        data-category-id="DIC_kwDOGtQ_f84CTrwl"
+        data-category-id="your category id"
         data-mapping="title"
         data-strict="0"
         data-reactions-enabled="1"
@@ -238,8 +238,8 @@ mermaid:
 # https://giscus.app/
 giscus:
   repo: Bosh-Kuo/Bosh-Hexo-Blog
-  repo_id: R_kgDOGtQ_fw
-  category_id: DIC_kwDOGtQ_f84CTrwl
+  repo_id: # your repo id
+  category_id: # your category id
   theme: 
     light: light
     dark: dark
