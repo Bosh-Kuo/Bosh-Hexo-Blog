@@ -4,7 +4,7 @@
 
 # Site
 title: Bosh's Blog
-subtitle: '歡迎來到我的 Blog! 我將會在這裡分享我的學習筆記！'
+subtitle: '歡迎來到我的 Blog!'
 description: '| AI | Frontend | Backend | DevOps | 都想學的雜食軟體工程師'
 keywords:
 author: Bosh-Kuo
@@ -137,4 +137,4 @@ deploy:
   type: git
   repo: https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git
   branch: gh-pages  # repo分支
-  message: "new nvidia-driver problem article"  # Commit 訊息
+  message: "發布新技術筆記網站公告文章"  # Commit 訊息
