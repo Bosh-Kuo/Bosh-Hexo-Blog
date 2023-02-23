@@ -137,4 +137,4 @@ deploy:
   type: git
   repo: https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git
   branch: gh-pages  # repo分支
-  message: "發布新技術筆記網站公告文章"  # Commit 訊息
+  message: "修改文章檔名與錯字"  # Commit 訊息

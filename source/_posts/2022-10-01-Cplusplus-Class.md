@@ -178,7 +178,7 @@ int main()
 ```
 <br>
 
-### **Destrcutors**
+### **Destructors**
 
 A destructor is invoked right before an object is destroyed.
 - It must be public and have no parameter. 

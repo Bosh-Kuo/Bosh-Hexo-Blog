@@ -217,7 +217,7 @@ b = &c;
 // the space containing 5.2
 
 ```
-`記憶體用不到也清不掉就是 mermory leak`
+`記憶體用不到也清不掉就是 memory leak`
 
 <br/>
 

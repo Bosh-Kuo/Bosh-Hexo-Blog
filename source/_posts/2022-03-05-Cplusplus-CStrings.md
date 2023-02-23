@@ -19,7 +19,7 @@ category:
 - Use one byte (–128 to 127) to store English letters, numbers, symbols, and
 special characters(但不能儲存中文符號)
 - It is also an `integer`!
-字元本身儲存的是一個整數，再經由`ASCII code` encode成我們看到的符號，因此每個char其實都可以轉成int，也可以最整數運算，參考[9_1.cpp]([./9_1.cpp](https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/tree/master/Lecture_Code/9.CStrings)), [9_2.cpp](https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/tree/master/Lecture_Code/9.CStrings)
+字元本身儲存的是一個整數，再經由`ASCII code` encode成我們看到的符號，因此每個char其實都可以轉成int，也可以最整數運算，參考[9_1.cpp](https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/tree/master/Lecture_Code/9.CStrings), [9_2.cpp](https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/tree/master/Lecture_Code/9.CStrings)
 
 The C++ standard library <cctype> contains some useful functions for processing characters. 
 ```C++

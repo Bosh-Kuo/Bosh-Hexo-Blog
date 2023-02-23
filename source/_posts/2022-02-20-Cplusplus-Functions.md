@@ -10,7 +10,7 @@ category:
 ---
 
 # **CH5 Functions**
-## **Founction**
+## **Function**
 C++中function是由header與body組成，分別有system-defined functions, user-defined functions宣告的prototype:   
 > `return_type function_name(parameter_type parameter_name);`  
 
@@ -21,7 +21,7 @@ C++中function是由header與body組成，分別有system-defined functions, use
 
 <br>
 
-## **funtion prototype**
+## **Function prototype**
 在C++中funtion 須在main()前先declare,並在main()後define內容。同樣也可以在main()前直接defination取代declaration，就不用另外做declaration。但需要小心若多個function間有互相呼叫關係，那要確保呼叫的function以經被define好了，若兩function間互相呼叫，就一定只能用function prototype。  
 參考[5_2.cpp](https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/tree/master/Lecture_Code/5.Functions/5_2.cpp), [5_3.cpp](https://github.com/Bosh-Kuo/Cplusplus-Programming-Design-2021-Fall/tree/master/Lecture_Code/5.Functions/5_3.cpp)
 
