@@ -4,16 +4,16 @@
 
 # Site
 title: Bosh's Blog
-subtitle: '歡迎來到我的 Blog!'
-description: '| AI | Frontend | Backend | DevOps | 都想學的雜食軟體工程師'
+subtitle: "歡迎來到我的 Blog!"
+description: "| AI | Frontend | Backend | DevOps | 都想學的雜食軟體工程師"
 keywords:
 author: Bosh-Kuo
 language: zh-TW
-timezone: ''
+timezone: ""
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://blog.boshkuo.com/  # 網站的網址:無個人網域(https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/)
+url: https://blog.boshkuo.com/ # 網站的網址:無個人網域(https://Bosh-Kuo.github.io/Bosh-Hexo-Blog/)
 root: /  # 網站根目錄:無個人網域(/Bosh-Hexo-Blog/)
 # permalink: :year/:month/:day/:title/
 permalink: :title/
@@ -39,7 +39,7 @@ titlecase: false # Transform title into titlecase
 external_link:
   enable: true # Open external links in new tab
   field: site # Apply to the whole site
-  exclude: ''
+  exclude: ""
 filename_case: 0
 render_drafts: false
 post_asset_folder: false
@@ -49,21 +49,21 @@ highlight:
   enable: true
   line_number: true
   auto_detect: false
-  tab_replace: ''
+  tab_replace: ""
   wrap: true
   hljs: false
 prismjs:
   enable: false
   preprocess: true
   line_number: true
-  tab_replace: ''
+  tab_replace: ""
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
-  path: ''
+  path: ""
   per_page: 5
   order_by: -date
 
@@ -83,7 +83,7 @@ meta_generator: true
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 ## updated_option supports 'mtime', 'date', 'empty'
-updated_option: 'mtime'
+updated_option: "mtime"
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -121,11 +121,11 @@ mermaid: ## mermaid url https://github.com/knsv/mermaid
 
 # math
 markdown:
-    plugins:
-      - plugin:
-        name: '@renbaoshuo/markdown-it-katex'
-        options:
-          strict: false
+  plugins:
+    - plugin:
+      name: "@renbaoshuo/markdown-it-katex"
+      options:
+        strict: false
 
 # sitemap
 sitemap:
@@ -137,4 +137,4 @@ deploy:
   type: git
   repo: https://github.com/Bosh-Kuo/Bosh-Hexo-Blog.git
   branch: gh-pages  # repo分支
-  message: "修改文章檔名與錯字"  # Commit 訊息
+  message: "更新 menu(github, tech notes, portfolio)" # Commit 訊息
