@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(1) - 建立hexo部落格模板</title>
+    <url>/hexo-from-scratch-1/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/Hexo/Basic/hexo-from-scratch-1">建立 Hexo 部落格模板</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Basic</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(2) - Hexo基本設定</title>
+    <url>/hexo-from-scratch-2/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/Hexo/Basic/hexo-from-scratch-2">Hexo 基本設定</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Basic</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(4) - 寫下第一篇部落格文章</title>
+    <url>/hexo-from-scratch-4/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/Hexo/Basic/hexo-from-scratch-4">編輯部落格文章</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Basic</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(3) - NexT佈景主題基本設置</title>
+    <url>/hexo-from-scratch-3/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/Hexo/Basic/hexo-from-scratch-3">Hexo NexT 佈景主題基本設置</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Basic</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(10) - 客製化 NexT 主題：github 圖標 / Dark mode / Canvas Ribbon背景</title>
+    <url>/hexo-from-scratch-10/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/Hexo/Basic/hexo-from-scratch-10">客製化 NexT 主題：github 圖標 / Dark mode / Canvas Ribbon背景</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Basic</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(11) - 用Git&amp;Github備份hexo專案</title>
+    <url>/hexo-from-scratch-11/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/Hexo/Basic/hexo-from-scratch-11">以 Git &amp; Github 管理 hexo 專案</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Basic</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(5) - 標籤、分類與關於頁面</title>
+    <url>/hexo-from-scratch-5/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/Hexo/Basic/hexo-from-scratch-5">新增標籤頁面與分類頁面</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Basic</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(6) - Github Page 部署</title>
+    <url>/hexo-from-scratch-6/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/Hexo/Basic/hexo-from-scratch-6">Github Page 部署</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Basic</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(7) - 客製化 NexT 主題：Google Analytics 分析部落格文章流量</title>
+    <url>/hexo-from-scratch-7/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/Hexo/Basic/hexo-from-scratch-7">Google Analytics 分析部落格文章流量</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Basic</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(8) - 客製化 NexT 主題：統計訪客人數與閱讀次數</title>
+    <url>/hexo-from-scratch-8/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/Hexo/Basic/hexo-from-scratch-8">客製化 NexT 主題：統計訪客人數與閱讀次數</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Basic</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(12) - 第一階段結尾篇:從管理到發布，如何規劃與管理一篇文章？</title>
+    <url>/hexo-from-scratch-12/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/Hexo/Basic/hexo-from-scratch-12">第一階段結尾: 從管理到發布，如何規劃與管理一篇文章？</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Basic</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>從零開始使用Hexo + Github Page搭建個人技術筆記網站(9) - 客製化 NexT 主題：網站運行時間與文章長度和閱讀時間與搜尋功能</title>
+    <url>/hexo-from-scratch-9/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/Hexo/Basic/hexo-from-scratch-9">客製化 NexT 主題：網站運行時間、文章長度、閱讀時間與搜尋功能</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Basic</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++ Programming Design - Algorithms and Recursion</title>
+    <url>/Cplusplus-Algorithms-and-Recursion/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/C++/NTU_Programming_Design/Algorithms-and-Recursion">CH6 Algorithms and Recursion</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Programming Language</category>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>Programming</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++ Programming Design - Introduction</title>
+    <url>/Cplusplus-Introduction/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/C++/NTU_Programming_Design/Introduction">Ch1 Introduction</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Programming Language</category>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>Programming</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++ Programming Design - Functions</title>
+    <url>/Cplusplus-Functions/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/C++/NTU_Programming_Design/Functions">CH5 Functions</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Programming Language</category>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>Programming</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++ Programming Design - Selection and Repetition</title>
+    <url>/Cplusplus-Selection-and-Repetition/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/C++/NTU_Programming_Design/Selection-and-Repetition">CH2 Selection and Repetition</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Programming Language</category>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>Programming</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++ Programming Design - Variables and Arrays</title>
+    <url>/Cplusplus-Variables-and-Arrays/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/C++/NTU_Programming_Design/Variables-and-Arrays">CH4 Variables and Arrays</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Programming Language</category>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>Programming</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++ Programming Design - CStrings</title>
+    <url>/Cplusplus-CStrings/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/C++/NTU_Programming_Design/CStrings">CH9 CStrings</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Programming Language</category>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>Programming</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++ Programming Design - Complexity and Graphs</title>
+    <url>/Cplusplus-Complexity-and-Graphs/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/C++/NTU_Programming_Design/Complexity-and-Graphs">CH7 Complexity and Graphs</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Programming Language</category>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>Programming</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++ Programming Design - Digital Systems</title>
+    <url>/Cplusplus-Digital-Systems/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/C++/NTU_Programming_Design/Digital-Systems">CH3 Digital Systems</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Programming Language</category>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>Programming</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++ Programming Design - Pointers</title>
+    <url>/Cplusplus-Pointers/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/C++/NTU_Programming_Design/Pointers">CH8 Pointers</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Programming Language</category>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>Programming</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++ Programming Design - Class</title>
+    <url>/Cplusplus-Class/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/C++/NTU_Programming_Design/Class">CH11 Class</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Programming Language</category>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>Programming</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++ Programming Design - Self-defined data type</title>
+    <url>/Cplusplus-Self-Defined-DataType/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/C++/NTU_Programming_Design/Self-Defined-DataType">CH10 Self-defined Data Type</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Programming Language</category>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>Programming</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++ Programming Design - Operator-Overloading</title>
+    <url>/Cplusplus-Operator-Overloading/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/C++/NTU_Programming_Design/Operator-Overloading">CH12 Operator Overloading</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Programming Language</category>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>Programming</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 進階補充系列(1) - 註冊個人網域域名(with Godaddy)與Github Page 設定</title>
+    <url>/hexo-advanced-supplementary-1/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/Hexo/Advance/hexo-advanced-supplementary-1">註冊個人網域域名(with Godaddy)與Github Page 設定</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Advanced</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Domain Name Setting</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++ Programming Design - Inheritance and Polymorphism</title>
+    <url>/Cplusplus-Inheritance-Polymorphism/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/C++/NTU_Programming_Design/Inheritance-Polymorphism">CH14 Inheritance and Polymorphism</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Programming Language</category>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>Programming</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++ Programming Design - Strings, File IO and Header Files</title>
+    <url>/Cplusplus-Strings-FileIO-HeaderFiles/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/C++/NTU_Programming_Design/Strings-FileIO-HeaderFiles">CH13 Strings, File IO and Header Files</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Programming Language</category>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>Programming</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++ Programming Design - Templates, Vector and Exception</title>
+    <url>/Cplusplus-Templates-Vector-Exception/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/C++/NTU_Programming_Design/Templates-Vector-Exception">CH15 Templates, Vector and Exception</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Programming Language</category>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>Programming</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 進階補充系列(2) - 客製化 NexT 主題：添加側邊欄 Tag Cloud / Mermaid 圖表</title>
+    <url>/hexo-advanced-supplementary-2/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/Hexo/Advance/hexo-advanced-supplementary-2">客製化 NexT 主題：添加側邊欄 Tag Cloud / Mermaid 圖表</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Advanced</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Next Theme</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 進階補充系列(3) - 更換 NexT 主題： Butterfly 主題客製化設定</title>
+    <url>/hexo-advanced-supplementary-3/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/Hexo/Advance/hexo-advanced-supplementary-3">更換 NexT 主題： Butterfly 主題客製化設定</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Advanced</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Butterfly Theme</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 進階補充系列(4) - Butterfly 主題： 內文客製化配置</title>
+    <url>/hexo-advanced-supplementary-4/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/Hexo/Advance/hexo-advanced-supplementary-4">Butterfly 主題： 內文客製化配置</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Advanced</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Butterfly Theme</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我用 Docusaurus 建立了一個新的技術筆記網站！</title>
+    <url>/Docusaurus-Blog/</url>
+    <content><![CDATA[<!-- ## 我的新筆記網站 -->
+<blockquote>
+<p>這篇文章宣布一個消息，我使用 Docusaurus 建立建立了一個新的技術部落格網站 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，未來技術筆記類型的文章將會在新網站發布。其實很早以前我就開始觀望 Docusaurus 這個 SSG 了，但由於開始注意到 Docusaurus 時，已經使用 Hexo 幾個月，且當下使用 Hexo 也還算滿意的狀態。<br>
+由於目前對新站有比較明確的一些想法和目標，近期應該會比較著重於更新與經營新站，本站應該會暫時休耕。不過基於 Hexo 的喜愛還有對這個網站的情懷，本站不會關閉也不會移除原有的文章，目前我也還在摸索最適合自己的做筆記、寫文章方式，目前對於這個網站應該放什麼類型的文章或以什麼方法來寫都還沒有一個明確的想法，但比較確定的是，關於技術筆記類型的文章都會發佈在 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a> 上，歡迎大家一起交流～</p>
+</blockquote>
+<h2 id="以-Docusaurus-建立新的技術筆記網站的原因">以 Docusaurus 建立新的技術筆記網站的原因</h2>
+<p>一開始建立本站的目的就是想要拿來做技術筆記，同時也想試著建立自己的工程師品牌。但後來發布 Hexo 教學系列文章和 C++ 筆記後我卻有很長一段時間完全把網站放著沒有更新，最主要的原因是<code>對我來說</code> <code>Hexo 不是一個好的筆記平台</code>，文章在專案資料夾中默認以日期開頭常常讓我很難快速找到要修改編輯的檔案，<s>且所有的文檔都只能放在 <code>_posts</code> 資料夾不能依據分類放在不同資料夾，對於文章分類管理也滿不方便的。</s> (感謝 <a href="https://github.com/Shuai-Xin">Shuai-Xin</a>的更正，在 _posts 中是可以用資料夾分類文檔的。)<br>
+站在讀者的角度，要找一個特定主題的文章需要先去分類頁面在進入對應的分類一個一個點選查看的過程就需要經過好幾次的畫面跳轉，其實不是個好的使用者體驗。</p>
+<p>因為實在太久沒有更新網站了，前一個月決定將版面換成我喜歡的樣式，順便來培養寫筆記的習慣。但出於上述原因，我發現我潛意識中並沒有辦法把這個部落格當作筆記平台，反而會把它看待成像是 <a href="https://medium.com/">Medium</a> 這類型的專欄，最近的這幾篇文章都不自覺的想要寫得精緻一點，也會不自覺的已與讀者對話的口吻來寫文章。並不是說這樣寫文章不好，但對我這樣文筆匱乏的人來說這樣寫文章真的很花時間，光是花在打磨文字的時間就佔據做筆記的大半時間了，實在是違反當初想要寫技術筆記的初衷。</p>
+<h3 id="我的筆記需求">我的筆記需求</h3>
+<p>我覺得我會不自覺把這個不落格當作專欄網站來經營的原因在於它的版型真的很精緻漂亮，我的潛意識會一直告訴自己：這麼漂亮的網站就應該配上精緻細心的文章才不會顯得突兀，進而導致想到要寫文章就要花很多時間就更沒動力去寫。<br>
+幾個月前偶然發現幾個用 Docusaurus 建立的技術筆記部落格，發現 Docusaurus 幾乎能夠滿足我的所有筆記需求，包括：</p>
+<ul>
+<li>側邊欄顯示所有文章名稱</li>
+<li>依照資料夾分類的文章管理系統</li>
+<li>類似 HackMD 的筆記版型（給人這就是拿來做筆記的平台的感覺）</li>
+<li>以 Markdown 編輯</li>
+<li>自定義性與可玩性高</li>
+</ul>
+<p>在嘗試 Docusaurus 之後，我才發現這才是我理想中最棒的技術部落格版型啊！不僅具有可玩性，而且在上面做筆記的體驗很好，我能夠很自然的用它來寫平常在 Notion 上面做給自己看的那種類型的筆記。雖然我在大約一個月前才花了很多時間來整理我的 Hexo Blog，但還是毅然決然地決定以後都使用 Docusaurus 來發表技術筆記了。</p>
+<h3 id="Docusaurus-的優點">Docusaurus 的優點</h3>
+<ul>
+<li><strong><code>Category side bar:</code></strong><br>
+Docusaurus 功能中最吸引我的是 Docs 左側的 side bar。它的版型很像 Gitbook，可以顯示網站內所有文章的分類，文章依照資料夾式的結構摺疊收藏在不同的資料夾中，但它的功能更多也更美觀。此外，每個分類資料夾下面還可以有子分類資料夾，對作者來說更方便管理不同類別的文章，對讀者來說也更方便依照資料夾分類查詢文章。</li>
+</ul>
+<p>過去我看自己的 Hexo Blog 時覺得最困擾的點是，讀者沒辦法一次性地看到我的網站裡有哪些文章，我的 Hexo 版面只能在最底層顯示與該文章最相關的 6 篇文章以及在側邊欄顯示最近發佈的幾篇文章，即便網站裡面有其他文章是讀者可能有興趣的，或是其他篇文章跟讀者目前正在閱讀的文章有高度關聯，但如果讀者沒有特別去翻的話可能也不會發現有這些文章可以看。而 Docusaurus 的版面讓讀者有更大的機會發現網站中其他感興趣的文章，這就大大增加讀者停留在我的網站的機會。</p>
+<ul>
+<li><strong><code>以 React 自定義的獨立頁面:</code></strong><br>
+另一個很吸引我的是，Docusaurus 是基於 React 的 SSG，不僅在 markdown 文件中支援 React 語法，還還支援以 React 建立自己的獨立頁面，這就讓網站有非常大的可玩性，除了可以在同個網站放自己的履歷、作品集，甚至可以直接放一個小專案。而 Hexo 就比較難以完全自定義網站的所有元素，也比較難隨意在網站中任意新增非不落格文章的頁面，且大部分的版型都是由使用的主題決定，自定義樣式的門檻以及成本比較高，因此以 Hexo 建立的部落格通常都長得滿像的。</li>
+</ul>
+<h2 id="關於本站未來的一些想法與規劃">關於本站未來的一些想法與規劃</h2>
+<p>不得不說，我真的覺得 Hexo Butterfly 主題的版型很美，好看到讓我沒辦法直接放棄這個網站 XD 雖然我目前還不太確定這個網站接下來要用來發佈什麼樣的文章，但比較肯定的是從寫作動機來說， <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a> 的文章主要會是寫給自己看的，而這個網站的文章是寫給別人看的，可能會是針對特定主題的心得或是教學，總之希望這兩個網站可以順利長期更新經營～</p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 進階補充系列(5) - SEO： Google Search Console  設定</title>
+    <url>/hexo-advanced-supplementary-5/</url>
+    <content><![CDATA[<div class="note info modern"><p>Hi 我是 Bosh! 本篇文章已搬家至 <a href="https://notes.boshkuo.com/docs/Hexo/Advance/hexo-advanced-supplementary-5">SEO： Google Search Console 設定</a>，未來的技術筆記類型文章將持續發布於 <a href="https://notes.boshkuo.com/">Bosh’s Tech Notes</a>，本部落格將會繼續紀錄我的個人生活，以及一些值得分享的專題心得！</p>
+</div>]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Advanced</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>SEO</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ubuntu 20.04.3 系統更新導致的 nvidia-driver 異常問題</title>
+    <url>/ubuntu-nvidia-driver-problems/</url>
+    <content><![CDATA[<blockquote>
+<p>本篇為排除問題過程的紀錄，本身對 Linux 系統與 Nvidia 深度學習環境也不是很熟悉，若有描述不正確的地方歡迎更正～</p>
+</blockquote>
+<h2 id="設備與軟體版本"><strong>設備與軟體版本</strong></h2>
+<ul>
+<li>設備：
+<ul>
+<li>GPU: RTX 3090</li>
+<li>CPU: Intel Core i5-9500 CPU @ 3.00GHz × 6</li>
+</ul>
+</li>
+<li>系統： Ubuntu 20.04.3</li>
+<li>軟體版本：
+<ul>
+<li>nvidia-driver: 510.69.02</li>
+<li>CUDA: 11.3</li>
+</ul>
+</li>
+</ul>
+<h2 id="問題：重新開機後螢幕黑屏、畫面比例異常"><strong>問題：重新開機後螢幕黑屏、畫面比例異常</strong></h2>
+<p>如標題所述，某次實驗大樓預告要停電，我前一天晚上先把電腦關機，隔天我重新開機後原本正常顯示的雙螢幕只有其中一台可以顯示，且畫面比例非常奇怪又不能調整。大概能猜到是顯卡驅動的問題，於是我先下 <code>nvidia-smi</code>指令確認nvidia-driver 是否正常，果不其然無法顯示顯卡資訊，於是我查了會造成 nvidia driver 出現異常的原因，主要可能由以下原因造成：</p>
+<ol>
+<li><code>驅動程式版本不相容</code>：如果使用舊版本的驅動程式，可能會與新版本的系統不相容。</li>
+<li><code>驅動程式更新失敗</code>：如果驅動程式更新失敗，可能會導致驅動程式異常。</li>
+<li><code>硬體故障</code>：如果 NVIDIA GPU 硬體故障，可能會導致驅動程式異常。</li>
+<li><code>系統更新</code>：如果系統更新後，驅動程式與系統不相容，也可能導致驅動程式異常。</li>
+</ol>
+<p>從我遇到的情況來看大概能推敲出原因是因為 Linux 系統自動更新後，系統的內核版本、核心函數或其他系統設置已經改變，但是驅動程式仍然是舊版本，不能與新版本的系統兼容。</p>
+<h2 id="解決方法：重新安裝驅動程式"><strong>解決方法：重新安裝驅動程式</strong></h2>
+<p>解決上述問題的方法就是重新安裝驅動程式，以下介紹兩種安裝方法。</p>
+<h3 id="Command-mode-安裝驅動"><strong>Command mode 安裝驅動</strong></h3>
+<p>以 command line 安裝 nvidia driver 可以透過 <code>apt install</code> 直接安裝，或是從 Nvidia 官網下載安裝檔來安裝，這兩者的差別在於使用「apt install」安裝 NVIDIA 驅動程式是以Ubuntu的軟體包管理系統為基礎的安裝方式，這種方式可以確保驅動程式的版本是與當前Ubuntu版本相容的。相反的，如果從 NVIDIA 官網下載驅動程式安裝包，並且使用手動安裝的方式，我們可以選擇最新版本的驅動程式，但不保證與當前的Ubuntu版本相容。</p>
+<p>為了避免安裝 nvidia driver 時 GPU 受到圖形介面相關程式驅動，因此我先按 <code>ctrl + alt + F3</code> 進入全屏的 command mode，接著在命令列中輸入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#給驅動run檔賦予執行權限 </span></span><br><span class="line">sudo chmod +x 驅動程式檔名.run</span><br><span class="line"></span><br><span class="line"><span class="comment">#執行安裝程式</span></span><br><span class="line">sudo ./驅動程式檔名.run</span><br></pre></td></tr></table></figure>
+<p>接著遵循驅動程式安裝程序的指示後按下 <code>ctrl + alt + F2</code> 返回圖形介面模式。</p>
+<p>我們也可以輸入 <code>sudo service lightdm stop</code> 來停用 <code>X server</code>，關閉圖形介面，完成安裝後再輸入 <code>sudo service lightdm start</code>來啟動圖型介面。</p>
+<blockquote>
+<p><code>X server</code> 是 X Window System 中的一部分，它是一個在 Unix-like 系統中運行的圖形繪製程式，負責管理圖形輸出與輸入。它管理螢幕、鍵盤、滑鼠等裝置的顯示和輸入訊息，並允許應用程式進行圖形繪製和互動。</p>
+</blockquote>
+<p>若安裝成功，切換回圖型介面後畫面應該就正常了，若仍不正常可以先嘗試重新開機在找問題。</p>
+<h3 id="圖型介面安裝"><strong>圖型介面安裝</strong></h3>
+<p>若對下指令沒這麼熟悉甚至有恐懼的話可以先試試看用 ubuntu 提供的圖型介面，依照下列步驟來安裝：</p>
+<ol>
+<li>開啟「顯示設定」，通常可以在「應用程式」選單中找到。</li>
+<li>選擇「顯示設定」中的「驅動程式」選項卡。</li>
+<li>選擇「更新驅動程式」，如果有可用的 NVIDIA 驅動程式，您就可以選擇它。</li>
+<li>安裝驅動程式並重新啟動系統，以使 NVIDIA 驅動程式生效。</li>
+</ol>
+<p>因為我也沒有試過以圖型介面安裝，若失敗可以嘗試以 command mode 安裝。</p>
+<h2 id="追溯問題：為什麼只有我的-Ubuntu-系統更新才會發生這種問題而其他人都不會？"><strong>追溯問題：為什麼只有我的 Ubuntu 系統更新才會發生這種問題而其他人都不會？</strong></h2>
+<p>一般情況下，系統進行更新後不會發生驅動程式與系統不相容的問題，是因為系統更新通常包括驅動程式更新，以確保驅動程式與系統相容。但是，在某些情況下，驅動程式更新不是通過系統更新進行的，而是需要手動下載並安裝，這時就有可能發生驅動程式與系統不相容的問題。而驅動程式更新不是通過系統更新進行的原因是因為驅動程式並不是由系統供應商提供的，而是由硬體製造商提供的。</p>
+<p>而解決這個問題的方法就是要確保系統更新時驅動程式會跟著一起更新，我們可以通過以下步驟：</p>
+<ol>
+<li>在系統設置中，選擇「軟體更新」或「軟體和更新」。</li>
+<li>在「軟體更新」選項中，找到「驅動程式」選項，並選擇「自動安裝驅動程式更新」。</li>
+<li>完成設置後，系統將自動檢查驅動程式更新，並在更新可用時進行自動更新。</li>
+</ol>
+<p>而如果 「更新驅動程式」選項卡中<code>只有手動安裝選項可用</code>，這可能是因為：</p>
+<ol>
+<li><code>系統不是最新版本</code>：如果系統不是最新版本，可能不支援自動更新 NVIDIA 驅動程式。需要先更新系統，然後再更新 NVIDIA 驅動程式。</li>
+<li><code>在系統中禁用了自動更新</code>：如果禁用了自動更新，就必須手動安裝 NVIDIA 驅動程式。可以檢查「顯示設定」中的「更新」選項卡，以確保自動更新功能是啟用的。</li>
+<li><code>沒有可用的自動更新驅動程式</code>：如果沒有可用的自動更新驅動程式，您就必須手動安裝 NVIDIA 驅動程式。可以前往 NVIDIA 網站下載驅動程式，然後手動安裝它。</li>
+</ol>
+<h2 id="延伸問題：自動更新驅動會不會影響到已經安裝好的-CUDA-和-cudnn？"><strong>延伸問題：自動更新驅動會不會影響到已經安裝好的 CUDA 和 cudnn？</strong></h2>
+<p>通常新的驅動可以向下兼容版本較舊的 CUDA 與 cudnn，但還是有可能會發生新版驅動程式不相容舊版 CUDA 和 cudnn 的版本的問題，身為一個疲累的研究生，光做研究就足夠心累了，時不時還要處理開發環境問題真的很麻煩，因此我的做法是停用 ubuntu 的系統自動更新，雖然會捨棄修復漏洞和提高系統安全性的好處，但可以減少驅動程式和其他軟件不相容的風險。</p>
+]]></content>
+      <categories>
+        <category>Deep Learning</category>
+        <category>Environment Setup</category>
+      </categories>
+      <tags>
+        <tag>Deep Learning</tag>
+        <tag>Nvidia Driver</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+</search>
